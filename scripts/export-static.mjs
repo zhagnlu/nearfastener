@@ -1,0 +1,29 @@
+import { readFile, writeFile, mkdir, cp } from 'node:fs/promises';
+import { join, dirname, relative } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const root = fileURLToPath(new URL('../', import.meta.url));
+const out = join(root, 'static-site');
+const routes = JSON.parse(await readFile(join(root, 'content/routes.json'), 'utf8'));
+const header = await readFile(join(root, 'content/header.html'), 'utf8');
+const footer = await readFile(join(root, 'content/footer.html'), 'utf8');
+const escape = (value) => value.replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
+await mkdir(out, { recursive: true });
+for (const file of ['assets', 'site.css', 'replica.css', 'site.js', 'favicon.ico']) await cp(join(root, 'public', file), join(out, file), { recursive: true });
+
+for (const [route, meta] of Object.entries(routes)) {
+  const outputFile = join(out, route === '/' ? '' : route.slice(1), 'index.html');
+  const directory = dirname(outputFile);
+  const local = (absolute) => relative(directory, join(out, absolute.slice(1))) || '.';
+  const source = header + await readFile(join(root, 'content/pages', meta.file), 'utf8') + footer;
+  // Real relative links also let the entire replica open from index.html offline.
+  const markup = source.replace(/\b(href|src)="(\/[^"?#]*)([^\"]*)"/g, (match, attr, path, suffix) => {
+    if (attr === 'href' && routes[path]) return `data-route="${path}" href="${local(path === '/' ? '/index.html' : path + '/index.html')}${suffix}"`;
+    return `${attr}="${local(path)}${suffix}"`;
+  });
+  const html = `<!DOCTYPE html>\n<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escape(meta.title)}</title><meta name="description" content="${escape(meta.description)}"><link rel="icon" href="${local('/favicon.ico')}"><link rel="stylesheet" href="${local('/site.css')}"><link rel="stylesheet" href="${local('/replica.css')}"><script defer src="${local('/site.js')}"></script></head><body><a class="skip-link" href="#main-content">Skip to content</a><div class="site-shell" data-page-path="${route}">${markup}</div></body></html>\n`;
+  await mkdir(directory, { recursive: true });
+  await writeFile(outputFile, html);
+}
+await writeFile(join(out, 'README.txt'), `Near Fastener website replica\n\n${Object.keys(routes).length} HTML pages. All images, icons, styles and scripts are local.\nOpen index.html directly, or upload this entire folder to a static web server.\nContact / RFQ forms validate fields and export a local request file; they do not send messages or upload drawings.\nCompany placeholders and source copy are preserved for later editing.\n`);
+console.log(`Exported ${Object.keys(routes).length} pages to ${out}`);

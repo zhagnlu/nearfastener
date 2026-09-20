@@ -1,0 +1,247 @@
+{
+  "/": {
+    "title": "High Strength Fastener Manufacturer in China | Near Fastener",
+    "description": "Bolts, nuts, studs & custom fasteners per GB/DIN/ISO/ASTM standards. Factory direct, OEM manufacturing, material traceability. Request a quote today.",
+    "file": "home.html"
+  },
+  "/products/hex-bolts": {
+    "title": "Hex Bolts | Near Fastener",
+    "description": "Standard and high strength hexagon head bolts for structural and general engineering applications.",
+    "file": "products/hex-bolts.html"
+  },
+  "/products": {
+    "title": "Industrial Fastener Products | Near Fastener",
+    "description": "Browse our full range of industrial fasteners: hex bolts, high strength bolts, structural bolts, nuts, stud bolts, threaded rods, washers, and anchor bolts.",
+    "file": "products.html"
+  },
+  "/standards": {
+    "title": "Fastener Standards — GB / DIN / ISO / ASTM | Near Fastener",
+    "description": "Browse fasteners by international standards: GB/T, DIN, ISO, EN, ASTM, ASME. Each standard page includes full technical specifications and available sizes.",
+    "file": "standards.html"
+  },
+  "/capabilities": {
+    "title": "Manufacturing Capabilities | Near Fastener",
+    "description": "Full in-house manufacturing capabilities: cold forging, hot forging, CNC machining, thread rolling, heat treatment, surface treatment, testing, and packaging.",
+    "file": "capabilities.html"
+  },
+  "/industries": {
+    "title": "Industries We Serve | Near Fastener",
+    "description": "Fasteners for steel structures, wind energy, construction, mining, heavy machinery, oil & gas, and railway industries.",
+    "file": "industries.html"
+  },
+  "/quality": {
+    "title": "Quality Control | Near Fastener",
+    "description": "Comprehensive quality control: raw material inspection, chemical analysis, hardness test, tensile test, proof load, torque test, dimensional inspection, coating thickness, and salt spray testing.",
+    "file": "quality.html"
+  },
+  "/about": {
+    "title": "About Us | Near Fastener",
+    "description": "Learn about our factory, manufacturing capabilities, quality commitment, and global reach.",
+    "file": "about.html"
+  },
+  "/resources": {
+    "title": "Technical Resources | Near Fastener",
+    "description": "Engineering guides, material references, and industry insights for fastener selection and specification.",
+    "file": "resources.html"
+  },
+  "/contact": {
+    "title": "Contact Us | Near Fastener",
+    "description": "Get in touch with our team. Email, phone, WhatsApp, or visit our factory. We respond within 24 hours.",
+    "file": "contact.html"
+  },
+  "/rfq": {
+    "title": "Request a Quote | Near Fastener",
+    "description": "Upload your drawing or RFQ document and get a detailed quotation within 24 hours. Specify product, standard, diameter, material, quantity, and more.",
+    "file": "rfq.html"
+  },
+  "/products/high-strength-bolts": {
+    "title": "High Strength Bolts | Near Fastener",
+    "description": "Grade 8.8/10.9/12.9 high strength hex bolts for steel structures, bridges, and heavy machinery.",
+    "file": "products/high-strength-bolts.html"
+  },
+  "/products/structural-bolts": {
+    "title": "Structural Bolts | Near Fastener",
+    "description": "Preloaded and non-preloaded structural bolt assemblies for steel construction per GB/T 1231 and ASTM A325.",
+    "file": "products/structural-bolts.html"
+  },
+  "/products/hex-nuts": {
+    "title": "Hex Nuts | Near Fastener",
+    "description": "Standard and heavy hex nuts in carbon steel and alloy steel, Grades 4/8/10.",
+    "file": "products/hex-nuts.html"
+  },
+  "/products/stud-bolts": {
+    "title": "Stud Bolts | Near Fastener",
+    "description": "Double-ended stud bolts with nuts for flange connections, pressure vessels, and high-temperature applications.",
+    "file": "products/stud-bolts.html"
+  },
+  "/products/threaded-rods": {
+    "title": "Threaded Rods | Near Fastener",
+    "description": "Full-thread and double-thread rods in various lengths for construction and industrial applications.",
+    "file": "products/threaded-rods.html"
+  },
+  "/products/washers": {
+    "title": "Washers | Near Fastener",
+    "description": "Flat washers, spring washers, and heavy hex structural washer assemblies.",
+    "file": "products/washers.html"
+  },
+  "/products/anchor-bolts": {
+    "title": "Anchor Bolts | Near Fastener",
+    "description": "L-shaped, J-shaped, and headed anchor bolts for concrete foundations and steel column bases.",
+    "file": "products/anchor-bolts.html"
+  },
+  "/products/custom-fasteners": {
+    "title": "Custom Fasteners | Near Fastener",
+    "description": "Non-standard and custom-engineered fasteners manufactured per customer drawings and specifications.",
+    "file": "products/custom-fasteners.html"
+  },
+  "/standards/gb-t-5782": {
+    "title": "GB/T 5782 Hex Head Bolt | Near Fastener",
+    "description": "GB/T 5782 — Standard hex head bolt with partial thread. Equivalent to ISO 4014 / DIN 931.",
+    "file": "standards/gb-t-5782.html"
+  },
+  "/standards/gb-t-5783": {
+    "title": "GB/T 5783 Full Thread Hex Bolt | Near Fastener",
+    "description": "GB/T 5783 — Full thread hex head bolt. Equivalent to ISO 4017 / DIN 933.",
+    "file": "standards/gb-t-5783.html"
+  },
+  "/standards/gb-t-1231": {
+    "title": "GB/T 1231 Structural Bolt Assembly | Near Fastener",
+    "description": "GB/T 1231 — High strength structural bolt assembly (bolt + nut + washers) for preloaded steel structure connections.",
+    "file": "standards/gb-t-1231.html"
+  },
+  "/standards/gb-t-32076-7": {
+    "title": "GB/T 32076.7 High Strength Hex Bolt | Near Fastener",
+    "description": "GB/T 32076.7 — High strength hex bolt for preloaded bolt assemblies in steel structures. Grade 10.9, material 42CrMo/35CrMo.",
+    "file": "standards/gb-t-32076-7.html"
+  },
+  "/standards/gb-t-6170": {
+    "title": "GB/T 6170 Hex Nut | Near Fastener",
+    "description": "GB/T 6170 — Standard hex nut. Equivalent to ISO 4032.",
+    "file": "standards/gb-t-6170.html"
+  },
+  "/standards/din-931": {
+    "title": "DIN 931 Hex Head Bolt (Partial Thread) | Near Fastener",
+    "description": "DIN 931 — Partial thread hex head bolt. Superseded by ISO 4014 but still widely referenced.",
+    "file": "standards/din-931.html"
+  },
+  "/standards/din-933": {
+    "title": "DIN 933 Hex Head Bolt (Full Thread) | Near Fastener",
+    "description": "DIN 933 — Full thread hex head bolt. Superseded by ISO 4017 but still widely referenced.",
+    "file": "standards/din-933.html"
+  },
+  "/standards/din-976": {
+    "title": "DIN 976 Threaded Rod | Near Fastener",
+    "description": "DIN 976 — Full-thread steel rod in various lengths.",
+    "file": "standards/din-976.html"
+  },
+  "/standards/din-125": {
+    "title": "DIN 125 Flat Washer | Near Fastener",
+    "description": "DIN 125 — Standard flat washer for load distribution.",
+    "file": "standards/din-125.html"
+  },
+  "/standards/iso-4014": {
+    "title": "ISO 4014 Hex Head Bolt (Partial Thread) | Near Fastener",
+    "description": "ISO 4014 — International standard for partial thread hex head bolts.",
+    "file": "standards/iso-4014.html"
+  },
+  "/standards/iso-4017": {
+    "title": "ISO 4017 Hex Head Bolt (Full Thread) | Near Fastener",
+    "description": "ISO 4017 — International standard for full thread hex head bolts.",
+    "file": "standards/iso-4017.html"
+  },
+  "/standards/iso-4032": {
+    "title": "ISO 4032 Hex Nut | Near Fastener",
+    "description": "ISO 4032 — International standard for hex nuts.",
+    "file": "standards/iso-4032.html"
+  },
+  "/standards/astm-a325": {
+    "title": "ASTM A325 / F3125 Structural Bolt | Near Fastener",
+    "description": "ASTM A325 / F3125 — Heavy hex structural bolt for steel connections in North American standard projects.",
+    "file": "standards/astm-a325.html"
+  },
+  "/standards/astm-a193": {
+    "title": "ASTM A193 / A194 Stud Bolt Assembly | Near Fastener",
+    "description": "ASTM A193 / A194 — Alloy steel stud bolts with heavy hex nuts for high-temperature and high-pressure service.",
+    "file": "standards/astm-a193.html"
+  },
+  "/resources/gb-t-32076-7-guide": {
+    "title": "Understanding GB/T 32076.7: High Strength Bolt Assemblies for Steel Structures | Near Fastener",
+    "description": "A comprehensive guide to GB/T 32076.7 standard covering material requirements, mechanical properties, and application guidelines for high strength bolt assemblies.",
+    "file": "resources/gb-t-32076-7-guide.html"
+  },
+  "/resources/bolt-property-classes": {
+    "title": "Bolt Property Classes Explained: 4.6 vs 8.8 vs 10.9 vs 12.9 | Near Fastener",
+    "description": "What do the numbers mean? Understanding mechanical property classes, material selection, and how to choose the right grade for your application.",
+    "file": "resources/bolt-property-classes.html"
+  },
+  "/resources/surface-treatment-comparison": {
+    "title": "Surface Treatment Comparison: Zinc Plating vs HDG vs Zinc Flake | Near Fastener",
+    "description": "Comparing the most common surface treatments for industrial fasteners — cost, corrosion resistance, appearance, and application recommendations.",
+    "file": "resources/surface-treatment-comparison.html"
+  },
+  "/resources/42crmo-material-guide": {
+    "title": "42CrMo Alloy Steel: Properties and Applications in Fastener Manufacturing | Near Fastener",
+    "description": "Why 42CrMo (AISI 4140) is the preferred material for high strength fasteners, and how heat treatment affects its mechanical properties.",
+    "file": "resources/42crmo-material-guide.html"
+  },
+  "/product/gb-t-5782-hex-bolt": {
+    "title": "GB/T 5782 Hex Head Bolt — GB/T 5782 | Near Fastener",
+    "description": "GB/T 5782 GB/T 5782 Hex Head Bolt. Diameter: M5–M64, Grade: 4.6 / 8.8 / 10.9, Material: Carbon Steel / Alloy Steel.",
+    "file": "product/gb-t-5782-hex-bolt.html"
+  },
+  "/product/din-931-hex-bolt": {
+    "title": "DIN 931 Hex Head Bolt — DIN 931 / ISO 4014 | Near Fastener",
+    "description": "DIN 931 / ISO 4014 DIN 931 Hex Head Bolt. Diameter: M5–M64, Grade: 4.6 / 8.8 / 10.9, Material: Carbon Steel / Alloy Steel.",
+    "file": "product/din-931-hex-bolt.html"
+  },
+  "/product/din-933-hex-bolt": {
+    "title": "DIN 933 Full Thread Hex Bolt — DIN 933 / ISO 4017 | Near Fastener",
+    "description": "DIN 933 / ISO 4017 DIN 933 Full Thread Hex Bolt. Diameter: M5–M64, Grade: 4.6 / 8.8 / 10.9, Material: Carbon Steel / Alloy Steel.",
+    "file": "product/din-933-hex-bolt.html"
+  },
+  "/product/iso-4014-hex-bolt": {
+    "title": "ISO 4014 Hex Head Bolt — ISO 4014 | Near Fastener",
+    "description": "ISO 4014 ISO 4014 Hex Head Bolt. Diameter: M5–M64, Grade: 4.6 / 8.8 / 10.9, Material: Carbon Steel / Alloy Steel.",
+    "file": "product/iso-4014-hex-bolt.html"
+  },
+  "/product/gb-t-5783-hex-bolt": {
+    "title": "GB/T 5783 Full Thread Hex Bolt — GB/T 5783 | Near Fastener",
+    "description": "GB/T 5783 GB/T 5783 Full Thread Hex Bolt. Diameter: M5–M64, Grade: 4.6 / 8.8 / 10.9, Material: Carbon Steel / Alloy Steel.",
+    "file": "product/gb-t-5783-hex-bolt.html"
+  },
+  "/product/gb-t-32076-7-high-strength-bolt": {
+    "title": "GB/T 32076.7 High Strength Hex Bolt — GB/T 32076.7 | Near Fastener",
+    "description": "GB/T 32076.7 GB/T 32076.7 High Strength Hex Bolt. Diameter: M39–M64, Grade: 10.9, Material: 42CrMo / 35CrMo.",
+    "file": "product/gb-t-32076-7-high-strength-bolt.html"
+  },
+  "/product/gb-t-1231-structural-bolt": {
+    "title": "GB/T 1231 Structural Bolt Assembly — GB/T 1231 | Near Fastener",
+    "description": "GB/T 1231 GB/T 1231 Structural Bolt Assembly. Diameter: M12–M30, Grade: 10.9S, Material: 20MnTiB / 35CrMo.",
+    "file": "product/gb-t-1231-structural-bolt.html"
+  },
+  "/product/astm-a325-structural-bolt": {
+    "title": "ASTM A325 / F3125 Structural Bolt — ASTM A325 / F3125 | Near Fastener",
+    "description": "ASTM A325 / F3125 ASTM A325 / F3125 Structural Bolt. Diameter: 1/2\"–1-1/2\", Grade: Type 1 / Type 3, Material: Medium Carbon Steel / Weathering Steel.",
+    "file": "product/astm-a325-structural-bolt.html"
+  },
+  "/product/hex-nut-gb-t-6170": {
+    "title": "GB/T 6170 Hex Nut — GB/T 6170 / ISO 4032 | Near Fastener",
+    "description": "GB/T 6170 / ISO 4032 GB/T 6170 Hex Nut. Diameter: M5–M64, Grade: 4 / 8 / 10, Material: Carbon Steel.",
+    "file": "product/hex-nut-gb-t-6170.html"
+  },
+  "/product/stud-bolt-astm-a193": {
+    "title": "ASTM A193/A194 Stud Bolt Assembly — ASTM A193 B7 / A194 2H | Near Fastener",
+    "description": "ASTM A193 B7 / A194 2H ASTM A193/A194 Stud Bolt Assembly. Diameter: 1/2\"–4\", Grade: B7 / B16, Material: 42CrMo (AISI 4140).",
+    "file": "product/stud-bolt-astm-a193.html"
+  },
+  "/product/threaded-rod-din-976": {
+    "title": "DIN 976 Threaded Rod — DIN 976 | Near Fastener",
+    "description": "DIN 976 DIN 976 Threaded Rod. Diameter: M6–M48, Grade: 4.6 / 8.8, Material: Carbon Steel.",
+    "file": "product/threaded-rod-din-976.html"
+  },
+  "/product/flat-washer-din-125": {
+    "title": "DIN 125 Flat Washer — DIN 125 / ISO 7089 | Near Fastener",
+    "description": "DIN 125 / ISO 7089 DIN 125 Flat Washer. Diameter: M3–M64, Grade: 200HV / 300HV, Material: Carbon Steel.",
+    "file": "product/flat-washer-din-125.html"
+  }
+}

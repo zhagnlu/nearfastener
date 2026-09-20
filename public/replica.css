@@ -1,0 +1,24 @@
+:root { color-scheme: light; }
+html { scroll-padding-top: 100px; }
+[hidden] { display: none !important; }
+.site-shell { display: flex; flex-direction: column; min-height: 100vh; }
+.site-fragment { display: contents; }
+.skip-link { position: fixed; top: 8px; left: 8px; z-index: 100; transform: translateY(-160%); background: #c87320; color: white; border-radius: 5px; padding: 10px 18px; }
+.skip-link:focus { transform: translateY(0); }
+header.header-scrolled { background: rgb(15 23 42 / .96); box-shadow: 0 3px 16px rgb(0 0 0 / .14); backdrop-filter: blur(10px); }
+header a.is-current { color: #fff; background: rgb(255 255 255 / .1); }
+.mobile-navigation { padding: 12px 20px 22px; max-height: calc(100dvh - 64px); overflow-y: auto; border-top: 1px solid rgb(255 255 255 / .08); background: #101724; }
+.mobile-navigation a { display: block; padding: 12px; border-radius: 5px; color: #d1d5db; font-size: 14px; font-weight: 500; }
+.mobile-navigation a:hover { color: white; background: rgb(255 255 255 / .05); }
+.mobile-navigation a.mobile-quote { margin-top: 12px; background: #c87320; color: white; text-align: center; font-weight: 600; }
+[data-reveal].reveal-pending { opacity: 0; transform: translateY(24px); }
+.preview-form-note { color: #64748b; font-size: 12px; line-height: 1.6; }
+.form-feedback { margin-top: 18px; padding: 16px 18px; border: 1px solid #d8e1ea; border-radius: 6px; color: #1b2a4a; background: #f0f4f8; font-size: 14px; line-height: 1.7; }
+.form-feedback.form-error { color: #9c2727; border-color: #f3c9c9; background: #fff4f4; }
+.download-request { margin-top: 10px; padding: 8px 15px; border-radius: 4px; background: #c87320; color: white; cursor: pointer; font-weight: 600; }
+.download-request:hover { background: #a9601c; }
+.is-dragging { border-color: #c87320 !important; background: #fff7ed; }
+a:focus-visible,button:focus-visible,label[for="file-upload"]:focus-visible { outline: 3px solid #d38a43; outline-offset: 4px; }
+@media (min-width: 1024px) { .mobile-navigation { display: none !important; } }
+@media (max-width: 640px) { main { min-width: 0; } table { overflow-wrap: anywhere; } }
+@media (prefers-reduced-motion: reduce) { *,*::before,*::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; transition-delay: 0ms !important; } [data-reveal].reveal-pending { opacity: 1; transform: none; } }
