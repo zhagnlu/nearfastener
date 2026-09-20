@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import header from "../content/header.html?raw";
 import footer from "../content/footer.html?raw";
+import SiteEnhancements from "./SiteEnhancements";
 
 export const metadata: Metadata = {
   title: "High Strength Fastener Manufacturer in China | Near Fastener",
@@ -29,7 +30,7 @@ export default function RootLayout({
           {children}
           <div className="site-fragment" dangerouslySetInnerHTML={{ __html: footer }} />
         </div>
-        <script src="/site.js" defer />
+        <SiteEnhancements />
       </body>
     </html>
   );
