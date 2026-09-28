@@ -1,5 +1,6 @@
 // Shared, dependency-free behavior for the app and the standalone HTML export.
 function initNearFastener() {
+  const t = (text) => window.NearFastenerI18n?.t(text) ?? text;
   const header = document.querySelector('header');
   const main = document.querySelector('main');
   const toggle = header?.querySelector('[aria-label="Toggle menu"]');
@@ -47,7 +48,7 @@ function initNearFastener() {
       if (!mobileNav.hidden && !header.contains(event.target)) close();
     });
     mobileNav.addEventListener('click', (event) => { if (event.target.closest('a')) close(); });
-    window.matchMedia('(min-width: 1024px)').addEventListener('change', (event) => { if (event.matches) close(); });
+    window.matchMedia('(min-width: 1280px)').addEventListener('change', (event) => { if (event.matches) close(); });
     const onScroll = () => header.classList.toggle('header-scrolled', window.scrollY > 20);
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
@@ -88,20 +89,24 @@ function initNearFastener() {
       if (!allowed.includes(extension)) {
         drawing = null;
         fileInput.value = '';
-        fileInput.setCustomValidity('Choose a PDF, CAD, Office document, or JPG/PNG image.');
+        fileInput.dataset.validationMessage = 'Choose a PDF, CAD, Office document, or JPG/PNG image.';
+        fileInput.setCustomValidity(t(fileInput.dataset.validationMessage));
         showFeedback('Please choose a PDF, CAD, Office document, or JPG/PNG image.', true);
         return;
       }
       if (file.size > 20 * 1024 * 1024) {
         drawing = null;
         fileInput.value = '';
-        fileInput.setCustomValidity('The file must be no larger than 20 MB.');
+        fileInput.dataset.validationMessage = 'The file must be no larger than 20 MB.';
+        fileInput.setCustomValidity(t(fileInput.dataset.validationMessage));
         showFeedback('The selected file exceeds the 20 MB limit.', true);
         return;
       }
+      fileInput.dataset.validationMessage = '';
       fileInput.setCustomValidity('');
       drawing = file;
       const caption = dropzone.querySelector('p');
+      if (caption) caption.dataset.noTranslate = '';
       if (caption) caption.textContent = `${file.name} · ${(file.size / 1024 / 1024).toFixed(2)} MB`;
       feedback.hidden = true;
     };
@@ -120,8 +125,8 @@ function initNearFastener() {
       event.preventDefault();
       if (!form.reportValidity()) return;
       const entries = [...new FormData(form).entries()].filter(([, value]) => typeof value === 'string' && value.trim());
-      const body = entries.map(([key, value]) => `${key.replaceAll('_', ' ')}: ${value}`).join('\n\n');
-      const text = `NEAR FASTENER — ${form.dataset.previewForm === 'rfq' ? 'REQUEST FOR QUOTATION' : 'CONTACT REQUEST'}\n\n${body}${drawing ? `\n\nSelected drawing: ${drawing.name}` : ''}\n\nThis request has not been sent. A selected drawing is not included in this text file.\n`;
+      const body = entries.map(([key, value]) => `${t(form.elements.namedItem(key)?.labels?.[0]?.textContent || key.replaceAll('_', ' '))}: ${value}`).join('\n\n');
+      const text = `NEAR FASTENER — ${t(form.dataset.previewForm === 'rfq' ? 'Request a Quote' : 'Contact Us')}\n\n${body}${drawing ? `\n\n${t('Selected drawing')}: ${drawing.name}` : ''}\n\n${t('This request has not been sent. A selected drawing is not included in this text file.')}\n`;
       showFeedback('Your request is ready to download. No message or file has been sent.');
       const download = document.createElement('button');
       download.type = 'button';
@@ -141,6 +146,7 @@ function initNearFastener() {
       feedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     });
   });
+  window.NearFastenerI18n?.init();
 }
 
 if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initNearFastener, { once: true });

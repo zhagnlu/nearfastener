@@ -19,6 +19,36 @@ header a.is-current { color: #fff; background: rgb(255 255 255 / .1); }
 .download-request:hover { background: #a9601c; }
 .is-dragging { border-color: #c87320 !important; background: #fff7ed; }
 a:focus-visible,button:focus-visible,label[for="file-upload"]:focus-visible { outline: 3px solid #d38a43; outline-offset: 4px; }
-@media (min-width: 1024px) { .mobile-navigation { display: none !important; } }
+
 @media (max-width: 640px) { main { min-width: 0; } table { overflow-wrap: anywhere; } }
 @media (prefers-reduced-motion: reduce) { *,*::before,*::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; transition-delay: 0ms !important; } [data-reveal].reveal-pending { opacity: 1; transform: none; } }
+
+/* The language control is shared by desktop and mobile navigation. */
+.language-switcher { position: relative; display: flex; align-items: center; gap: 5px; margin-inline-start: 12px; color: #e2e8f0; flex-shrink: 0; }
+.language-icon { font-size: 22px; line-height: 1; }
+.language-switcher select { background: #182334; color: #f1f5f9; border: 1px solid #526073; border-radius: 4px; font: inherit; font-size: 13px; padding: 7px 5px; max-width: 112px; cursor: pointer; }
+.language-switcher select:focus-visible { outline: 3px solid #d38a43; outline-offset: 3px; }
+.language-status:not(:empty) { position: absolute; top: calc(100% + 12px); inset-inline-end: 0; width: 240px; padding: 10px 12px; background: #182334; border: 1px solid #526073; border-radius: 4px; font-size: 13px; }
+@media (max-width: 1279px) {
+  .site-shell header > div > div > nav, .site-shell header > div > div > .hidden { display: none; }
+  .site-shell header > div > div > button { display: block; }
+  .language-switcher { margin-inline-start: auto; margin-inline-end: 8px; }
+  .mobile-navigation { display: block; }
+}
+@media (min-width: 1280px) { .mobile-navigation { display: none !important; } }
+@media (max-width: 380px) {
+  header > div > div > a > span { font-size: 14px; }
+  .language-icon { display: none; }
+  .language-switcher { margin-inline-start: 5px; margin-inline-end: 2px; }
+  .language-switcher select { max-width: 90px; font-size: 12px; }
+}
+[dir="rtl"] { font-family: Arial, sans-serif; }
+[dir="rtl"] .text-left { text-align: right; }
+[dir="rtl"] input[type="email"], [dir="rtl"] input[type="tel"] { direction: ltr; text-align: right; }
+[dir="rtl"] .language-switcher select { direction: ltr; }
+[dir="rtl"] main p { line-height: 1.85; }
+/* Long translated words must not widen cards or the page on small screens. */
+main, footer { overflow-wrap: anywhere; }
+main p, main h1, main h2, main h3, footer h4 { hyphens: auto; }
+[dir="rtl"] .font-mono { font-family: Arial, sans-serif; }
+[dir="rtl"] [data-i18n-ltr] { direction: ltr; unicode-bidi: isolate; }

@@ -1,3 +1,4 @@
+import { buildLocales } from './build-locales.mjs';
 import { readFile, writeFile, mkdir, cp } from 'node:fs/promises';
 import { join, dirname, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -8,8 +9,9 @@ const routes = JSON.parse(await readFile(join(root, 'content/routes.json'), 'utf
 const header = await readFile(join(root, 'content/header.html'), 'utf8');
 const footer = await readFile(join(root, 'content/footer.html'), 'utf8');
 const escape = (value) => value.replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
+await buildLocales();
 await mkdir(out, { recursive: true });
-for (const file of ['assets', 'site.css', 'replica.css', 'site.js', 'favicon.ico']) await cp(join(root, 'public', file), join(out, file), { recursive: true });
+for (const file of ['assets', 'site.css', 'replica.css', 'site.js', 'i18n.js', 'locales', 'favicon.ico']) await cp(join(root, 'public', file), join(out, file), { recursive: true });
 
 for (const [route, meta] of Object.entries(routes)) {
   const outputFile = join(out, route === '/' ? '' : route.slice(1), 'index.html');
@@ -21,7 +23,7 @@ for (const [route, meta] of Object.entries(routes)) {
     if (attr === 'href' && routes[path]) return `data-route="${path}" href="${local(path === '/' ? '/index.html' : path + '/index.html')}${suffix}"`;
     return `${attr}="${local(path)}${suffix}"`;
   });
-  const html = `<!DOCTYPE html>\n<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escape(meta.title)}</title><meta name="description" content="${escape(meta.description)}"><link rel="icon" href="${local('/favicon.ico')}"><link rel="stylesheet" href="${local('/site.css')}"><link rel="stylesheet" href="${local('/replica.css')}"><script defer src="${local('/site.js')}"></script></head><body><a class="skip-link" href="#main-content">Skip to content</a><div class="site-shell" data-page-path="${route}">${markup}</div></body></html>\n`;
+  const html = `<!DOCTYPE html>\n<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escape(meta.title)}</title><meta name="description" content="${escape(meta.description)}"><link rel="icon" href="${local('/favicon.ico')}"><link rel="stylesheet" href="${local('/site.css')}"><link rel="stylesheet" href="${local('/replica.css')}"><script defer src="${local('/i18n.js')}"></script><script defer src="${local('/site.js')}"></script></head><body><a class="skip-link" href="#main-content">Skip to content</a><div class="site-shell" data-page-path="${route}">${markup}</div></body></html>\n`;
   await mkdir(directory, { recursive: true });
   await writeFile(outputFile, html);
 }
