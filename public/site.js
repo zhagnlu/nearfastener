@@ -73,6 +73,30 @@ function initNearFastener() {
   }
 
   document.querySelectorAll('[data-preview-form]').forEach((form) => {
+    if (form.dataset.previewForm === 'rfq') {
+      const params = new URLSearchParams(location.search);
+      const product = [...form.querySelectorAll('[data-rfq-product-id]')].find((item) => item.dataset.rfqProductId === params.get('product_id'));
+      if (product) {
+        form.querySelector('[data-rfq-context]').hidden = false;
+        product.hidden = false;
+        const productField = form.elements.namedItem('product');
+        let automaticTitle = product.dataset.productTitle;
+        productField.value = automaticTitle;
+        document.addEventListener('nearfastener:language', () => {
+          if (productField.value === automaticTitle) {
+            automaticTitle = t(product.dataset.productTitle);
+            productField.value = automaticTitle;
+          }
+        });
+        form.elements.namedItem('standard').value = product.dataset.productStandard;
+        for (const name of ['diameter', 'length', 'thread_pitch', 'material', 'property_class', 'surface_treatment', 'quantity']) {
+          const value = params.get(name);
+          if (value && value.length <= 160) {
+            form.elements.namedItem(name).value = name === 'length' && params.get('length_unit') === 'mm' && /^\d+(?:\.\d+)?$/.test(value) ? `${value} mm` : value;
+          }
+        }
+      }
+    }
     const feedback = form.querySelector('.form-feedback');
     const fileInput = form.querySelector('input[type="file"]');
     const dropzone = fileInput?.parentElement;
@@ -145,6 +169,10 @@ function initNearFastener() {
       feedback.append(document.createElement('br'), download);
       feedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     });
+  });
+  const requestLanguages = document.querySelectorAll('[data-request-language]');
+  document.addEventListener('nearfastener:language', (event) => {
+    requestLanguages.forEach((input) => { input.value = event.detail.language; });
   });
   window.NearFastenerI18n?.init();
 }

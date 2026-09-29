@@ -1,0 +1,471 @@
+{
+  "schemaVersion": 1,
+  "attributes": [
+    {
+      "id": "headStyle",
+      "title": "Head style",
+      "values": [
+        "hex",
+        "countersunk",
+        "pan",
+        "cylindrical"
+      ]
+    },
+    {
+      "id": "driveType",
+      "title": "Drive type",
+      "values": [
+        "external-hex",
+        "hex-socket",
+        "phillips",
+        "slotted",
+        "hexalobular"
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "id": "screws",
+      "path": "/products/screws",
+      "title": "Screws",
+      "description": "Explore screws by head style and drive type.",
+      "image": "/assets/hex-socket-countersunk-screw.svg",
+      "status": "published",
+      "kind": "type",
+      "parentId": null,
+      "aliases": [
+        "螺钉",
+        "螺丝"
+      ]
+    },
+    {
+      "id": "hex-bolts",
+      "path": "/products/hex-bolts",
+      "title": "Hex Bolts",
+      "description": "Standard and high strength hexagon head bolts for structural and general engineering applications.",
+      "image": "/assets/hex-head-bolt-steel-close-up-b894f812.jpg",
+      "status": "published",
+      "kind": "type",
+      "parentId": null,
+      "aliases": [
+        "外六角螺丝",
+        "外六角螺栓",
+        "External Hex Fasteners"
+      ]
+    },
+    {
+      "id": "high-strength-bolts",
+      "path": "/products/high-strength-bolts",
+      "title": "High Strength Bolts",
+      "description": "Grade 8.8/10.9/12.9 high strength hex bolts for steel structures, bridges, and heavy machinery.",
+      "image": "/assets/large-hex-bolt-forged-steel-5eb223e6.jpg",
+      "status": "published",
+      "kind": "performance",
+      "parentId": null,
+      "aliases": []
+    },
+    {
+      "id": "structural-bolts",
+      "path": "/products/structural-bolts",
+      "title": "Structural Bolts",
+      "description": "Preloaded and non-preloaded structural bolt assemblies for steel construction per GB/T 1231 and ASTM A325.",
+      "image": "/assets/structural-bolt-assembly-nut-washer-5e6908bd.jpg",
+      "status": "published",
+      "kind": "application",
+      "parentId": null,
+      "aliases": []
+    },
+    {
+      "id": "hex-nuts",
+      "path": "/products/hex-nuts",
+      "title": "Hex Nuts",
+      "description": "Standard and heavy hex nuts in carbon steel and alloy steel, Grades 4/8/10.",
+      "image": "/assets/hex-nut-steel-machined-13f37182.jpg",
+      "status": "published",
+      "kind": "type",
+      "parentId": null,
+      "aliases": []
+    },
+    {
+      "id": "stud-bolts",
+      "path": "/products/stud-bolts",
+      "title": "Stud Bolts",
+      "description": "Double-ended stud bolts with nuts for flange connections, pressure vessels, and high-temperature applications.",
+      "image": "/assets/stud-bolt-threaded-rod-with-nuts-1f2e7f82.jpg",
+      "status": "published",
+      "kind": "type",
+      "parentId": null,
+      "aliases": []
+    },
+    {
+      "id": "threaded-rods",
+      "path": "/products/threaded-rods",
+      "title": "Threaded Rods",
+      "description": "Full-thread and double-thread rods in various lengths for construction and industrial applications.",
+      "image": "/assets/full-thread-steel-rods-bundle-29ea2752.jpg",
+      "status": "published",
+      "kind": "type",
+      "parentId": null,
+      "aliases": []
+    },
+    {
+      "id": "washers",
+      "path": "/products/washers",
+      "title": "Washers",
+      "description": "Flat washers, spring washers, and heavy hex structural washer assemblies.",
+      "image": "/assets/steel-flat-washers-stack-1f14b8d2.jpg",
+      "status": "published",
+      "kind": "type",
+      "parentId": null,
+      "aliases": []
+    },
+    {
+      "id": "anchor-bolts",
+      "path": "/products/anchor-bolts",
+      "title": "Anchor Bolts",
+      "description": "L-shaped, J-shaped, and headed anchor bolts for concrete foundations and steel column bases.",
+      "image": "/assets/anchor-bolts-l-shaped-j-shaped-9337b201.jpg",
+      "status": "published",
+      "kind": "type",
+      "parentId": null,
+      "aliases": []
+    },
+    {
+      "id": "custom-fasteners",
+      "path": "/products/custom-fasteners",
+      "title": "Custom Fasteners",
+      "description": "Non-standard and custom-engineered fasteners manufactured per customer drawings and specifications.",
+      "image": "/assets/custom-engineered-special-fasteners-f2c9f809.jpg",
+      "status": "published",
+      "kind": "service",
+      "parentId": null,
+      "aliases": []
+    },
+    {
+      "id": "countersunk-screws",
+      "path": "/products/countersunk-screws",
+      "title": "Countersunk Screws",
+      "description": "Countersunk head screws for flush-fitting connections.",
+      "image": "/assets/hex-socket-countersunk-screw.svg",
+      "status": "published",
+      "kind": "head-style",
+      "parentId": "screws",
+      "aliases": [
+        "沉头螺丝",
+        "沉头螺钉"
+      ]
+    },
+    {
+      "id": "hex-socket-screws",
+      "path": "/products/hex-socket-screws",
+      "title": "Hex Socket Screws",
+      "description": "Screws with an internal hexagon drive.",
+      "image": "/assets/hex-socket-countersunk-screw.svg",
+      "status": "published",
+      "kind": "drive-type",
+      "parentId": "screws",
+      "aliases": [
+        "内六角螺丝",
+        "内六角螺钉"
+      ]
+    }
+  ],
+  "products": [
+    {
+      "id": "gb-t-5782-hex-bolt",
+      "path": "/product/gb-t-5782-hex-bolt",
+      "title": "GB/T 5782 Hex Head Bolt",
+      "description": "Standard hex head bolt per GB/T 5782, widely used in general engineering and structural connections.",
+      "standard": "GB/T 5782",
+      "image": "/assets/hex-head-bolt-zinc-plated-ccd31d4c.jpg",
+      "status": "published",
+      "primaryCategoryId": "hex-bolts",
+      "categoryIds": [
+        "hex-bolts"
+      ],
+      "attributes": {
+        "headStyle": [
+          "hex"
+        ],
+        "driveType": [
+          "external-hex"
+        ]
+      }
+    },
+    {
+      "id": "din-931-hex-bolt",
+      "path": "/product/din-931-hex-bolt",
+      "title": "DIN 931 Hex Head Bolt",
+      "description": "Partial thread hex head bolt per DIN 931 (ISO 4014), the most widely used bolt standard internationally.",
+      "standard": "DIN 931 / ISO 4014",
+      "image": "/assets/din931-partial-thread-hex-bolt-ac0fe916.jpg",
+      "status": "published",
+      "primaryCategoryId": "hex-bolts",
+      "categoryIds": [
+        "hex-bolts"
+      ],
+      "attributes": {
+        "headStyle": [
+          "hex"
+        ],
+        "driveType": [
+          "external-hex"
+        ]
+      }
+    },
+    {
+      "id": "din-933-hex-bolt",
+      "path": "/product/din-933-hex-bolt",
+      "title": "DIN 933 Full Thread Hex Bolt",
+      "description": "Full thread hex head bolt per DIN 933 (ISO 4017), fully threaded for through-bolt connections.",
+      "standard": "DIN 933 / ISO 4017",
+      "image": "/assets/din933-full-thread-hex-bolt-4096c885.jpg",
+      "status": "published",
+      "primaryCategoryId": "hex-bolts",
+      "categoryIds": [
+        "hex-bolts"
+      ],
+      "attributes": {
+        "headStyle": [
+          "hex"
+        ],
+        "driveType": [
+          "external-hex"
+        ]
+      }
+    },
+    {
+      "id": "iso-4014-hex-bolt",
+      "path": "/product/iso-4014-hex-bolt",
+      "title": "ISO 4014 Hex Head Bolt",
+      "description": "International standard partial thread hex bolt per ISO 4014, equivalent to DIN 931.",
+      "standard": "ISO 4014",
+      "image": "/assets/iso4014-hex-bolt-partial-thread-413471ed.jpg",
+      "status": "published",
+      "primaryCategoryId": "hex-bolts",
+      "categoryIds": [
+        "hex-bolts"
+      ],
+      "attributes": {
+        "headStyle": [
+          "hex"
+        ],
+        "driveType": [
+          "external-hex"
+        ]
+      }
+    },
+    {
+      "id": "gb-t-5783-hex-bolt",
+      "path": "/product/gb-t-5783-hex-bolt",
+      "title": "GB/T 5783 Full Thread Hex Bolt",
+      "description": "Full thread hex head bolt per GB/T 5783 (ISO 4017), Chinese national standard for fully threaded bolts.",
+      "standard": "GB/T 5783",
+      "image": "/assets/gbt5783-full-thread-bolt-ba451c1d.jpg",
+      "status": "published",
+      "primaryCategoryId": "hex-bolts",
+      "categoryIds": [
+        "hex-bolts"
+      ],
+      "attributes": {
+        "headStyle": [
+          "hex"
+        ],
+        "driveType": [
+          "external-hex"
+        ]
+      }
+    },
+    {
+      "id": "gb-t-32076-7-high-strength-bolt",
+      "path": "/product/gb-t-32076-7-high-strength-bolt",
+      "title": "GB/T 32076.7 High Strength Hex Bolt",
+      "description": "High strength hex bolt per GB/T 32076.7 for preloaded bolt assemblies in steel structures and heavy-duty applications.",
+      "standard": "GB/T 32076.7",
+      "image": "/assets/high-strength-hex-bolt-42crmo-63a7ff09.jpg",
+      "status": "published",
+      "primaryCategoryId": "high-strength-bolts",
+      "categoryIds": [
+        "high-strength-bolts"
+      ],
+      "attributes": {
+        "headStyle": [
+          "hex"
+        ],
+        "driveType": [
+          "external-hex"
+        ]
+      }
+    },
+    {
+      "id": "gb-t-1231-structural-bolt",
+      "path": "/product/gb-t-1231-structural-bolt",
+      "title": "GB/T 1231 Structural Bolt Assembly",
+      "description": "High strength structural bolt assembly (bolt + nut + washers) per GB/T 1231 for preloaded steel structure connections.",
+      "standard": "GB/T 1231",
+      "image": "/assets/structural-bolt-assembly-gbt1231-16f4a007.jpg",
+      "status": "published",
+      "primaryCategoryId": "structural-bolts",
+      "categoryIds": [
+        "structural-bolts"
+      ],
+      "attributes": {}
+    },
+    {
+      "id": "astm-a325-structural-bolt",
+      "path": "/product/astm-a325-structural-bolt",
+      "title": "ASTM A325 / F3125 Structural Bolt",
+      "description": "Heavy hex structural bolt per ASTM A325 / F3125 for steel structure connections in North American standard projects.",
+      "standard": "ASTM A325 / F3125",
+      "image": "/assets/astm-a325-heavy-hex-structural-bolt-8c7b1586.jpg",
+      "status": "published",
+      "primaryCategoryId": "structural-bolts",
+      "categoryIds": [
+        "structural-bolts"
+      ],
+      "attributes": {}
+    },
+    {
+      "id": "hex-nut-gb-t-6170",
+      "path": "/product/hex-nut-gb-t-6170",
+      "title": "GB/T 6170 Hex Nut",
+      "description": "Standard hex nut per GB/T 6170 (ISO 4032), available in all sizes to match corresponding bolts.",
+      "standard": "GB/T 6170 / ISO 4032",
+      "image": "/assets/standard-hex-nut-zinc-fd045946.jpg",
+      "status": "published",
+      "primaryCategoryId": "hex-nuts",
+      "categoryIds": [
+        "hex-nuts"
+      ],
+      "attributes": {}
+    },
+    {
+      "id": "stud-bolt-astm-a193",
+      "path": "/product/stud-bolt-astm-a193",
+      "title": "ASTM A193/A194 Stud Bolt Assembly",
+      "description": "Alloy steel stud bolt with heavy hex nuts for high-temperature and high-pressure flange connections.",
+      "standard": "ASTM A193 B7 / A194 2H",
+      "image": "/assets/stud-bolt-assembly-b7-2h-189724b0.jpg",
+      "status": "published",
+      "primaryCategoryId": "stud-bolts",
+      "categoryIds": [
+        "stud-bolts"
+      ],
+      "attributes": {}
+    },
+    {
+      "id": "threaded-rod-din-976",
+      "path": "/product/threaded-rod-din-976",
+      "title": "DIN 976 Threaded Rod",
+      "description": "Full-thread steel rod per DIN 976, available in 1m/2m/3m lengths for construction and industrial use.",
+      "standard": "DIN 976",
+      "image": "/assets/threaded-rod-full-thread-zinc-18557509.jpg",
+      "status": "published",
+      "primaryCategoryId": "threaded-rods",
+      "categoryIds": [
+        "threaded-rods"
+      ],
+      "attributes": {}
+    },
+    {
+      "id": "flat-washer-din-125",
+      "path": "/product/flat-washer-din-125",
+      "title": "DIN 125 Flat Washer",
+      "description": "Standard flat washer per DIN 125 (ISO 7089), used with bolts and nuts to distribute load.",
+      "standard": "DIN 125 / ISO 7089",
+      "image": "/assets/flat-washer-din125-zinc-0ed0fd68.jpg",
+      "status": "published",
+      "primaryCategoryId": "washers",
+      "categoryIds": [
+        "washers"
+      ],
+      "attributes": {}
+    },
+    {
+      "id": "hex-socket-countersunk-screw",
+      "path": "/product/hex-socket-countersunk-screw",
+      "title": "Hex Socket Countersunk Head Screw",
+      "description": "A flush-fitting countersunk head with an internal hexagon drive. Specify your requirements for a quotation.",
+      "standard": "ISO 10642:2026",
+      "standardId": "iso-10642",
+      "image": "/assets/hex-socket-countersunk-screw.svg",
+      "status": "published",
+      "primaryCategoryId": "countersunk-screws",
+      "categoryIds": [
+        "countersunk-screws",
+        "hex-socket-screws"
+      ],
+      "attributes": {
+        "headStyle": [
+          "countersunk"
+        ],
+        "driveType": [
+          "hex-socket"
+        ]
+      },
+      "detail": {
+        "specifications": [
+          [
+            "Standard",
+            "ISO 10642:2026"
+          ],
+          [
+            "Head style",
+            "90° countersunk head"
+          ],
+          [
+            "Drive type",
+            "Hexagon socket"
+          ],
+          [
+            "Thread",
+            "Metric coarse thread"
+          ],
+          [
+            "Standard scope",
+            "M2–M20"
+          ]
+        ],
+        "notes": [
+          {
+            "title": "Ordering information",
+            "text": "Confirm size, material, property class, finish, quantity and delivery requirements in your RFQ."
+          },
+          {
+            "title": "Assembly notes",
+            "text": "Match the countersink to the screw head. Use the specified driver size and application-specific tightening instructions."
+          }
+        ],
+        "availability": "Sizes in the standard are reference information. Availability and lead time are confirmed with your quotation.",
+        "standardNoteId": "loadability"
+      }
+    }
+  ],
+  "standards": [
+    {
+      "id": "iso-10642",
+      "path": "/standards/iso-10642",
+      "title": "ISO 10642:2026",
+      "description": "Hexagon socket countersunk head screws with reduced loadability.",
+      "sourceUrl": "https://www.iso.org/standard/90795.html",
+      "notes": [
+        {
+          "title": "Standard scope",
+          "text": "The standard covers steel and stainless steel screws with metric coarse threads from M2 to M20.",
+          "id": "scope"
+        },
+        {
+          "title": "Reduced loadability",
+          "text": "The countersunk head and socket geometry reduce loadability. Check the specified property class and the application requirements.",
+          "id": "loadability"
+        },
+        {
+          "title": "DIN 7991 reference",
+          "text": "DIN 7991 is a withdrawn reference. Verify dimensions and application suitability before substituting ISO 10642.",
+          "id": "din-reference"
+        }
+      ],
+      "additionalSourceUrl": "https://www.bossard.com/us-en/eshop/screws-and-bolts-with-internal-drive/hex-socket-flat-countersunk-head-screws-fully-threaded/p/20/"
+    }
+  ]
+}

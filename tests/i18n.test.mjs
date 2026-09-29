@@ -11,7 +11,7 @@ const decode = (value) => value.replace(/&(#x[0-9a-f]+|#\d+|amp|lt|gt|quot|apos|
   return { amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: '\u00a0' }[entity.toLowerCase()];
 });
 
-test('all 49 pages, shared fragments, and metadata are covered by the English catalog', async () => {
+test('all configured pages, shared fragments, and metadata are covered by the English catalog', async () => {
   const english = await readCatalog('en');
   const routes = JSON.parse(await readFile(join(root, 'content/routes.json'), 'utf8'));
   const strings = new Set();

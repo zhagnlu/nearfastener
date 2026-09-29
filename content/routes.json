@@ -7,12 +7,14 @@
   "/products/hex-bolts": {
     "title": "Hex Bolts | Near Fastener",
     "description": "Standard and high strength hexagon head bolts for structural and general engineering applications.",
-    "file": "products/hex-bolts.html"
+    "file": "products/hex-bolts.html",
+    "catalogGenerated": true
   },
   "/products": {
     "title": "Industrial Fastener Products | Near Fastener",
     "description": "Browse our full range of industrial fasteners: hex bolts, high strength bolts, structural bolts, nuts, stud bolts, threaded rods, washers, and anchor bolts.",
-    "file": "products.html"
+    "file": "products.html",
+    "catalogGenerated": true
   },
   "/standards": {
     "title": "Fastener Standards — GB / DIN / ISO / ASTM | Near Fastener",
@@ -57,42 +59,50 @@
   "/products/high-strength-bolts": {
     "title": "High Strength Bolts | Near Fastener",
     "description": "Grade 8.8/10.9/12.9 high strength hex bolts for steel structures, bridges, and heavy machinery.",
-    "file": "products/high-strength-bolts.html"
+    "file": "products/high-strength-bolts.html",
+    "catalogGenerated": true
   },
   "/products/structural-bolts": {
     "title": "Structural Bolts | Near Fastener",
     "description": "Preloaded and non-preloaded structural bolt assemblies for steel construction per GB/T 1231 and ASTM A325.",
-    "file": "products/structural-bolts.html"
+    "file": "products/structural-bolts.html",
+    "catalogGenerated": true
   },
   "/products/hex-nuts": {
     "title": "Hex Nuts | Near Fastener",
     "description": "Standard and heavy hex nuts in carbon steel and alloy steel, Grades 4/8/10.",
-    "file": "products/hex-nuts.html"
+    "file": "products/hex-nuts.html",
+    "catalogGenerated": true
   },
   "/products/stud-bolts": {
     "title": "Stud Bolts | Near Fastener",
     "description": "Double-ended stud bolts with nuts for flange connections, pressure vessels, and high-temperature applications.",
-    "file": "products/stud-bolts.html"
+    "file": "products/stud-bolts.html",
+    "catalogGenerated": true
   },
   "/products/threaded-rods": {
     "title": "Threaded Rods | Near Fastener",
     "description": "Full-thread and double-thread rods in various lengths for construction and industrial applications.",
-    "file": "products/threaded-rods.html"
+    "file": "products/threaded-rods.html",
+    "catalogGenerated": true
   },
   "/products/washers": {
     "title": "Washers | Near Fastener",
     "description": "Flat washers, spring washers, and heavy hex structural washer assemblies.",
-    "file": "products/washers.html"
+    "file": "products/washers.html",
+    "catalogGenerated": true
   },
   "/products/anchor-bolts": {
     "title": "Anchor Bolts | Near Fastener",
     "description": "L-shaped, J-shaped, and headed anchor bolts for concrete foundations and steel column bases.",
-    "file": "products/anchor-bolts.html"
+    "file": "products/anchor-bolts.html",
+    "catalogGenerated": true
   },
   "/products/custom-fasteners": {
     "title": "Custom Fasteners | Near Fastener",
     "description": "Non-standard and custom-engineered fasteners manufactured per customer drawings and specifications.",
-    "file": "products/custom-fasteners.html"
+    "file": "products/custom-fasteners.html",
+    "catalogGenerated": true
   },
   "/standards/gb-t-5782": {
     "title": "GB/T 5782 Hex Head Bolt | Near Fastener",
@@ -243,5 +253,35 @@
     "title": "DIN 125 Flat Washer — DIN 125 / ISO 7089 | Near Fastener",
     "description": "DIN 125 / ISO 7089 DIN 125 Flat Washer. Diameter: M3–M64, Grade: 200HV / 300HV, Material: Carbon Steel.",
     "file": "product/flat-washer-din-125.html"
+  },
+  "/products/screws": {
+    "title": "Screws | Near Fastener",
+    "description": "Explore screws by head style and drive type.",
+    "file": "products/screws.html",
+    "catalogGenerated": true
+  },
+  "/products/countersunk-screws": {
+    "title": "Countersunk Screws | Near Fastener",
+    "description": "Countersunk head screws for flush-fitting connections.",
+    "file": "products/countersunk-screws.html",
+    "catalogGenerated": true
+  },
+  "/products/hex-socket-screws": {
+    "title": "Hex Socket Screws | Near Fastener",
+    "description": "Screws with an internal hexagon drive.",
+    "file": "products/hex-socket-screws.html",
+    "catalogGenerated": true
+  },
+  "/product/hex-socket-countersunk-screw": {
+    "title": "Hex Socket Countersunk Head Screw | Near Fastener",
+    "description": "A flush-fitting countersunk head with an internal hexagon drive. Specify your requirements for a quotation.",
+    "file": "product/hex-socket-countersunk-screw.html",
+    "catalogGenerated": true
+  },
+  "/standards/iso-10642": {
+    "title": "ISO 10642:2026 | Near Fastener",
+    "description": "Hexagon socket countersunk head screws with reduced loadability.",
+    "file": "standards/iso-10642.html",
+    "catalogGenerated": true
   }
 }
