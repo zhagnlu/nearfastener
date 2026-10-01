@@ -36,7 +36,7 @@
 
 ## 新增和发布
 
-1. 在 `categories` 中增加分类；设置名称、说明、稳定 URL、父级和状态。图片可省略，有图片时放入 `public/assets/`。
+1. 在 `categories` 中增加分类；设置名称、说明、稳定 URL、父级和状态。图片可省略，有图片时放入 `public/assets/products/<分类ID>/`。
 2. 在 `products` 中增加产品记录、图片和分类关联。推荐配置 `detail.specifications`（名称与值的二元数组）、`detail.notes`（标题与正文）、`detail.availability`，自动生成详情和询价配置表单。若有标准资料，在顶层 `standards` 添加说明和来源，并用产品的 `standardId` 关联；标准索引入口也应同步添加。旧方式仍可在 `pages/product/` 新增 HTML 并在 `routes.json` 登记路由。
 3. 在九个 `content/locales/*.json` 语言文件中补齐新增分类、卡片、元数据和详情文案；不要把草稿内容标成现货或已供应。
 4. 设置分类和产品 `status: "published"`，执行 `npm run export:static`。开发、构建命令也会自动生成目录。开发服务运行期间修改 JSON 后，运行 `npm run catalog:build` 更新生成页面。
@@ -47,3 +47,32 @@
 首页推荐和页脚链接是人工精选入口，并非完整目录；增加分类时无需强行加入所有推荐区。完整目录始终从 `/products` 进入。
 
 询价页的产品上下文由目录自动生成。`public/site.js` 只接受已发布产品 ID，并将详情页填写的参数带入询价表单。当前表单生成本地询价文本，不发送邮件、不上传图纸。完整示例见 `docs/countersunk-screw-flow.md`。
+
+## 图片目录
+
+所有网站图片按用途存放在 `public/assets/`，HTML 和目录数据使用 `/assets/...` 引用。
+
+| 目录 | 用途 |
+| --- | --- |
+| `products/hex-bolts/` | 外六角螺栓 |
+| `products/high-strength-bolts/` | 高强度螺栓 |
+| `products/structural-bolts/` | 钢结构螺栓及连接副 |
+| `products/hex-nuts/` | 六角螺母 |
+| `products/stud-bolts/` | 双头螺柱 |
+| `products/threaded-rods/` | 全牙螺杆 |
+| `products/washers/` | 垫圈 |
+| `products/anchor-bolts/` | 地脚螺栓 |
+| `products/custom-fasteners/` | 非标紧固件 |
+| `products/countersunk-screws/` | 沉头螺丝，含沉头内六角实例 |
+| `products/hex-socket-screws/` | 内六角螺丝专用图片，已预留目录 |
+| `products/screws/` | 螺钉父分类专用图片，已预留目录 |
+| `company/` | 厂区、公司介绍；首页使用 `factory_4.jpg`，关于页使用 `factory-1.jpg` |
+| `capabilities/` | 车间、工艺、设备、包装 |
+| `quality/` | 检测设备与质量实验室 |
+| `industries/` | 应用行业 |
+| `resources/` | 材料、等级、表面处理及技术资料 |
+| `brand/` | 正式品牌图片；`originals/` 保存原图，`candidates/` 保存备选图 |
+
+产品图片按 `primaryCategoryId` 归档；同一产品跨分类展示时共用主分类中的图片，不复制文件。标准页和技术文章也可引用已有产品图片。无专用图片的分类保留 `.gitkeep`，需要时直接添加图片即可。
+
+移动图片后同步更新 `catalog.json`、手写页面及 `assets.json` 中的对应路径，再运行 `npm run export:static`。导出会重建 `static-site/assets/`，清除旧路径的副本。历史采集脚本会保留 `assets.json` 中已分类的路径，未分类的新采集图片先放入 `assets/imports/`。

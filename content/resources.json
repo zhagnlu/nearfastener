@@ -1,0 +1,303 @@
+{
+  "topics": [
+    {
+      "id": "standards",
+      "title": "Standards"
+    },
+    {
+      "id": "grades",
+      "title": "Property Class"
+    },
+    {
+      "id": "finishes",
+      "title": "Surface Treatment"
+    },
+    {
+      "id": "materials",
+      "title": "Material Science"
+    }
+  ],
+  "articles": [
+    {
+      "id": "bolt-property-classes",
+      "topic": "grades",
+      "title": "Bolt Property Classes Explained: 4.6 vs 8.8 vs 10.9 vs 12.9",
+      "summary": "Read bolt strength markings, compare nominal values, and prepare a specification that covers the complete joint.",
+      "image": "/assets/resources/bolt-grades-comparison-property-class-e2b8357c.jpg",
+      "updated": "2026-09-30",
+      "sections": [
+        {
+          "id": "read-markings",
+          "title": "How to read the marking",
+          "paragraphs": [
+            "For carbon and alloy steel bolts, the first number multiplied by 100 gives nominal tensile strength in MPa. The second number divided by 10 gives the nominal yield-to-tensile ratio. Class 8.8 therefore represents 800 MPa nominal tensile strength and a nominal ratio of 0.8.",
+            "These numbers explain the designation; they are not a complete acceptance specification. Required minimum properties and test methods depend on the applicable standard, diameter and product geometry."
+          ],
+          "sources": [
+            "iso898",
+            "bossard"
+          ]
+        },
+        {
+          "id": "compare-classes",
+          "title": "Compare nominal values",
+          "paragraphs": [
+            "Use this table to understand markings, not to calculate a safe working load or an installation torque. MPa is equivalent to N/mm²."
+          ],
+          "table": {
+            "headers": [
+              "Property Class",
+              "Nominal tensile strength (MPa)",
+              "Nominal yield ratio"
+            ],
+            "rows": [
+              [
+                "4.6",
+                "400",
+                "0.6"
+              ],
+              [
+                "8.8",
+                "800",
+                "0.8"
+              ],
+              [
+                "10.9",
+                "1000",
+                "0.9"
+              ],
+              [
+                "12.9",
+                "1200",
+                "0.9"
+              ]
+            ]
+          },
+          "sources": [
+            "bossard"
+          ]
+        },
+        {
+          "id": "joint-selection",
+          "title": "Choose for the complete joint",
+          "paragraphs": [
+            "A higher class is not automatically a better replacement. Check the specified preload, mating nut, washer, thread engagement, coating and service environment together. Changing the lubricant or finish can change the torque needed to achieve the intended clamp force.",
+            "Low and countersunk heads may have reduced loadability. For a countersunk socket screw, check its product standard as well as its property class before applying data from a conventional hex bolt."
+          ],
+          "sources": [
+            "iso898"
+          ]
+        },
+        {
+          "id": "rfq-checklist",
+          "title": "What to include in your RFQ",
+          "paragraphs": [
+            "State the product standard, thread diameter and pitch, length, property class, finish and quantity. Include the drawing revision and required inspection documents. If replacing an existing fastener, provide its markings and assembly requirements rather than relying on a photograph alone."
+          ]
+        }
+      ],
+      "relatedProducts": [
+        "gb-t-5782-hex-bolt",
+        "gb-t-32076-7-high-strength-bolt",
+        "hex-socket-countersunk-screw"
+      ],
+      "sources": [
+        {
+          "id": "iso898",
+          "label": "ISO 898-1:2013",
+          "url": "https://www.iso.org/standard/60610.html"
+        },
+        {
+          "id": "bossard",
+          "label": "Bossard",
+          "url": "https://www.bossard.com/au-en/knowledge-hub/resources/technical-information/screws-property-class-04-to-12/"
+        }
+      ]
+    },
+    {
+      "id": "gb-t-32076-7-guide",
+      "topic": "standards",
+      "title": "Understanding GB/T 32076.7: High Strength Bolt Assemblies for Steel Structures",
+      "summary": "A purchasing guide to the M39–M64 scope, assembly requirements and documentation for GB/T 32076.7.",
+      "image": "/assets/resources/engineering-technical-drawing-bolt-1d141a16.jpg",
+      "updated": "2026-09-30",
+      "sections": [
+        {
+          "id": "scope",
+          "title": "Check the standard scope",
+          "paragraphs": [
+            "GB/T 32076.7-2015 covers M39–M64 large-width-across-flats hexagon bolt and nut assemblies for preloaded structural connections. It is not a general specification for every high strength bolt or every metric diameter.",
+            "The official Chinese standard record lists publication on 9 October 2015 and implementation on 1 June 2016. Identify the required edition in the purchase specification and check the project documents before ordering."
+          ],
+          "sources": [
+            "samr"
+          ]
+        },
+        {
+          "id": "complete-assembly",
+          "title": "Specify the assembly",
+          "paragraphs": [
+            "Describe the bolt and nut combination, and identify any washers required by the project. State the diameter, pitch, length, property class, finish and required quantities for each component. A bolt that looks similar is not evidence that the complete assembly meets the same requirements.",
+            "Keep delivery identification and inspection records with the supplied lots. When reviewing alternatives, compare dimensional and assembly requirements before agreeing to substitute another standard."
+          ]
+        },
+        {
+          "id": "installation",
+          "title": "Agree the installation requirements",
+          "paragraphs": [
+            "A strength class alone does not establish an installation torque. Ask the project engineer to identify the required preload, tightening method and acceptance checks. Confirm that any supplied lubrication and coating match the agreed installation procedure.",
+            "Do not assume that a torque value used on a smaller bolt, another coating or a different assembly can be scaled directly to an M39–M64 connection."
+          ]
+        },
+        {
+          "id": "purchase-checklist",
+          "title": "Before issuing a purchase order",
+          "paragraphs": [
+            "Attach the approved drawing and standard edition. Ask the supplier to confirm dimensional compliance, assembly identification, required mechanical tests, coating details and traceability documents. Record any proposed deviation explicitly so that the project team can review it before manufacture."
+          ]
+        }
+      ],
+      "relatedProducts": [
+        "gb-t-32076-7-high-strength-bolt",
+        "gb-t-1231-structural-bolt"
+      ],
+      "sources": [
+        {
+          "id": "samr",
+          "label": "GB/T 32076.7-2015",
+          "url": "https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=38A3D5BFD8E817AA86608B58055143E0"
+        }
+      ]
+    },
+    {
+      "id": "surface-treatment-comparison",
+      "topic": "finishes",
+      "title": "Surface Treatment Comparison: Zinc Plating vs HDG vs Zinc Flake",
+      "summary": "Compare coating processes, thread fit and hydrogen-embrittlement considerations before requesting a fastener quotation.",
+      "image": "/assets/resources/zinc-plated-vs-hdg-bolts-comparison-c9f8cca9.jpg",
+      "updated": "2026-09-30",
+      "sections": [
+        {
+          "id": "electroplating",
+          "title": "Zinc electroplating",
+          "paragraphs": [
+            "ISO 4042 addresses electroplated coating systems for fasteners, including zinc and zinc alloys. A finish specification should identify the coating system, any conversion layer, sealer and lubricant, rather than only a colour.",
+            "The standard includes requirements and recommendations to reduce hydrogen-embrittlement risk. For high strength fasteners, agree the process controls and applicable verification with the supplier before choosing an electroplated finish."
+          ],
+          "sources": [
+            "iso4042"
+          ]
+        },
+        {
+          "id": "galvanizing",
+          "title": "Hot-dip galvanizing",
+          "paragraphs": [
+            "ISO 10684 covers spun hot-dip galvanized coatings on coarse-threaded steel fasteners from M8 to M64, up to class 10.9 for bolts, screws and studs and class 12 for nuts. Its scope should not be extended automatically to class 12.9 bolts.",
+            "Specify the mating thread arrangement and check fit after coating. The coating and nut thread allowances belong in the assembly specification, not just in a note describing the desired appearance."
+          ],
+          "sources": [
+            "iso10684"
+          ]
+        },
+        {
+          "id": "zinc-flake",
+          "title": "Zinc flake coatings",
+          "paragraphs": [
+            "ISO 10683 covers non-electrolytically applied zinc flake systems. These systems are used on high strength fasteners to address internal hydrogen-embrittlement concerns associated with coating processes. Preparation and application still need controlled procedures.",
+            "Confirm the complete coating system, including topcoat and lubricant. A trade name alone does not define corrosion performance, friction behaviour or suitability for the intended joint."
+          ],
+          "sources": [
+            "iso10683"
+          ]
+        },
+        {
+          "id": "coating-rfq",
+          "title": "Compare quotations on the same basis",
+          "paragraphs": [
+            "Give each supplier the same service environment, corrosion test and acceptance criteria, thread-fit requirements, friction requirements and quantity. Ask for the process specification and relevant test results. Compare the quoted coating system and inspection scope, not colour or price alone."
+          ]
+        }
+      ],
+      "relatedProducts": [
+        "gb-t-5782-hex-bolt",
+        "gb-t-1231-structural-bolt",
+        "threaded-rod-din-976"
+      ],
+      "sources": [
+        {
+          "id": "iso4042",
+          "label": "ISO 4042:2022",
+          "url": "https://committee.iso.org/standard/77913.html"
+        },
+        {
+          "id": "iso10684",
+          "label": "ISO 10684:2004",
+          "url": "https://www.iso.org/standard/36897.html"
+        },
+        {
+          "id": "iso10683",
+          "label": "ISO 10683:2018",
+          "url": "https://committee.iso.org/standard/70609.html?browse=ics"
+        }
+      ]
+    },
+    {
+      "id": "42crmo-material-guide",
+      "topic": "materials",
+      "title": "42CrMo Alloy Steel: Properties and Applications in Fastener Manufacturing",
+      "summary": "Specify the material standard, heat-treatment condition and finished-fastener requirements when sourcing chromium-molybdenum steel fasteners.",
+      "image": "/assets/resources/42crmo-steel-billet-raw-material-8aa571f8.jpg",
+      "updated": "2026-09-30",
+      "sections": [
+        {
+          "id": "grade-designation",
+          "title": "Start with the exact material designation",
+          "paragraphs": [
+            "Write the material grade together with its governing standard and delivery condition. Avoid specifying only “alloy steel” when the drawing requires a particular chemistry or mechanical performance.",
+            "42CrMo, 42CrMo4 and SAE 4140 are related designations, but they should not be accepted as automatic substitutes. Compare the governing specifications, chemical limits, product form and required tests before approving a substitution. Ovako lists 4140 among similar designations for 42CrMo4 and identifies specific variants separately."
+          ],
+          "sources": [
+            "ovako"
+          ]
+        },
+        {
+          "id": "heat-treatment",
+          "title": "Heat treatment and section size matter",
+          "paragraphs": [
+            "Ovako describes 42CrMo4 as a quenching and tempering steel and reports mechanical properties by delivery condition and bar diameter. This illustrates why a grade name alone does not determine the properties of every finished part.",
+            "For a fastener quotation, state the required finished-part property class or mechanical specification. Ask how heat treatment, section size and final testing will be controlled for the supplied product."
+          ],
+          "sources": [
+            "ovako"
+          ]
+        },
+        {
+          "id": "certificates",
+          "title": "Read certificates against the order",
+          "paragraphs": [
+            "Check that the certificate identifies the specified grade and material standard, heat or lot number, delivery condition and required test results. Confirm how the material identification is carried through to the finished fastener lot.",
+            "A raw-material certificate does not by itself verify the dimensions, coating or final mechanical properties of a finished bolt. Request the inspection records required by the purchase specification."
+          ]
+        },
+        {
+          "id": "material-rfq",
+          "title": "Prepare a useful material enquiry",
+          "paragraphs": [
+            "Send the drawing revision, material standard, finished dimensions, required strength and toughness, service temperature, surface treatment and quantity. If an alternative material is proposed, request a comparison of the requirements and obtain approval before production."
+          ]
+        }
+      ],
+      "relatedProducts": [
+        "gb-t-32076-7-high-strength-bolt",
+        "stud-bolt-astm-a193"
+      ],
+      "sources": [
+        {
+          "id": "ovako",
+          "label": "Ovako",
+          "url": "https://steelnavigator.ovako.com/steel-grades/42crmo4/"
+        }
+      ]
+    }
+  ]
+}

@@ -19,6 +19,20 @@ function initNearFastener() {
   };
   setCurrentNav(desktopNav);
 
+  const articleFilters = document.querySelector('[data-resource-filters]');
+  if (articleFilters) {
+    const buttons = [...articleFilters.querySelectorAll('[data-resource-filter]')];
+    const articles = document.querySelectorAll('[data-resource-card]');
+    const selectTopic = (topic) => {
+      if (!buttons.some((button) => button.dataset.resourceFilter === topic)) topic = 'all';
+      buttons.forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.resourceFilter === topic)));
+      articles.forEach((article) => { article.hidden = topic !== 'all' && article.dataset.topic !== topic; });
+    };
+    selectTopic(new URLSearchParams(location.search).get('topic') || 'all');
+    buttons.forEach((button) => button.addEventListener('click', () => selectTopic(button.dataset.resourceFilter)));
+    articleFilters.hidden = false;
+  }
+
   if (header && toggle && desktopNav) {
     const mobileNav = desktopNav.cloneNode(true);
     mobileNav.id = 'mobile-navigation';

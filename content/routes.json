@@ -42,9 +42,10 @@
     "file": "about.html"
   },
   "/resources": {
-    "title": "Technical Resources | Near Fastener",
-    "description": "Engineering guides, material references, and industry insights for fastener selection and specification.",
-    "file": "resources.html"
+    "title": "Fastener Blog & Guides | Near Fastener",
+    "description": "Practical guides to fastener standards, strength classes, materials and coatings. Turn technical requirements into a clear purchasing specification.",
+    "file": "resources.html",
+    "resourcesGenerated": true
   },
   "/contact": {
     "title": "Contact Us | Near Fastener",
@@ -176,23 +177,27 @@
   },
   "/resources/gb-t-32076-7-guide": {
     "title": "Understanding GB/T 32076.7: High Strength Bolt Assemblies for Steel Structures | Near Fastener",
-    "description": "A comprehensive guide to GB/T 32076.7 standard covering material requirements, mechanical properties, and application guidelines for high strength bolt assemblies.",
-    "file": "resources/gb-t-32076-7-guide.html"
+    "description": "A purchasing guide to the M39–M64 scope, assembly requirements and documentation for GB/T 32076.7.",
+    "file": "resources/gb-t-32076-7-guide.html",
+    "resourcesGenerated": true
   },
   "/resources/bolt-property-classes": {
     "title": "Bolt Property Classes Explained: 4.6 vs 8.8 vs 10.9 vs 12.9 | Near Fastener",
-    "description": "What do the numbers mean? Understanding mechanical property classes, material selection, and how to choose the right grade for your application.",
-    "file": "resources/bolt-property-classes.html"
+    "description": "Read bolt strength markings, compare nominal values, and prepare a specification that covers the complete joint.",
+    "file": "resources/bolt-property-classes.html",
+    "resourcesGenerated": true
   },
   "/resources/surface-treatment-comparison": {
     "title": "Surface Treatment Comparison: Zinc Plating vs HDG vs Zinc Flake | Near Fastener",
-    "description": "Comparing the most common surface treatments for industrial fasteners — cost, corrosion resistance, appearance, and application recommendations.",
-    "file": "resources/surface-treatment-comparison.html"
+    "description": "Compare coating processes, thread fit and hydrogen-embrittlement considerations before requesting a fastener quotation.",
+    "file": "resources/surface-treatment-comparison.html",
+    "resourcesGenerated": true
   },
   "/resources/42crmo-material-guide": {
     "title": "42CrMo Alloy Steel: Properties and Applications in Fastener Manufacturing | Near Fastener",
-    "description": "Why 42CrMo (AISI 4140) is the preferred material for high strength fasteners, and how heat treatment affects its mechanical properties.",
-    "file": "resources/42crmo-material-guide.html"
+    "description": "Specify the material standard, heat-treatment condition and finished-fastener requirements when sourcing chromium-molybdenum steel fasteners.",
+    "file": "resources/42crmo-material-guide.html",
+    "resourcesGenerated": true
   },
   "/product/gb-t-5782-hex-bolt": {
     "title": "GB/T 5782 Hex Head Bolt — GB/T 5782 | Near Fastener",

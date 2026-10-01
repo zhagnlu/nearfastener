@@ -7,8 +7,8 @@ export const metadata: Metadata = {
   title: "High Strength Fastener Manufacturer in China | Near Fastener",
   description: "Bolts, nuts, studs and custom fasteners. GB / DIN / ISO / ASTM / EN standards. Near Fastener.",
   icons: {
-    icon: { url: "/nearfastener_flag_transparent.png", type: "image/png" },
-    shortcut: "/nearfastener_flag_transparent.png",
+    icon: { url: "/assets/brand/nearfastener_flag_transparent.png", type: "image/png" },
+    shortcut: "/assets/brand/nearfastener_flag_transparent.png",
   },
 };
 

@@ -20,7 +20,7 @@ export function validateCatalog(catalog, routes) {
       paths.add(item.path);
       requireValue(['draft', 'published'].includes(item.status), `Invalid status: ${item.id}`);
       requireValue(nonempty(item.title), `Missing title: ${item.id}`);
-      if (item.image != null) requireValue(/^\/assets\/[a-zA-Z0-9_-]+\.(jpg|jpeg|png|webp|svg)$/.test(item.image), `Invalid image: ${item.id}`);
+      if (item.image != null) requireValue(/^\/assets\/(?:[a-zA-Z0-9_-]+\/)*[a-zA-Z0-9_-]+\.(jpg|jpeg|png|webp|svg)$/.test(item.image), `Invalid image: ${item.id}`);
       if (published(item)) requireValue(nonempty(item.description), `Missing description: ${item.id}`);
       if (kind === 'category') {
         requireValue(nonempty(item.kind), `Missing category kind: ${item.id}`);

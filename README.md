@@ -37,7 +37,7 @@ npm run export:static  # 重新生成独立 HTML 网站
 - `content/pages/`：每个页面的可编辑 HTML，路径与原站网址对应。
 - `content/routes.json`：页面标题、描述及文件映射。
 - `content/header.html`、`content/footer.html`：公共导航及页脚。
-- `public/assets/`：44 张原站图片。
+- `public/assets/`：按产品类别和公共用途分类的图片；目录说明见 [content/CATALOG.md](content/CATALOG.md#图片目录)。
 - `public/site.css`：原站的实际样式，包括响应式断点。
 - `public/replica.css`：手机菜单、键盘焦点、表单反馈等补充样式。
 - `public/site.js`：手机菜单、导航状态、滚动动效、文件校验及表单下载。
@@ -45,6 +45,12 @@ npm run export:static  # 重新生成独立 HTML 网站
 - `scripts/export-static.mjs`：生成可直接打开和部署的独立版本。
 
 编辑内容或样式后重新执行 `npm run export:static`，更新独立版本。
+
+## Resources 博客
+
+`content/resources.json` 维护文章主题、正文分节、表格、更新时间、来源链接及关联产品 ID。`npm run resources:build` 生成列表与详情页，`dev`、`build` 和静态导出也会自动执行。文章保留 `/resources/<文章ID>` 路径；在数据中增加文章并补齐九种语言后即可发布，不需要手工复制 HTML 模板。
+
+列表提供主题筛选；详情包括章节目录、技术来源、相关产品与询价入口。无 JavaScript 时文章和链接仍可阅读。日期表示正文实际更新日。删除文章后重新生成会移除对应的生成页面与路由，静态导出随后清理旧页面。
 
 ## 表单行为
 

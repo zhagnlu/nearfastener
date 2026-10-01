@@ -16,10 +16,11 @@
     "i18n:build": "node scripts/build-locales.mjs",
     "catalog:build": "node scripts/build-catalog.mjs",
     "test:catalog": "node --test tests/catalog.test.mjs",
-    "test:flow": "npm run export:static && node --test tests/catalog.test.mjs tests/i18n.test.mjs tests/screw-flow.test.mjs",
-    "prebuild": "npm run catalog:build && npm run i18n:build",
-    "predev": "npm run catalog:build && npm run i18n:build",
-    "test:i18n": "node --test tests/i18n.test.mjs"
+    "test:flow": "npm run export:static && node --test tests/catalog.test.mjs tests/i18n.test.mjs tests/screw-flow.test.mjs tests/resources.test.mjs",
+    "prebuild": "npm run catalog:build && npm run resources:build && npm run i18n:build",
+    "predev": "npm run catalog:build && npm run resources:build && npm run i18n:build",
+    "test:i18n": "node --test tests/i18n.test.mjs",
+    "resources:build": "node scripts/build-resources.mjs"
   },
   "dependencies": {
     "drizzle-orm": "0.45.2",

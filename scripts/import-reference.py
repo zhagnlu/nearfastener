@@ -38,14 +38,20 @@ if missing:
     raise SystemExit("Missing observed images:\n" + "\n".join(sorted(missing)))
 
 asset_map = {}
+mapping_file = CONTENT / "assets.json"
+existing_assets = json.loads(mapping_file.read_text()) if mapping_file.exists() else {}
 for url in sorted(wanted):
     asset = available[url]
     name = Path(urlparse(url).path).stem
     suffix = Path(asset["path"]).suffix
     digest = hashlib.sha256(url.encode()).hexdigest()[:8]
     local_name = f"{name}-{digest}{suffix}"
-    shutil.copyfile(asset["path"], ASSETS / local_name)
-    asset_map[url] = "/assets/" + local_name
+    # Preserve curated category paths when reimporting an existing image.
+    local_url = existing_assets.get(url, "/assets/imports/" + local_name)
+    target = ROOT / "public" / local_url.lstrip("/")
+    target.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copyfile(asset["path"], target)
+    asset_map[url] = local_url
 
 def clean(markup):
     markup = re.sub(r"<script\b[^>]*>.*?</script>", "", markup, flags=re.S | re.I)

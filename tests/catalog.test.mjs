@@ -54,6 +54,8 @@ test('malformed relationships fail before pages are generated', () => {
     [(c) => c.products[0].attributes.driveType = ['unknown'], /attribute value/],
     [(c) => c.products[0].path = '/product/unknown', /Missing product detail/],
     [(c) => c.categories[0].image = 'https://example.com/image.jpg', /Invalid image/],
+    [(c) => c.categories[0].image = '/assets/products/../secret.jpg', /Invalid image/],
+    [(c) => c.categories[0].image = '/assets/products//screw.jpg', /Invalid image/],
   ]) {
     const catalog = fresh();
     mutate(catalog);
