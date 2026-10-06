@@ -101,7 +101,7 @@
   },
   "/products/custom-fasteners": {
     "title": "Custom Fasteners | Near Fastener",
-    "description": "Non-standard and custom-engineered fasteners manufactured per customer drawings and specifications.",
+    "description": "From custom screws and bolts to SEMS assemblies, we support OEM production and factory purchasing based on your drawings and requirements.",
     "file": "products/custom-fasteners.html",
     "catalogGenerated": true
   },
@@ -261,7 +261,7 @@
   },
   "/products/screws": {
     "title": "Screws | Near Fastener",
-    "description": "Explore screws by head style and drive type.",
+    "description": "Explore product families and send your drawing or specification for a quotation.",
     "file": "products/screws.html",
     "catalogGenerated": true
   },
@@ -287,6 +287,162 @@
     "title": "ISO 10642:2026 | Near Fastener",
     "description": "Hexagon socket countersunk head screws with reduced loadability.",
     "file": "standards/iso-10642.html",
+    "catalogGenerated": true
+  },
+  "/products/machine-screws": {
+    "title": "Phillips and Slotted Machine Screws | Near Fastener",
+    "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+    "file": "products/machine-screws.html",
+    "catalogGenerated": true
+  },
+  "/products/set-screws": {
+    "title": "Set Screws | Near Fastener",
+    "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+    "file": "products/set-screws.html",
+    "catalogGenerated": true
+  },
+  "/products/shoulder-screws": {
+    "title": "Shoulder Screws | Near Fastener",
+    "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+    "file": "products/shoulder-screws.html",
+    "catalogGenerated": true
+  },
+  "/products/thumb-screws": {
+    "title": "Thumb Screws | Near Fastener",
+    "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+    "file": "products/thumb-screws.html",
+    "catalogGenerated": true
+  },
+  "/products/assembly-screws": {
+    "title": "Assembly and Captive Screws | Near Fastener",
+    "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+    "file": "products/assembly-screws.html",
+    "catalogGenerated": true
+  },
+  "/products/self-drilling-screws": {
+    "title": "Self-Drilling Screws | Near Fastener",
+    "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+    "file": "products/self-drilling-screws.html",
+    "catalogGenerated": true
+  },
+  "/products/special-bolts": {
+    "title": "Special Head Bolts | Near Fastener",
+    "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+    "file": "products/special-bolts.html",
+    "catalogGenerated": true
+  },
+  "/product/socket-cap-screw": {
+    "title": "Socket Head Cap Screws | Near Fastener",
+    "description": "Internal hexagon drive for machine assembly; choose the head profile to suit clearance and seating requirements.",
+    "file": "product/socket-cap-screw.html",
+    "catalogGenerated": true
+  },
+  "/product/socket-button-screw": {
+    "title": "Socket Button Head Screws | Near Fastener",
+    "description": "Internal hexagon drive for machine assembly; choose the head profile to suit clearance and seating requirements.",
+    "file": "product/socket-button-screw.html",
+    "catalogGenerated": true
+  },
+  "/product/low-head-socket-screw": {
+    "title": "Low Head Socket Screws | Near Fastener",
+    "description": "Internal hexagon drive for machine assembly; choose the head profile to suit clearance and seating requirements.",
+    "file": "product/low-head-socket-screw.html",
+    "catalogGenerated": true
+  },
+  "/product/phillips-countersunk-screw": {
+    "title": "Phillips Countersunk Screws | Near Fastener",
+    "description": "Machine-thread screws for tapped holes or matching nuts. Select the drive and head style for your assembly.",
+    "file": "product/phillips-countersunk-screw.html",
+    "catalogGenerated": true
+  },
+  "/product/slotted-cylinder-screw": {
+    "title": "Slotted Cylindrical Head Screws | Near Fastener",
+    "description": "Machine-thread screws for tapped holes or matching nuts. Select the drive and head style for your assembly.",
+    "file": "product/slotted-cylinder-screw.html",
+    "catalogGenerated": true
+  },
+  "/product/flat-point-set-screw": {
+    "title": "Flat Point Socket Set Screws | Near Fastener",
+    "description": "Headless threaded fasteners with a flat contact end for locating or retaining components.",
+    "file": "product/flat-point-set-screw.html",
+    "catalogGenerated": true
+  },
+  "/product/shoulder-screw": {
+    "title": "Shoulder Screws | Near Fastener",
+    "description": "A smooth precision shank provides a locating surface. Confirm shank diameter, fit and thread dimensions on the drawing.",
+    "file": "product/shoulder-screw.html",
+    "catalogGenerated": true
+  },
+  "/product/knurled-thumb-screw": {
+    "title": "Knurled Thumb Screws | Near Fastener",
+    "description": "A knurled head supports manual adjustment and removable covers without a separate driver.",
+    "file": "product/knurled-thumb-screw.html",
+    "catalogGenerated": true
+  },
+  "/product/sems-screw": {
+    "title": "SEMS Washer Assembly Screws | Near Fastener",
+    "description": "Assembly fasteners help retain washers or the screw itself during installation and maintenance.",
+    "file": "product/sems-screw.html",
+    "catalogGenerated": true
+  },
+  "/product/captive-screw": {
+    "title": "Captive Screws | Near Fastener",
+    "description": "Assembly fasteners help retain washers or the screw itself during installation and maintenance.",
+    "file": "product/captive-screw.html",
+    "catalogGenerated": true
+  },
+  "/product/hex-socket-flange-screw": {
+    "title": "Socket Flange Head Screws | Near Fastener",
+    "description": "Internal hexagon drive for machine assembly; choose the head profile to suit clearance and seating requirements.",
+    "file": "product/hex-socket-flange-screw.html",
+    "catalogGenerated": true
+  },
+  "/product/fitted-hex-bolt": {
+    "title": "Hex Head Fitted Bolts | Near Fastener",
+    "description": "A smooth precision shank provides a locating surface. Confirm shank diameter, fit and thread dimensions on the drawing.",
+    "file": "product/fitted-hex-bolt.html",
+    "catalogGenerated": true
+  },
+  "/product/square-head-bolt": {
+    "title": "Square Head Bolts | Near Fastener",
+    "description": "Special head profiles for equipment connections. Confirm the mating geometry and application requirements before ordering.",
+    "file": "product/square-head-bolt.html",
+    "catalogGenerated": true
+  },
+  "/product/eye-bolt": {
+    "title": "Eye Bolts | Near Fastener",
+    "description": "Special head profiles for equipment connections. Confirm the mating geometry and application requirements before ordering.",
+    "file": "product/eye-bolt.html",
+    "catalogGenerated": true
+  },
+  "/product/countersunk-drilling-screw": {
+    "title": "Countersunk Self-Drilling Screws | Near Fastener",
+    "description": "A drill-point tip combines hole formation and fastening for compatible sheet assemblies. Match the screw to the substrate and thickness.",
+    "file": "product/countersunk-drilling-screw.html",
+    "catalogGenerated": true
+  },
+  "/product/hex-head-drilling-screw": {
+    "title": "Hex Head Self-Drilling Screws | Near Fastener",
+    "description": "A drill-point tip combines hole formation and fastening for compatible sheet assemblies. Match the screw to the substrate and thickness.",
+    "file": "product/hex-head-drilling-screw.html",
+    "catalogGenerated": true
+  },
+  "/products/bolts": {
+    "title": "Bolts | Near Fastener",
+    "description": "Explore product families and send your drawing or specification for a quotation.",
+    "file": "products/bolts.html",
+    "catalogGenerated": true
+  },
+  "/products/nuts": {
+    "title": "Nuts | Near Fastener",
+    "description": "Explore product families and send your drawing or specification for a quotation.",
+    "file": "products/nuts.html",
+    "catalogGenerated": true
+  },
+  "/products/studs-and-rods": {
+    "title": "Studs and Threaded Rods | Near Fastener",
+    "description": "Explore product families and send your drawing or specification for a quotation.",
+    "file": "products/studs-and-rods.html",
     "catalogGenerated": true
   }
 }

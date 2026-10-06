@@ -25,11 +25,24 @@
   ],
   "categories": [
     {
+      "id": "bolts",
+      "path": "/products/bolts",
+      "title": "Bolts",
+      "description": "Explore product families and send your drawing or specification for a quotation.",
+      "image": "/assets/products/hex-bolts/hex-head-bolt-steel-close-up-b894f812.jpg",
+      "status": "published",
+      "kind": "type",
+      "parentId": null,
+      "aliases": [
+        "螺栓"
+      ]
+    },
+    {
       "id": "screws",
       "path": "/products/screws",
       "title": "Screws",
-      "description": "Explore screws by head style and drive type.",
-      "image": "/assets/products/countersunk-screws/hex-socket-countersunk-screw.svg",
+      "description": "Explore product families and send your drawing or specification for a quotation.",
+      "image": "/assets/products/screw-families/hex-socket-countersunk-screw-photo.jpg",
       "status": "published",
       "kind": "type",
       "parentId": null,
@@ -39,6 +52,54 @@
       ]
     },
     {
+      "id": "nuts",
+      "path": "/products/nuts",
+      "title": "Nuts",
+      "description": "Explore product families and send your drawing or specification for a quotation.",
+      "image": "/assets/products/hex-nuts/hex-nut-steel-machined-13f37182.jpg",
+      "status": "published",
+      "kind": "type",
+      "parentId": null,
+      "aliases": [
+        "螺母"
+      ]
+    },
+    {
+      "id": "studs-and-rods",
+      "path": "/products/studs-and-rods",
+      "title": "Studs and Threaded Rods",
+      "description": "Explore product families and send your drawing or specification for a quotation.",
+      "image": "/assets/products/threaded-rods/full-thread-steel-rods-bundle-29ea2752.jpg",
+      "status": "published",
+      "kind": "type",
+      "parentId": null,
+      "aliases": [
+        "螺柱与螺杆"
+      ]
+    },
+    {
+      "id": "washers",
+      "path": "/products/washers",
+      "title": "Washers",
+      "description": "Flat washers, spring washers, and heavy hex structural washer assemblies.",
+      "image": "/assets/products/washers/steel-flat-washers-stack-1f14b8d2.jpg",
+      "status": "published",
+      "kind": "type",
+      "parentId": null,
+      "aliases": []
+    },
+    {
+      "id": "custom-fasteners",
+      "path": "/products/custom-fasteners",
+      "title": "Custom Fasteners",
+      "description": "From custom screws and bolts to SEMS assemblies, we support OEM production and factory purchasing based on your drawings and requirements.",
+      "image": "/assets/products/custom-fasteners/custom-engineered-special-fasteners-f2c9f809.jpg",
+      "status": "published",
+      "kind": "service",
+      "parentId": null,
+      "aliases": []
+    },
+    {
       "id": "hex-bolts",
       "path": "/products/hex-bolts",
       "title": "Hex Bolts",
@@ -46,7 +107,7 @@
       "image": "/assets/products/hex-bolts/hex-head-bolt-steel-close-up-b894f812.jpg",
       "status": "published",
       "kind": "type",
-      "parentId": null,
+      "parentId": "bolts",
       "aliases": [
         "外六角螺丝",
         "外六角螺栓",
@@ -61,8 +122,9 @@
       "image": "/assets/products/high-strength-bolts/large-hex-bolt-forged-steel-5eb223e6.jpg",
       "status": "published",
       "kind": "performance",
-      "parentId": null,
-      "aliases": []
+      "parentId": "bolts",
+      "aliases": [],
+      "navigationGroup": "performance"
     },
     {
       "id": "structural-bolts",
@@ -72,8 +134,9 @@
       "image": "/assets/products/structural-bolts/structural-bolt-assembly-nut-washer-5e6908bd.jpg",
       "status": "published",
       "kind": "application",
-      "parentId": null,
-      "aliases": []
+      "parentId": "bolts",
+      "aliases": [],
+      "navigationGroup": "application"
     },
     {
       "id": "hex-nuts",
@@ -83,7 +146,7 @@
       "image": "/assets/products/hex-nuts/hex-nut-steel-machined-13f37182.jpg",
       "status": "published",
       "kind": "type",
-      "parentId": null,
+      "parentId": "nuts",
       "aliases": []
     },
     {
@@ -94,7 +157,7 @@
       "image": "/assets/products/stud-bolts/stud-bolt-threaded-rod-with-nuts-1f2e7f82.jpg",
       "status": "published",
       "kind": "type",
-      "parentId": null,
+      "parentId": "studs-and-rods",
       "aliases": []
     },
     {
@@ -105,18 +168,7 @@
       "image": "/assets/products/threaded-rods/full-thread-steel-rods-bundle-29ea2752.jpg",
       "status": "published",
       "kind": "type",
-      "parentId": null,
-      "aliases": []
-    },
-    {
-      "id": "washers",
-      "path": "/products/washers",
-      "title": "Washers",
-      "description": "Flat washers, spring washers, and heavy hex structural washer assemblies.",
-      "image": "/assets/products/washers/steel-flat-washers-stack-1f14b8d2.jpg",
-      "status": "published",
-      "kind": "type",
-      "parentId": null,
+      "parentId": "studs-and-rods",
       "aliases": []
     },
     {
@@ -127,18 +179,7 @@
       "image": "/assets/products/anchor-bolts/anchor-bolts-l-shaped-j-shaped-9337b201.jpg",
       "status": "published",
       "kind": "type",
-      "parentId": null,
-      "aliases": []
-    },
-    {
-      "id": "custom-fasteners",
-      "path": "/products/custom-fasteners",
-      "title": "Custom Fasteners",
-      "description": "Non-standard and custom-engineered fasteners manufactured per customer drawings and specifications.",
-      "image": "/assets/products/custom-fasteners/custom-engineered-special-fasteners-f2c9f809.jpg",
-      "status": "published",
-      "kind": "service",
-      "parentId": null,
+      "parentId": "bolts",
       "aliases": []
     },
     {
@@ -146,27 +187,119 @@
       "path": "/products/countersunk-screws",
       "title": "Countersunk Screws",
       "description": "Countersunk head screws for flush-fitting connections.",
-      "image": "/assets/products/countersunk-screws/hex-socket-countersunk-screw.svg",
+      "image": "/assets/products/screw-families/hex-socket-countersunk-screw-photo.jpg",
       "status": "published",
       "kind": "head-style",
       "parentId": "screws",
       "aliases": [
         "沉头螺丝",
         "沉头螺钉"
-      ]
+      ],
+      "navigationGroup": "head-style"
     },
     {
       "id": "hex-socket-screws",
       "path": "/products/hex-socket-screws",
       "title": "Hex Socket Screws",
       "description": "Screws with an internal hexagon drive.",
-      "image": "/assets/products/countersunk-screws/hex-socket-countersunk-screw.svg",
+      "image": "/assets/products/screw-families/hex-socket-countersunk-screw-photo.jpg",
       "status": "published",
       "kind": "drive-type",
       "parentId": "screws",
       "aliases": [
         "内六角螺丝",
         "内六角螺钉"
+      ]
+    },
+    {
+      "id": "machine-screws",
+      "path": "/products/machine-screws",
+      "title": "Phillips and Slotted Machine Screws",
+      "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+      "image": "/assets/products/screw-families/phillips-countersunk-screw-photo.jpg",
+      "status": "published",
+      "kind": "type",
+      "parentId": "screws",
+      "aliases": [
+        "机牙螺钉"
+      ]
+    },
+    {
+      "id": "set-screws",
+      "path": "/products/set-screws",
+      "title": "Set Screws",
+      "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+      "image": "/assets/products/screw-families/flat-point-set-screw-photo.jpg",
+      "status": "published",
+      "kind": "type",
+      "parentId": "screws",
+      "aliases": [
+        "紧定螺钉"
+      ]
+    },
+    {
+      "id": "shoulder-screws",
+      "path": "/products/shoulder-screws",
+      "title": "Shoulder Screws",
+      "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+      "image": "/assets/products/screw-families/shoulder-screw-photo.jpg",
+      "status": "published",
+      "kind": "type",
+      "parentId": "screws",
+      "aliases": [
+        "肩螺钉／塞打螺丝"
+      ]
+    },
+    {
+      "id": "thumb-screws",
+      "path": "/products/thumb-screws",
+      "title": "Thumb Screws",
+      "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+      "image": "/assets/products/screw-families/knurled-thumb-screw-photo.jpg",
+      "status": "published",
+      "kind": "type",
+      "parentId": "screws",
+      "aliases": [
+        "手拧螺丝"
+      ]
+    },
+    {
+      "id": "assembly-screws",
+      "path": "/products/assembly-screws",
+      "title": "Assembly and Captive Screws",
+      "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+      "image": "/assets/products/screw-families/sems-screw-photo.jpg",
+      "status": "published",
+      "kind": "type",
+      "parentId": "screws",
+      "aliases": [
+        "组合与松不脱螺丝"
+      ]
+    },
+    {
+      "id": "self-drilling-screws",
+      "path": "/products/self-drilling-screws",
+      "title": "Self-Drilling Screws",
+      "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+      "image": "/assets/products/screw-families/countersunk-drilling-screw-photo.jpg",
+      "status": "published",
+      "kind": "type",
+      "parentId": "screws",
+      "aliases": [
+        "钻尾螺丝"
+      ]
+    },
+    {
+      "id": "special-bolts",
+      "path": "/products/special-bolts",
+      "title": "Special Head Bolts",
+      "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+      "image": "/assets/products/screw-families/square-head-bolt-photo.jpg",
+      "status": "published",
+      "kind": "type",
+      "parentId": "bolts",
+      "aliases": [
+        "特殊头型螺栓"
       ]
     }
   ],
@@ -284,8 +417,9 @@
       "standard": "GB/T 32076.7",
       "image": "/assets/products/high-strength-bolts/high-strength-hex-bolt-42crmo-63a7ff09.jpg",
       "status": "published",
-      "primaryCategoryId": "high-strength-bolts",
+      "primaryCategoryId": "hex-bolts",
       "categoryIds": [
+        "hex-bolts",
         "high-strength-bolts"
       ],
       "attributes": {
@@ -305,8 +439,9 @@
       "standard": "GB/T 1231",
       "image": "/assets/products/structural-bolts/structural-bolt-assembly-gbt1231-16f4a007.jpg",
       "status": "published",
-      "primaryCategoryId": "structural-bolts",
+      "primaryCategoryId": "hex-bolts",
       "categoryIds": [
+        "hex-bolts",
         "structural-bolts"
       ],
       "attributes": {}
@@ -319,8 +454,9 @@
       "standard": "ASTM A325 / F3125",
       "image": "/assets/products/structural-bolts/astm-a325-heavy-hex-structural-bolt-8c7b1586.jpg",
       "status": "published",
-      "primaryCategoryId": "structural-bolts",
+      "primaryCategoryId": "hex-bolts",
       "categoryIds": [
+        "hex-bolts",
         "structural-bolts"
       ],
       "attributes": {}
@@ -388,9 +524,9 @@
       "description": "A flush-fitting countersunk head with an internal hexagon drive. Specify your requirements for a quotation.",
       "standard": "ISO 10642:2026",
       "standardId": "iso-10642",
-      "image": "/assets/products/countersunk-screws/hex-socket-countersunk-screw.svg",
+      "image": "/assets/products/screw-families/hex-socket-countersunk-screw-photo.jpg",
       "status": "published",
-      "primaryCategoryId": "countersunk-screws",
+      "primaryCategoryId": "hex-socket-screws",
       "categoryIds": [
         "countersunk-screws",
         "hex-socket-screws"
@@ -438,7 +574,705 @@
         ],
         "availability": "Sizes in the standard are reference information. Availability and lead time are confirmed with your quotation.",
         "standardNoteId": "loadability"
-      }
+      },
+      "imageKind": "generated"
+    },
+    {
+      "id": "socket-cap-screw",
+      "path": "/product/socket-cap-screw",
+      "title": "Socket Head Cap Screws",
+      "description": "Internal hexagon drive for machine assembly; choose the head profile to suit clearance and seating requirements.",
+      "standard": "Drawing / specification",
+      "image": "/assets/products/screw-families/socket-cap-screw-photo.jpg",
+      "status": "published",
+      "primaryCategoryId": "hex-socket-screws",
+      "categoryIds": [
+        "hex-socket-screws"
+      ],
+      "attributes": {},
+      "detail": {
+        "specifications": [
+          [
+            "Product family",
+            "Socket Head Cap Screws"
+          ],
+          [
+            "Dimensions and tolerances",
+            "To your drawing or agreed specification"
+          ],
+          [
+            "Material",
+            "Carbon steel, alloy steel or stainless steel; selection subject to technical review"
+          ],
+          [
+            "Surface Treatment",
+            "To your drawing or agreed specification"
+          ]
+        ],
+        "notes": [
+          {
+            "title": "Ordering information",
+            "text": "Send the required dimensions, material, finish, quantity and application with your inquiry."
+          }
+        ],
+        "availability": "Manufacturing feasibility, material options and delivery are confirmed after review of your drawing or specification."
+      },
+      "referenceListing": "https://guwanji.tmall.com/category-1237502200.htm",
+      "imageKind": "generated"
+    },
+    {
+      "id": "socket-button-screw",
+      "path": "/product/socket-button-screw",
+      "title": "Socket Button Head Screws",
+      "description": "Internal hexagon drive for machine assembly; choose the head profile to suit clearance and seating requirements.",
+      "standard": "Drawing / specification",
+      "image": "/assets/products/screw-families/socket-button-screw-photo.jpg",
+      "status": "published",
+      "primaryCategoryId": "hex-socket-screws",
+      "categoryIds": [
+        "hex-socket-screws"
+      ],
+      "attributes": {},
+      "detail": {
+        "specifications": [
+          [
+            "Product family",
+            "Socket Button Head Screws"
+          ],
+          [
+            "Dimensions and tolerances",
+            "To your drawing or agreed specification"
+          ],
+          [
+            "Material",
+            "Carbon steel, alloy steel or stainless steel; selection subject to technical review"
+          ],
+          [
+            "Surface Treatment",
+            "To your drawing or agreed specification"
+          ]
+        ],
+        "notes": [
+          {
+            "title": "Ordering information",
+            "text": "Send the required dimensions, material, finish, quantity and application with your inquiry."
+          }
+        ],
+        "availability": "Manufacturing feasibility, material options and delivery are confirmed after review of your drawing or specification."
+      },
+      "referenceListing": "https://guwanji.tmall.com/category-1237502200.htm",
+      "imageKind": "generated"
+    },
+    {
+      "id": "low-head-socket-screw",
+      "path": "/product/low-head-socket-screw",
+      "title": "Low Head Socket Screws",
+      "description": "Internal hexagon drive for machine assembly; choose the head profile to suit clearance and seating requirements.",
+      "standard": "Drawing / specification",
+      "image": "/assets/products/screw-families/low-head-socket-screw-photo.jpg",
+      "status": "published",
+      "primaryCategoryId": "hex-socket-screws",
+      "categoryIds": [
+        "hex-socket-screws"
+      ],
+      "attributes": {},
+      "detail": {
+        "specifications": [
+          [
+            "Product family",
+            "Low Head Socket Screws"
+          ],
+          [
+            "Dimensions and tolerances",
+            "To your drawing or agreed specification"
+          ],
+          [
+            "Material",
+            "Carbon steel, alloy steel or stainless steel; selection subject to technical review"
+          ],
+          [
+            "Surface Treatment",
+            "To your drawing or agreed specification"
+          ]
+        ],
+        "notes": [
+          {
+            "title": "Ordering information",
+            "text": "Send the required dimensions, material, finish, quantity and application with your inquiry."
+          }
+        ],
+        "availability": "Manufacturing feasibility, material options and delivery are confirmed after review of your drawing or specification."
+      },
+      "referenceListing": "https://guwanji.tmall.com/category-1237502200.htm",
+      "imageKind": "generated"
+    },
+    {
+      "id": "phillips-countersunk-screw",
+      "path": "/product/phillips-countersunk-screw",
+      "title": "Phillips Countersunk Screws",
+      "description": "Machine-thread screws for tapped holes or matching nuts. Select the drive and head style for your assembly.",
+      "standard": "Drawing / specification",
+      "image": "/assets/products/screw-families/phillips-countersunk-screw-photo.jpg",
+      "status": "published",
+      "primaryCategoryId": "machine-screws",
+      "categoryIds": [
+        "machine-screws",
+        "countersunk-screws"
+      ],
+      "attributes": {},
+      "detail": {
+        "specifications": [
+          [
+            "Product family",
+            "Phillips Countersunk Screws"
+          ],
+          [
+            "Dimensions and tolerances",
+            "To your drawing or agreed specification"
+          ],
+          [
+            "Material",
+            "Carbon steel, alloy steel or stainless steel; selection subject to technical review"
+          ],
+          [
+            "Surface Treatment",
+            "To your drawing or agreed specification"
+          ]
+        ],
+        "notes": [
+          {
+            "title": "Ordering information",
+            "text": "Send the required dimensions, material, finish, quantity and application with your inquiry."
+          }
+        ],
+        "availability": "Manufacturing feasibility, material options and delivery are confirmed after review of your drawing or specification."
+      },
+      "referenceListing": "https://guwanji.tmall.com/category-1237502200.htm",
+      "imageKind": "generated"
+    },
+    {
+      "id": "slotted-cylinder-screw",
+      "path": "/product/slotted-cylinder-screw",
+      "title": "Slotted Cylindrical Head Screws",
+      "description": "Machine-thread screws for tapped holes or matching nuts. Select the drive and head style for your assembly.",
+      "standard": "Drawing / specification",
+      "image": "/assets/products/screw-families/slotted-cylinder-screw-photo.jpg",
+      "status": "published",
+      "primaryCategoryId": "machine-screws",
+      "categoryIds": [
+        "machine-screws"
+      ],
+      "attributes": {},
+      "detail": {
+        "specifications": [
+          [
+            "Product family",
+            "Slotted Cylindrical Head Screws"
+          ],
+          [
+            "Dimensions and tolerances",
+            "To your drawing or agreed specification"
+          ],
+          [
+            "Material",
+            "Carbon steel, alloy steel or stainless steel; selection subject to technical review"
+          ],
+          [
+            "Surface Treatment",
+            "To your drawing or agreed specification"
+          ]
+        ],
+        "notes": [
+          {
+            "title": "Ordering information",
+            "text": "Send the required dimensions, material, finish, quantity and application with your inquiry."
+          }
+        ],
+        "availability": "Manufacturing feasibility, material options and delivery are confirmed after review of your drawing or specification."
+      },
+      "referenceListing": "https://guwanji.tmall.com/category-1237502200.htm",
+      "imageKind": "generated"
+    },
+    {
+      "id": "flat-point-set-screw",
+      "path": "/product/flat-point-set-screw",
+      "title": "Flat Point Socket Set Screws",
+      "description": "Headless threaded fasteners with a flat contact end for locating or retaining components.",
+      "standard": "Drawing / specification",
+      "image": "/assets/products/screw-families/flat-point-set-screw-photo.jpg",
+      "status": "published",
+      "primaryCategoryId": "set-screws",
+      "categoryIds": [
+        "set-screws"
+      ],
+      "attributes": {},
+      "detail": {
+        "specifications": [
+          [
+            "Product family",
+            "Flat Point Socket Set Screws"
+          ],
+          [
+            "Dimensions and tolerances",
+            "To your drawing or agreed specification"
+          ],
+          [
+            "Material",
+            "Carbon steel, alloy steel or stainless steel; selection subject to technical review"
+          ],
+          [
+            "Surface Treatment",
+            "To your drawing or agreed specification"
+          ]
+        ],
+        "notes": [
+          {
+            "title": "Ordering information",
+            "text": "Send the required dimensions, material, finish, quantity and application with your inquiry."
+          }
+        ],
+        "availability": "Manufacturing feasibility, material options and delivery are confirmed after review of your drawing or specification."
+      },
+      "referenceListing": "https://guwanji.tmall.com/category-1237502200.htm",
+      "imageKind": "generated"
+    },
+    {
+      "id": "shoulder-screw",
+      "path": "/product/shoulder-screw",
+      "title": "Shoulder Screws",
+      "description": "A smooth precision shank provides a locating surface. Confirm shank diameter, fit and thread dimensions on the drawing.",
+      "standard": "Drawing / specification",
+      "image": "/assets/products/screw-families/shoulder-screw-photo.jpg",
+      "status": "published",
+      "primaryCategoryId": "shoulder-screws",
+      "categoryIds": [
+        "shoulder-screws"
+      ],
+      "attributes": {},
+      "detail": {
+        "specifications": [
+          [
+            "Product family",
+            "Shoulder Screws"
+          ],
+          [
+            "Dimensions and tolerances",
+            "To your drawing or agreed specification"
+          ],
+          [
+            "Material",
+            "Carbon steel, alloy steel or stainless steel; selection subject to technical review"
+          ],
+          [
+            "Surface Treatment",
+            "To your drawing or agreed specification"
+          ]
+        ],
+        "notes": [
+          {
+            "title": "Ordering information",
+            "text": "Send the required dimensions, material, finish, quantity and application with your inquiry."
+          }
+        ],
+        "availability": "Manufacturing feasibility, material options and delivery are confirmed after review of your drawing or specification."
+      },
+      "referenceListing": "https://guwanji.tmall.com/category-1237502200.htm",
+      "imageKind": "generated"
+    },
+    {
+      "id": "knurled-thumb-screw",
+      "path": "/product/knurled-thumb-screw",
+      "title": "Knurled Thumb Screws",
+      "description": "A knurled head supports manual adjustment and removable covers without a separate driver.",
+      "standard": "Drawing / specification",
+      "image": "/assets/products/screw-families/knurled-thumb-screw-photo.jpg",
+      "status": "published",
+      "primaryCategoryId": "thumb-screws",
+      "categoryIds": [
+        "thumb-screws"
+      ],
+      "attributes": {},
+      "detail": {
+        "specifications": [
+          [
+            "Product family",
+            "Knurled Thumb Screws"
+          ],
+          [
+            "Dimensions and tolerances",
+            "To your drawing or agreed specification"
+          ],
+          [
+            "Material",
+            "Carbon steel, alloy steel or stainless steel; selection subject to technical review"
+          ],
+          [
+            "Surface Treatment",
+            "To your drawing or agreed specification"
+          ]
+        ],
+        "notes": [
+          {
+            "title": "Ordering information",
+            "text": "Send the required dimensions, material, finish, quantity and application with your inquiry."
+          }
+        ],
+        "availability": "Manufacturing feasibility, material options and delivery are confirmed after review of your drawing or specification."
+      },
+      "referenceListing": "https://guwanji.tmall.com/category-1237502200.htm",
+      "imageKind": "generated"
+    },
+    {
+      "id": "sems-screw",
+      "path": "/product/sems-screw",
+      "title": "SEMS Washer Assembly Screws",
+      "description": "Assembly fasteners help retain washers or the screw itself during installation and maintenance.",
+      "standard": "Drawing / specification",
+      "image": "/assets/products/screw-families/sems-screw-photo.jpg",
+      "status": "published",
+      "primaryCategoryId": "assembly-screws",
+      "categoryIds": [
+        "assembly-screws"
+      ],
+      "attributes": {},
+      "detail": {
+        "specifications": [
+          [
+            "Product family",
+            "SEMS Washer Assembly Screws"
+          ],
+          [
+            "Dimensions and tolerances",
+            "To your drawing or agreed specification"
+          ],
+          [
+            "Material",
+            "Carbon steel, alloy steel or stainless steel; selection subject to technical review"
+          ],
+          [
+            "Surface Treatment",
+            "To your drawing or agreed specification"
+          ]
+        ],
+        "notes": [
+          {
+            "title": "Ordering information",
+            "text": "Send the required dimensions, material, finish, quantity and application with your inquiry."
+          },
+          {
+            "title": "Factory Bulk Orders",
+            "text": "For OEM assembly lines and repeat production orders. Share batch quantity, annual demand, inspection requirements and delivery schedule."
+          },
+          {
+            "title": "Custom SEMS Assemblies",
+            "text": "Screw and captive-washer assemblies configured to your application: head and drive, flat or spring washers, material and finish. Confirm washer dimensions and assembly details in your drawing."
+          }
+        ],
+        "availability": "Manufacturing feasibility, material options and delivery are confirmed after review of your drawing or specification."
+      },
+      "referenceListing": "https://guwanji.tmall.com/category-1237502200.htm",
+      "imageKind": "generated"
+    },
+    {
+      "id": "captive-screw",
+      "path": "/product/captive-screw",
+      "title": "Captive Screws",
+      "description": "Assembly fasteners help retain washers or the screw itself during installation and maintenance.",
+      "standard": "Drawing / specification",
+      "image": "/assets/products/screw-families/captive-screw-photo.jpg",
+      "status": "published",
+      "primaryCategoryId": "assembly-screws",
+      "categoryIds": [
+        "assembly-screws"
+      ],
+      "attributes": {},
+      "detail": {
+        "specifications": [
+          [
+            "Product family",
+            "Captive Screws"
+          ],
+          [
+            "Dimensions and tolerances",
+            "To your drawing or agreed specification"
+          ],
+          [
+            "Material",
+            "Carbon steel, alloy steel or stainless steel; selection subject to technical review"
+          ],
+          [
+            "Surface Treatment",
+            "To your drawing or agreed specification"
+          ]
+        ],
+        "notes": [
+          {
+            "title": "Ordering information",
+            "text": "Send the required dimensions, material, finish, quantity and application with your inquiry."
+          }
+        ],
+        "availability": "Manufacturing feasibility, material options and delivery are confirmed after review of your drawing or specification."
+      },
+      "referenceListing": "https://guwanji.tmall.com/category-1237502200.htm",
+      "imageKind": "generated"
+    },
+    {
+      "id": "hex-socket-flange-screw",
+      "path": "/product/hex-socket-flange-screw",
+      "title": "Socket Flange Head Screws",
+      "description": "Internal hexagon drive for machine assembly; choose the head profile to suit clearance and seating requirements.",
+      "standard": "Drawing / specification",
+      "image": "/assets/products/screw-families/hex-socket-flange-screw-photo.jpg",
+      "status": "published",
+      "primaryCategoryId": "hex-socket-screws",
+      "categoryIds": [
+        "hex-socket-screws"
+      ],
+      "attributes": {},
+      "detail": {
+        "specifications": [
+          [
+            "Product family",
+            "Socket Flange Head Screws"
+          ],
+          [
+            "Dimensions and tolerances",
+            "To your drawing or agreed specification"
+          ],
+          [
+            "Material",
+            "Carbon steel, alloy steel or stainless steel; selection subject to technical review"
+          ],
+          [
+            "Surface Treatment",
+            "To your drawing or agreed specification"
+          ]
+        ],
+        "notes": [
+          {
+            "title": "Ordering information",
+            "text": "Send the required dimensions, material, finish, quantity and application with your inquiry."
+          }
+        ],
+        "availability": "Manufacturing feasibility, material options and delivery are confirmed after review of your drawing or specification."
+      },
+      "referenceListing": "https://guwanji.tmall.com/category-1237502200.htm",
+      "imageKind": "generated"
+    },
+    {
+      "id": "fitted-hex-bolt",
+      "path": "/product/fitted-hex-bolt",
+      "title": "Hex Head Fitted Bolts",
+      "description": "A smooth precision shank provides a locating surface. Confirm shank diameter, fit and thread dimensions on the drawing.",
+      "standard": "Drawing / specification",
+      "image": "/assets/products/screw-families/fitted-hex-bolt-photo.jpg",
+      "status": "published",
+      "primaryCategoryId": "hex-bolts",
+      "categoryIds": [
+        "hex-bolts"
+      ],
+      "attributes": {},
+      "detail": {
+        "specifications": [
+          [
+            "Product family",
+            "Hex Head Fitted Bolts"
+          ],
+          [
+            "Dimensions and tolerances",
+            "To your drawing or agreed specification"
+          ],
+          [
+            "Material",
+            "Carbon steel, alloy steel or stainless steel; selection subject to technical review"
+          ],
+          [
+            "Surface Treatment",
+            "To your drawing or agreed specification"
+          ]
+        ],
+        "notes": [
+          {
+            "title": "Ordering information",
+            "text": "Send the required dimensions, material, finish, quantity and application with your inquiry."
+          }
+        ],
+        "availability": "Manufacturing feasibility, material options and delivery are confirmed after review of your drawing or specification."
+      },
+      "referenceListing": "https://guwanji.tmall.com/category-1237502200.htm",
+      "imageKind": "generated"
+    },
+    {
+      "id": "square-head-bolt",
+      "path": "/product/square-head-bolt",
+      "title": "Square Head Bolts",
+      "description": "Special head profiles for equipment connections. Confirm the mating geometry and application requirements before ordering.",
+      "standard": "Drawing / specification",
+      "image": "/assets/products/screw-families/square-head-bolt-photo.jpg",
+      "status": "published",
+      "primaryCategoryId": "special-bolts",
+      "categoryIds": [
+        "special-bolts"
+      ],
+      "attributes": {},
+      "detail": {
+        "specifications": [
+          [
+            "Product family",
+            "Square Head Bolts"
+          ],
+          [
+            "Dimensions and tolerances",
+            "To your drawing or agreed specification"
+          ],
+          [
+            "Material",
+            "Carbon steel, alloy steel or stainless steel; selection subject to technical review"
+          ],
+          [
+            "Surface Treatment",
+            "To your drawing or agreed specification"
+          ]
+        ],
+        "notes": [
+          {
+            "title": "Ordering information",
+            "text": "Send the required dimensions, material, finish, quantity and application with your inquiry."
+          }
+        ],
+        "availability": "Manufacturing feasibility, material options and delivery are confirmed after review of your drawing or specification."
+      },
+      "referenceListing": "https://guwanji.tmall.com/category-1237502200.htm",
+      "imageKind": "generated"
+    },
+    {
+      "id": "eye-bolt",
+      "path": "/product/eye-bolt",
+      "title": "Eye Bolts",
+      "description": "Special head profiles for equipment connections. Confirm the mating geometry and application requirements before ordering.",
+      "standard": "Drawing / specification",
+      "image": "/assets/products/screw-families/eye-bolt-photo.jpg",
+      "status": "published",
+      "primaryCategoryId": "special-bolts",
+      "categoryIds": [
+        "special-bolts"
+      ],
+      "attributes": {},
+      "detail": {
+        "specifications": [
+          [
+            "Product family",
+            "Eye Bolts"
+          ],
+          [
+            "Dimensions and tolerances",
+            "To your drawing or agreed specification"
+          ],
+          [
+            "Material",
+            "Carbon steel, alloy steel or stainless steel; selection subject to technical review"
+          ],
+          [
+            "Surface Treatment",
+            "To your drawing or agreed specification"
+          ]
+        ],
+        "notes": [
+          {
+            "title": "Ordering information",
+            "text": "Send the required dimensions, material, finish, quantity and application with your inquiry."
+          }
+        ],
+        "availability": "Manufacturing feasibility, material options and delivery are confirmed after review of your drawing or specification."
+      },
+      "referenceListing": "https://guwanji.tmall.com/category-1237502200.htm",
+      "imageKind": "generated"
+    },
+    {
+      "id": "countersunk-drilling-screw",
+      "path": "/product/countersunk-drilling-screw",
+      "title": "Countersunk Self-Drilling Screws",
+      "description": "A drill-point tip combines hole formation and fastening for compatible sheet assemblies. Match the screw to the substrate and thickness.",
+      "standard": "Drawing / specification",
+      "image": "/assets/products/screw-families/countersunk-drilling-screw-photo.jpg",
+      "status": "published",
+      "primaryCategoryId": "self-drilling-screws",
+      "categoryIds": [
+        "self-drilling-screws"
+      ],
+      "attributes": {},
+      "detail": {
+        "specifications": [
+          [
+            "Product family",
+            "Countersunk Self-Drilling Screws"
+          ],
+          [
+            "Dimensions and tolerances",
+            "To your drawing or agreed specification"
+          ],
+          [
+            "Material",
+            "Carbon steel, alloy steel or stainless steel; selection subject to technical review"
+          ],
+          [
+            "Surface Treatment",
+            "To your drawing or agreed specification"
+          ]
+        ],
+        "notes": [
+          {
+            "title": "Ordering information",
+            "text": "Send the required dimensions, material, finish, quantity and application with your inquiry."
+          }
+        ],
+        "availability": "Manufacturing feasibility, material options and delivery are confirmed after review of your drawing or specification."
+      },
+      "referenceListing": "https://guwanji.tmall.com/category-1237502200.htm",
+      "imageKind": "generated"
+    },
+    {
+      "id": "hex-head-drilling-screw",
+      "path": "/product/hex-head-drilling-screw",
+      "title": "Hex Head Self-Drilling Screws",
+      "description": "A drill-point tip combines hole formation and fastening for compatible sheet assemblies. Match the screw to the substrate and thickness.",
+      "standard": "Drawing / specification",
+      "image": "/assets/products/screw-families/hex-head-drilling-screw-photo.jpg",
+      "status": "published",
+      "primaryCategoryId": "self-drilling-screws",
+      "categoryIds": [
+        "self-drilling-screws"
+      ],
+      "attributes": {},
+      "detail": {
+        "specifications": [
+          [
+            "Product family",
+            "Hex Head Self-Drilling Screws"
+          ],
+          [
+            "Dimensions and tolerances",
+            "To your drawing or agreed specification"
+          ],
+          [
+            "Material",
+            "Carbon steel, alloy steel or stainless steel; selection subject to technical review"
+          ],
+          [
+            "Surface Treatment",
+            "To your drawing or agreed specification"
+          ]
+        ],
+        "notes": [
+          {
+            "title": "Ordering information",
+            "text": "Send the required dimensions, material, finish, quantity and application with your inquiry."
+          }
+        ],
+        "availability": "Manufacturing feasibility, material options and delivery are confirmed after review of your drawing or specification."
+      },
+      "referenceListing": "https://guwanji.tmall.com/category-1237502200.htm",
+      "imageKind": "generated"
     }
   ],
   "standards": [
@@ -467,5 +1301,28 @@
       ],
       "additionalSourceUrl": "https://www.bossard.com/us-en/eshop/screws-and-bolts-with-internal-drive/hex-socket-flat-countersunk-head-screws-fully-threaded/p/20/"
     }
-  ]
+  ],
+  "customManufacturing": {
+    "headline": "Custom Manufacturing and Bulk Supply for Factories",
+    "intro": "From custom screws and bolts to SEMS assemblies, we support OEM production and factory purchasing based on your drawings and requirements.",
+    "cards": [
+      {
+        "title": "Made to Your Drawing",
+        "text": "Specify head shape, drive, thread, material and finish. We review the drawing and manufacturing requirements before quotation."
+      },
+      {
+        "title": "Factory Bulk Orders",
+        "text": "For OEM assembly lines and repeat production orders. Share batch quantity, annual demand, inspection requirements and delivery schedule."
+      },
+      {
+        "title": "Custom SEMS Assemblies",
+        "text": "Screw and captive-washer assemblies configured to your application: head and drive, flat or spring washers, material and finish. Confirm washer dimensions and assembly details in your drawing."
+      }
+    ],
+    "processTitle": "From Drawing to Batch Production",
+    "process": "Drawing review → specification and sample approval → batch production and inspection → agreed packing and delivery.",
+    "cta": "Discuss a Custom or Bulk Order",
+    "learnMore": "Explore Custom Manufacturing",
+    "terms": "Order quantity, sample arrangements, inspection and delivery schedule are agreed for each project."
+  }
 }

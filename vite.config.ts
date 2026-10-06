@@ -23,14 +23,8 @@ const localBindingConfig = {
         },
       ]
     : [],
-  r2_buckets: r2
-    ? [
-        {
-          binding: r2,
-          bucket_name: "site-creator-r2",
-        },
-      ]
-    : [],
+  r2_buckets: [{ binding: "RFQ_STORAGE", bucket_name: "nearfastener-rfq" }, ...(r2 && r2 !== "RFQ_STORAGE" ? [{ binding: r2, bucket_name: "site-creator-r2" }] : [])],
+  triggers: { crons: ["*/10 * * * *"] },
 };
 
 export default defineConfig(async () => {

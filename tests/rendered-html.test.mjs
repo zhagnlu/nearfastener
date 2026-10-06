@@ -51,3 +51,11 @@ test('the deployable worker renders every configured route and returns 404 for u
   const missing = await worker.fetch(new Request('http://localhost/this-page-does-not-exist'), env, context);
   assert.equal(missing.status, 404);
 });
+
+test('built worker exposes RFQ API and does not report success without setup', async () => {
+  const { default: worker } = await import('../dist/server/index.js');
+  const response = await worker.fetch(new Request('https://factory.example/api/rfq', { method: 'POST', headers: { Origin: 'https://factory.example' } }), {}, {});
+  assert.equal(response.status, 503);
+  assert.equal((await response.json()).error, 'not_configured');
+  assert.equal(typeof worker.scheduled, 'function');
+});

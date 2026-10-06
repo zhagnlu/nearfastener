@@ -1,0 +1,3 @@
+# Copy to .dev.vars only when ready to enable sending; never commit real secrets.
+# RESEND_API_KEY=re_your_key
+# RFQ_FROM=Near Fastener <quotes@your-verified-domain.example>

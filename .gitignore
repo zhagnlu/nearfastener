@@ -43,3 +43,8 @@ next-env.d.ts
 /reference/
 /static-site/
 *.tsbuildinfo
+
+# Worker mail secrets
+.dev.vars
+.dev.vars.*
+!.dev.vars.example

@@ -1,0 +1,126 @@
+{
+  "tool": "built-in image_gen",
+  "referenceImage": "/assets/products/hex-bolts/hex-head-bolt-steel-close-up-b894f812.jpg",
+  "purpose": "Product appearance visualization, not evidence of factory photography or dimensional accuracy.",
+  "assets": [
+    {
+      "productId": "hex-socket-countersunk-screw",
+      "file": "/assets/products/screw-families/hex-socket-countersunk-screw-photo.jpg",
+      "subject": "Hex Socket Countersunk Head Screw",
+      "kind": "ai-generated-product-visualization",
+      "prompt": "Replace only the product in the reference photo. Preserve warm grey/beige tabletop, blurred warm grey workshop wall, soft golden window light from upper left, shadows, lens, texture and horizontal 3:2 framing. One physically accurate silver machined steel fastener, lying diagonally in right-center with head or socket visible and full shaft inside generous margins. Realistic helical threads and tooling marks. No vector, cartoon, text, logos, packaging, hands or extra loose components. Subject: Hex Socket Countersunk Head Screw."
+    },
+    {
+      "productId": "socket-cap-screw",
+      "file": "/assets/products/screw-families/socket-cap-screw-photo.jpg",
+      "subject": "Socket Head Cap Screws",
+      "kind": "ai-generated-product-visualization",
+      "prompt": "Replace only the product in the reference photo. Preserve warm grey/beige tabletop, blurred warm grey workshop wall, soft golden window light from upper left, shadows, lens, texture and horizontal 3:2 framing. One physically accurate silver machined steel fastener, lying diagonally in right-center with head or socket visible and full shaft inside generous margins. Realistic helical threads and tooling marks. No vector, cartoon, text, logos, packaging, hands or extra loose components. Subject: Socket Head Cap Screws."
+    },
+    {
+      "productId": "socket-button-screw",
+      "file": "/assets/products/screw-families/socket-button-screw-photo.jpg",
+      "subject": "Socket Button Head Screws",
+      "kind": "ai-generated-product-visualization",
+      "prompt": "Replace only the product in the reference photo. Preserve warm grey/beige tabletop, blurred warm grey workshop wall, soft golden window light from upper left, shadows, lens, texture and horizontal 3:2 framing. One physically accurate silver machined steel fastener, lying diagonally in right-center with head or socket visible and full shaft inside generous margins. Realistic helical threads and tooling marks. No vector, cartoon, text, logos, packaging, hands or extra loose components. Subject: Socket Button Head Screws."
+    },
+    {
+      "productId": "low-head-socket-screw",
+      "file": "/assets/products/screw-families/low-head-socket-screw-photo.jpg",
+      "subject": "Low Head Socket Screws",
+      "kind": "ai-generated-product-visualization",
+      "prompt": "Replace only the product in the reference photo. Preserve warm grey/beige tabletop, blurred warm grey workshop wall, soft golden window light from upper left, shadows, lens, texture and horizontal 3:2 framing. One physically accurate silver machined steel fastener, lying diagonally in right-center with head or socket visible and full shaft inside generous margins. Realistic helical threads and tooling marks. No vector, cartoon, text, logos, packaging, hands or extra loose components. Subject: Low Head Socket Screws."
+    },
+    {
+      "productId": "phillips-countersunk-screw",
+      "file": "/assets/products/screw-families/phillips-countersunk-screw-photo.jpg",
+      "subject": "Phillips Countersunk Screws",
+      "kind": "ai-generated-product-visualization",
+      "prompt": "Replace only the product in the reference photo. Preserve warm grey/beige tabletop, blurred warm grey workshop wall, soft golden window light from upper left, shadows, lens, texture and horizontal 3:2 framing. One physically accurate silver machined steel fastener, lying diagonally in right-center with head or socket visible and full shaft inside generous margins. Realistic helical threads and tooling marks. No vector, cartoon, text, logos, packaging, hands or extra loose components. Subject: Phillips Countersunk Screws."
+    },
+    {
+      "productId": "slotted-cylinder-screw",
+      "file": "/assets/products/screw-families/slotted-cylinder-screw-photo.jpg",
+      "subject": "Slotted Cylindrical Head Screws",
+      "kind": "ai-generated-product-visualization",
+      "prompt": "Replace only the product in the reference photo. Preserve warm grey/beige tabletop, blurred warm grey workshop wall, soft golden window light from upper left, shadows, lens, texture and horizontal 3:2 framing. One physically accurate silver machined steel fastener, lying diagonally in right-center with head or socket visible and full shaft inside generous margins. Realistic helical threads and tooling marks. No vector, cartoon, text, logos, packaging, hands or extra loose components. Subject: Slotted Cylindrical Head Screws."
+    },
+    {
+      "productId": "flat-point-set-screw",
+      "file": "/assets/products/screw-families/flat-point-set-screw-photo.jpg",
+      "subject": "Flat Point Socket Set Screws",
+      "kind": "ai-generated-product-visualization",
+      "prompt": "Replace only the product in the reference photo. Preserve warm grey/beige tabletop, blurred warm grey workshop wall, soft golden window light from upper left, shadows, lens, texture and horizontal 3:2 framing. One physically accurate silver machined steel fastener, lying diagonally in right-center with head or socket visible and full shaft inside generous margins. Realistic helical threads and tooling marks. No vector, cartoon, text, logos, packaging, hands or extra loose components. Subject: Flat Point Socket Set Screws."
+    },
+    {
+      "productId": "shoulder-screw",
+      "file": "/assets/products/screw-families/shoulder-screw-photo.jpg",
+      "subject": "Shoulder Screws",
+      "kind": "ai-generated-product-visualization",
+      "prompt": "Replace only the product in the reference photo. Preserve warm grey/beige tabletop, blurred warm grey workshop wall, soft golden window light from upper left, shadows, lens, texture and horizontal 3:2 framing. One physically accurate silver machined steel fastener, lying diagonally in right-center with head or socket visible and full shaft inside generous margins. Realistic helical threads and tooling marks. No vector, cartoon, text, logos, packaging, hands or extra loose components. Subject: Shoulder Screws."
+    },
+    {
+      "productId": "knurled-thumb-screw",
+      "file": "/assets/products/screw-families/knurled-thumb-screw-photo.jpg",
+      "subject": "Knurled Thumb Screws",
+      "kind": "ai-generated-product-visualization",
+      "prompt": "Replace only the product in the reference photo. Preserve warm grey/beige tabletop, blurred warm grey workshop wall, soft golden window light from upper left, shadows, lens, texture and horizontal 3:2 framing. One physically accurate silver machined steel fastener, lying diagonally in right-center with head or socket visible and full shaft inside generous margins. Realistic helical threads and tooling marks. No vector, cartoon, text, logos, packaging, hands or extra loose components. Subject: Knurled Thumb Screws."
+    },
+    {
+      "productId": "sems-screw",
+      "file": "/assets/products/screw-families/sems-screw-photo.jpg",
+      "subject": "SEMS Washer Assembly Screws",
+      "kind": "ai-generated-product-visualization",
+      "prompt": "Replace only the product in the reference photo. Preserve warm grey/beige tabletop, blurred warm grey workshop wall, soft golden window light from upper left, shadows, lens, texture and horizontal 3:2 framing. One physically accurate silver machined steel fastener, lying diagonally in right-center with head or socket visible and full shaft inside generous margins. Realistic helical threads and tooling marks. No vector, cartoon, text, logos, packaging, hands or extra loose components. Subject: SEMS Washer Assembly Screws."
+    },
+    {
+      "productId": "captive-screw",
+      "file": "/assets/products/screw-families/captive-screw-photo.jpg",
+      "subject": "Captive Screws",
+      "kind": "ai-generated-product-visualization",
+      "prompt": "Replace only the product in the reference photo. Preserve warm grey/beige tabletop, blurred warm grey workshop wall, soft golden window light from upper left, shadows, lens, texture and horizontal 3:2 framing. One physically accurate silver machined steel fastener, lying diagonally in right-center with head or socket visible and full shaft inside generous margins. Realistic helical threads and tooling marks. No vector, cartoon, text, logos, packaging, hands or extra loose components. Subject: Captive Screws."
+    },
+    {
+      "productId": "hex-socket-flange-screw",
+      "file": "/assets/products/screw-families/hex-socket-flange-screw-photo.jpg",
+      "subject": "Socket Flange Head Screws",
+      "kind": "ai-generated-product-visualization",
+      "prompt": "Replace only the product in the reference photo. Preserve warm grey/beige tabletop, blurred warm grey workshop wall, soft golden window light from upper left, shadows, lens, texture and horizontal 3:2 framing. One physically accurate silver machined steel fastener, lying diagonally in right-center with head or socket visible and full shaft inside generous margins. Realistic helical threads and tooling marks. No vector, cartoon, text, logos, packaging, hands or extra loose components. Subject: Socket Flange Head Screws."
+    },
+    {
+      "productId": "fitted-hex-bolt",
+      "file": "/assets/products/screw-families/fitted-hex-bolt-photo.jpg",
+      "subject": "Hex Head Fitted Bolts",
+      "kind": "ai-generated-product-visualization",
+      "prompt": "Replace only the product in the reference photo. Preserve warm grey/beige tabletop, blurred warm grey workshop wall, soft golden window light from upper left, shadows, lens, texture and horizontal 3:2 framing. One physically accurate silver machined steel fastener, lying diagonally in right-center with head or socket visible and full shaft inside generous margins. Realistic helical threads and tooling marks. No vector, cartoon, text, logos, packaging, hands or extra loose components. Subject: Hex Head Fitted Bolts."
+    },
+    {
+      "productId": "square-head-bolt",
+      "file": "/assets/products/screw-families/square-head-bolt-photo.jpg",
+      "subject": "Square Head Bolts",
+      "kind": "ai-generated-product-visualization",
+      "prompt": "Replace only the product in the reference photo. Preserve warm grey/beige tabletop, blurred warm grey workshop wall, soft golden window light from upper left, shadows, lens, texture and horizontal 3:2 framing. One physically accurate silver machined steel fastener, lying diagonally in right-center with head or socket visible and full shaft inside generous margins. Realistic helical threads and tooling marks. No vector, cartoon, text, logos, packaging, hands or extra loose components. Subject: Square Head Bolts."
+    },
+    {
+      "productId": "eye-bolt",
+      "file": "/assets/products/screw-families/eye-bolt-photo.jpg",
+      "subject": "Eye Bolts",
+      "kind": "ai-generated-product-visualization",
+      "prompt": "Replace only the product in the reference photo. Preserve warm grey/beige tabletop, blurred warm grey workshop wall, soft golden window light from upper left, shadows, lens, texture and horizontal 3:2 framing. One physically accurate silver machined steel fastener, lying diagonally in right-center with head or socket visible and full shaft inside generous margins. Realistic helical threads and tooling marks. No vector, cartoon, text, logos, packaging, hands or extra loose components. Subject: Eye Bolts."
+    },
+    {
+      "productId": "countersunk-drilling-screw",
+      "file": "/assets/products/screw-families/countersunk-drilling-screw-photo.jpg",
+      "subject": "Countersunk Self-Drilling Screws",
+      "kind": "ai-generated-product-visualization",
+      "prompt": "Replace only the product in the reference photo. Preserve warm grey/beige tabletop, blurred warm grey workshop wall, soft golden window light from upper left, shadows, lens, texture and horizontal 3:2 framing. One physically accurate silver machined steel fastener, lying diagonally in right-center with head or socket visible and full shaft inside generous margins. Realistic helical threads and tooling marks. No vector, cartoon, text, logos, packaging, hands or extra loose components. Subject: Countersunk Self-Drilling Screws."
+    },
+    {
+      "productId": "hex-head-drilling-screw",
+      "file": "/assets/products/screw-families/hex-head-drilling-screw-photo.jpg",
+      "subject": "Hex Head Self-Drilling Screws",
+      "kind": "ai-generated-product-visualization",
+      "prompt": "Replace only the product in the reference photo. Preserve warm grey/beige tabletop, blurred warm grey workshop wall, soft golden window light from upper left, shadows, lens, texture and horizontal 3:2 framing. One physically accurate silver machined steel fastener, lying diagonally in right-center with head or socket visible and full shaft inside generous margins. Realistic helical threads and tooling marks. No vector, cartoon, text, logos, packaging, hands or extra loose components. Subject: Hex Head Self-Drilling Screws."
+    }
+  ]
+}

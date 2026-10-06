@@ -41,6 +41,6 @@ for (const [route, meta] of Object.entries(routes)) {
   await mkdir(directory, { recursive: true });
   await writeFile(outputFile, html);
 }
-await writeFile(join(out, 'README.txt'), `Near Fastener website replica\n\n${Object.keys(routes).length} HTML pages. All images, icons, styles and scripts are local.\nOpen index.html directly, or upload this entire folder to a static web server.\nContact / RFQ forms validate fields and export a local request file; they do not send messages or upload drawings.\nCompany placeholders and source copy are preserved for later editing.\n`);
+await writeFile(join(out, 'README.txt'), `Near Fastener website replica\n\n${Object.keys(routes).length} HTML pages. All images, icons, styles and scripts are local.\nOpen index.html directly, or upload this entire folder to a static web server.\nRFQ submissions require the same-origin Cloudflare Worker /api/rfq endpoint, private R2 storage and configured Resend credentials. Offline files and static-only hosting cannot submit RFQs. Contact forms still export a local request file.\nCompany placeholders and source copy are preserved for later editing.\n`);
 console.log(`Exported ${Object.keys(routes).length} pages to ${out}`);
 await writeFile(manifest, JSON.stringify(Object.keys(routes)) + '\n');

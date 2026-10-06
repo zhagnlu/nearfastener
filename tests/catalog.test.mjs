@@ -79,3 +79,38 @@ test('catalog generated pages on disk match the source data', async () => {
     assert.equal(await readFile(new URL(`../content/pages/${file}`, import.meta.url), 'utf8'), html, file);
   }
 });
+
+test('primary product families partition the catalog while alternate browsing keeps old routes', async () => {
+  const roots = source.categories.filter((category) => category.status === 'published' && !category.parentId);
+  assert.deepEqual(roots.map((category) => category.id), ['bolts', 'screws', 'nuts', 'studs-and-rods', 'washers', 'custom-fasteners']);
+  const pages = catalogPages(source, routes);
+  for (const product of source.products.filter((item) => item.status === 'published')) {
+    assert.equal(roots.filter((category) => productsForCategory(source, category.id).some((item) => item.id === product.id)).length, 1, product.id);
+    const primary = source.categories.find((category) => category.id === product.primaryCategoryId);
+    assert.equal(primary.navigationGroup ?? 'family', 'family', product.id);
+    const html = await readFile(new URL(`../content/pages/${routes[product.path].file}`, import.meta.url), 'utf8');
+    const root = roots.find((category) => productsForCategory(source, category.id).some((item) => item.id === product.id));
+    assert.ok(html.match(/<nav\b[^>]*>[\s\S]*?<\/nav>/)[0].includes(`href="${root.path}"`), product.id);
+  }
+  assert.match(pages.get('/products/bolts').html, /Browse by Strength/);
+  assert.match(pages.get('/products/bolts').html, /Browse by Application/);
+  assert.match(pages.get('/products/screws').html, /Browse by Head Style/);
+  assert.equal(source.categories.find((item) => item.id === 'special-bolts').parentId, 'bolts');
+});
+
+test('custom manufacturing page supports factory bulk and SEMS inquiries', () => {
+  const html = catalogPages(source, routes).get('/products/custom-fasteners').html;
+  assert.ok(!html.includes('Products in this category are being updated.'));
+  assert.ok(html.includes('Factory Bulk Orders'));
+  assert.ok(html.includes('href="/product/sems-screw"'));
+  assert.ok(html.includes('href="/rfq"'));
+});
+
+test('homepage and footer use the same root categories as the product directory', async () => {
+  const expected = source.categories.filter((item) => item.status === 'published' && !item.parentId).map((item) => item.path);
+  const footer = await readFile(new URL('../content/footer.html', import.meta.url), 'utf8');
+  const home = await readFile(new URL('../content/pages/home.html', import.meta.url), 'utf8');
+  const footerProducts = footer.match(/<h4\b[^>]*>Products<\/h4><ul\b[^>]*>([\s\S]*?)<\/ul>/)[1];
+  const homeProducts = home.match(/<section\b[^>]*>(?:(?!<section\b)[\s\S])*?Product Categories[\s\S]*?<\/section>/)[0];
+  for (const html of [footerProducts, homeProducts]) assert.deepEqual([...html.matchAll(/href="([^"]+)"/g)].map((match) => match[1]), expected);
+});

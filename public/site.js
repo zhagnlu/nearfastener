@@ -118,7 +118,7 @@ function initNearFastener() {
     const showFeedback = (message, error = false) => {
       feedback.hidden = false;
       feedback.classList.toggle('form-error', error);
-      feedback.replaceChildren(document.createTextNode(message));
+      feedback.replaceChildren(document.createTextNode(t(message)));
     };
     const checkFile = (file) => {
       if (!file) { drawing = null; return; }
@@ -159,9 +159,50 @@ function initNearFastener() {
       }
       dropzone.addEventListener('drop', (event) => checkFile(event.dataTransfer?.files?.[0]));
     }
-    form.addEventListener('submit', (event) => {
+    let submissionId = null;
+    let submitting = false;
+    let submitted = false;
+    form.addEventListener('submit', async (event) => {
       event.preventDefault();
       if (!form.reportValidity()) return;
+      if (form.hasAttribute('data-rfq-submit')) {
+        if (submitting || submitted) return;
+        const button = form.querySelector('button[type="submit"]');
+        if (location.protocol === 'file:') { showFeedback('Online submission is unavailable here. Please email info@nearfastener.com with your requirements and drawing.', true); return; }
+        submissionId ??= crypto.randomUUID();
+        const data = new FormData(form);
+        data.set('submission_id', submissionId);
+        data.set('language', document.documentElement.lang || 'en');
+        const productId = new URLSearchParams(location.search).get('product_id');
+        if (productId) data.set('product_id', productId);
+        if (drawing) data.set('drawing', drawing, drawing.name);
+        submitting = true;
+        button.disabled = true;
+        showFeedback('Submitting your request...');
+        try {
+          const response = await fetch('/api/rfq', { method: 'POST', body: data, signal: AbortSignal.timeout(45000) });
+          const result = await response.json();
+          if (!response.ok) {
+            const messages = {
+              not_configured: 'Online submission is not enabled yet. Please email info@nearfastener.com with your requirements and drawing.',
+              too_large: 'The selected file exceeds the 20 MB limit.',
+              invalid_file: 'Please choose a PDF, CAD, Office document, or JPG/PNG image.',
+              invalid: 'Please check the required fields and email address.',
+            };
+            showFeedback(messages[result.error] || 'Submission failed. Please try again or email info@nearfastener.com.', true);
+          } else if (result.id && ['notified', 'queued'].includes(result.status)) {
+            submitted = true;
+            showFeedback(result.status === 'notified' ? 'Your request has been saved and the email notification has been sent.' : 'Your request has been saved. The email notification is pending and will be retried.');
+            const reference = document.createElement('p');
+            reference.textContent = `${t('Request reference')}: ${result.id}`;
+            reference.dataset.noTranslate = '';
+            feedback.append(reference);
+          } else { showFeedback('Submission failed. Please try again or email info@nearfastener.com.', true); }
+        } catch { showFeedback('Unable to confirm submission. Please retry with this form or email info@nearfastener.com.', true); }
+        finally { submitting = false; button.disabled = submitted; }
+        feedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        return;
+      }
       const entries = [...new FormData(form).entries()].filter(([, value]) => typeof value === 'string' && value.trim());
       const body = entries.map(([key, value]) => `${t(form.elements.namedItem(key)?.labels?.[0]?.textContent || key.replaceAll('_', ' '))}: ${value}`).join('\n\n');
       const text = `NEAR FASTENER — ${t(form.dataset.previewForm === 'rfq' ? 'Request a Quote' : 'Contact Us')}\n\n${body}${drawing ? `\n\n${t('Selected drawing')}: ${drawing.name}` : ''}\n\n${t('This request has not been sent. A selected drawing is not included in this text file.')}\n`;

@@ -1,5 +1,6 @@
 // Pure catalog validation and rendering, shared by the builder and tests.
 import { detailPages, validateDetails } from './catalog-detail.mjs';
+import { customManufacturing } from './custom-manufacturing.mjs';
 const escape = (value) => String(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#39;');
 const requireValue = (condition, message) => { if (!condition) throw new Error(message); };
 const nonempty = (value) => typeof value === 'string' && value.trim().length > 0;
@@ -24,6 +25,7 @@ export function validateCatalog(catalog, routes) {
       if (published(item)) requireValue(nonempty(item.description), `Missing description: ${item.id}`);
       if (kind === 'category') {
         requireValue(nonempty(item.kind), `Missing category kind: ${item.id}`);
+        requireValue(item.navigationGroup === undefined || ['family', 'head-style', 'performance', 'application'].includes(item.navigationGroup), `Invalid navigation group: ${item.id}`);
         requireValue(Array.isArray(item.aliases) && item.aliases.every(nonempty), `Invalid aliases: ${item.id}`);
       } else if (published(item) && !item.detail) {
         requireValue(routes[item.path] && !routes[item.path].catalogGenerated, `Missing product detail route: ${item.path}`);
@@ -77,7 +79,16 @@ export function productsForCategory(catalog, id) {
 
 const card = (item) => `<a class="catalog-card group bg-white rounded-card overflow-hidden border border-border hover:shadow-xl transition-all duration-300 hover:-translate-y-1" href="${escape(item.path)}">${item.image ? `<div class="aspect-[3/2] overflow-hidden"><img src="${escape(item.image)}" alt="${escape(item.title)}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy"></div>` : ''}<div class="p-5"><h2 class="font-semibold text-foreground text-lg mb-2 group-hover:text-accent transition-colors">${escape(item.title)}</h2>${item.standard ? `<p class="text-xs font-mono text-teal mb-2">${escape(item.standard)}</p>` : ''}<p class="text-sm text-muted-foreground line-clamp-2">${escape(item.description)}</p></div></a>`;
 const grid = (items) => `<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">${items.map(card).join('')}</div>`;
+// Homepage and product directory share the same published top-level categories.
+export function homepageCategories(catalog) {
+  return `<section class="py-20 lg:py-24 bg-secondary"><div class="max-w-max-content mx-auto px-4 lg:px-8"><div class="text-center mb-12"><h2 class="text-3xl lg:text-4xl font-bold text-primary mb-3">Product Categories</h2><p class="text-muted-foreground max-w-xl mx-auto">Browse our full range of industrial fasteners by product type.</p></div>${grid(catalog.categories.filter((item) => published(item) && !item.parentId))}</div></section>`;
+}
+export function footerCategories(catalog) {
+  return catalog.categories.filter((item) => published(item) && !item.parentId).map((item) => `<li><a class="text-sm text-gray-400 hover:text-white transition-colors" href="${escape(item.path)}">${escape(item.title)}</a></li>`).join('');
+}
 const empty = '<div class="text-center py-16"><p class="text-muted-foreground mb-4">Products in this category are being updated.</p><a class="text-accent hover:underline font-semibold" href="/rfq">Request a custom quote instead</a></div>';
+const categorySection = (title, body) => `<section class="catalog-group"><h2 class="text-2xl font-bold text-foreground mb-6">${escape(title)}</h2>${body}</section>`;
+const navigationGroups = [['family', 'Product Families'], ['head-style', 'Browse by Head Style'], ['performance', 'Browse by Strength'], ['application', 'Browse by Application']];
 
 export function catalogPages(catalog, routes) {
   validateCatalog(catalog, routes);
@@ -87,7 +98,7 @@ export function catalogPages(catalog, routes) {
   const index = routes['/products'];
   requireValue(index, 'Missing /products route');
   const intro = 'Browse our full range of industrial fasteners by product type. Each product is available in multiple standards, materials, and sizes.';
-  const cta = '<section class="py-12 bg-gradient-to-r from-accent to-amber-hover"><div class="max-w-max-content mx-auto px-4 lg:px-8 text-center"><h2 class="text-2xl font-bold text-white mb-3">Need a Custom Fastener?</h2><p class="text-white/80 mb-6">Send your drawing or specification and get a quote within 24 hours.</p><a class="inline-block bg-white text-accent font-bold px-8 py-3 rounded-card hover:bg-gray-100 transition-colors" href="/rfq">Request a Quote</a></div></section>';
+  const cta = customManufacturing(catalog);
   pages.set('/products', { ...index, catalogGenerated: true, html: `<main id="main-content" class="flex-1"><div class="pt-20"><section class="bg-steel-dark py-16"><div class="max-w-max-content mx-auto px-4 lg:px-8"><h1 class="text-3xl lg:text-4xl font-bold text-white mb-3">Our Products</h1><p class="text-gray-400 max-w-2xl">${intro}</p></div></section><section class="py-16"><div class="max-w-max-content mx-auto px-4 lg:px-8">${grid(categories.filter((item) => !item.parentId))}</div></section>${cta}</div></main>\n` });
   for (const category of categories) {
     const ancestors = [];
@@ -96,7 +107,12 @@ export function catalogPages(catalog, routes) {
     const breadcrumbs = [{ path: '/', title: 'Home' }, { path: '/products', title: 'Products' }, ...ancestors].map((item) => `<a class="hover:text-white" href="${escape(item.path)}">${escape(item.title)}</a><span class="catalog-separator" aria-hidden="true"></span>`).join('');
     const children = categories.filter((item) => item.parentId === category.id);
     const products = productsForCategory(catalog, category.id);
-    const html = `<main id="main-content" class="flex-1"><div class="pt-20"><section class="bg-steel-dark py-12"><div class="max-w-max-content mx-auto px-4 lg:px-8"><nav class="catalog-breadcrumb flex items-center gap-2 text-sm text-gray-400 mb-4">${breadcrumbs}<span class="text-white">${escape(category.title)}</span></nav><h1 class="text-3xl lg:text-4xl font-bold text-white mb-2">${escape(category.title)}</h1><p class="text-gray-400 max-w-2xl">${escape(category.description)}</p></div></section><section class="py-16"><div class="catalog-sections max-w-max-content mx-auto px-4 lg:px-8">${children.length ? grid(children) : ''}${products.length ? grid(products) : children.length ? '' : empty}</div></section></div></main>\n`;
+    const childSections = navigationGroups.map(([group, title]) => {
+      const items = children.filter((item) => (item.navigationGroup ?? 'family') === group);
+      return items.length ? categorySection(title, grid(items)) : '';
+    }).join('');
+    const productSection = category.id === 'custom-fasteners' ? customManufacturing(catalog, true) : products.length ? (children.length ? categorySection('All Products', grid(products)) : grid(products)) : children.length ? '' : empty;
+    const html = `<main id="main-content" class="flex-1"><div class="pt-20"><section class="bg-steel-dark py-12"><div class="max-w-max-content mx-auto px-4 lg:px-8"><nav class="catalog-breadcrumb flex items-center gap-2 text-sm text-gray-400 mb-4">${breadcrumbs}<span class="text-white">${escape(category.title)}</span></nav><h1 class="text-3xl lg:text-4xl font-bold text-white mb-2">${escape(category.title)}</h1><p class="text-gray-400 max-w-2xl">${escape(category.description)}</p></div></section><section class="py-16"><div class="catalog-sections max-w-max-content mx-auto px-4 lg:px-8">${childSections}${productSection}</div></section></div></main>\n`;
     pages.set(category.path, { title: `${category.title} | Near Fastener`, description: category.description, file: `${category.path.slice(1)}.html`, catalogGenerated: true, html });
   }
   for (const [path, page] of detailPages(catalog)) pages.set(path, page);

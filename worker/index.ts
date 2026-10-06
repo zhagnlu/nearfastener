@@ -1,9 +1,13 @@
+import { handleRfq, retryRfq, type RfqBucket } from './rfq.mjs';
 /** Cloudflare Worker entry point for the vinext-starter template. */
 import { handleImageOptimization, DEFAULT_DEVICE_SIZES, DEFAULT_IMAGE_SIZES } from "vinext/server/image-optimization";
 import handler from "vinext/server/app-router-entry";
 
 interface Env {
   ASSETS: Fetcher;
+  RFQ_STORAGE?: RfqBucket;
+  RESEND_API_KEY?: string;
+  RFQ_FROM?: string;
   DB: D1Database;
   IMAGES: {
     input(stream: ReadableStream): {
@@ -26,8 +30,14 @@ interface ExecutionContext {
 // const imageConfig: ImageConfig = { dangerouslyAllowSVG: true };
 
 const worker = {
+  async scheduled(_event: unknown, env: Env, ctx: ExecutionContext) {
+    ctx.waitUntil(retryRfq(env));
+  },
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     const url = new URL(request.url);
+    if (url.pathname === "/api/rfq" || url.pathname.startsWith("/api/rfq/attachment/")) {
+      try { return (await handleRfq(request, env)) ?? Response.json({ error: "not_found" }, { status: 404 }); } catch { return Response.json({ error: "unavailable" }, { status: 503, headers: { "Cache-Control": "no-store" } }); }
+    }
 
     if (url.pathname === "/_vinext/image") {
       const allowedWidths = [...DEFAULT_DEVICE_SIZES, ...DEFAULT_IMAGE_SIZES];
