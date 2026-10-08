@@ -55,3 +55,12 @@ test('static RFQ action resolves to a real file and retains the product identity
   assert.match(rfq, /data-preview-form="rfq"/);
   assert.ok(rfq.includes(`data-rfq-product-id="${id}"`));
 });
+
+test('all product pages carry identity and specification fields into RFQ', async () => {
+  for (const item of catalog.products.filter((item) => item.status === 'published')) {
+    const html = await readFile(resolve(root, 'content/pages', routes[item.path].file), 'utf8');
+    assert.equal((html.match(/data-product-request/g) ?? []).length, 1, item.id);
+    assert.ok(html.includes(`name="product_id" value="${item.id}"`), item.id);
+    for (const name of ['diameter', 'length', 'material', 'property_class', 'surface_treatment', 'quantity']) assert.ok(html.includes(`name="${name}"`), `${item.id}/${name}`);
+  }
+});

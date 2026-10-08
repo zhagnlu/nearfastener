@@ -28,7 +28,7 @@
       "id": "bolts",
       "path": "/products/bolts",
       "title": "Bolts",
-      "description": "Explore product families and send your drawing or specification for a quotation.",
+      "description": "Hex, special and anchor bolts, with options for structural and high-strength applications.",
       "image": "/assets/products/hex-bolts/hex-head-bolt-steel-close-up-b894f812.jpg",
       "status": "published",
       "kind": "type",
@@ -41,7 +41,7 @@
       "id": "screws",
       "path": "/products/screws",
       "title": "Screws",
-      "description": "Explore product families and send your drawing or specification for a quotation.",
+      "description": "Socket, machine, set, shoulder, thumb, assembly and self-drilling screws.",
       "image": "/assets/products/screw-families/hex-socket-countersunk-screw-photo.jpg",
       "status": "published",
       "kind": "type",
@@ -55,7 +55,7 @@
       "id": "nuts",
       "path": "/products/nuts",
       "title": "Nuts",
-      "description": "Explore product families and send your drawing or specification for a quotation.",
+      "description": "Hex nuts for matching bolt and stud assemblies; share your drawing for special requirements.",
       "image": "/assets/products/hex-nuts/hex-nut-steel-machined-13f37182.jpg",
       "status": "published",
       "kind": "type",
@@ -68,14 +68,15 @@
       "id": "studs-and-rods",
       "path": "/products/studs-and-rods",
       "title": "Studs and Threaded Rods",
-      "description": "Explore product families and send your drawing or specification for a quotation.",
-      "image": "/assets/products/threaded-rods/full-thread-steel-rods-bundle-29ea2752.jpg",
+      "description": "Stud bolts and threaded rods for project and assembly requirements.",
+      "image": "/assets/products/threaded-rods/studs-threaded-rods-pure-product-v2.jpg",
       "status": "published",
       "kind": "type",
       "parentId": null,
       "aliases": [
         "螺柱与螺杆"
-      ]
+      ],
+      "imageKind": "generated"
     },
     {
       "id": "washers",
@@ -165,11 +166,12 @@
       "path": "/products/threaded-rods",
       "title": "Threaded Rods",
       "description": "Full-thread and double-thread rods in various lengths for construction and industrial applications.",
-      "image": "/assets/products/threaded-rods/full-thread-steel-rods-bundle-29ea2752.jpg",
+      "image": "/assets/products/threaded-rods/studs-threaded-rods-pure-product-v2.jpg",
       "status": "published",
       "kind": "type",
       "parentId": "studs-and-rods",
-      "aliases": []
+      "aliases": [],
+      "imageKind": "generated"
     },
     {
       "id": "anchor-bolts",

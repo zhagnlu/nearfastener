@@ -891,5 +891,22 @@
   "Your request has been saved and the email notification has been sent.": "تم حفظ الطلب وإرسال إشعار البريد الإلكتروني.",
   "Your request has been saved. The email notification is pending and will be retried.": "تم حفظ الطلب. إشعار البريد قيد الانتظار وستتم إعادة المحاولة.",
   "Request reference": "رقم الطلب",
-  "Unable to confirm submission. Please retry with this form or email info@nearfastener.com.": "تعذر تأكيد الإرسال. أعد المحاولة بهذه الاستمارة أو راسل info@nearfastener.com."
+  "Unable to confirm submission. Please retry with this form or email info@nearfastener.com.": "تعذر تأكيد الإرسال. أعد المحاولة بهذه الاستمارة أو راسل info@nearfastener.com.",
+  "Custom Fasteners for Factory Production": "مثبتات مخصصة للإنتاج الصناعي",
+  "Bolts, Screws, Nuts & Custom Fasteners": "براغي ومسامير وصواميل ومثبتات مخصصة",
+  "Share your drawing, quantity and delivery requirements for a quotation.": "شارك الرسم والكمية ومتطلبات التسليم للحصول على عرض سعر.",
+  "AI-generated manufacturing illustration.": "رسم توضيحي للتصنيع مولّد بالذكاء الاصطناعي.",
+  "Bulk Packing and Delivery": "التغليف والتسليم بالدفعات",
+  "Prepare your drawing, material, finish, batch quantity and delivery destination.": "جهّز الرسم والمادة والتشطيب وكمية الدفعة ووجهة التسليم.",
+  "Hex, special and anchor bolts, with options for structural and high-strength applications.": "براغٍ سداسية وخاصة ومسامير تثبيت لتطبيقات الإنشاءات والمقاومة العالية.",
+  "Socket, machine, set, shoulder, thumb, assembly and self-drilling screws.": "براغٍ بسداسي داخلي وآلية وتثبيت وبكتف ويدوية ومجمعة وذاتية الحفر.",
+  "Hex nuts for matching bolt and stud assemblies; share your drawing for special requirements.": "صواميل سداسية لمجموعات البراغي والمسامير الملولبة؛ أرسل الرسم للمتطلبات الخاصة.",
+  "Stud bolts and threaded rods for project and assembly requirements.": "مسامير وقضبان ملولبة لتلبية احتياجات المشاريع والتجميع.",
+  "Annual Demand": "الطلب السنوي",
+  "Delivery Schedule": "جدول التسليم",
+  "Custom Fasteners & OEM Bulk Supply | Near Fastener": "مثبتات مخصصة وتوريد OEM بالجملة | Near Fastener",
+  "Bolts, screws, nuts, studs, threaded rods, washers and custom fasteners for factory production.": "براغٍ ومسامير وصواميل وقضبان ملولبة ووردات ومثبتات مخصصة للإنتاج الصناعي.",
+  "Open Email Draft": "فتح مسودة البريد",
+  "This opens your email app. Review and send the message there.": "سيتم فتح تطبيق البريد. راجع الرسالة وأرسلها من هناك.",
+  "Your email draft is ready. Send it from your email app.": "مسودة البريد جاهزة. أرسلها من تطبيق البريد."
 }

@@ -50,11 +50,14 @@ test('saves specs and drawing, emails only fixed recipient with customer Reply-T
     assert.deepEqual(body.to, ['info@nearfastener.com']);
     assert.equal(body.reply_to, 'buyer@example.org');
     assert.match(body.text, /quantity: 5000/);
+    assert.match(body.text, /company: Assembly Factory/);
+    assert.match(body.text, /annual_demand: 60000 pcs/);
+    assert.match(body.text, /delivery_schedule: Monthly batches/);
     assert.match(body.text, /api\/rfq\/attachment\//);
     assert.equal(options.headers['Idempotency-Key'], `rfq-${id}`);
     return sent();
   };
-  const response = await handleRfq(request({ drawing: new File(['drawing bytes'], 'drawing.pdf') }), bindings, send);
+  const response = await handleRfq(request({ drawing: new File(['drawing bytes'], 'drawing.pdf'), company: 'Assembly Factory', annual_demand: '60000 pcs', delivery_schedule: 'Monthly batches' }), bindings, send);
   assert.equal(response.status, 201);
   assert.equal((await response.json()).status, 'notified');
   const record = JSON.parse(bindings.RFQ_STORAGE.data.get(`rfq/records/${id}.json`));

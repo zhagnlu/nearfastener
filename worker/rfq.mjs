@@ -1,7 +1,7 @@
 // Private R2 storage; Resend credentials stay in Worker secrets.
 const MAX_FILE = 20 * 1024 * 1024;
 const MAX_BODY = MAX_FILE + 128 * 1024;
-const fields = ['product', 'standard', 'diameter', 'length', 'thread_pitch', 'material', 'property_class', 'surface_treatment', 'quantity', 'destination', 'message', 'name', 'email', 'product_id', 'language'];
+const fields = ['product', 'standard', 'diameter', 'length', 'thread_pitch', 'material', 'property_class', 'surface_treatment', 'quantity', 'destination', 'message', 'name', 'email', 'product_id', 'language', 'company', 'annual_demand', 'delivery_schedule'];
 const json = (body, status = 200) => Response.json(body, { status, headers: { 'Cache-Control': 'no-store' } });
 const key = (id) => `rfq/records/${id}.json`;
 const pending = (id) => `rfq/pending/${id}`;

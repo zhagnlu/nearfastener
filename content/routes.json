@@ -1,7 +1,7 @@
 {
   "/": {
-    "title": "High Strength Fastener Manufacturer in China | Near Fastener",
-    "description": "Bolts, nuts, studs & custom fasteners per GB/DIN/ISO/ASTM standards. Factory direct, OEM manufacturing, material traceability. Request a quote today.",
+    "title": "Custom Fasteners & OEM Bulk Supply | Near Fastener",
+    "description": "From custom screws and bolts to SEMS assemblies, we support OEM production and factory purchasing based on your drawings and requirements.",
     "file": "home.html"
   },
   "/products/hex-bolts": {
@@ -12,7 +12,7 @@
   },
   "/products": {
     "title": "Industrial Fastener Products | Near Fastener",
-    "description": "Browse our full range of industrial fasteners: hex bolts, high strength bolts, structural bolts, nuts, stud bolts, threaded rods, washers, and anchor bolts.",
+    "description": "Bolts, screws, nuts, studs, threaded rods, washers and custom fasteners for factory production.",
     "file": "products.html",
     "catalogGenerated": true
   },
@@ -261,7 +261,7 @@
   },
   "/products/screws": {
     "title": "Screws | Near Fastener",
-    "description": "Explore product families and send your drawing or specification for a quotation.",
+    "description": "Socket, machine, set, shoulder, thumb, assembly and self-drilling screws.",
     "file": "products/screws.html",
     "catalogGenerated": true
   },
@@ -429,19 +429,19 @@
   },
   "/products/bolts": {
     "title": "Bolts | Near Fastener",
-    "description": "Explore product families and send your drawing or specification for a quotation.",
+    "description": "Hex, special and anchor bolts, with options for structural and high-strength applications.",
     "file": "products/bolts.html",
     "catalogGenerated": true
   },
   "/products/nuts": {
     "title": "Nuts | Near Fastener",
-    "description": "Explore product families and send your drawing or specification for a quotation.",
+    "description": "Hex nuts for matching bolt and stud assemblies; share your drawing for special requirements.",
     "file": "products/nuts.html",
     "catalogGenerated": true
   },
   "/products/studs-and-rods": {
     "title": "Studs and Threaded Rods | Near Fastener",
-    "description": "Explore product families and send your drawing or specification for a quotation.",
+    "description": "Stud bolts and threaded rods for project and assembly requirements.",
     "file": "products/studs-and-rods.html",
     "catalogGenerated": true
   }

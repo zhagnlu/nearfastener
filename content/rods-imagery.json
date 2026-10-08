@@ -1,0 +1,14 @@
+{
+  "tool": "built-in image_gen",
+  "referenceImage": "/assets/products/hex-bolts/hex-head-bolt-steel-close-up-b894f812.jpg",
+  "asset": {
+    "categoryIds": [
+      "studs-and-rods",
+      "threaded-rods"
+    ],
+    "file": "/assets/products/threaded-rods/studs-threaded-rods-pure-product-v2.jpg",
+    "subject": "Headless studs and threaded rods, without packaging",
+    "kind": "ai-generated-product-visualization",
+    "prompt": "Use case: product-mockup. Asset type: landscape 3:2 category product photograph for Studs and Threaded Rods. Reference image: provided hex bolt image only as a reference for warm beige tabletop, blurred warm gray workshop wall, softly cast window-light shapes, restrained industrial lighting and realistic steel color. Generate a NEW pure-product composition showing four straight cylindrical steel threaded rods and two double-ended headless studs lying diagonally on the same warm beige tabletop. All parts are headless, with no hex heads, no nuts, no washers. Full threaded rods have continuous accurate helical metric threads along their entire length, flat circular cut ends. Double-ended studs have threaded ends and short plain cylindrical centers. Parallel arrangement with small natural separations, length visibly greater than diameter, medium close view, all objects fully visible with generous margins and no cropping. Product geometry straight and precise, photorealistic metal texture. No boxes, packaging, straps, labels, papers, tools, people, text, logo or watermark. Show ONLY the threaded rods and studs on the tabletop. Match the reference background and lighting closely."
+  }
+}

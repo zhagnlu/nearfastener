@@ -1,3 +1,12 @@
+function contactEmailDraft(values, t = (text) => text) {
+  const subject = String(values.subject || 'Near Fastener enquiry').slice(0, 300);
+  const name = String(values.name || '').slice(0, 300);
+  const email = String(values.email || '').slice(0, 300);
+  const message = String(values.message || '').slice(0, 5000);
+  const body = `${t('Name')}: ${name}\n${t('Email')}: ${email}\n\n${message}`;
+  return `mailto:info@nearfastener.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+
 // Shared, dependency-free behavior for the app and the standalone HTML export.
 function initNearFastener() {
   const t = (text) => window.NearFastenerI18n?.t(text) ?? text;
@@ -201,6 +210,17 @@ function initNearFastener() {
         } catch { showFeedback('Unable to confirm submission. Please retry with this form or email info@nearfastener.com.', true); }
         finally { submitting = false; button.disabled = submitted; }
         feedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        return;
+      }
+      if (form.dataset.previewForm === 'contact') {
+        const data = new FormData(form);
+        const draft = document.createElement('a');
+        draft.href = contactEmailDraft(Object.fromEntries(data), t);
+        draft.textContent = t('Open Email Draft');
+        draft.className = 'download-request';
+        showFeedback('Your email draft is ready. Send it from your email app.');
+        feedback.append(document.createElement('br'), draft);
+        draft.click();
         return;
       }
       const entries = [...new FormData(form).entries()].filter(([, value]) => typeof value === 'string' && value.trim());

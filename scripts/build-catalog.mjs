@@ -3,7 +3,7 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { catalogPages, homepageCategories, footerCategories } from './catalog.mjs';
 import { customManufacturing } from './custom-manufacturing.mjs';
-import { rfqContext, productBreadcrumb } from './catalog-detail.mjs';
+import { rfqContext, productBreadcrumb, productRequest } from './catalog-detail.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 export async function buildCatalog() {
@@ -32,7 +32,11 @@ export async function buildCatalog() {
   for (const product of catalog.products.filter((item) => item.status === 'published' && !item.detail)) {
     const file = join(root, 'content/pages', routes[product.path].file);
     const html = await readFile(file, 'utf8');
-    const updated = html.replace(/<nav\b[^>]*>[\s\S]*?<\/nav>/, productBreadcrumb(catalog, product));
+    let updated = html.replace(/<nav\b[^>]*>[\s\S]*?<\/nav>/, productBreadcrumb(catalog, product));
+    updated = updated.replaceAll('href="/rfq"', `href="/rfq?product_id=${encodeURIComponent(product.id)}"`);
+    const requestMarker = /<!-- product-request:start -->[\s\S]*?<!-- product-request:end -->/;
+    const requestBlock = `<!-- product-request:start --><div class="max-w-max-content mx-auto px-4 lg:px-8 pb-12">${productRequest(product)}</div><!-- product-request:end -->`;
+    updated = requestMarker.test(updated) ? updated.replace(requestMarker, requestBlock) : updated.replace('</main>', `${requestBlock}</main>`);
     if (updated !== html) await writeFile(file, updated);
   }
   const footerFile = join(root, 'content/footer.html');

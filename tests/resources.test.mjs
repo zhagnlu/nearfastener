@@ -56,7 +56,7 @@ test('exported articles resolve offline images, product links, and RFQ links', a
     const page = join(root, 'static-site', file.replace(/\.html$/, '/index.html'));
     const html = await readFile(page, 'utf8');
     for (const [, value] of html.matchAll(/(?:src|href)="([^"]+)"/g)) {
-      if (/^(https?:|#)/.test(value)) continue;
+      if (/^(https?:|mailto:|tel:|#)/.test(value)) continue;
       await access(resolve(dirname(page), value.split(/[?#]/)[0]));
     }
     assert.equal((html.match(/class="whatsapp-float"/g) ?? []).length, 1);

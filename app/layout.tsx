@@ -4,8 +4,8 @@ import footer from "../content/footer.html?raw";
 import SiteEnhancements from "./SiteEnhancements";
 
 export const metadata: Metadata = {
-  title: "High Strength Fastener Manufacturer in China | Near Fastener",
-  description: "Bolts, nuts, studs and custom fasteners. GB / DIN / ISO / ASTM / EN standards. Near Fastener.",
+  title: "Custom Fasteners & OEM Bulk Supply | Near Fastener",
+  description: "From custom screws and bolts to SEMS assemblies, we support OEM production and factory purchasing based on your drawings and requirements.",
   icons: {
     icon: { url: "/assets/brand/nearfastener_flag_transparent.png", type: "image/png" },
     shortcut: "/assets/brand/nearfastener_flag_transparent.png",

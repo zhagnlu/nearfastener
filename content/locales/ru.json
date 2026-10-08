@@ -891,5 +891,22 @@
   "Your request has been saved and the email notification has been sent.": "Запрос сохранён, уведомление по электронной почте отправлено.",
   "Your request has been saved. The email notification is pending and will be retried.": "Запрос сохранён. Уведомление ожидает отправки и будет отправлено повторно.",
   "Request reference": "Номер запроса",
-  "Unable to confirm submission. Please retry with this form or email info@nearfastener.com.": "Не удалось подтвердить отправку. Повторите попытку в этой форме или напишите на info@nearfastener.com."
+  "Unable to confirm submission. Please retry with this form or email info@nearfastener.com.": "Не удалось подтвердить отправку. Повторите попытку в этой форме или напишите на info@nearfastener.com.",
+  "Custom Fasteners for Factory Production": "Крепёж на заказ для заводского производства",
+  "Bolts, Screws, Nuts & Custom Fasteners": "Болты, винты, гайки и крепёж на заказ",
+  "Share your drawing, quantity and delivery requirements for a quotation.": "Предоставьте чертёж, количество и требования к поставке для расчёта цены.",
+  "AI-generated manufacturing illustration.": "Иллюстрация производства, созданная ИИ.",
+  "Bulk Packing and Delivery": "Упаковка и поставка партиями",
+  "Prepare your drawing, material, finish, batch quantity and delivery destination.": "Подготовьте чертёж, материал, покрытие, объём партии и место поставки.",
+  "Hex, special and anchor bolts, with options for structural and high-strength applications.": "Шестигранные, специальные и анкерные болты для конструкций и высокопрочных соединений.",
+  "Socket, machine, set, shoulder, thumb, assembly and self-drilling screws.": "Винты с внутренним шестигранником, машинные, установочные, с буртиком, ручные, комбинированные и самосверлящие.",
+  "Hex nuts for matching bolt and stud assemblies; share your drawing for special requirements.": "Шестигранные гайки для болтов и шпилек; предоставьте чертёж для специальных требований.",
+  "Stud bolts and threaded rods for project and assembly requirements.": "Шпильки и резьбовые стержни для проектов и сборки.",
+  "Annual Demand": "Годовая потребность",
+  "Delivery Schedule": "График поставок",
+  "Custom Fasteners & OEM Bulk Supply | Near Fastener": "Крепёж на заказ и оптовые поставки OEM | Near Fastener",
+  "Bolts, screws, nuts, studs, threaded rods, washers and custom fasteners for factory production.": "Болты, винты, гайки, шпильки, резьбовые стержни, шайбы и крепёж на заказ для заводского производства.",
+  "Open Email Draft": "Открыть черновик письма",
+  "This opens your email app. Review and send the message there.": "Откроется почтовое приложение. Проверьте и отправьте сообщение в нём.",
+  "Your email draft is ready. Send it from your email app.": "Черновик письма готов. Отправьте его из почтового приложения."
 }

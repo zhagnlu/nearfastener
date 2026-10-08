@@ -891,5 +891,22 @@
   "Your request has been saved and the email notification has been sent.": "Solicitação salva e notificação por e-mail enviada.",
   "Your request has been saved. The email notification is pending and will be retried.": "Solicitação salva. A notificação está pendente e será tentada novamente.",
   "Request reference": "Referência da solicitação",
-  "Unable to confirm submission. Please retry with this form or email info@nearfastener.com.": "Não foi possível confirmar o envio. Tente novamente neste formulário ou escreva para info@nearfastener.com."
+  "Unable to confirm submission. Please retry with this form or email info@nearfastener.com.": "Não foi possível confirmar o envio. Tente novamente neste formulário ou escreva para info@nearfastener.com.",
+  "Custom Fasteners for Factory Production": "Fixadores sob medida para produção industrial",
+  "Bolts, Screws, Nuts & Custom Fasteners": "Parafusos, porcas e fixadores sob medida",
+  "Share your drawing, quantity and delivery requirements for a quotation.": "Envie desenho, quantidade e requisitos de entrega para uma cotação.",
+  "AI-generated manufacturing illustration.": "Ilustração de fabricação gerada por IA.",
+  "Bulk Packing and Delivery": "Embalagem e entrega em lotes",
+  "Prepare your drawing, material, finish, batch quantity and delivery destination.": "Prepare desenho, material, acabamento, quantidade do lote e destino.",
+  "Hex, special and anchor bolts, with options for structural and high-strength applications.": "Parafusos sextavados, especiais e de ancoragem para aplicações estruturais e de alta resistência.",
+  "Socket, machine, set, shoulder, thumb, assembly and self-drilling screws.": "Parafusos de sextavado interno, de máquina, de fixação, de ombro, manuais, combinados e autoperfurantes.",
+  "Hex nuts for matching bolt and stud assemblies; share your drawing for special requirements.": "Porcas sextavadas para conjuntos de parafusos e prisioneiros; envie desenhos para requisitos especiais.",
+  "Stud bolts and threaded rods for project and assembly requirements.": "Prisioneiros e barras roscadas para projetos e montagem.",
+  "Annual Demand": "Demanda anual",
+  "Delivery Schedule": "Plano de entrega",
+  "Custom Fasteners & OEM Bulk Supply | Near Fastener": "Fixadores sob medida e fornecimento OEM em lotes | Near Fastener",
+  "Bolts, screws, nuts, studs, threaded rods, washers and custom fasteners for factory production.": "Parafusos, porcas, prisioneiros, barras roscadas, arruelas e fixadores sob medida para produção industrial.",
+  "Open Email Draft": "Abrir rascunho de e-mail",
+  "This opens your email app. Review and send the message there.": "Seu aplicativo de e-mail será aberto. Revise e envie a mensagem nele.",
+  "Your email draft is ready. Send it from your email app.": "Seu rascunho está pronto. Envie-o pelo seu aplicativo de e-mail."
 }

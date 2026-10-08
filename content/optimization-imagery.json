@@ -1,0 +1,13 @@
+{
+  "tool": "built-in image_gen",
+  "assets": [
+    {
+      "path": "/assets/products/custom-fasteners/custom-fastener-family-hero-v2.jpg",
+      "prompt": "Use case: product-mockup. Asset type: landscape 3:2 hero photograph for a custom fastener manufacturer website. A carefully composed family of steel fasteners on a warm gray beige industrial tabletop: one upright large hex bolt, two horizontal socket head screws, one SEMS screw with flat and spring washers under its head, a shoulder screw, a threaded stud and two hex nuts. Mechanical geometry accurate, each fastener separate and clearly readable. A subtle unmarked engineering drawing beneath just one side of the group. Soft warm natural window light, neutral beige blurred workshop background, premium industrial catalog photography, believable metal textures, no packaging, no text, no logos, no watermark. Main product group centered-right, clear negative space left for website heading overlay, landscape composition. Image conveys made-to-drawing production and industrial bulk supply, not a specific real factory."
+    },
+    {
+      "path": "/assets/capabilities/fastener-batch-packing-v2.jpg",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 illustration of fastener factory batch packing. Clean professional industrial packing workbench, open corrugated cartons with rows of identical zinc plated socket head screws arranged in transparent compartment trays, a small group of identical SEMS screws with retained washers on the foreground table, stack of closed unmarked cartons softly blurred behind, inspection checklist blank without readable text. Believable screw geometry with true hexagonal socket recesses, neat repeat batch arrangement, no retail packaging, no people, no hands, no branding, no text, no watermark. Warm gray beige palette, soft natural light, realistic industrial editorial photography, calm understated appearance matching fastener product catalog photography. This is a conceptual illustration, not a documentary photo of any actual factory."
+    }
+  ]
+}
