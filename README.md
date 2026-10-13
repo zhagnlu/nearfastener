@@ -32,6 +32,24 @@ npm test               # 全站内容、图片、路由和 404 检查
 npm run export:static  # 重新生成独立 HTML 网站
 ```
 
+## ECS 自动部署
+
+`.github/workflows/deploy-ecs.yml` 只在推送 `push_renote` 分支时部署，手动运行也必须选择该分支。GitHub 安装依赖并执行 `npm test`，随后通过 SSH 上传 `static-site/` 到独立版本目录，原子切换 `current` 链接；HTTP 检查失败时恢复上一版本。首次部署没有历史版本可回滚。版本目录保留，需按服务器容量定期清理旧版本。
+
+在仓库 Settings → Secrets and variables → Actions 配置：
+
+| Secret | 内容 |
+| --- | --- |
+| `ECS_HOST` | ECS IPv4 公网地址或主机名 |
+| `ECS_USER` | 有部署目录写权限的 SSH 用户 |
+| `ECS_SSH_KEY` | 专用 SSH 私钥；对应公钥加入服务器该用户的 authorized_keys |
+| `ECS_KNOWN_HOSTS` | 经可信渠道核验的 SSH 主机公钥记录；非 22 端口使用 `[主机]:端口` 形式 |
+| `ECS_HEALTHCHECK_URL` | 指向该站 ECS 源站的完整 HTTP/HTTPS 地址，不经过 CDN 缓存 |
+| `ECS_PORT` | 可选，默认 `22` |
+| `ECS_DEPLOY_PATH` | 可选，默认 `/var/www/nearfastener`；使用无空格的绝对路径 |
+
+ECS 需预先安装 Nginx、Bash、tar，创建并授权部署目录。Nginx 的 root 指向部署目录下的 `current`，配置 `index index.html;` 和 `try_files $uri $uri/ =404;`，禁止访问点文件。SSH 安全组需允许部署 runner 访问。静态发布不包含 Worker 后端，`/api/rfq` 需单独配置后端或代理；正式域名还需填入 `content/site.json` 的 `url`，生成 canonical 和 sitemap。
+
 ## 编辑内容
 
 - `content/pages/`：每个页面的可编辑 HTML，路径与原站网址对应。
