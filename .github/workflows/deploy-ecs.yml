@@ -2,7 +2,7 @@ name: Deploy website to ECS
 
 on:
   push:
-    branches: [push_renote]
+    branches: [push_remote]
   workflow_dispatch:
 
 permissions:
@@ -15,7 +15,7 @@ concurrency:
 jobs:
   deploy:
     # Manual runs must also select the deployment branch.
-    if: github.ref == 'refs/heads/push_renote'
+    if: github.ref == 'refs/heads/push_remote'
     runs-on: ubuntu-latest
     timeout-minutes: 30
     defaults:
@@ -25,15 +25,7 @@ jobs:
       - uses: actions/checkout@v6
         with:
           persist-credentials: false
-      - uses: actions/setup-node@v6
-        with:
-          node-version: '22'
-          cache: npm
-      - name: Install dependencies
-        run: npm ci
-      - name: Build, export and test
-        run: npm test
-      - name: Upload and activate release
+      - name: Sync published files to ECS
         env:
           ECS_HOST: ${{ secrets.ECS_HOST }}
           ECS_PORT: ${{ secrets.ECS_PORT }}
@@ -41,10 +33,9 @@ jobs:
           ECS_SSH_KEY: ${{ secrets.ECS_SSH_KEY }}
           ECS_KNOWN_HOSTS: ${{ secrets.ECS_KNOWN_HOSTS }}
           ECS_DEPLOY_PATH: ${{ secrets.ECS_DEPLOY_PATH }}
-          ECS_HEALTHCHECK_URL: ${{ secrets.ECS_HEALTHCHECK_URL }}
         run: |
           set -euo pipefail
-          for name in ECS_HOST ECS_USER ECS_SSH_KEY ECS_KNOWN_HOSTS ECS_HEALTHCHECK_URL; do
+          for name in ECS_HOST ECS_USER ECS_SSH_KEY ECS_KNOWN_HOSTS; do
             if [[ -z "${!name}" ]]; then
               echo "::error::Missing required secret: $name"
               exit 1
@@ -56,7 +47,6 @@ jobs:
           [[ "$ECS_USER" =~ ^[a-zA-Z_][a-zA-Z0-9_-]*$ ]]
           [[ "$ECS_PORT" =~ ^[0-9]{1,5}$ ]] && (( ECS_PORT >= 1 && ECS_PORT <= 65535 ))
           [[ "$ECS_DEPLOY_PATH" =~ ^/[a-zA-Z0-9_/-]+$ && "$ECS_DEPLOY_PATH" != / ]]
-          [[ "$ECS_HEALTHCHECK_URL" =~ ^https?:// ]]
 
           ssh_dir="$RUNNER_TEMP/ecs-ssh"
           mkdir -p "$ssh_dir"
@@ -72,44 +62,15 @@ jobs:
             exit 1
           fi
           echo 'SSH private key format validated; connecting to ECS.'
-          ssh_options=(-i "$ssh_dir/key" -p "$ECS_PORT" -o BatchMode=yes -o StrictHostKeyChecking=yes -o "UserKnownHostsFile=$ssh_dir/known_hosts" -o ConnectTimeout=20 -o ServerAliveInterval=15)
+          ssh_options=(-i "$ssh_dir/key" -p "$ECS_PORT" -o BatchMode=yes -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes -o "UserKnownHostsFile=$ssh_dir/known_hosts" -o ConnectTimeout=20 -o ServerAliveInterval=15)
           target="$ECS_USER@$ECS_HOST"
-          release="$GITHUB_SHA-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT"
-          release_dir="$ECS_DEPLOY_PATH/releases/$release"
-
-          # Each deployment uses a fresh directory; current changes only after upload.
-          ssh "${ssh_options[@]}" "$target" "mkdir -p '$release_dir'"
-          tar -C static-site -czf - . | ssh "${ssh_options[@]}" "$target" "tar -xzf - -C '$release_dir'"
-          ssh "${ssh_options[@]}" "$target" bash -s -- "$ECS_DEPLOY_PATH" "$release" <<'REMOTE'
-          set -euo pipefail
-          base="$1"
-          release="$2"
-          test -s "$base/releases/$release/index.html"
-          if [[ -e "$base/current" && ! -L "$base/current" ]]; then
-            echo 'current must be a symlink, not an existing directory'
-            exit 1
-          fi
-          previous="$(readlink "$base/current" || true)"
-          printf '%s\n' "$previous" > "$base/releases/$release/.previous-release"
-          ln -s "$base/releases/$release" "$base/current-$release"
-          mv -Tf "$base/current-$release" "$base/current"
-          REMOTE
-
-          # Use the ECS origin URL here, without a CDN cache.
-          if ! curl --fail --silent --show-error --location --retry 5 --retry-all-errors --retry-delay 3 --max-time 20 \
-            "$ECS_HEALTHCHECK_URL" -o "$RUNNER_TEMP/ecs-health.html"; then
-            ssh "${ssh_options[@]}" "$target" bash -s -- "$ECS_DEPLOY_PATH" "$release" <<'ROLLBACK'
-          set -euo pipefail
-          base="$1"
-          release="$2"
-          previous="$(cat "$base/releases/$release/.previous-release")"
-          if [[ -n "$previous" && -d "$previous" ]]; then
-            ln -s "$previous" "$base/rollback-$release"
-            mv -Tf "$base/rollback-$release" "$base/current"
-            echo 'Restored previous release'
-          else
-            echo 'No previous release is available for rollback'
-          fi
-          ROLLBACK
-            exit 1
-          fi
+          test -s index.html
+          ssh "${ssh_options[@]}" "$target" "mkdir -p '$ECS_DEPLOY_PATH' && test -w '$ECS_DEPLOY_PATH' && command -v rsync >/dev/null"
+          # Delete obsolete website files only inside the dedicated deployment root.
+          # Infrastructure files stay on ECS; Git and workflow files are never uploaded.
+          rsync -rlptz --delete-delay --chmod=D755,F644 \
+            --exclude='/.git/' --exclude='/.github/' \
+            --exclude='/.user.ini' --exclude='/.well-known/' \
+            --exclude='/README.txt' --exclude='/.exported-routes.json' \
+            -e "ssh -i $ssh_dir/key -p $ECS_PORT -o BatchMode=yes -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes -o UserKnownHostsFile=$ssh_dir/known_hosts -o ConnectTimeout=20" \
+            ./ "$target:$ECS_DEPLOY_PATH/"

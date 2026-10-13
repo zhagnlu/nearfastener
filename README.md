@@ -34,21 +34,32 @@ npm run export:static  # 重新生成独立 HTML 网站
 
 ## ECS 自动部署
 
-`.github/workflows/deploy-ecs.yml` 只在推送 `push_renote` 分支时部署，手动运行也必须选择该分支。GitHub 安装依赖并执行 `npm test`，随后通过 SSH 上传 `static-site/` 到独立版本目录，原子切换 `current` 链接；HTTP 检查失败时恢复上一版本。首次部署没有历史版本可回滚。版本目录保留，需按服务器容量定期清理旧版本。
+开发源码保留在 `main`（或其他开发分支），`push_remote` 只保存生成的静态网站和部署 workflow，不保存应用源码或 node_modules。
+
+开发完成并提交代码后执行：
+
+```sh
+npm run publish:ecs
+```
+
+发布脚本先执行 `npm test`（构建、生成 `static-site/`、测试），再通过临时 Git 工作目录将产物作为分支根目录提交并推送到 `push_remote`。不切换开发分支，不强制推送，自动移除发布分支中已过时的文件。`npm run publish:ecs -- --dry-run` 可验证发布提交但不推送；仍会执行构建和读取远程分支。
+
+GitHub `.github/workflows/deploy-ecs.yml` 只监听 `push_remote`，手动运行也只能选择该分支。GitHub 不构建网站，只通过 SSH + rsync 将分支文件同步到 `ECS_DEPLOY_PATH` 根目录。没有 releases/current、版本保留或自动回滚；同步会删除服务器上已经不在发布分支中的旧网站文件，保留 `.well-known/` 和 `.user.ini`，不上传 `.git/` 和 `.github/`。同步期间可能短暂出现新旧文件混合。
 
 在仓库 Settings → Secrets and variables → Actions 配置：
 
 | Secret | 内容 |
 | --- | --- |
 | `ECS_HOST` | ECS IPv4 公网地址或主机名 |
-| `ECS_USER` | 有部署目录写权限的 SSH 用户 |
-| `ECS_SSH_KEY` | 专用 SSH 私钥；对应公钥加入服务器该用户的 authorized_keys |
-| `ECS_KNOWN_HOSTS` | 经可信渠道核验的 SSH 主机公钥记录；非 22 端口使用 `[主机]:端口` 形式 |
-| `ECS_HEALTHCHECK_URL` | 指向该站 ECS 源站的完整 HTTP/HTTPS 地址，不经过 CDN 缓存 |
+| `ECS_USER` | 对整个站点目录有读写权限的 SSH 用户，例如 deploy |
+| `ECS_SSH_KEY` | 完整无密码短语的专用 SSH 私钥 |
+| `ECS_KNOWN_HOSTS` | 经核验的服务器 SSH 公钥记录；非 22 端口使用 `[主机]:端口` |
 | `ECS_PORT` | 可选，默认 `22` |
-| `ECS_DEPLOY_PATH` | 可选，默认 `/var/www/nearfastener`；使用无空格的绝对路径 |
+| `ECS_DEPLOY_PATH` | 可选，默认 `/var/www/nearfastener`；仅用于本网站的绝对目录 |
 
-ECS 需预先安装 Nginx、Bash、tar，创建并授权部署目录。Nginx 的 root 指向部署目录下的 `current`，配置 `index index.html;` 和 `try_files $uri $uri/ =404;`，禁止访问点文件。SSH 安全组需允许部署 runner 访问。报价使用 FormSubmit 邮件服务，无需额外部署报价 API；正式域名还需填入 `content/site.json` 的 `url`，生成 canonical 和 sitemap。
+ECS 需安装 Nginx、rsync，并将部署公钥加入部署用户的 authorized_keys。现有文件若归 www-data，需要将本网站整个目录授权给 deploy（仅针对 `/var/www/nearfastener`）。Nginx 保持 `root /var/www/nearfastener;`，配置 `index index.html;` 和 `try_files $uri $uri/ =404;`；无需修改 Nginx 程序或其他网站配置。`ECS_HEALTHCHECK_URL` 不再使用。
+
+报价使用 FormSubmit 邮件服务，无需额外部署报价 API；正式域名需填入 `content/site.json` 的 `url`，生成 canonical 和 sitemap。
 
 ## 编辑内容
 
