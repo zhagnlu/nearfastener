@@ -48,7 +48,7 @@ npm run export:static  # 重新生成独立 HTML 网站
 | `ECS_PORT` | 可选，默认 `22` |
 | `ECS_DEPLOY_PATH` | 可选，默认 `/var/www/nearfastener`；使用无空格的绝对路径 |
 
-ECS 需预先安装 Nginx、Bash、tar，创建并授权部署目录。Nginx 的 root 指向部署目录下的 `current`，配置 `index index.html;` 和 `try_files $uri $uri/ =404;`，禁止访问点文件。SSH 安全组需允许部署 runner 访问。静态发布不包含 Worker 后端，`/api/rfq` 需单独配置后端或代理；正式域名还需填入 `content/site.json` 的 `url`，生成 canonical 和 sitemap。
+ECS 需预先安装 Nginx、Bash、tar，创建并授权部署目录。Nginx 的 root 指向部署目录下的 `current`，配置 `index index.html;` 和 `try_files $uri $uri/ =404;`，禁止访问点文件。SSH 安全组需允许部署 runner 访问。报价使用 FormSubmit 邮件服务，无需额外部署报价 API；正式域名还需填入 `content/site.json` 的 `url`，生成 canonical 和 sitemap。
 
 ## 编辑内容
 
@@ -72,9 +72,9 @@ ECS 需预先安装 Nginx、Bash、tar，创建并授权部署目录。Nginx 的
 
 ## 表单行为
 
-报价页已接入同源 Worker 接口，支持保存询价和图纸、通知 `info@nearfastener.com`、失败重试和私密图纸下载。收件地址固定，客户邮箱作为 Reply-To。当前尚未配置发信凭据，提交会明确提示尚未启用；不会发送真实邮件或显示虚假成功。联系页会打开收件人为 `info@nearfastener.com` 的邮件草稿，由客户在邮件应用中确认发送。
+报价页通过 FormSubmit 发送到 `info@nearfastener.com`，保留产品参数和最多 10 MB 的图纸附件。提交后进入服务商确认页面；首次上线需在收件邮箱完成激活，不需要邮箱密码、Worker、R2 或 Resend。联系页仍使用客户邮件应用中的邮件草稿。
 
-上线配置、存储位置和恢复方式见 [content/RFQ.md](content/RFQ.md)。独立 HTML 在离线或仅静态托管时无法提交报价；需搭配同域名 Worker API。
+上线配置、存储位置和恢复方式见 [content/RFQ.md](content/RFQ.md)。ECS 静态托管可直接提交报价；离线文件请使用邮件联系。
 
 ## 检查
 

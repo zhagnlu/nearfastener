@@ -466,7 +466,7 @@
   "Engineering guides, material references, and industry insights to help you select the right fasteners.": "أدلة هندسية ومراجع مواد ومعلومات قطاعية لمساعدتك في اختيار المثبتات المناسبة.",
   "Upload your drawing, BOM, or RFQ document. Our engineers will review and respond within 24 hours.": "ارفع الرسم أو قائمة المواد أو طلب العرض. سيراجع مهندسونا الطلب ويردون خلال 24 ساعة.",
   "Upload Your Drawing & Get a Quote": "ارفع الرسم واحصل على عرض سعر",
-  "Accepted formats: PDF, DWG, DXF, Excel, Word, Images. Max 20MB.": "الصيغ: PDF وDWG وDXF وExcel وWord وصور. الحد الأقصى 20MB.",
+  "Accepted formats: PDF, DWG, DXF, Excel, Word, Images. Max 10MB.": "الصيغ: PDF وDWG وDXF وExcel وWord وصور. الحد الأقصى 10MB.",
   "Product *": "المنتج *",
   "e.g., Hex Bolt, Stud Bolt": "مثال: برغي سداسي، مسمار ملولب",
   "e.g., GB/T 5782, DIN 931": "مثال: GB/T 5782, DIN 931",
@@ -651,8 +651,8 @@
   "Loading language…": "جارٍ تحميل اللغة…",
   "Language could not be loaded. Please try again.": "تعذر تحميل اللغة. يرجى المحاولة مجدداً.",
   "Choose a PDF, CAD, Office document, or JPG/PNG image.": "اختر ملف PDF أو CAD أو Office أو صورة JPG/PNG.",
-  "The file must be no larger than 20 MB.": "يجب ألا يتجاوز الملف 20 MB.",
-  "The selected file exceeds the 20 MB limit.": "الملف المحدد يتجاوز حد 20 MB.",
+  "The file must be no larger than 10 MB.": "يجب ألا يتجاوز الملف 10 MB.",
+  "The selected file exceeds the 10 MB limit.": "الملف المحدد يتجاوز حد 10 MB.",
   "Your request is ready to download. No message or file has been sent.": "طلبك جاهز للتنزيل. لم يتم إرسال أي رسالة أو ملف.",
   "Download request": "تنزيل الطلب",
   "Selected drawing": "الرسم المحدد",
@@ -1020,5 +1020,6 @@
   "Hex, lock, flange and coupling nuts for bolt, stud and threaded-rod assemblies.": "صواميل سداسية وقفل وشفة وتوصيل لتجميعات المسامير والقضبان الملولبة.",
   "Flat, split spring and structural washers; suitability is confirmed against the complete assembly.": "وردات مسطحة وزنبركية مشقوقة وإنشائية؛ تؤكد الملاءمة وفق متطلبات التجميع الكامل.",
   "Socket, machine, set, shoulder, thumb, assembly, self-tapping and self-drilling screws.": "براغي سداسية داخلية وآلة وتثبيت وكتف ويدوية ومجمعة وذاتية اللولبة وذاتية الثقب.",
-  "DIN 933 Full Thread Hex Bolt | Near Fastener": "DIN 933 برغي سداسي كامل القلاوظ | Near Fastener"
+  "DIN 933 Full Thread Hex Bolt | Near Fastener": "DIN 933 برغي سداسي كامل القلاوظ | Near Fastener",
+  "Your request and drawing will be sent through FormSubmit to info@nearfastener.com.": "سيتم إرسال طلبك والرسم عبر FormSubmit إلى info@nearfastener.com."
 }

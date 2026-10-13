@@ -466,7 +466,7 @@
   "Engineering guides, material references, and industry insights to help you select the right fasteners.": "Engineering guides, material references, and industry insights to help you select the right fasteners.",
   "Upload your drawing, BOM, or RFQ document. Our engineers will review and respond within 24 hours.": "Upload your drawing, BOM, or RFQ document. Our engineers will review and respond within 24 hours.",
   "Upload Your Drawing & Get a Quote": "Upload Your Drawing & Get a Quote",
-  "Accepted formats: PDF, DWG, DXF, Excel, Word, Images. Max 20MB.": "Accepted formats: PDF, DWG, DXF, Excel, Word, Images. Max 20MB.",
+  "Accepted formats: PDF, DWG, DXF, Excel, Word, Images. Max 10MB.": "Accepted formats: PDF, DWG, DXF, Excel, Word, Images. Max 10MB.",
   "Product *": "Product *",
   "e.g., Hex Bolt, Stud Bolt": "e.g., Hex Bolt, Stud Bolt",
   "e.g., GB/T 5782, DIN 931": "e.g., GB/T 5782, DIN 931",
@@ -651,8 +651,8 @@
   "Loading language…": "Loading language…",
   "Language could not be loaded. Please try again.": "Language could not be loaded. Please try again.",
   "Choose a PDF, CAD, Office document, or JPG/PNG image.": "Choose a PDF, CAD, Office document, or JPG/PNG image.",
-  "The file must be no larger than 20 MB.": "The file must be no larger than 20 MB.",
-  "The selected file exceeds the 20 MB limit.": "The selected file exceeds the 20 MB limit.",
+  "The file must be no larger than 10 MB.": "The file must be no larger than 10 MB.",
+  "The selected file exceeds the 10 MB limit.": "The selected file exceeds the 10 MB limit.",
   "Your request is ready to download. No message or file has been sent.": "Your request is ready to download. No message or file has been sent.",
   "Download request": "Download request",
   "Selected drawing": "Selected drawing",
@@ -1020,5 +1020,6 @@
   "Hex, lock, flange and coupling nuts for bolt, stud and threaded-rod assemblies.": "Hex, lock, flange and coupling nuts for bolt, stud and threaded-rod assemblies.",
   "Flat, split spring and structural washers; suitability is confirmed against the complete assembly.": "Flat, split spring and structural washers; suitability is confirmed against the complete assembly.",
   "Socket, machine, set, shoulder, thumb, assembly, self-tapping and self-drilling screws.": "Socket, machine, set, shoulder, thumb, assembly, self-tapping and self-drilling screws.",
-  "DIN 933 Full Thread Hex Bolt | Near Fastener": "DIN 933 Full Thread Hex Bolt | Near Fastener"
+  "DIN 933 Full Thread Hex Bolt | Near Fastener": "DIN 933 Full Thread Hex Bolt | Near Fastener",
+  "Your request and drawing will be sent through FormSubmit to info@nearfastener.com.": "Your request and drawing will be sent through FormSubmit to info@nearfastener.com."
 }

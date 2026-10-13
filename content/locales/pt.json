@@ -466,7 +466,7 @@
   "Engineering guides, material references, and industry insights to help you select the right fasteners.": "Guias de engenharia, materiais e informações do setor para escolher os fixadores adequados.",
   "Upload your drawing, BOM, or RFQ document. Our engineers will review and respond within 24 hours.": "Envie seu desenho, lista de materiais ou consulta. Nossos engenheiros analisarão e responderão em 24 horas.",
   "Upload Your Drawing & Get a Quote": "Envie seu desenho e obtenha um orçamento",
-  "Accepted formats: PDF, DWG, DXF, Excel, Word, Images. Max 20MB.": "Formatos: PDF, DWG, DXF, Excel, Word e imagens. Máx. 20MB.",
+  "Accepted formats: PDF, DWG, DXF, Excel, Word, Images. Max 10MB.": "Formatos: PDF, DWG, DXF, Excel, Word e imagens. Máx. 10MB.",
   "Product *": "Produto *",
   "e.g., Hex Bolt, Stud Bolt": "Ex.: parafuso sextavado, prisioneiro",
   "e.g., GB/T 5782, DIN 931": "Ex.: GB/T 5782, DIN 931",
@@ -651,8 +651,8 @@
   "Loading language…": "Carregando idioma…",
   "Language could not be loaded. Please try again.": "Não foi possível carregar o idioma. Tente novamente.",
   "Choose a PDF, CAD, Office document, or JPG/PNG image.": "Escolha PDF, CAD, documento Office ou imagem JPG/PNG.",
-  "The file must be no larger than 20 MB.": "O arquivo não pode exceder 20 MB.",
-  "The selected file exceeds the 20 MB limit.": "O arquivo selecionado excede o limite de 20 MB.",
+  "The file must be no larger than 10 MB.": "O arquivo não pode exceder 10 MB.",
+  "The selected file exceeds the 10 MB limit.": "O arquivo selecionado excede o limite de 10 MB.",
   "Your request is ready to download. No message or file has been sent.": "Sua solicitação está pronta para download. Nenhuma mensagem ou arquivo foi enviado.",
   "Download request": "Baixar solicitação",
   "Selected drawing": "Desenho selecionado",
@@ -1020,5 +1020,6 @@
   "Hex, lock, flange and coupling nuts for bolt, stud and threaded-rod assemblies.": "Porcas sextavadas, autotravantes, flangeadas e de união para conjuntos de parafusos e hastes.",
   "Flat, split spring and structural washers; suitability is confirmed against the complete assembly.": "Arruelas planas, de pressão partidas e estruturais; confirme a adequação ao conjunto completo.",
   "Socket, machine, set, shoulder, thumb, assembly, self-tapping and self-drilling screws.": "Parafusos Allen, de máquina, sem cabeça, de ombro, manuais, combinados, autoatarraxantes e autoperfurantes.",
-  "DIN 933 Full Thread Hex Bolt | Near Fastener": "DIN 933 Parafuso sextavado de rosca inteira | Near Fastener"
+  "DIN 933 Full Thread Hex Bolt | Near Fastener": "DIN 933 Parafuso sextavado de rosca inteira | Near Fastener",
+  "Your request and drawing will be sent through FormSubmit to info@nearfastener.com.": "Sua solicitação e desenho serão enviados pelo FormSubmit para info@nearfastener.com."
 }

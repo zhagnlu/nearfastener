@@ -466,7 +466,7 @@
   "Engineering guides, material references, and industry insights to help you select the right fasteners.": "工程指南、材料参考及行业知识，帮助您选择合适的紧固件。",
   "Upload your drawing, BOM, or RFQ document. Our engineers will review and respond within 24 hours.": "上传图纸、物料清单或询价文件，我们的工程师将在 24 小时内审核回复。",
   "Upload Your Drawing & Get a Quote": "上传图纸并获取报价",
-  "Accepted formats: PDF, DWG, DXF, Excel, Word, Images. Max 20MB.": "支持 PDF、DWG、DXF、Excel、Word、图片，最大 20MB。",
+  "Accepted formats: PDF, DWG, DXF, Excel, Word, Images. Max 10MB.": "支持 PDF、DWG、DXF、Excel、Word、图片，最大 10MB。",
   "Product *": "产品 *",
   "e.g., Hex Bolt, Stud Bolt": "例如：六角螺栓、双头螺柱",
   "e.g., GB/T 5782, DIN 931": "例如：GB/T 5782, DIN 931",
@@ -651,8 +651,8 @@
   "Loading language…": "正在加载语言…",
   "Language could not be loaded. Please try again.": "语言加载失败，请重试。",
   "Choose a PDF, CAD, Office document, or JPG/PNG image.": "请选择 PDF、CAD、Office 文档或 JPG/PNG 图片。",
-  "The file must be no larger than 20 MB.": "文件不得超过 20 MB。",
-  "The selected file exceeds the 20 MB limit.": "所选文件超过 20 MB 限制。",
+  "The file must be no larger than 10 MB.": "文件不得超过 10 MB。",
+  "The selected file exceeds the 10 MB limit.": "所选文件超过 10 MB 限制。",
   "Your request is ready to download. No message or file has been sent.": "您的询价已可下载，尚未发送任何消息或文件。",
   "Download request": "下载询价",
   "Selected drawing": "所选图纸",
@@ -1020,5 +1020,6 @@
   "Hex, lock, flange and coupling nuts for bolt, stud and threaded-rod assemblies.": "用于螺栓、螺柱与螺杆组件的六角、锁紧、法兰及连接螺母。",
   "Flat, split spring and structural washers; suitability is confirmed against the complete assembly.": "平垫圈、开口弹垫与结构垫圈；适用性按完整组件要求确认。",
   "Socket, machine, set, shoulder, thumb, assembly, self-tapping and self-drilling screws.": "内六角、机螺钉、紧定、肩部、手拧、组合、自攻与钻尾螺钉。",
-  "DIN 933 Full Thread Hex Bolt | Near Fastener": "DIN 933 全螺纹六角螺栓 | Near Fastener"
+  "DIN 933 Full Thread Hex Bolt | Near Fastener": "DIN 933 全螺纹六角螺栓 | Near Fastener",
+  "Your request and drawing will be sent through FormSubmit to info@nearfastener.com.": "您的询价和图纸将通过 FormSubmit 发送至 info@nearfastener.com。"
 }

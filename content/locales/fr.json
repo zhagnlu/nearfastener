@@ -466,7 +466,7 @@
   "Engineering guides, material references, and industry insights to help you select the right fasteners.": "Guides techniques, références matériaux et connaissances sectorielles pour choisir vos fixations.",
   "Upload your drawing, BOM, or RFQ document. Our engineers will review and respond within 24 hours.": "Déposez votre plan, nomenclature ou demande. Nos ingénieurs l’examineront et répondront sous 24 heures.",
   "Upload Your Drawing & Get a Quote": "Déposez votre plan et obtenez un devis",
-  "Accepted formats: PDF, DWG, DXF, Excel, Word, Images. Max 20MB.": "Formats : PDF, DWG, DXF, Excel, Word, images. Max. 20MB.",
+  "Accepted formats: PDF, DWG, DXF, Excel, Word, Images. Max 10MB.": "Formats : PDF, DWG, DXF, Excel, Word, images. Max. 10MB.",
   "Product *": "Produit *",
   "e.g., Hex Bolt, Stud Bolt": "Ex. : boulon hexagonal, goujon",
   "e.g., GB/T 5782, DIN 931": "Ex. : GB/T 5782, DIN 931",
@@ -651,8 +651,8 @@
   "Loading language…": "Chargement de la langue…",
   "Language could not be loaded. Please try again.": "Impossible de charger la langue. Réessayez.",
   "Choose a PDF, CAD, Office document, or JPG/PNG image.": "Choisissez un PDF, CAD, document Office ou une image JPG/PNG.",
-  "The file must be no larger than 20 MB.": "Le fichier ne doit pas dépasser 20 MB.",
-  "The selected file exceeds the 20 MB limit.": "Le fichier sélectionné dépasse la limite de 20 MB.",
+  "The file must be no larger than 10 MB.": "Le fichier ne doit pas dépasser 10 MB.",
+  "The selected file exceeds the 10 MB limit.": "Le fichier sélectionné dépasse la limite de 10 MB.",
   "Your request is ready to download. No message or file has been sent.": "Votre demande est prête à télécharger. Aucun message ni fichier n’a été envoyé.",
   "Download request": "Télécharger la demande",
   "Selected drawing": "Plan sélectionné",
@@ -1020,5 +1020,6 @@
   "Hex, lock, flange and coupling nuts for bolt, stud and threaded-rod assemblies.": "Écrous hexagonaux, frein, à embase et de raccordement pour assemblages de boulons et tiges.",
   "Flat, split spring and structural washers; suitability is confirmed against the complete assembly.": "Rondelles plates, élastiques fendues et de construction ; valider leur emploi dans l’assemblage complet.",
   "Socket, machine, set, shoulder, thumb, assembly, self-tapping and self-drilling screws.": "Vis six pans creux, mécaniques, sans tête, à épaulement, moletées, assemblées, autotaraudeuses et autoperceuses.",
-  "DIN 933 Full Thread Hex Bolt | Near Fastener": "DIN 933 Boulon hexagonal entièrement fileté | Near Fastener"
+  "DIN 933 Full Thread Hex Bolt | Near Fastener": "DIN 933 Boulon hexagonal entièrement fileté | Near Fastener",
+  "Your request and drawing will be sent through FormSubmit to info@nearfastener.com.": "Votre demande et votre plan seront envoyés via FormSubmit à info@nearfastener.com."
 }

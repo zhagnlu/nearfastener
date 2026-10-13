@@ -466,7 +466,7 @@
   "Engineering guides, material references, and industry insights to help you select the right fasteners.": "Technische Leitfäden, Werkstoffinformationen und Branchenwissen zur Auswahl passender Verbindungselemente.",
   "Upload your drawing, BOM, or RFQ document. Our engineers will review and respond within 24 hours.": "Laden Sie Zeichnung, Stückliste oder Anfrage hoch. Unsere Ingenieure prüfen sie und antworten binnen 24 Stunden.",
   "Upload Your Drawing & Get a Quote": "Zeichnung hochladen und Angebot erhalten",
-  "Accepted formats: PDF, DWG, DXF, Excel, Word, Images. Max 20MB.": "Formate: PDF, DWG, DXF, Excel, Word, Bilder. Max. 20MB.",
+  "Accepted formats: PDF, DWG, DXF, Excel, Word, Images. Max 10MB.": "Formate: PDF, DWG, DXF, Excel, Word, Bilder. Max. 10MB.",
   "Product *": "Produkt *",
   "e.g., Hex Bolt, Stud Bolt": "Z. B. Sechskantschraube, Stehbolzen",
   "e.g., GB/T 5782, DIN 931": "Z. B. GB/T 5782, DIN 931",
@@ -651,8 +651,8 @@
   "Loading language…": "Sprache wird geladen…",
   "Language could not be loaded. Please try again.": "Sprache konnte nicht geladen werden. Bitte erneut versuchen.",
   "Choose a PDF, CAD, Office document, or JPG/PNG image.": "Wählen Sie PDF, CAD, Office-Dokument oder JPG/PNG-Bild.",
-  "The file must be no larger than 20 MB.": "Die Datei darf höchstens 20 MB groß sein.",
-  "The selected file exceeds the 20 MB limit.": "Die ausgewählte Datei überschreitet 20 MB.",
+  "The file must be no larger than 10 MB.": "Die Datei darf höchstens 10 MB groß sein.",
+  "The selected file exceeds the 10 MB limit.": "Die ausgewählte Datei überschreitet 10 MB.",
   "Your request is ready to download. No message or file has been sent.": "Ihre Anfrage steht zum Download bereit. Es wurde keine Nachricht oder Datei gesendet.",
   "Download request": "Anfrage herunterladen",
   "Selected drawing": "Ausgewählte Zeichnung",
@@ -1020,5 +1020,6 @@
   "Hex, lock, flange and coupling nuts for bolt, stud and threaded-rod assemblies.": "Sechskant-, Sicherungs-, Flansch- und Verbindungsmuttern für Schrauben- und Stangenbaugruppen.",
   "Flat, split spring and structural washers; suitability is confirmed against the complete assembly.": "Flache Scheiben, geteilte Federringe und Stahlbauscheiben; Eignung für die gesamte Baugruppe prüfen.",
   "Socket, machine, set, shoulder, thumb, assembly, self-tapping and self-drilling screws.": "Innensechskant-, Maschinen-, Gewindestift-, Schulter-, Rändel-, Kombi-, Blech- und Bohrschrauben.",
-  "DIN 933 Full Thread Hex Bolt | Near Fastener": "DIN 933 Sechskantschraube mit Vollgewinde | Near Fastener"
+  "DIN 933 Full Thread Hex Bolt | Near Fastener": "DIN 933 Sechskantschraube mit Vollgewinde | Near Fastener",
+  "Your request and drawing will be sent through FormSubmit to info@nearfastener.com.": "Ihre Anfrage und Zeichnung werden über FormSubmit an info@nearfastener.com gesendet."
 }

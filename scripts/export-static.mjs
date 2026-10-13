@@ -50,6 +50,6 @@ for (const [route, meta] of Object.entries(routes)) {
   await mkdir(directory, { recursive: true });
   await writeFile(outputFile, html);
 }
-await writeFile(join(out, 'README.txt'), `Near Fastener website replica\n\n${Object.keys(routes).length} HTML pages. All images, icons, styles and scripts are local.\nOpen index.html directly, or upload this entire folder to a static web server.\nRFQ submissions require the same-origin Cloudflare Worker /api/rfq endpoint, private R2 storage and configured Resend credentials. Offline files and static-only hosting cannot submit RFQs. Contact forms open an email draft for the visitor to review and send from their mail app.\nCompany placeholders and source copy are preserved for later editing.\n`);
+await writeFile(join(out, 'README.txt'), `Near Fastener website replica\n\n${Object.keys(routes).length} HTML pages. All images, icons, styles and scripts are local.\nOpen index.html directly, or upload this entire folder to a static web server.\nRFQ submissions use FormSubmit email delivery to info@nearfastener.com, including attachments up to 10 MB. Online hosting and first-use email activation are required. Contact forms open an email draft for the visitor to review and send from their mail app.\nCompany placeholders and source copy are preserved for later editing.\n`);
 console.log(`Exported ${Object.keys(routes).length} pages to ${out}`);
 await writeFile(manifest, JSON.stringify(Object.keys(routes)) + '\n');

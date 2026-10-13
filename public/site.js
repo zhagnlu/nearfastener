@@ -141,12 +141,12 @@ function initNearFastener() {
         showFeedback('Please choose a PDF, CAD, Office document, or JPG/PNG image.', true);
         return;
       }
-      if (file.size > 20 * 1024 * 1024) {
+      if (file.size > 10 * 1024 * 1024) {
         drawing = null;
         fileInput.value = '';
-        fileInput.dataset.validationMessage = 'The file must be no larger than 20 MB.';
+        fileInput.dataset.validationMessage = 'The file must be no larger than 10 MB.';
         fileInput.setCustomValidity(t(fileInput.dataset.validationMessage));
-        showFeedback('The selected file exceeds the 20 MB limit.', true);
+        showFeedback('The selected file exceeds the 10 MB limit.', true);
         return;
       }
       fileInput.dataset.validationMessage = '';
@@ -168,48 +168,46 @@ function initNearFastener() {
       }
       dropzone.addEventListener('drop', (event) => checkFile(event.dataTransfer?.files?.[0]));
     }
-    let submissionId = null;
     let submitting = false;
-    let submitted = false;
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
       if (!form.reportValidity()) return;
       if (form.hasAttribute('data-rfq-submit')) {
-        if (submitting || submitted) return;
+        if (submitting) return;
         const button = form.querySelector('button[type="submit"]');
         if (location.protocol === 'file:') { showFeedback('Online submission is unavailable here. Please email info@nearfastener.com with your requirements and drawing.', true); return; }
-        submissionId ??= crypto.randomUUID();
         const data = new FormData(form);
-        data.set('submission_id', submissionId);
-        data.set('language', document.documentElement.lang || 'en');
+        const details = [...data.entries()]
+          .filter(([key, value]) => typeof value === 'string' && value.trim() && !['website', '_honey', 'message'].includes(key))
+          .map(([key, value]) => `${key}: ${value}`);
         const productId = new URLSearchParams(location.search).get('product_id');
-        if (productId) data.set('product_id', productId);
-        if (drawing) data.set('drawing', drawing, drawing.name);
+        if (productId) details.push(`product_id: ${productId}`);
+        details.push(`language: ${document.documentElement.lang || 'en'}`);
+        const setHidden = (name, value) => {
+          let input = form.querySelector(`input[name="${name}"]`);
+          if (!input) { input = document.createElement('input'); input.type = 'hidden'; input.name = name; form.append(input); }
+          input.value = value;
+        };
+        setHidden('_subject', 'Near Fastener RFQ');
+        setHidden('_template', 'table');
+        setHidden('_replyto', String(data.get('email') || ''));
+        setHidden('_honey', String(data.get('_honey') || ''));
+        const message = form.querySelector('[name="message"]');
+        message.value = [message.value, '', ...details].join('\n');
+        // Native multipart submission supports drawings and the provider's CAPTCHA.
+        // Do not claim delivery before the provider has confirmed submission.
+        if (drawing) {
+          const files = new DataTransfer();
+          files.items.add(drawing);
+          fileInput.files = files.files;
+        }
+        form.action = 'https://formsubmit.co/info@nearfastener.com';
+        form.method = 'post';
+        form.enctype = 'multipart/form-data';
         submitting = true;
         button.disabled = true;
         showFeedback('Submitting your request...');
-        try {
-          const response = await fetch('/api/rfq', { method: 'POST', body: data, signal: AbortSignal.timeout(45000) });
-          const result = await response.json();
-          if (!response.ok) {
-            const messages = {
-              not_configured: 'Online submission is not enabled yet. Please email info@nearfastener.com with your requirements and drawing.',
-              too_large: 'The selected file exceeds the 20 MB limit.',
-              invalid_file: 'Please choose a PDF, CAD, Office document, or JPG/PNG image.',
-              invalid: 'Please check the required fields and email address.',
-            };
-            showFeedback(messages[result.error] || 'Submission failed. Please try again or email info@nearfastener.com.', true);
-          } else if (result.id && ['notified', 'queued'].includes(result.status)) {
-            submitted = true;
-            showFeedback(result.status === 'notified' ? 'Your request has been saved and the email notification has been sent.' : 'Your request has been saved. The email notification is pending and will be retried.');
-            const reference = document.createElement('p');
-            reference.textContent = `${t('Request reference')}: ${result.id}`;
-            reference.dataset.noTranslate = '';
-            feedback.append(reference);
-          } else { showFeedback('Submission failed. Please try again or email info@nearfastener.com.', true); }
-        } catch { showFeedback('Unable to confirm submission. Please retry with this form or email info@nearfastener.com.', true); }
-        finally { submitting = false; button.disabled = submitted; }
-        feedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        HTMLFormElement.prototype.submit.call(form);
         return;
       }
       if (form.dataset.previewForm === 'contact') {

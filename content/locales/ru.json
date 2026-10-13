@@ -466,7 +466,7 @@
   "Engineering guides, material references, and industry insights to help you select the right fasteners.": "Инженерные руководства, справочники материалов и отраслевые сведения для выбора крепежа.",
   "Upload your drawing, BOM, or RFQ document. Our engineers will review and respond within 24 hours.": "Загрузите чертёж, ведомость или запрос. Инженеры рассмотрят его и ответят в течение 24 часов.",
   "Upload Your Drawing & Get a Quote": "Загрузите чертёж и получите предложение",
-  "Accepted formats: PDF, DWG, DXF, Excel, Word, Images. Max 20MB.": "Форматы: PDF, DWG, DXF, Excel, Word, изображения. До 20MB.",
+  "Accepted formats: PDF, DWG, DXF, Excel, Word, Images. Max 10MB.": "Форматы: PDF, DWG, DXF, Excel, Word, изображения. До 10MB.",
   "Product *": "Продукт *",
   "e.g., Hex Bolt, Stud Bolt": "Напр.: шестигранный болт, шпилька",
   "e.g., GB/T 5782, DIN 931": "Напр.: GB/T 5782, DIN 931",
@@ -651,8 +651,8 @@
   "Loading language…": "Загрузка языка…",
   "Language could not be loaded. Please try again.": "Не удалось загрузить язык. Повторите попытку.",
   "Choose a PDF, CAD, Office document, or JPG/PNG image.": "Выберите PDF, CAD, документ Office или изображение JPG/PNG.",
-  "The file must be no larger than 20 MB.": "Файл не должен превышать 20 MB.",
-  "The selected file exceeds the 20 MB limit.": "Выбранный файл превышает лимит 20 MB.",
+  "The file must be no larger than 10 MB.": "Файл не должен превышать 10 MB.",
+  "The selected file exceeds the 10 MB limit.": "Выбранный файл превышает лимит 10 MB.",
   "Your request is ready to download. No message or file has been sent.": "Запрос готов к скачиванию. Сообщения и файлы не отправлены.",
   "Download request": "Скачать запрос",
   "Selected drawing": "Выбранный чертёж",
@@ -1020,5 +1020,6 @@
   "Hex, lock, flange and coupling nuts for bolt, stud and threaded-rod assemblies.": "Шестигранные, стопорные, фланцевые и соединительные гайки для болтов и резьбовых стержней.",
   "Flat, split spring and structural washers; suitability is confirmed against the complete assembly.": "Плоские, разрезные пружинные и конструкционные шайбы; пригодность проверяется для всего узла.",
   "Socket, machine, set, shoulder, thumb, assembly, self-tapping and self-drilling screws.": "Винты с внутренним шестигранником, машинные, установочные, ступенчатые, ручные, комбинированные, самонарезающие и самосверлящие.",
-  "DIN 933 Full Thread Hex Bolt | Near Fastener": "DIN 933 Шестигранный болт с полной резьбой | Near Fastener"
+  "DIN 933 Full Thread Hex Bolt | Near Fastener": "DIN 933 Шестигранный болт с полной резьбой | Near Fastener",
+  "Your request and drawing will be sent through FormSubmit to info@nearfastener.com.": "Ваш запрос и чертёж будут отправлены через FormSubmit на info@nearfastener.com."
 }

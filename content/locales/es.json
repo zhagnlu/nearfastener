@@ -466,7 +466,7 @@
   "Engineering guides, material references, and industry insights to help you select the right fasteners.": "Guías de ingeniería, materiales y conocimientos del sector para elegir las fijaciones adecuadas.",
   "Upload your drawing, BOM, or RFQ document. Our engineers will review and respond within 24 hours.": "Suba su plano, lista de materiales o solicitud. Nuestros ingenieros revisarán y responderán en 24 horas.",
   "Upload Your Drawing & Get a Quote": "Suba su plano y obtenga una cotización",
-  "Accepted formats: PDF, DWG, DXF, Excel, Word, Images. Max 20MB.": "Formatos: PDF, DWG, DXF, Excel, Word e imágenes. Máx. 20MB.",
+  "Accepted formats: PDF, DWG, DXF, Excel, Word, Images. Max 10MB.": "Formatos: PDF, DWG, DXF, Excel, Word e imágenes. Máx. 10MB.",
   "Product *": "Producto *",
   "e.g., Hex Bolt, Stud Bolt": "Ej.: perno hexagonal, espárrago",
   "e.g., GB/T 5782, DIN 931": "Ej.: GB/T 5782, DIN 931",
@@ -651,8 +651,8 @@
   "Loading language…": "Cargando idioma…",
   "Language could not be loaded. Please try again.": "No se pudo cargar el idioma. Inténtelo de nuevo.",
   "Choose a PDF, CAD, Office document, or JPG/PNG image.": "Elija un PDF, CAD, documento de Office o imagen JPG/PNG.",
-  "The file must be no larger than 20 MB.": "El archivo no debe superar los 20 MB.",
-  "The selected file exceeds the 20 MB limit.": "El archivo seleccionado supera el límite de 20 MB.",
+  "The file must be no larger than 10 MB.": "El archivo no debe superar los 10 MB.",
+  "The selected file exceeds the 10 MB limit.": "El archivo seleccionado supera el límite de 10 MB.",
   "Your request is ready to download. No message or file has been sent.": "Su solicitud está lista para descargar. No se ha enviado ningún mensaje ni archivo.",
   "Download request": "Descargar solicitud",
   "Selected drawing": "Plano seleccionado",
@@ -1020,5 +1020,6 @@
   "Hex, lock, flange and coupling nuts for bolt, stud and threaded-rod assemblies.": "Tuercas hexagonales, autoblocantes, con brida y de unión para conjuntos de pernos y varillas.",
   "Flat, split spring and structural washers; suitability is confirmed against the complete assembly.": "Arandelas planas, elásticas partidas y estructurales; confirme su uso en el conjunto completo.",
   "Socket, machine, set, shoulder, thumb, assembly, self-tapping and self-drilling screws.": "Tornillos Allen, de máquina, prisioneros, de hombro, manuales, combinados, autorroscantes y autoperforantes.",
-  "DIN 933 Full Thread Hex Bolt | Near Fastener": "DIN 933 Perno hexagonal de rosca completa | Near Fastener"
+  "DIN 933 Full Thread Hex Bolt | Near Fastener": "DIN 933 Perno hexagonal de rosca completa | Near Fastener",
+  "Your request and drawing will be sent through FormSubmit to info@nearfastener.com.": "Su solicitud y plano se enviarán mediante FormSubmit a info@nearfastener.com."
 }

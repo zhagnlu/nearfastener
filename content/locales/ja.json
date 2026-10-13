@@ -466,7 +466,7 @@
   "Engineering guides, material references, and industry insights to help you select the right fasteners.": "適切な締結部品選びを支える技術ガイド、材料情報、業界知識。",
   "Upload your drawing, BOM, or RFQ document. Our engineers will review and respond within 24 hours.": "図面、部品表、見積依頼書をアップロードしてください。技術担当が確認し24時間以内に回答します。",
   "Upload Your Drawing & Get a Quote": "図面をアップロードして見積を依頼",
-  "Accepted formats: PDF, DWG, DXF, Excel, Word, Images. Max 20MB.": "対応形式：PDF、DWG、DXF、Excel、Word、画像。最大20MB。",
+  "Accepted formats: PDF, DWG, DXF, Excel, Word, Images. Max 10MB.": "対応形式：PDF、DWG、DXF、Excel、Word、画像。最大10MB。",
   "Product *": "製品 *",
   "e.g., Hex Bolt, Stud Bolt": "例：六角ボルト、スタッドボルト",
   "e.g., GB/T 5782, DIN 931": "例：GB/T 5782, DIN 931",
@@ -651,8 +651,8 @@
   "Loading language…": "言語を読み込み中…",
   "Language could not be loaded. Please try again.": "言語を読み込めませんでした。もう一度お試しください。",
   "Choose a PDF, CAD, Office document, or JPG/PNG image.": "PDF、CAD、Office文書、JPG/PNG画像を選択してください。",
-  "The file must be no larger than 20 MB.": "ファイルは20 MB以下にしてください。",
-  "The selected file exceeds the 20 MB limit.": "選択したファイルは20 MBの上限を超えています。",
+  "The file must be no larger than 10 MB.": "ファイルは10 MB以下にしてください。",
+  "The selected file exceeds the 10 MB limit.": "選択したファイルは10 MBの上限を超えています。",
   "Your request is ready to download. No message or file has been sent.": "依頼内容をダウンロードできます。メッセージやファイルは送信されていません。",
   "Download request": "依頼内容をダウンロード",
   "Selected drawing": "選択した図面",
@@ -1020,5 +1020,6 @@
   "Hex, lock, flange and coupling nuts for bolt, stud and threaded-rod assemblies.": "ボルト、スタッド、ねじ棒の組立向け六角・ロック・フランジ・長ナット。",
   "Flat, split spring and structural washers; suitability is confirmed against the complete assembly.": "平座金、割りばね座金、構造用座金。接合全体の仕様に基づき適合性を確認します。",
   "Socket, machine, set, shoulder, thumb, assembly, self-tapping and self-drilling screws.": "六角穴付き、小ねじ、止めねじ、ショルダー、手締め、組合せ、タッピン、ドリルねじ。",
-  "DIN 933 Full Thread Hex Bolt | Near Fastener": "DIN 933 全ねじ六角ボルト | Near Fastener"
+  "DIN 933 Full Thread Hex Bolt | Near Fastener": "DIN 933 全ねじ六角ボルト | Near Fastener",
+  "Your request and drawing will be sent through FormSubmit to info@nearfastener.com.": "お問い合わせと図面は FormSubmit 経由で info@nearfastener.com に送信されます。"
 }
