@@ -65,6 +65,13 @@ jobs:
           printf '%s\n' "$ECS_SSH_KEY" > "$ssh_dir/key"
           printf '%s\n' "$ECS_KNOWN_HOSTS" > "$ssh_dir/known_hosts"
           chmod 600 "$ssh_dir/key" "$ssh_dir/known_hosts"
+          # Normalize CRLF pasted from Windows without exposing secret contents.
+          sed -i 's/\r$//' "$ssh_dir/key" "$ssh_dir/known_hosts"
+          if ! ssh-keygen -y -P '' -f "$ssh_dir/key" > /dev/null 2>/dev/null; then
+            echo "::error::ECS_SSH_KEY cannot be read. Supply the complete private key (not the .pub file), preserve real line breaks, and use a deployment key without a passphrase."
+            exit 1
+          fi
+          echo 'SSH private key format validated; connecting to ECS.'
           ssh_options=(-i "$ssh_dir/key" -p "$ECS_PORT" -o BatchMode=yes -o StrictHostKeyChecking=yes -o "UserKnownHostsFile=$ssh_dir/known_hosts" -o ConnectTimeout=20 -o ServerAliveInterval=15)
           target="$ECS_USER@$ECS_HOST"
           release="$GITHUB_SHA-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT"
