@@ -41,7 +41,7 @@
       "id": "screws",
       "path": "/products/screws",
       "title": "Screws",
-      "description": "Socket, machine, set, shoulder, thumb, assembly and self-drilling screws.",
+      "description": "Socket, machine, set, shoulder, thumb, assembly, self-tapping and self-drilling screws.",
       "image": "/assets/products/screw-families/hex-socket-countersunk-screw-photo.jpg",
       "status": "published",
       "kind": "type",
@@ -55,7 +55,7 @@
       "id": "nuts",
       "path": "/products/nuts",
       "title": "Nuts",
-      "description": "Hex nuts for matching bolt and stud assemblies; share your drawing for special requirements.",
+      "description": "Hex, lock, flange and coupling nuts for bolt, stud and threaded-rod assemblies.",
       "image": "/assets/products/hex-nuts/hex-nut-steel-machined-13f37182.jpg",
       "status": "published",
       "kind": "type",
@@ -82,7 +82,7 @@
       "id": "washers",
       "path": "/products/washers",
       "title": "Washers",
-      "description": "Flat washers, spring washers, and heavy hex structural washer assemblies.",
+      "description": "Flat, split spring and structural washers; suitability is confirmed against the complete assembly.",
       "image": "/assets/products/washers/steel-flat-washers-stack-1f14b8d2.jpg",
       "status": "published",
       "kind": "type",
@@ -178,11 +178,12 @@
       "path": "/products/anchor-bolts",
       "title": "Anchor Bolts",
       "description": "L-shaped, J-shaped, and headed anchor bolts for concrete foundations and steel column bases.",
-      "image": "/assets/products/anchor-bolts/anchor-bolts-l-shaped-j-shaped-9337b201.jpg",
+      "image": "/assets/products/catalog-expansion/anchor-bolt.jpg",
       "status": "published",
       "kind": "type",
       "parentId": "bolts",
-      "aliases": []
+      "aliases": [],
+      "imageKind": "generated"
     },
     {
       "id": "countersunk-screws",
@@ -204,19 +205,20 @@
       "path": "/products/hex-socket-screws",
       "title": "Hex Socket Screws",
       "description": "Screws with an internal hexagon drive.",
-      "image": "/assets/products/screw-families/hex-socket-countersunk-screw-photo.jpg",
+      "image": "/assets/products/screw-families/socket-cap-screw-photo.jpg",
       "status": "published",
       "kind": "drive-type",
       "parentId": "screws",
       "aliases": [
         "内六角螺丝",
         "内六角螺钉"
-      ]
+      ],
+      "navigationGroup": "drive-type"
     },
     {
       "id": "machine-screws",
       "path": "/products/machine-screws",
-      "title": "Phillips and Slotted Machine Screws",
+      "title": "Machine Screws",
       "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
       "image": "/assets/products/screw-families/phillips-countersunk-screw-photo.jpg",
       "status": "published",
@@ -303,6 +305,113 @@
       "aliases": [
         "特殊头型螺栓"
       ]
+    },
+    {
+      "id": "self-tapping-screws",
+      "path": "/products/self-tapping-screws",
+      "title": "Self-Tapping Screws",
+      "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+      "image": "/assets/products/catalog-expansion/self-tapping-screw.jpg",
+      "status": "published",
+      "kind": "type",
+      "parentId": "screws",
+      "aliases": [],
+      "imageKind": "generated"
+    },
+    {
+      "id": "flange-bolts",
+      "path": "/products/flange-bolts",
+      "title": "Flange Bolts",
+      "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+      "image": "/assets/products/catalog-expansion/hex-flange-bolt.jpg",
+      "status": "published",
+      "kind": "type",
+      "parentId": "bolts",
+      "aliases": [],
+      "imageKind": "generated"
+    },
+    {
+      "id": "carriage-bolts",
+      "path": "/products/carriage-bolts",
+      "title": "Carriage Bolts",
+      "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+      "image": "/assets/products/catalog-expansion/carriage-bolt.jpg",
+      "status": "published",
+      "kind": "type",
+      "parentId": "bolts",
+      "aliases": [],
+      "imageKind": "generated"
+    },
+    {
+      "id": "lock-nuts",
+      "path": "/products/lock-nuts",
+      "title": "Lock Nuts",
+      "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+      "image": "/assets/products/catalog-expansion/lock-nut.jpg",
+      "status": "published",
+      "kind": "type",
+      "parentId": "nuts",
+      "aliases": [],
+      "imageKind": "generated"
+    },
+    {
+      "id": "flange-nuts",
+      "path": "/products/flange-nuts",
+      "title": "Flange Nuts",
+      "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+      "image": "/assets/products/catalog-expansion/flange-nut.jpg",
+      "status": "published",
+      "kind": "type",
+      "parentId": "nuts",
+      "aliases": [],
+      "imageKind": "generated"
+    },
+    {
+      "id": "coupling-nuts",
+      "path": "/products/coupling-nuts",
+      "title": "Coupling Nuts",
+      "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+      "image": "/assets/products/catalog-expansion/coupling-nut.jpg",
+      "status": "published",
+      "kind": "type",
+      "parentId": "nuts",
+      "aliases": [],
+      "imageKind": "generated"
+    },
+    {
+      "id": "flat-washers",
+      "path": "/products/flat-washers",
+      "title": "Flat Washers",
+      "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+      "image": "/assets/products/washers/flat-washer-din125-zinc-0ed0fd68.jpg",
+      "status": "published",
+      "kind": "type",
+      "parentId": "washers",
+      "aliases": []
+    },
+    {
+      "id": "spring-washers",
+      "path": "/products/spring-washers",
+      "title": "Spring Washers",
+      "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+      "image": "/assets/products/catalog-expansion/spring-washer.jpg",
+      "status": "published",
+      "kind": "type",
+      "parentId": "washers",
+      "aliases": [],
+      "imageKind": "generated"
+    },
+    {
+      "id": "structural-washers",
+      "path": "/products/structural-washers",
+      "title": "Structural Washers",
+      "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+      "image": "/assets/products/catalog-expansion/structural-washer.jpg",
+      "status": "published",
+      "kind": "type",
+      "parentId": "washers",
+      "aliases": [],
+      "imageKind": "generated"
     }
   ],
   "products": [
@@ -325,7 +434,9 @@
         "driveType": [
           "external-hex"
         ]
-      }
+      },
+      "displayFamilyId": "partial-thread-hex",
+      "displayFamilyTitle": "Hex Head Bolt (Partial Thread)"
     },
     {
       "id": "din-931-hex-bolt",
@@ -346,7 +457,9 @@
         "driveType": [
           "external-hex"
         ]
-      }
+      },
+      "displayFamilyId": "partial-thread-hex",
+      "displayFamilyTitle": "Hex Head Bolt (Partial Thread)"
     },
     {
       "id": "din-933-hex-bolt",
@@ -354,7 +467,7 @@
       "title": "DIN 933 Full Thread Hex Bolt",
       "description": "Full thread hex head bolt per DIN 933 (ISO 4017), fully threaded for through-bolt connections.",
       "standard": "DIN 933 / ISO 4017",
-      "image": "/assets/products/hex-bolts/din933-full-thread-hex-bolt-4096c885.jpg",
+      "image": "/assets/products/catalog-expansion/full-thread-hex-bolt.jpg",
       "status": "published",
       "primaryCategoryId": "hex-bolts",
       "categoryIds": [
@@ -367,6 +480,36 @@
         "driveType": [
           "external-hex"
         ]
+      },
+      "displayFamilyId": "full-thread-hex",
+      "displayFamilyTitle": "Hex Head Bolt (Full Thread)",
+      "imageKind": "generated",
+      "detail": {
+        "specifications": [
+          [
+            "Product family",
+            "DIN 933 Full Thread Hex Bolt"
+          ],
+          [
+            "Dimensions and tolerances",
+            "To your drawing or agreed specification"
+          ],
+          [
+            "Material",
+            "Carbon steel, alloy steel or stainless steel; selection subject to technical review"
+          ],
+          [
+            "Surface Treatment",
+            "To your drawing or agreed specification"
+          ]
+        ],
+        "notes": [
+          {
+            "title": "Ordering information",
+            "text": "Send the required dimensions, material, finish, quantity and application with your inquiry."
+          }
+        ],
+        "availability": "Manufacturing feasibility, material options and delivery are confirmed after review of your drawing or specification."
       }
     },
     {
@@ -388,7 +531,9 @@
         "driveType": [
           "external-hex"
         ]
-      }
+      },
+      "displayFamilyId": "partial-thread-hex",
+      "displayFamilyTitle": "Hex Head Bolt (Partial Thread)"
     },
     {
       "id": "gb-t-5783-hex-bolt",
@@ -396,7 +541,7 @@
       "title": "GB/T 5783 Full Thread Hex Bolt",
       "description": "Full thread hex head bolt per GB/T 5783 (ISO 4017), Chinese national standard for fully threaded bolts.",
       "standard": "GB/T 5783",
-      "image": "/assets/products/hex-bolts/gbt5783-full-thread-bolt-ba451c1d.jpg",
+      "image": "/assets/products/catalog-expansion/full-thread-hex-bolt.jpg",
       "status": "published",
       "primaryCategoryId": "hex-bolts",
       "categoryIds": [
@@ -409,6 +554,36 @@
         "driveType": [
           "external-hex"
         ]
+      },
+      "displayFamilyId": "full-thread-hex",
+      "displayFamilyTitle": "Hex Head Bolt (Full Thread)",
+      "imageKind": "generated",
+      "detail": {
+        "specifications": [
+          [
+            "Product family",
+            "GB/T 5783 Full Thread Hex Bolt"
+          ],
+          [
+            "Dimensions and tolerances",
+            "To your drawing or agreed specification"
+          ],
+          [
+            "Material",
+            "Carbon steel, alloy steel or stainless steel; selection subject to technical review"
+          ],
+          [
+            "Surface Treatment",
+            "To your drawing or agreed specification"
+          ]
+        ],
+        "notes": [
+          {
+            "title": "Ordering information",
+            "text": "Send the required dimensions, material, finish, quantity and application with your inquiry."
+          }
+        ],
+        "availability": "Manufacturing feasibility, material options and delivery are confirmed after review of your drawing or specification."
       }
     },
     {
@@ -513,9 +688,9 @@
       "standard": "DIN 125 / ISO 7089",
       "image": "/assets/products/washers/flat-washer-din125-zinc-0ed0fd68.jpg",
       "status": "published",
-      "primaryCategoryId": "washers",
+      "primaryCategoryId": "flat-washers",
       "categoryIds": [
-        "washers"
+        "flat-washers"
       ],
       "attributes": {}
     },
@@ -1274,6 +1449,552 @@
         "availability": "Manufacturing feasibility, material options and delivery are confirmed after review of your drawing or specification."
       },
       "referenceListing": "https://guwanji.tmall.com/category-1237502200.htm",
+      "imageKind": "generated"
+    },
+    {
+      "id": "pan-head-machine-screw",
+      "path": "/product/pan-head-machine-screw",
+      "title": "Phillips Pan Head Machine Screws",
+      "description": "Phillips pan head with machine thread; confirm head clearance, thread pitch and mating hole.",
+      "standard": "Drawing / specification",
+      "image": "/assets/products/catalog-expansion/pan-head-machine-screw.jpg",
+      "status": "published",
+      "primaryCategoryId": "machine-screws",
+      "categoryIds": [
+        "machine-screws"
+      ],
+      "attributes": {},
+      "detail": {
+        "specifications": [
+          [
+            "Product family",
+            "Phillips Pan Head Machine Screws"
+          ],
+          [
+            "Dimensions and tolerances",
+            "To your drawing or agreed specification"
+          ],
+          [
+            "Material",
+            "Carbon steel, alloy steel or stainless steel; selection subject to technical review"
+          ],
+          [
+            "Surface Treatment",
+            "To your drawing or agreed specification"
+          ]
+        ],
+        "notes": [
+          {
+            "title": "Ordering information",
+            "text": "Send the required dimensions, material, finish, quantity and application with your inquiry."
+          }
+        ],
+        "availability": "Manufacturing feasibility, material options and delivery are confirmed after review of your drawing or specification."
+      },
+      "imageKind": "generated"
+    },
+    {
+      "id": "self-tapping-screw",
+      "path": "/product/self-tapping-screw",
+      "title": "Self-Tapping Screws",
+      "description": "Pointed self-tapping screws; confirm substrate, pilot hole and engagement before selecting the thread.",
+      "standard": "Drawing / specification",
+      "image": "/assets/products/catalog-expansion/self-tapping-screw.jpg",
+      "status": "published",
+      "primaryCategoryId": "self-tapping-screws",
+      "categoryIds": [
+        "self-tapping-screws"
+      ],
+      "attributes": {},
+      "detail": {
+        "specifications": [
+          [
+            "Product family",
+            "Self-Tapping Screws"
+          ],
+          [
+            "Dimensions and tolerances",
+            "To your drawing or agreed specification"
+          ],
+          [
+            "Material",
+            "Carbon steel, alloy steel or stainless steel; selection subject to technical review"
+          ],
+          [
+            "Surface Treatment",
+            "To your drawing or agreed specification"
+          ]
+        ],
+        "notes": [
+          {
+            "title": "Ordering information",
+            "text": "Send the required dimensions, material, finish, quantity and application with your inquiry."
+          }
+        ],
+        "availability": "Manufacturing feasibility, material options and delivery are confirmed after review of your drawing or specification."
+      },
+      "imageKind": "generated"
+    },
+    {
+      "id": "cone-point-set-screw",
+      "path": "/product/cone-point-set-screw",
+      "title": "Cone Point Socket Set Screws",
+      "description": "Headless socket screws with a cone point; specify the mating recess and positioning requirement.",
+      "standard": "Drawing / specification",
+      "image": "/assets/products/catalog-expansion/cone-point-set-screw.jpg",
+      "status": "published",
+      "primaryCategoryId": "set-screws",
+      "categoryIds": [
+        "set-screws"
+      ],
+      "attributes": {},
+      "detail": {
+        "specifications": [
+          [
+            "Product family",
+            "Cone Point Socket Set Screws"
+          ],
+          [
+            "Dimensions and tolerances",
+            "To your drawing or agreed specification"
+          ],
+          [
+            "Material",
+            "Carbon steel, alloy steel or stainless steel; selection subject to technical review"
+          ],
+          [
+            "Surface Treatment",
+            "To your drawing or agreed specification"
+          ]
+        ],
+        "notes": [
+          {
+            "title": "Ordering information",
+            "text": "Send the required dimensions, material, finish, quantity and application with your inquiry."
+          }
+        ],
+        "availability": "Manufacturing feasibility, material options and delivery are confirmed after review of your drawing or specification."
+      },
+      "imageKind": "generated"
+    },
+    {
+      "id": "cup-point-set-screw",
+      "path": "/product/cup-point-set-screw",
+      "title": "Cup Point Socket Set Screws",
+      "description": "Headless socket screws with a cup point; confirm the contact surface and holding requirement.",
+      "standard": "Drawing / specification",
+      "image": "/assets/products/catalog-expansion/cup-point-set-screw.jpg",
+      "status": "published",
+      "primaryCategoryId": "set-screws",
+      "categoryIds": [
+        "set-screws"
+      ],
+      "attributes": {},
+      "detail": {
+        "specifications": [
+          [
+            "Product family",
+            "Cup Point Socket Set Screws"
+          ],
+          [
+            "Dimensions and tolerances",
+            "To your drawing or agreed specification"
+          ],
+          [
+            "Material",
+            "Carbon steel, alloy steel or stainless steel; selection subject to technical review"
+          ],
+          [
+            "Surface Treatment",
+            "To your drawing or agreed specification"
+          ]
+        ],
+        "notes": [
+          {
+            "title": "Ordering information",
+            "text": "Send the required dimensions, material, finish, quantity and application with your inquiry."
+          }
+        ],
+        "availability": "Manufacturing feasibility, material options and delivery are confirmed after review of your drawing or specification."
+      },
+      "imageKind": "generated"
+    },
+    {
+      "id": "dog-point-set-screw",
+      "path": "/product/dog-point-set-screw",
+      "title": "Dog Point Socket Set Screws",
+      "description": "Headless socket screws with a cylindrical dog point; specify tip diameter, length and mating feature.",
+      "standard": "Drawing / specification",
+      "image": "/assets/products/catalog-expansion/dog-point-set-screw.jpg",
+      "status": "published",
+      "primaryCategoryId": "set-screws",
+      "categoryIds": [
+        "set-screws"
+      ],
+      "attributes": {},
+      "detail": {
+        "specifications": [
+          [
+            "Product family",
+            "Dog Point Socket Set Screws"
+          ],
+          [
+            "Dimensions and tolerances",
+            "To your drawing or agreed specification"
+          ],
+          [
+            "Material",
+            "Carbon steel, alloy steel or stainless steel; selection subject to technical review"
+          ],
+          [
+            "Surface Treatment",
+            "To your drawing or agreed specification"
+          ]
+        ],
+        "notes": [
+          {
+            "title": "Ordering information",
+            "text": "Send the required dimensions, material, finish, quantity and application with your inquiry."
+          }
+        ],
+        "availability": "Manufacturing feasibility, material options and delivery are confirmed after review of your drawing or specification."
+      },
+      "imageKind": "generated"
+    },
+    {
+      "id": "hex-flange-bolt",
+      "path": "/product/hex-flange-bolt",
+      "title": "Hex Flange Bolts",
+      "description": "External hex head with an integral flange; confirm flange diameter, bearing surface and thread.",
+      "standard": "Drawing / specification",
+      "image": "/assets/products/catalog-expansion/hex-flange-bolt.jpg",
+      "status": "published",
+      "primaryCategoryId": "flange-bolts",
+      "categoryIds": [
+        "flange-bolts"
+      ],
+      "attributes": {},
+      "detail": {
+        "specifications": [
+          [
+            "Product family",
+            "Hex Flange Bolts"
+          ],
+          [
+            "Dimensions and tolerances",
+            "To your drawing or agreed specification"
+          ],
+          [
+            "Material",
+            "Carbon steel, alloy steel or stainless steel; selection subject to technical review"
+          ],
+          [
+            "Surface Treatment",
+            "To your drawing or agreed specification"
+          ]
+        ],
+        "notes": [
+          {
+            "title": "Ordering information",
+            "text": "Send the required dimensions, material, finish, quantity and application with your inquiry."
+          }
+        ],
+        "availability": "Manufacturing feasibility, material options and delivery are confirmed after review of your drawing or specification."
+      },
+      "imageKind": "generated"
+    },
+    {
+      "id": "carriage-bolt",
+      "path": "/product/carriage-bolt",
+      "title": "Carriage Bolts",
+      "description": "Round head with a square neck; confirm neck dimensions and the matching hole.",
+      "standard": "Drawing / specification",
+      "image": "/assets/products/catalog-expansion/carriage-bolt.jpg",
+      "status": "published",
+      "primaryCategoryId": "carriage-bolts",
+      "categoryIds": [
+        "carriage-bolts"
+      ],
+      "attributes": {},
+      "detail": {
+        "specifications": [
+          [
+            "Product family",
+            "Carriage Bolts"
+          ],
+          [
+            "Dimensions and tolerances",
+            "To your drawing or agreed specification"
+          ],
+          [
+            "Material",
+            "Carbon steel, alloy steel or stainless steel; selection subject to technical review"
+          ],
+          [
+            "Surface Treatment",
+            "To your drawing or agreed specification"
+          ]
+        ],
+        "notes": [
+          {
+            "title": "Ordering information",
+            "text": "Send the required dimensions, material, finish, quantity and application with your inquiry."
+          }
+        ],
+        "availability": "Manufacturing feasibility, material options and delivery are confirmed after review of your drawing or specification."
+      },
+      "imageKind": "generated"
+    },
+    {
+      "id": "anchor-bolt",
+      "path": "/product/anchor-bolt",
+      "title": "L and J Anchor Bolts",
+      "description": "Bent foundation bolts; specify L or J shape, bend dimensions, embedded length and exposed thread.",
+      "standard": "Drawing / specification",
+      "image": "/assets/products/catalog-expansion/anchor-bolt.jpg",
+      "status": "published",
+      "primaryCategoryId": "anchor-bolts",
+      "categoryIds": [
+        "anchor-bolts"
+      ],
+      "attributes": {},
+      "detail": {
+        "specifications": [
+          [
+            "Product family",
+            "L and J Anchor Bolts"
+          ],
+          [
+            "Dimensions and tolerances",
+            "To your drawing or agreed specification"
+          ],
+          [
+            "Material",
+            "Carbon steel, alloy steel or stainless steel; selection subject to technical review"
+          ],
+          [
+            "Surface Treatment",
+            "To your drawing or agreed specification"
+          ]
+        ],
+        "notes": [
+          {
+            "title": "Ordering information",
+            "text": "Send the required dimensions, material, finish, quantity and application with your inquiry."
+          }
+        ],
+        "availability": "Manufacturing feasibility, material options and delivery are confirmed after review of your drawing or specification."
+      },
+      "imageKind": "generated"
+    },
+    {
+      "id": "lock-nut",
+      "path": "/product/lock-nut",
+      "title": "Nylon Insert Lock Nuts",
+      "description": "Hex nuts with a nylon locking insert; confirm thread fit, temperature and assembly requirements.",
+      "standard": "Drawing / specification",
+      "image": "/assets/products/catalog-expansion/lock-nut.jpg",
+      "status": "published",
+      "primaryCategoryId": "lock-nuts",
+      "categoryIds": [
+        "lock-nuts"
+      ],
+      "attributes": {},
+      "detail": {
+        "specifications": [
+          [
+            "Product family",
+            "Nylon Insert Lock Nuts"
+          ],
+          [
+            "Dimensions and tolerances",
+            "To your drawing or agreed specification"
+          ],
+          [
+            "Material",
+            "Carbon steel, alloy steel or stainless steel; selection subject to technical review"
+          ],
+          [
+            "Surface Treatment",
+            "To your drawing or agreed specification"
+          ]
+        ],
+        "notes": [
+          {
+            "title": "Ordering information",
+            "text": "Send the required dimensions, material, finish, quantity and application with your inquiry."
+          }
+        ],
+        "availability": "Manufacturing feasibility, material options and delivery are confirmed after review of your drawing or specification."
+      },
+      "imageKind": "generated"
+    },
+    {
+      "id": "flange-nut",
+      "path": "/product/flange-nut",
+      "title": "Hex Flange Nuts",
+      "description": "Hex nuts with an integral flange; specify flange dimensions and serrated or plain bearing surface.",
+      "standard": "Drawing / specification",
+      "image": "/assets/products/catalog-expansion/flange-nut.jpg",
+      "status": "published",
+      "primaryCategoryId": "flange-nuts",
+      "categoryIds": [
+        "flange-nuts"
+      ],
+      "attributes": {},
+      "detail": {
+        "specifications": [
+          [
+            "Product family",
+            "Hex Flange Nuts"
+          ],
+          [
+            "Dimensions and tolerances",
+            "To your drawing or agreed specification"
+          ],
+          [
+            "Material",
+            "Carbon steel, alloy steel or stainless steel; selection subject to technical review"
+          ],
+          [
+            "Surface Treatment",
+            "To your drawing or agreed specification"
+          ]
+        ],
+        "notes": [
+          {
+            "title": "Ordering information",
+            "text": "Send the required dimensions, material, finish, quantity and application with your inquiry."
+          }
+        ],
+        "availability": "Manufacturing feasibility, material options and delivery are confirmed after review of your drawing or specification."
+      },
+      "imageKind": "generated"
+    },
+    {
+      "id": "coupling-nut",
+      "path": "/product/coupling-nut",
+      "title": "Hex Coupling Nuts",
+      "description": "Elongated hex nuts for threaded connections; confirm length, thread engagement and alignment.",
+      "standard": "Drawing / specification",
+      "image": "/assets/products/catalog-expansion/coupling-nut.jpg",
+      "status": "published",
+      "primaryCategoryId": "coupling-nuts",
+      "categoryIds": [
+        "coupling-nuts"
+      ],
+      "attributes": {},
+      "detail": {
+        "specifications": [
+          [
+            "Product family",
+            "Hex Coupling Nuts"
+          ],
+          [
+            "Dimensions and tolerances",
+            "To your drawing or agreed specification"
+          ],
+          [
+            "Material",
+            "Carbon steel, alloy steel or stainless steel; selection subject to technical review"
+          ],
+          [
+            "Surface Treatment",
+            "To your drawing or agreed specification"
+          ]
+        ],
+        "notes": [
+          {
+            "title": "Ordering information",
+            "text": "Send the required dimensions, material, finish, quantity and application with your inquiry."
+          }
+        ],
+        "availability": "Manufacturing feasibility, material options and delivery are confirmed after review of your drawing or specification."
+      },
+      "imageKind": "generated"
+    },
+    {
+      "id": "spring-washer",
+      "path": "/product/spring-washer",
+      "title": "Split Spring Washers",
+      "description": "Split helical washers; specify dimensions and validate their suitability for the complete joint.",
+      "standard": "Drawing / specification",
+      "image": "/assets/products/catalog-expansion/spring-washer.jpg",
+      "status": "published",
+      "primaryCategoryId": "spring-washers",
+      "categoryIds": [
+        "spring-washers"
+      ],
+      "attributes": {},
+      "detail": {
+        "specifications": [
+          [
+            "Product family",
+            "Split Spring Washers"
+          ],
+          [
+            "Dimensions and tolerances",
+            "To your drawing or agreed specification"
+          ],
+          [
+            "Material",
+            "Carbon steel, alloy steel or stainless steel; selection subject to technical review"
+          ],
+          [
+            "Surface Treatment",
+            "To your drawing or agreed specification"
+          ]
+        ],
+        "notes": [
+          {
+            "title": "Ordering information",
+            "text": "Send the required dimensions, material, finish, quantity and application with your inquiry."
+          }
+        ],
+        "availability": "Manufacturing feasibility, material options and delivery are confirmed after review of your drawing or specification."
+      },
+      "imageKind": "generated"
+    },
+    {
+      "id": "structural-washer",
+      "path": "/product/structural-washer",
+      "title": "Structural Flat Washers",
+      "description": "Thick flat washers for structural assemblies; confirm dimensions, hardness and assembly specification.",
+      "standard": "Drawing / specification",
+      "image": "/assets/products/catalog-expansion/structural-washer.jpg",
+      "status": "published",
+      "primaryCategoryId": "structural-washers",
+      "categoryIds": [
+        "structural-washers"
+      ],
+      "attributes": {},
+      "detail": {
+        "specifications": [
+          [
+            "Product family",
+            "Structural Flat Washers"
+          ],
+          [
+            "Dimensions and tolerances",
+            "To your drawing or agreed specification"
+          ],
+          [
+            "Material",
+            "Carbon steel, alloy steel or stainless steel; selection subject to technical review"
+          ],
+          [
+            "Surface Treatment",
+            "To your drawing or agreed specification"
+          ]
+        ],
+        "notes": [
+          {
+            "title": "Ordering information",
+            "text": "Send the required dimensions, material, finish, quantity and application with your inquiry."
+          }
+        ],
+        "availability": "Manufacturing feasibility, material options and delivery are confirmed after review of your drawing or specification."
+      },
       "imageKind": "generated"
     }
   ],

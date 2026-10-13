@@ -7,6 +7,26 @@ const source = JSON.parse(await readFile(new URL('../content/catalog.json', impo
 const routes = JSON.parse(await readFile(new URL('../content/routes.json', import.meta.url), 'utf8'));
 const fresh = () => structuredClone(source);
 
+test('standard variants share family cards while retaining every detail link', () => {
+  const page = catalogPages(source, routes).get('/products/hex-bolts').html;
+  assert.equal((page.match(/class="catalog-standard-family"/g) ?? []).length, 2);
+  for (const id of ['gb-t-5782-hex-bolt', 'din-931-hex-bolt', 'iso-4014-hex-bolt', 'gb-t-5783-hex-bolt', 'din-933-hex-bolt']) {
+    assert.ok(page.includes(`href="/product/${id}"`), id);
+  }
+});
+
+test('expanded public families contain products and new details carry their RFQ identity', () => {
+  const pages = catalogPages(source, routes);
+  for (const category of source.categories.filter((item) => item.status === 'published' && item.kind !== 'service')) {
+    assert.ok(productsForCategory(source, category.id).length, category.id);
+  }
+  for (const id of ['pan-head-machine-screw', 'self-tapping-screw', 'cone-point-set-screw', 'cup-point-set-screw', 'dog-point-set-screw', 'hex-flange-bolt', 'carriage-bolt', 'anchor-bolt', 'lock-nut', 'flange-nut', 'coupling-nut', 'spring-washer', 'structural-washer']) {
+    const html = pages.get(`/product/${id}`).html;
+    assert.ok(html.includes(`name="product_id" value="${id}"`), id);
+    assert.ok(html.includes('AI-generated product visualization'), id);
+  }
+});
+
 test('existing product and category routes remain represented once in the catalog', () => {
   validateCatalog(source, routes);
   const pages = catalogPages(source, routes);
@@ -87,7 +107,7 @@ test('primary product families partition the catalog while alternate browsing ke
   for (const product of source.products.filter((item) => item.status === 'published')) {
     assert.equal(roots.filter((category) => productsForCategory(source, category.id).some((item) => item.id === product.id)).length, 1, product.id);
     const primary = source.categories.find((category) => category.id === product.primaryCategoryId);
-    assert.equal(primary.navigationGroup ?? 'family', 'family', product.id);
+    assert.ok(['family', 'drive-type'].includes(primary.navigationGroup ?? 'family'), product.id);
     const html = await readFile(new URL(`../content/pages/${routes[product.path].file}`, import.meta.url), 'utf8');
     const root = roots.find((category) => productsForCategory(source, category.id).some((item) => item.id === product.id));
     assert.ok(html.match(/<nav\b[^>]*>[\s\S]*?<\/nav>/)[0].includes(`href="${root.path}"`), product.id);
@@ -95,6 +115,7 @@ test('primary product families partition the catalog while alternate browsing ke
   assert.match(pages.get('/products/bolts').html, /Browse by Strength/);
   assert.match(pages.get('/products/bolts').html, /Browse by Application/);
   assert.match(pages.get('/products/screws').html, /Browse by Head Style/);
+  assert.match(pages.get('/products/screws').html, /Browse by Drive Type/);
   assert.equal(source.categories.find((item) => item.id === 'special-bolts').parentId, 'bolts');
 });
 

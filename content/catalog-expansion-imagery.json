@@ -1,0 +1,82 @@
+{
+  "created": "2026-10-09",
+  "tool": "built-in image_gen",
+  "kind": "AI appearance illustrations, not factory photographs or dimensional drawings",
+  "referenceStyle": "Existing site product photos: warm beige tabletop, blurred warm workshop, soft window lighting, no packaging or promotional graphics",
+  "encoding": "JPEG quality 85; generated PNG originals retained in the default image_gen directory",
+  "images": [
+    {
+      "productId": "pan-head-machine-screw",
+      "path": "/assets/products/catalog-expansion/pan-head-machine-screw.jpg",
+      "prompt": "Photorealistic landscape 3:2 macro catalog photograph of one silver Phillips pan head machine screw, shallow rounded pan head with cross recess, blunt end and uniform fine machine thread. Warm beige textured tabletop, heavily blurred warm neutral workshop background and soft window light from upper left. Centered product fills 65 percent of frame. No packaging, boxes, text, logos, tools or graphics."
+    },
+    {
+      "productId": "self-tapping-screw",
+      "path": "/assets/products/catalog-expansion/self-tapping-screw.jpg",
+      "prompt": "Use case: product-mockup. Landscape 3:2 photorealistic macro factory website product-only photo of one Phillips pan-head self-tapping screw, sharp pointed tip, coarse widely spaced self-tapping thread, no drill flutes. Warm beige lightly textured tabletop, heavily blurred warm neutral workshop background, soft window light from upper left. Realistic silver steel materials, precise geometry and crisp machining detail. Center subjects with all shapes fully visible occupying about 65% of frame. No boxes, packaging, tools, people, labels, text, logos, watermarks or ecommerce graphics."
+    },
+    {
+      "productId": "cone-point-set-screw",
+      "path": "/assets/products/catalog-expansion/cone-point-set-screw.jpg",
+      "prompt": "Photorealistic landscape product photograph of a silver headless hex socket cone-point set screw. Sharp conical tip clearly visible. Fine machine threads. Warm beige tabletop, softly blurred warm workshop background, window light. Product only, no text or packaging."
+    },
+    {
+      "productId": "cup-point-set-screw",
+      "path": "/assets/products/catalog-expansion/cup-point-set-screw.jpg",
+      "prompt": "Photorealistic landscape product photo of one headless CUP POINT set screw on a warm beige tabletop, blurred warm workshop. Camera facing the working cup-point end in the foreground: a circular concave bowl centered exactly on the axis of the threaded cylinder, with a sharp circular rim. The screw extends backwards away from the camera; the hex socket at the opposite far end is hidden. No side holes. Silver fine machine threads, realistic geometry. Soft window lighting, no text, tools or packaging."
+    },
+    {
+      "productId": "dog-point-set-screw",
+      "path": "/assets/products/catalog-expansion/dog-point-set-screw.jpg",
+      "prompt": "Photorealistic landscape pure product photograph of a silver headless hex socket dog-point set screw. Uniform machine-threaded cylinder ends in a distinctly smaller diameter smooth cylindrical unthreaded pin with flat end, coaxial with screw. Warm beige tabletop, softly blurred warm workshop, soft window light. No text or packaging."
+    },
+    {
+      "productId": "hex-flange-bolt",
+      "path": "/assets/products/catalog-expansion/hex-flange-bolt.jpg",
+      "prompt": "Photorealistic landscape product photograph of one silver external hex head flange bolt. Distinct six-sided wrench head with broad integral circular flange underneath, machine-threaded shaft. Warm beige tabletop, blurred warm workshop, soft window light. Entire bolt centered and visible. No text, logos or packaging."
+    },
+    {
+      "productId": "carriage-bolt",
+      "path": "/assets/products/catalog-expansion/carriage-bolt.jpg",
+      "prompt": "Photorealistic landscape product photograph of one silver carriage bolt lying diagonally on a warm beige tabletop. Smooth round domed head without recess, distinctly visible square neck directly under the head, machine-threaded shaft. Soft blurred warm workshop and window light. Entire bolt visible, product only, no text or packaging."
+    },
+    {
+      "productId": "anchor-bolt",
+      "path": "/assets/products/catalog-expansion/anchor-bolt.jpg",
+      "prompt": "Photorealistic landscape pure product photograph of two silver bent foundation anchor bolts lying on warm beige tabletop, one L-shaped with a right-angle foot and one J-shaped with a curved hook. Long smooth straight shafts, machine thread only at the upper straight ends, bends unthreaded. Both complete shapes fully visible. Softly blurred warm workshop background, window light. No nuts, text, boxes or tools."
+    },
+    {
+      "productId": "lock-nut",
+      "path": "/assets/products/catalog-expansion/lock-nut.jpg",
+      "prompt": "Photorealistic landscape pure product photo of three silver hexagonal nylon insert lock nuts, blue nylon collars clearly visible in top circular holes and metal internal threads beneath collars. Warm beige tabletop, blurred warm neutral workshop, soft window lighting. Sharp realistic six-sided geometry. No bolts, packaging, text or tools."
+    },
+    {
+      "productId": "flange-nut",
+      "path": "/assets/products/catalog-expansion/flange-nut.jpg",
+      "prompt": "Photorealistic landscape pure product photograph of three silver hex flange nuts. Each has a six-sided hexagonal body and a broad integral circular flange at its bottom, internal machine threads clearly visible in central bore. Warm beige tabletop, blurred warm workshop backdrop, soft window lighting. No bolts, text or packaging."
+    },
+    {
+      "productId": "coupling-nut",
+      "path": "/assets/products/catalog-expansion/coupling-nut.jpg",
+      "prompt": "Photorealistic landscape pure product photograph of two silver long hexagonal coupling nuts on warm beige tabletop. Elongated six-sided prism bodies, length about three times width, internally threaded circular bores clearly visible, one lying down and one standing. Softly blurred warm workshop and window lighting. No bolts, text, tools or packaging."
+    },
+    {
+      "productId": "spring-washer",
+      "path": "/assets/products/catalog-expansion/spring-washer.jpg",
+      "prompt": "Photorealistic landscape product photo of three silver split spring lock washers, single-turn helical metal rings each with one clearly visible split gap and offset ends, realistic standard spring washer shape. Warm beige tabletop, softly blurred warm workshop, window light. Product only, no bolts, text or packaging."
+    },
+    {
+      "productId": "structural-washer",
+      "path": "/assets/products/catalog-expansion/structural-washer.jpg",
+      "prompt": "Photorealistic landscape pure product photograph of three thick plain circular flat steel structural washers, large centered round holes, flat parallel faces, visibly thicker than ordinary thin washers. Silver steel on warm beige tabletop, softly blurred warm workshop, soft window light. No markings, bolts, split gaps, text or packaging."
+    },
+    {
+      "productIds": [
+        "din-933-hex-bolt",
+        "gb-t-5783-hex-bolt"
+      ],
+      "path": "/assets/products/catalog-expansion/full-thread-hex-bolt.jpg",
+      "prompt": "Photorealistic landscape pure product photograph of one silver fully threaded external hex head bolt lying on warm beige tabletop. Solid six-sided hexagonal head with no socket, no hole, no flange. Fine uniform machine threads run the full shaft length up to directly beneath the head, no smooth unthreaded shank. Warm softly blurred workshop background and window lighting. Entire product visible, no text or packaging."
+    }
+  ]
+}

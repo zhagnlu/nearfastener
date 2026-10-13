@@ -1,3 +1,4 @@
+import { productSupport } from './product-support.mjs';
 import { readFile, writeFile, mkdir, access, unlink } from 'node:fs/promises';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -35,7 +36,7 @@ export async function buildCatalog() {
     let updated = html.replace(/<nav\b[^>]*>[\s\S]*?<\/nav>/, productBreadcrumb(catalog, product));
     updated = updated.replaceAll('href="/rfq"', `href="/rfq?product_id=${encodeURIComponent(product.id)}"`);
     const requestMarker = /<!-- product-request:start -->[\s\S]*?<!-- product-request:end -->/;
-    const requestBlock = `<!-- product-request:start --><div class="max-w-max-content mx-auto px-4 lg:px-8 pb-12">${productRequest(product)}</div><!-- product-request:end -->`;
+    const requestBlock = `<!-- product-request:start --><div class="max-w-max-content mx-auto px-4 lg:px-8 pb-12">${productSupport(catalog, product)}${productRequest(product)}</div><!-- product-request:end -->`;
     updated = requestMarker.test(updated) ? updated.replace(requestMarker, requestBlock) : updated.replace('</main>', `${requestBlock}</main>`);
     if (updated !== html) await writeFile(file, updated);
   }

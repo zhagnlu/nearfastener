@@ -89,7 +89,7 @@
   },
   "/products/washers": {
     "title": "Washers | Near Fastener",
-    "description": "Flat washers, spring washers, and heavy hex structural washer assemblies.",
+    "description": "Flat, split spring and structural washers; suitability is confirmed against the complete assembly.",
     "file": "products/washers.html",
     "catalogGenerated": true
   },
@@ -210,9 +210,10 @@
     "file": "product/din-931-hex-bolt.html"
   },
   "/product/din-933-hex-bolt": {
-    "title": "DIN 933 Full Thread Hex Bolt — DIN 933 / ISO 4017 | Near Fastener",
-    "description": "DIN 933 / ISO 4017 DIN 933 Full Thread Hex Bolt. Diameter: M5–M64, Grade: 4.6 / 8.8 / 10.9, Material: Carbon Steel / Alloy Steel.",
-    "file": "product/din-933-hex-bolt.html"
+    "title": "DIN 933 Full Thread Hex Bolt | Near Fastener",
+    "description": "Full thread hex head bolt per DIN 933 (ISO 4017), fully threaded for through-bolt connections.",
+    "file": "product/din-933-hex-bolt.html",
+    "catalogGenerated": true
   },
   "/product/iso-4014-hex-bolt": {
     "title": "ISO 4014 Hex Head Bolt — ISO 4014 | Near Fastener",
@@ -220,9 +221,10 @@
     "file": "product/iso-4014-hex-bolt.html"
   },
   "/product/gb-t-5783-hex-bolt": {
-    "title": "GB/T 5783 Full Thread Hex Bolt — GB/T 5783 | Near Fastener",
-    "description": "GB/T 5783 GB/T 5783 Full Thread Hex Bolt. Diameter: M5–M64, Grade: 4.6 / 8.8 / 10.9, Material: Carbon Steel / Alloy Steel.",
-    "file": "product/gb-t-5783-hex-bolt.html"
+    "title": "GB/T 5783 Full Thread Hex Bolt | Near Fastener",
+    "description": "Full thread hex head bolt per GB/T 5783 (ISO 4017), Chinese national standard for fully threaded bolts.",
+    "file": "product/gb-t-5783-hex-bolt.html",
+    "catalogGenerated": true
   },
   "/product/gb-t-32076-7-high-strength-bolt": {
     "title": "GB/T 32076.7 High Strength Hex Bolt — GB/T 32076.7 | Near Fastener",
@@ -261,7 +263,7 @@
   },
   "/products/screws": {
     "title": "Screws | Near Fastener",
-    "description": "Socket, machine, set, shoulder, thumb, assembly and self-drilling screws.",
+    "description": "Socket, machine, set, shoulder, thumb, assembly, self-tapping and self-drilling screws.",
     "file": "products/screws.html",
     "catalogGenerated": true
   },
@@ -290,7 +292,7 @@
     "catalogGenerated": true
   },
   "/products/machine-screws": {
-    "title": "Phillips and Slotted Machine Screws | Near Fastener",
+    "title": "Machine Screws | Near Fastener",
     "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
     "file": "products/machine-screws.html",
     "catalogGenerated": true
@@ -435,7 +437,7 @@
   },
   "/products/nuts": {
     "title": "Nuts | Near Fastener",
-    "description": "Hex nuts for matching bolt and stud assemblies; share your drawing for special requirements.",
+    "description": "Hex, lock, flange and coupling nuts for bolt, stud and threaded-rod assemblies.",
     "file": "products/nuts.html",
     "catalogGenerated": true
   },
@@ -443,6 +445,168 @@
     "title": "Studs and Threaded Rods | Near Fastener",
     "description": "Stud bolts and threaded rods for project and assembly requirements.",
     "file": "products/studs-and-rods.html",
+    "catalogGenerated": true
+  },
+  "/resources/sems-screw-selection": {
+    "title": "SEMS Screws: Washer Configuration and Factory Ordering | Near Fastener",
+    "description": "Specify the screw and washer combination together, then confirm assembly clearance, material, finish and batch demand.",
+    "file": "resources/sems-screw-selection.html",
+    "resourcesGenerated": true
+  },
+  "/resources/screw-head-selection": {
+    "title": "Socket Cap, Button, Low and Countersunk Heads: How to Choose | Near Fastener",
+    "description": "Compare head clearance, tool access and mounting geometry before specifying a screw for factory assembly.",
+    "file": "resources/screw-head-selection.html",
+    "resourcesGenerated": true
+  },
+  "/resources/custom-fastener-rfq-checklist": {
+    "title": "Custom Fastener RFQ Checklist for Factory Bulk Orders | Near Fastener",
+    "description": "Prepare drawings, acceptance requirements and delivery information so a custom fastener enquiry can be reviewed efficiently.",
+    "file": "resources/custom-fastener-rfq-checklist.html",
+    "resourcesGenerated": true
+  },
+  "/resources/stainless-fastener-galling": {
+    "title": "Stainless Steel Fastener Galling: Assembly and Ordering Guide | Near Fastener",
+    "description": "Plan thread condition, lubrication and assembly trials before ordering stainless steel fasteners in batches.",
+    "file": "resources/stainless-fastener-galling.html",
+    "resourcesGenerated": true
+  },
+  "/resources/high-strength-coating-hydrogen-embrittlement": {
+    "title": "High-Strength Fastener Coatings: Hydrogen Embrittlement Review | Near Fastener",
+    "description": "Review coating processes, inspection requirements and application conditions together before placing a bulk order.",
+    "file": "resources/high-strength-coating-hydrogen-embrittlement.html",
+    "resourcesGenerated": true
+  },
+  "/products/self-tapping-screws": {
+    "title": "Self-Tapping Screws | Near Fastener",
+    "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+    "file": "products/self-tapping-screws.html",
+    "catalogGenerated": true
+  },
+  "/products/flange-bolts": {
+    "title": "Flange Bolts | Near Fastener",
+    "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+    "file": "products/flange-bolts.html",
+    "catalogGenerated": true
+  },
+  "/products/carriage-bolts": {
+    "title": "Carriage Bolts | Near Fastener",
+    "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+    "file": "products/carriage-bolts.html",
+    "catalogGenerated": true
+  },
+  "/products/lock-nuts": {
+    "title": "Lock Nuts | Near Fastener",
+    "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+    "file": "products/lock-nuts.html",
+    "catalogGenerated": true
+  },
+  "/products/flange-nuts": {
+    "title": "Flange Nuts | Near Fastener",
+    "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+    "file": "products/flange-nuts.html",
+    "catalogGenerated": true
+  },
+  "/products/coupling-nuts": {
+    "title": "Coupling Nuts | Near Fastener",
+    "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+    "file": "products/coupling-nuts.html",
+    "catalogGenerated": true
+  },
+  "/products/flat-washers": {
+    "title": "Flat Washers | Near Fastener",
+    "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+    "file": "products/flat-washers.html",
+    "catalogGenerated": true
+  },
+  "/products/spring-washers": {
+    "title": "Spring Washers | Near Fastener",
+    "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+    "file": "products/spring-washers.html",
+    "catalogGenerated": true
+  },
+  "/products/structural-washers": {
+    "title": "Structural Washers | Near Fastener",
+    "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+    "file": "products/structural-washers.html",
+    "catalogGenerated": true
+  },
+  "/product/pan-head-machine-screw": {
+    "title": "Phillips Pan Head Machine Screws | Near Fastener",
+    "description": "Phillips pan head with machine thread; confirm head clearance, thread pitch and mating hole.",
+    "file": "product/pan-head-machine-screw.html",
+    "catalogGenerated": true
+  },
+  "/product/self-tapping-screw": {
+    "title": "Self-Tapping Screws | Near Fastener",
+    "description": "Pointed self-tapping screws; confirm substrate, pilot hole and engagement before selecting the thread.",
+    "file": "product/self-tapping-screw.html",
+    "catalogGenerated": true
+  },
+  "/product/cone-point-set-screw": {
+    "title": "Cone Point Socket Set Screws | Near Fastener",
+    "description": "Headless socket screws with a cone point; specify the mating recess and positioning requirement.",
+    "file": "product/cone-point-set-screw.html",
+    "catalogGenerated": true
+  },
+  "/product/cup-point-set-screw": {
+    "title": "Cup Point Socket Set Screws | Near Fastener",
+    "description": "Headless socket screws with a cup point; confirm the contact surface and holding requirement.",
+    "file": "product/cup-point-set-screw.html",
+    "catalogGenerated": true
+  },
+  "/product/dog-point-set-screw": {
+    "title": "Dog Point Socket Set Screws | Near Fastener",
+    "description": "Headless socket screws with a cylindrical dog point; specify tip diameter, length and mating feature.",
+    "file": "product/dog-point-set-screw.html",
+    "catalogGenerated": true
+  },
+  "/product/hex-flange-bolt": {
+    "title": "Hex Flange Bolts | Near Fastener",
+    "description": "External hex head with an integral flange; confirm flange diameter, bearing surface and thread.",
+    "file": "product/hex-flange-bolt.html",
+    "catalogGenerated": true
+  },
+  "/product/carriage-bolt": {
+    "title": "Carriage Bolts | Near Fastener",
+    "description": "Round head with a square neck; confirm neck dimensions and the matching hole.",
+    "file": "product/carriage-bolt.html",
+    "catalogGenerated": true
+  },
+  "/product/anchor-bolt": {
+    "title": "L and J Anchor Bolts | Near Fastener",
+    "description": "Bent foundation bolts; specify L or J shape, bend dimensions, embedded length and exposed thread.",
+    "file": "product/anchor-bolt.html",
+    "catalogGenerated": true
+  },
+  "/product/lock-nut": {
+    "title": "Nylon Insert Lock Nuts | Near Fastener",
+    "description": "Hex nuts with a nylon locking insert; confirm thread fit, temperature and assembly requirements.",
+    "file": "product/lock-nut.html",
+    "catalogGenerated": true
+  },
+  "/product/flange-nut": {
+    "title": "Hex Flange Nuts | Near Fastener",
+    "description": "Hex nuts with an integral flange; specify flange dimensions and serrated or plain bearing surface.",
+    "file": "product/flange-nut.html",
+    "catalogGenerated": true
+  },
+  "/product/coupling-nut": {
+    "title": "Hex Coupling Nuts | Near Fastener",
+    "description": "Elongated hex nuts for threaded connections; confirm length, thread engagement and alignment.",
+    "file": "product/coupling-nut.html",
+    "catalogGenerated": true
+  },
+  "/product/spring-washer": {
+    "title": "Split Spring Washers | Near Fastener",
+    "description": "Split helical washers; specify dimensions and validate their suitability for the complete joint.",
+    "file": "product/spring-washer.html",
+    "catalogGenerated": true
+  },
+  "/product/structural-washer": {
+    "title": "Structural Flat Washers | Near Fastener",
+    "description": "Thick flat washers for structural assemblies; confirm dimensions, hardness and assembly specification.",
+    "file": "product/structural-washer.html",
     "catalogGenerated": true
   }
 }

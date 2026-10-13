@@ -25,7 +25,7 @@ export function validateCatalog(catalog, routes) {
       if (published(item)) requireValue(nonempty(item.description), `Missing description: ${item.id}`);
       if (kind === 'category') {
         requireValue(nonempty(item.kind), `Missing category kind: ${item.id}`);
-        requireValue(item.navigationGroup === undefined || ['family', 'head-style', 'performance', 'application'].includes(item.navigationGroup), `Invalid navigation group: ${item.id}`);
+        requireValue(item.navigationGroup === undefined || ['family', 'head-style', 'drive-type', 'performance', 'application'].includes(item.navigationGroup), `Invalid navigation group: ${item.id}`);
         requireValue(Array.isArray(item.aliases) && item.aliases.every(nonempty), `Invalid aliases: ${item.id}`);
       } else if (published(item) && !item.detail) {
         requireValue(routes[item.path] && !routes[item.path].catalogGenerated, `Missing product detail route: ${item.path}`);
@@ -78,7 +78,22 @@ export function productsForCategory(catalog, id) {
 }
 
 const card = (item) => `<a class="catalog-card group bg-white rounded-card overflow-hidden border border-border hover:shadow-xl transition-all duration-300 hover:-translate-y-1" href="${escape(item.path)}">${item.image ? `<div class="aspect-[3/2] overflow-hidden"><img src="${escape(item.image)}" alt="${escape(item.title)}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy"></div>` : ''}<div class="p-5"><h2 class="font-semibold text-foreground text-lg mb-2 group-hover:text-accent transition-colors">${escape(item.title)}</h2>${item.standard ? `<p class="text-xs font-mono text-teal mb-2">${escape(item.standard)}</p>` : ''}<p class="text-sm text-muted-foreground line-clamp-2">${escape(item.description)}</p></div></a>`;
-const grid = (items) => `<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">${items.map(card).join('')}</div>`;
+const familyCards = (items) => {
+  const groups = new Map();
+  const result = [];
+  for (const item of items) {
+    if (!item.displayFamilyId) { result.push(item); continue; }
+    let family = groups.get(item.displayFamilyId);
+    if (!family) {
+      family = { ...item, title: item.displayFamilyTitle, standard: null, description: 'Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.', variants: [] };
+      groups.set(item.displayFamilyId, family); result.push(family);
+    }
+    family.variants.push(item);
+  }
+  return result.map((item) => item.variants?.length > 1 ? item : item.variants?.[0] ?? item);
+};
+const familyCard = (item) => item.variants ? `<article class="catalog-standard-family">${card(item)}<div class="product-tags">${item.variants.map((variant) => `<a href="${escape(variant.path)}">${escape(variant.standard)}</a>`).join('')}</div></article>` : card(item);
+const grid = (items) => `<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">${familyCards(items).map(familyCard).join('')}</div>`;
 // Homepage and product directory share the same published top-level categories.
 export function homepageCategories(catalog) {
   return `<section class="py-20 lg:py-24 bg-secondary"><div class="max-w-max-content mx-auto px-4 lg:px-8"><div class="text-center mb-12"><h2 class="text-3xl lg:text-4xl font-bold text-primary mb-3">Product Categories</h2><p class="text-muted-foreground max-w-xl mx-auto">Browse our full range of industrial fasteners by product type.</p></div>${grid(catalog.categories.filter((item) => published(item) && !item.parentId))}</div></section>`;
@@ -88,7 +103,7 @@ export function footerCategories(catalog) {
 }
 const empty = '<div class="text-center py-16"><p class="text-muted-foreground mb-4">Products in this category are being updated.</p><a class="text-accent hover:underline font-semibold" href="/rfq">Request a custom quote instead</a></div>';
 const categorySection = (title, body) => `<section class="catalog-group"><h2 class="text-2xl font-bold text-foreground mb-6">${escape(title)}</h2>${body}</section>`;
-const navigationGroups = [['family', 'Product Families'], ['head-style', 'Browse by Head Style'], ['performance', 'Browse by Strength'], ['application', 'Browse by Application']];
+const navigationGroups = [['family', 'Product Families'], ['head-style', 'Browse by Head Style'], ['drive-type', 'Browse by Drive Type'], ['performance', 'Browse by Strength'], ['application', 'Browse by Application']];
 
 export function catalogPages(catalog, routes) {
   validateCatalog(catalog, routes);

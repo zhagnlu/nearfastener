@@ -15,6 +15,14 @@
     {
       "id": "materials",
       "title": "Material Science"
+    },
+    {
+      "id": "selection",
+      "title": "Product Selection"
+    },
+    {
+      "id": "custom",
+      "title": "Custom Manufacturing"
     }
   ],
   "articles": [
@@ -221,7 +229,10 @@
       "relatedProducts": [
         "gb-t-5782-hex-bolt",
         "gb-t-1231-structural-bolt",
-        "threaded-rod-din-976"
+        "threaded-rod-din-976",
+        "hex-flange-bolt",
+        "carriage-bolt",
+        "structural-washer"
       ],
       "sources": [
         {
@@ -296,6 +307,274 @@
           "id": "ovako",
           "label": "Ovako",
           "url": "https://steelnavigator.ovako.com/steel-grades/42crmo4/"
+        }
+      ]
+    },
+    {
+      "id": "sems-screw-selection",
+      "topic": "selection",
+      "title": "SEMS Screws: Washer Configuration and Factory Ordering",
+      "summary": "Specify the screw and washer combination together, then confirm assembly clearance, material, finish and batch demand.",
+      "image": "/assets/products/screw-families/sems-screw-photo.jpg",
+      "relatedProducts": [
+        "sems-screw",
+        "captive-screw",
+        "hex-socket-flange-screw"
+      ],
+      "sections": [
+        {
+          "id": "configuration",
+          "title": "Specify the complete assembly",
+          "paragraphs": [
+            "SEMS ordering starts with the screw head, drive, thread and retained washer configuration. State whether you need a flat washer, a spring washer or a combination. Include washer inside diameter, outside diameter, thickness and order in the assembly."
+          ],
+          "sources": [
+            "pencom"
+          ]
+        },
+        {
+          "id": "fit",
+          "title": "Check the installed envelope",
+          "paragraphs": [
+            "Check the space occupied by the head and washers, tool access and usable thread length against the mating parts. Retaining the washer helps keep components together during handling; it does not by itself establish resistance to loosening in your application."
+          ],
+          "sources": [
+            "pencom"
+          ]
+        },
+        {
+          "id": "batch",
+          "title": "Prepare a batch specification",
+          "paragraphs": [
+            "Send a drawing or approved sample reference, material, finish, batch quantity and delivery schedule. Confirm inspection criteria and packing before production. If washer arrangement or coating changes, review the complete assembly again rather than ordering only by screw diameter."
+          ],
+          "sources": [
+            "pencom"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "id": "pencom",
+          "label": "PENCOM — machine screw and SEMS configurations",
+          "url": "https://www.pencomsf.com/en/products/screws/machine-screws/"
+        }
+      ],
+      "updated": "2026-10-09",
+      "imageKind": "generated"
+    },
+    {
+      "id": "screw-head-selection",
+      "topic": "selection",
+      "title": "Socket Cap, Button, Low and Countersunk Heads: How to Choose",
+      "summary": "Compare head clearance, tool access and mounting geometry before specifying a screw for factory assembly.",
+      "image": "/assets/products/screw-families/socket-cap-screw-photo.jpg",
+      "relatedProducts": [
+        "socket-cap-screw",
+        "socket-button-screw",
+        "low-head-socket-screw",
+        "hex-socket-countersunk-screw",
+        "pan-head-machine-screw"
+      ],
+      "sections": [
+        {
+          "id": "clearance",
+          "title": "Start with space and tool access",
+          "paragraphs": [
+            "Compare the head diameter and height with the available envelope and tool access. A socket cap head, button head and low head solve different clearance problems. Check the actual product drawing instead of treating all screws with the same thread as interchangeable."
+          ],
+          "sources": [
+            "bossard"
+          ]
+        },
+        {
+          "id": "seat",
+          "title": "Match the head to the seating surface",
+          "paragraphs": [
+            "A countersunk head needs a matching countersink; a flat-bearing head needs its specified seating surface. Confirm the head angle, hole preparation and length convention in the drawing. A flush appearance alone does not establish that the joint is correctly specified."
+          ],
+          "sources": [
+            "bossard"
+          ]
+        },
+        {
+          "id": "load",
+          "title": "Review loadability before substitution",
+          "paragraphs": [
+            "Some low-head and countersunk designs have reduced loadability because of head geometry. Do not transfer torque or load assumptions from a conventional cap screw without checking the applicable product standard. ISO 10642 explicitly covers countersunk socket screws with reduced loadability."
+          ],
+          "sources": [
+            "bossard",
+            "iso"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "id": "bossard",
+          "label": "Bossard — low-head screw loadability",
+          "url": "https://www.bossard.com/us-en/eshop/screws-and-bolts-with-internal-drive/hex-socket-head-cap-screws-with-low-head-and-pilot-recess-partially-fully-threaded/p/33001/"
+        },
+        {
+          "id": "iso",
+          "label": "ISO 10642 — countersunk screws with reduced loadability",
+          "url": "https://www.iso.org/standard/90795.html"
+        }
+      ],
+      "updated": "2026-10-09",
+      "imageKind": "generated"
+    },
+    {
+      "id": "custom-fastener-rfq-checklist",
+      "topic": "custom",
+      "title": "Custom Fastener RFQ Checklist for Factory Bulk Orders",
+      "summary": "Prepare drawings, acceptance requirements and delivery information so a custom fastener enquiry can be reviewed efficiently.",
+      "image": "/assets/products/custom-fasteners/custom-fastener-family-hero-v2.jpg",
+      "relatedProducts": [
+        "sems-screw",
+        "shoulder-screw",
+        "fitted-hex-bolt",
+        "square-head-bolt",
+        "anchor-bolt",
+        "hex-flange-bolt",
+        "carriage-bolt",
+        "coupling-nut"
+      ],
+      "sections": [
+        {
+          "id": "drawing",
+          "title": "Identify the drawing and critical features",
+          "paragraphs": [
+            "Include the drawing number, revision, units and required quantity. Identify critical head, thread, shoulder and washer dimensions, tolerances and mating parts. State the referenced standard or approved sample. A photo can explain appearance but cannot replace dimensional requirements."
+          ],
+          "sources": [
+            "pencom"
+          ]
+        },
+        {
+          "id": "acceptance",
+          "title": "Define material, finish and acceptance",
+          "paragraphs": [
+            "State material, property requirements and surface treatment separately. Explain which dimensions or tests require inspection records, and whether sample approval is needed before the production batch. Agree on acceptance criteria and document requirements before manufacture; avoid leaving them until delivery."
+          ],
+          "sources": []
+        },
+        {
+          "id": "delivery",
+          "title": "Plan the production and delivery batches",
+          "paragraphs": [
+            "Separate the first batch quantity from annual demand. Provide the destination, target schedule, packing requirements and any split deliveries. Confirm sample arrangements, order quantity and lead time for the specific project. These details support quotation without assuming a universal minimum order or delivery promise."
+          ],
+          "sources": []
+        }
+      ],
+      "sources": [
+        {
+          "id": "pencom",
+          "label": "PENCOM — machine screw and SEMS configurations",
+          "url": "https://www.pencomsf.com/en/products/screws/machine-screws/"
+        }
+      ],
+      "updated": "2026-10-09",
+      "imageKind": "generated"
+    },
+    {
+      "id": "stainless-fastener-galling",
+      "topic": "materials",
+      "title": "Stainless Steel Fastener Galling: Assembly and Ordering Guide",
+      "summary": "Plan thread condition, lubrication and assembly trials before ordering stainless steel fasteners in batches.",
+      "image": "/assets/products/screw-families/socket-cap-screw-photo.jpg",
+      "updated": "2026-10-09",
+      "relatedProducts": [
+        "socket-cap-screw",
+        "hex-nut-gb-t-6170",
+        "threaded-rod-din-976",
+        "flange-nut",
+        "coupling-nut"
+      ],
+      "sections": [
+        {
+          "id": "step-1",
+          "title": "Understand thread seizure",
+          "paragraphs": [
+            "Galling can occur when mating threads adhere under friction. Stainless steel corrosion resistance does not prevent this assembly problem. A seized thread may damage both components; increasing force is not a reliable remedy."
+          ],
+          "sources": [
+            "bossard"
+          ]
+        },
+        {
+          "id": "step-2",
+          "title": "Agree on lubrication and surface condition",
+          "paragraphs": [
+            "Discuss compatible lubrication or surface treatments for the application. Record the agreed condition in the purchasing specification. Validate the tightening procedure with that condition; a lubricant change should not inherit an unreviewed torque setting."
+          ],
+          "sources": []
+        },
+        {
+          "id": "step-3",
+          "title": "Prepare a representative assembly trial",
+          "paragraphs": [
+            "Send the mating part specification, service environment and planned assembly method with the RFQ. Confirm samples, assembly checks and acceptance criteria before releasing a production batch. This guide does not establish a universal tightening torque."
+          ],
+          "sources": []
+        }
+      ],
+      "sources": [
+        {
+          "id": "bossard",
+          "label": "Stainless Steel Fastener Galling: Assembly and Ordering Guide — Bossard",
+          "url": "https://www.bossard.com/au-en/knowledge-hub/resources/download-center/white-papers/galling-of-stainless-steel-fasteners/"
+        }
+      ],
+      "imageKind": "generated"
+    },
+    {
+      "id": "high-strength-coating-hydrogen-embrittlement",
+      "topic": "finishes",
+      "title": "High-Strength Fastener Coatings: Hydrogen Embrittlement Review",
+      "summary": "Review coating processes, inspection requirements and application conditions together before placing a bulk order.",
+      "image": "/assets/products/high-strength-bolts/high-strength-hex-bolt-42crmo-63a7ff09.jpg",
+      "updated": "2026-10-09",
+      "relatedProducts": [
+        "gb-t-32076-7-high-strength-bolt",
+        "astm-a325-structural-bolt",
+        "socket-cap-screw",
+        "hex-flange-bolt"
+      ],
+      "sections": [
+        {
+          "id": "step-1",
+          "title": "Look beyond coating appearance",
+          "paragraphs": [
+            "Hydrogen embrittlement can cause delayed failure after assembly. Acid cleaning and electroplating can introduce hydrogen into susceptible fasteners. A clean appearance or completed assembly does not establish that this risk has been controlled."
+          ],
+          "sources": [
+            "bossard"
+          ]
+        },
+        {
+          "id": "step-2",
+          "title": "Specify the complete coating process",
+          "paragraphs": [
+            "Provide the fastener material and property requirements alongside the coating specification. Ask for a process review, applicable standards and documented controls. Treat hydrogen relief as a qualified process requirement, rather than an automatic guarantee against failure."
+          ],
+          "sources": []
+        },
+        {
+          "id": "step-3",
+          "title": "Confirm records before batch approval",
+          "paragraphs": [
+            "Agree on process records, required testing and sample approval before manufacture. Keep corrosion protection, thread fit and assembly requirements in the same review. Final process selection depends on the product and application; this article supplies an RFQ checklist, not a blanket coating approval."
+          ],
+          "sources": []
+        }
+      ],
+      "sources": [
+        {
+          "id": "bossard",
+          "label": "High-Strength Fastener Coatings: Hydrogen Embrittlement Review — Bossard",
+          "url": "https://www.bossard.com/global-en/knowledge-hub/resources/download-center/white-papers/hydrogen-embrittlement/"
         }
       ]
     }
