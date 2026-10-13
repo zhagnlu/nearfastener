@@ -1,0 +1,76 @@
+name: Deploy website to ECS
+
+on:
+  push:
+    branches: [push_remote]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: nearfastener-ecs
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    # Manual runs must also select the deployment branch.
+    if: github.ref == 'refs/heads/push_remote'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - name: Sync published files to ECS
+        env:
+          ECS_HOST: ${{ secrets.ECS_HOST }}
+          ECS_PORT: ${{ secrets.ECS_PORT }}
+          ECS_USER: ${{ secrets.ECS_USER }}
+          ECS_SSH_KEY: ${{ secrets.ECS_SSH_KEY }}
+          ECS_KNOWN_HOSTS: ${{ secrets.ECS_KNOWN_HOSTS }}
+          ECS_DEPLOY_PATH: ${{ secrets.ECS_DEPLOY_PATH }}
+        run: |
+          set -euo pipefail
+          for name in ECS_HOST ECS_USER ECS_SSH_KEY ECS_KNOWN_HOSTS; do
+            if [[ -z "${!name}" ]]; then
+              echo "::error::Missing required secret: $name"
+              exit 1
+            fi
+          done
+          ECS_PORT="${ECS_PORT:-22}"
+          ECS_DEPLOY_PATH="${ECS_DEPLOY_PATH:-/var/www/nearfastener}"
+          [[ "$ECS_HOST" =~ ^[a-zA-Z0-9][a-zA-Z0-9.-]*$ ]]
+          [[ "$ECS_USER" =~ ^[a-zA-Z_][a-zA-Z0-9_-]*$ ]]
+          [[ "$ECS_PORT" =~ ^[0-9]{1,5}$ ]] && (( ECS_PORT >= 1 && ECS_PORT <= 65535 ))
+          [[ "$ECS_DEPLOY_PATH" =~ ^/[a-zA-Z0-9_/-]+$ && "$ECS_DEPLOY_PATH" != / ]]
+
+          ssh_dir="$RUNNER_TEMP/ecs-ssh"
+          mkdir -p "$ssh_dir"
+          chmod 700 "$ssh_dir"
+          trap 'rm -rf "$ssh_dir"' EXIT
+          printf '%s\n' "$ECS_SSH_KEY" > "$ssh_dir/key"
+          printf '%s\n' "$ECS_KNOWN_HOSTS" > "$ssh_dir/known_hosts"
+          chmod 600 "$ssh_dir/key" "$ssh_dir/known_hosts"
+          # Normalize CRLF pasted from Windows without exposing secret contents.
+          sed -i 's/\r$//' "$ssh_dir/key" "$ssh_dir/known_hosts"
+          if ! ssh-keygen -y -P '' -f "$ssh_dir/key" > /dev/null 2>/dev/null; then
+            echo "::error::ECS_SSH_KEY cannot be read. Supply the complete private key (not the .pub file), preserve real line breaks, and use a deployment key without a passphrase."
+            exit 1
+          fi
+          echo 'SSH private key format validated; connecting to ECS.'
+          ssh_options=(-i "$ssh_dir/key" -p "$ECS_PORT" -o BatchMode=yes -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes -o "UserKnownHostsFile=$ssh_dir/known_hosts" -o ConnectTimeout=20 -o ServerAliveInterval=15)
+          target="$ECS_USER@$ECS_HOST"
+          test -s index.html
+          ssh "${ssh_options[@]}" "$target" "mkdir -p '$ECS_DEPLOY_PATH' && test -w '$ECS_DEPLOY_PATH' && command -v rsync >/dev/null"
+          # Delete obsolete website files only inside the dedicated deployment root.
+          # Infrastructure files stay on ECS; Git and workflow files are never uploaded.
+          rsync -rlptz --delete-delay --chmod=D755,F644 \
+            --exclude='/.git/' --exclude='/.github/' \
+            --exclude='/.user.ini' --exclude='/.well-known/' \
+            --exclude='/README.txt' --exclude='/.exported-routes.json' \
+            -e "ssh -i $ssh_dir/key -p $ECS_PORT -o BatchMode=yes -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes -o UserKnownHostsFile=$ssh_dir/known_hosts -o ConnectTimeout=20" \
+            ./ "$target:$ECS_DEPLOY_PATH/"

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#f8fafc"/><stop offset="1" stop-color="#e2e8f0"/></linearGradient>
+    <linearGradient id="steel"><stop stop-color="#64748b"/><stop offset=".3" stop-color="#f1f5f9"/><stop offset=".6" stop-color="#cbd5e1"/><stop offset="1" stop-color="#64748b"/></linearGradient>
+    <pattern id="thread" width="35" height="26" patternUnits="userSpaceOnUse"><path d="M0 26L35 0" stroke="#64748b" stroke-width="5"/><path d="M0 21L35 -5" stroke="#f8fafc" stroke-width="2"/></pattern>
+    <clipPath id="shaft"><path d="M413 298H535V616L516 636H432L413 616Z"/></clipPath>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <g fill="none" stroke="#cbd5e1" stroke-width="1"><path d="M70 100H1130M70 700H1130M100 70V730M1100 70V730"/></g>
+  <g transform="rotate(-28 470 410)">
+    <path d="M413 286H535V616L516 636H432L413 616Z" fill="url(#steel)" stroke="#475569" stroke-width="3"/>
+    <rect x="403" y="323" width="145" height="330" fill="url(#thread)" clip-path="url(#shaft)"/>
+    <path d="M324 205H624V223L535 312H413L324 223Z" fill="url(#steel)" stroke="#475569" stroke-width="3"/>
+    <ellipse cx="474" cy="205" rx="150" ry="38" fill="#e2e8f0" stroke="#475569" stroke-width="3"/>
+    <path d="M429 191L474 180L519 191V215L474 229L429 215Z" fill="#1e293b" stroke="#64748b" stroke-width="3"/>
+    <path d="M429 215L474 202L519 215M474 202V180" fill="none" stroke="#94a3b8" stroke-width="2"/>
+  </g>
+  <circle cx="885" cy="285" r="111" fill="#e2e8f0" stroke="#475569" stroke-width="4"/>
+  <circle cx="885" cy="285" r="99" fill="none" stroke="#cbd5e1" stroke-width="3"/>
+  <path d="M839 258L885 231L931 258V312L885 339L839 312Z" fill="#334155" stroke="#64748b" stroke-width="4"/>
+  <path d="M756 285H1014M885 155V415" stroke="#94a3b8" stroke-width="2" stroke-dasharray="12 10"/>
+  <g fill="none" stroke="#c87320" stroke-width="3"><path d="M300 593H635M300 580V606M635 580V606"/><path d="M837 462L785 514H985L933 462"/></g>
+  <circle cx="886" cy="520" r="4" fill="#c87320"/>
+</svg>
