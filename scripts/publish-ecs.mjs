@@ -1,5 +1,5 @@
 import { execFileSync } from 'node:child_process';
-import { cpSync, mkdtempSync, mkdirSync, rmSync, existsSync } from 'node:fs';
+import { cpSync, mkdtempSync, mkdirSync, rmSync, existsSync, readFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -12,9 +12,11 @@ if (git(['branch', '--show-current']) === branch) throw new Error('Run publishin
 if (git(['status', '--porcelain'])) throw new Error('Commit development changes before publishing.');
 const sourceCommit = git(['rev-parse', 'HEAD']);
 const origin = git(['remote', 'get-url', 'origin']);
-execFileSync('npm', ['test'], { cwd: root, stdio: 'inherit' });
-if (git(['status', '--porcelain'])) throw new Error('Build updated tracked generated files. Commit those changes, then publish again.');
 if (!existsSync(join(root, 'static-site/index.html'))) throw new Error('Static export is missing index.html.');
+const marker = join(root, 'static-site/.ecs-build.json');
+if (!existsSync(marker)) throw new Error('Run npm run build:ecs and preview the result before publishing.');
+const build = JSON.parse(readFileSync(marker, 'utf8'));
+if (build.sourceCommit !== sourceCommit) throw new Error('Development commit changed since the ECS build. Run build:ecs and preview again.');
 
 // A separate temporary checkout preserves the development branch and its files.
 const publishRoot = mkdtempSync(join(tmpdir(), 'nearfastener-publish-'));
@@ -26,7 +28,7 @@ try {
     git(['fetch', '--depth=1', 'origin', branch], publishRoot);
     git(['reset', '--mixed', 'FETCH_HEAD'], publishRoot);
   }
-  cpSync(join(root, 'static-site'), publishRoot, { recursive: true });
+  cpSync(join(root, 'static-site'), publishRoot, { recursive: true, filter: (path) => path !== marker });
   mkdirSync(join(publishRoot, '.github/workflows'), { recursive: true });
   cpSync(join(root, '.github/workflows/deploy-ecs.yml'), join(publishRoot, '.github/workflows/deploy-ecs.yml'));
   git(['config', 'user.name', git(['show', '-s', '--format=%cn', 'HEAD'])], publishRoot);

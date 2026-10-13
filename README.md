@@ -34,15 +34,21 @@ npm run export:static  # 重新生成独立 HTML 网站
 
 ## ECS 自动部署
 
+完整操作步骤、密钥获取、GitHub Secrets、Nginx 配置及故障定位见 [部署文档](content/DEPLOYMENT.md)。文档仅含占位示例，不记录密码或私钥。
+
 开发源码保留在 `main`（或其他开发分支），`push_remote` 只保存生成的静态网站和部署 workflow，不保存应用源码或 node_modules。
 
 开发完成并提交代码后执行：
 
 ```sh
-npm run publish:ecs
+npm run build:ecs    # 构建和测试，只生成本地静态产物
+# 打开 static-site/index.html 预览，或用静态服务器预览
+npm run publish:ecs  # 推送已预览的产物，不重新构建
 ```
 
-发布脚本先执行 `npm test`（构建、生成 `static-site/`、测试），再通过临时 Git 工作目录将产物作为分支根目录提交并推送到 `push_remote`。不切换开发分支，不强制推送，自动移除发布分支中已过时的文件。`npm run publish:ecs -- --dry-run` 可验证发布提交但不推送；仍会执行构建和读取远程分支。
+`build:ecs` 执行 `npm test` 并记录本次构建的开发提交。构建和推送独立，构建不会访问远程或触发部署。可通过 `python3 -m http.server 8000 --directory static-site` 在 `http://localhost:8000/` 预览产物。
+
+`publish:ecs` 只读取已构建的 `static-site/`，通过临时 Git 工作目录将产物作为分支根目录提交并推送到 `push_remote`。不重新构建、不切换开发分支、不强制推送，自动移除发布分支中已过时的文件。开发提交如已变化，需重新构建和预览。构建和发布前工作区需干净；构建若更新了已跟踪的生成文件，先提交它们再构建。`npm run publish:ecs -- --dry-run` 可验证发布提交但不推送，仍读取远程分支。
 
 GitHub `.github/workflows/deploy-ecs.yml` 只监听 `push_remote`，手动运行也只能选择该分支。GitHub 不构建网站，只通过 SSH + rsync 将分支文件同步到 `ECS_DEPLOY_PATH` 根目录。没有 releases/current、版本保留或自动回滚；同步会删除服务器上已经不在发布分支中的旧网站文件，保留 `.well-known/` 和 `.user.ini`，不上传 `.git/` 和 `.github/`。同步期间可能短暂出现新旧文件混合。
 
