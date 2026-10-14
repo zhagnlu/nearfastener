@@ -23,7 +23,8 @@ test('expanded public families contain products and new details carry their RFQ 
   for (const id of ['pan-head-machine-screw', 'self-tapping-screw', 'cone-point-set-screw', 'cup-point-set-screw', 'dog-point-set-screw', 'hex-flange-bolt', 'carriage-bolt', 'anchor-bolt', 'lock-nut', 'flange-nut', 'coupling-nut', 'spring-washer', 'structural-washer']) {
     const html = pages.get(`/product/${id}`).html;
     assert.ok(html.includes(`name="product_id" value="${id}"`), id);
-    assert.ok(html.includes('AI-generated product visualization'), id);
+    assert.ok(html.includes(`src="${source.products.find((product) => product.id === id).image}"`), id);
+    assert.doesNotMatch(html, /AI-(?:generated|retouched)/, id);
   }
 });
 

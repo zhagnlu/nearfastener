@@ -4,6 +4,7 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { catalogPages, homepageCategories, footerCategories } from './catalog.mjs';
 import { customManufacturing } from './custom-manufacturing.mjs';
+import { aboutProductionStory, manufacturingProcessPage, productionMeta, productionRoute } from './manufacturing-gallery.mjs';
 import { rfqContext, productBreadcrumb, productRequest } from './catalog-detail.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
@@ -53,6 +54,15 @@ export async function buildCatalog() {
   const customBlock = `<!-- custom-manufacturing:start -->${customManufacturing(catalog)}<!-- custom-manufacturing:end -->`;
   const customMarker = /<!-- custom-manufacturing:start -->[\s\S]*?<!-- custom-manufacturing:end -->/;
   await writeFile(homeFile, customMarker.test(alignedHome) ? alignedHome.replace(customMarker, customBlock) : alignedHome.replace('</section>', `</section>${customBlock}`));
+  const aboutFile = join(root, 'content/pages/about.html');
+  const about = await readFile(aboutFile, 'utf8');
+  const aboutMarker = /<!-- about-production:start -->[\s\S]*?<!-- about-production:end -->/;
+  if (!aboutMarker.test(about)) throw new Error('Missing About production story marker');
+  await writeFile(aboutFile, about.replace(aboutMarker, `<!-- about-production:start -->${aboutProductionStory()}<!-- about-production:end -->`));
+  routes[productionRoute] = productionMeta;
+  const productionFile = join(root, 'content/pages', productionMeta.file);
+  await mkdir(dirname(productionFile), { recursive: true });
+  await writeFile(productionFile, manufacturingProcessPage());
   await writeFile(routesFile, JSON.stringify(routes, null, 2) + '\n');
   const rfqFile = join(root, 'content/pages/rfq.html');
   const rfq = await readFile(rfqFile, 'utf8');

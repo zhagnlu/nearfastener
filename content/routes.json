@@ -608,5 +608,10 @@
     "description": "Thick flat washers for structural assemblies; confirm dimensions, hardness and assembly specification.",
     "file": "product/structural-washer.html",
     "catalogGenerated": true
+  },
+  "/capabilities/production-line": {
+    "title": "Screw Production Line | Near Fastener",
+    "description": "Explore screw production through loading, conveying, furnace heating, process-bath equipment and transfer.",
+    "file": "capabilities/production-line.html"
   }
 }

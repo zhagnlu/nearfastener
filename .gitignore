@@ -39,6 +39,8 @@ next-env.d.ts
 /dist/
 /.wrangler/
 /outputs/
+/output/
+/.playwright-cli/
 /work/
 /reference/
 /static-site/

@@ -81,7 +81,7 @@
 
 依据店铺螺丝螺栓分类列表中已观察到的产品结构新增 16 个系列，未逐项迁移全部商品链接或尺寸 SKU。新增机牙、紧定、肩螺钉、手拧、组合与松不脱、钻尾和特殊头型七个分类，继续复用现有沉头、外六角和螺柱详情。
 
-写实产品 JPEG 位于 `public/assets/products/screw-families/*-photo.jpg`，由内置 image_gen 参照原目录主图的暖灰台面、窗影、光线和景深生成，无价格、宣传文字或品牌水印。17 张效果图替换目录中的 SVG 引用；旧 SVG 保留作为源示意稿。详情通过 `imageKind: "generated"` 标记效果图并显示九种语言说明。效果图不是工厂实拍或加工尺寸依据。图片记录和提示词规范见 `content/product-imagery.json`。
+写实产品 JPEG 位于 `public/assets/products/screw-families/*-photo.jpg`，由内置 image_gen 参照原目录主图的暖灰台面、窗影、光线和景深生成，无价格、宣传文字或品牌水印。17 张效果图替换目录中的 SVG 引用；旧 SVG 保留作为源示意稿。目录通过 `imageKind: "generated"` 记录图片来源，页面不显示生成方式提示。效果图不是工厂实拍或加工尺寸依据。图片记录和提示词规范见 `content/product-imagery.json`。
 
 产品页介绍系列结构和应用方向。制造可行性、材质与交付按客户图纸或规格确认；不从店铺推定工厂供货范围。新增内容与元数据已加入九种语言词库。
 
