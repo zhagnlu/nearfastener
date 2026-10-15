@@ -105,6 +105,11 @@ const empty = '<div class="text-center py-16"><p class="text-muted-foreground mb
 const categorySection = (title, body) => `<section class="catalog-group"><h2 class="text-2xl font-bold text-foreground mb-6">${escape(title)}</h2>${body}</section>`;
 const navigationGroups = [['family', 'Product Families'], ['head-style', 'Browse by Head Style'], ['drive-type', 'Browse by Drive Type'], ['performance', 'Browse by Strength'], ['application', 'Browse by Application']];
 
+export function categoryFacts(catalog, products) {
+  const rows = products.map(product => `<tr><th scope="row"><a href="${escape(product.path)}">${escape(product.title)}</a></th><td>${escape(product.standard ?? 'Drawing / specification')}</td><td>${product.detail?.specifications?.length ? product.detail.specifications.slice(0, 3).map(([name, value]) => `<div><span>${escape(name)}</span>: <span>${escape(value)}</span></div>`).join('') : escape(product.description)}</td></tr>`).join('');
+  return `<section class="category-facts"><h2>At a glance</h2><table><thead><tr><th scope="col">Products</th><th scope="col">Standard</th><th scope="col">Specifications</th></tr></thead><tbody>${rows}</tbody></table><h2 class="mt-8">Before You Order</h2><dl class="buying-answers"><div><dt>How should I specify a fastener for quotation?</dt><dd>${escape(catalog.customManufacturing.cards[0].text)}</dd></div><div><dt>What must be confirmed before production?</dt><dd>${escape(catalog.customManufacturing.terms)}</dd></div></dl><div class="workshop-actions"><a href="/resources/custom-fastener-rfq-checklist">${escape('Custom Fastener RFQ Checklist for Factory Bulk Orders')}</a><a href="/rfq">Request a Quote</a></div></section>`;
+}
+
 export function catalogPages(catalog, routes) {
   validateCatalog(catalog, routes);
   const categories = catalog.categories.filter(published);
@@ -126,7 +131,7 @@ export function catalogPages(catalog, routes) {
       const items = children.filter((item) => (item.navigationGroup ?? 'family') === group);
       return items.length ? categorySection(title, grid(items)) : '';
     }).join('');
-    const productSection = category.id === 'custom-fasteners' ? customManufacturing(catalog, true) : products.length ? (children.length ? categorySection('All Products', grid(products)) : grid(products)) : children.length ? '' : empty;
+    const productSection = category.id === 'custom-fasteners' ? customManufacturing(catalog, true) : products.length ? (children.length ? categorySection('All Products', grid(products)) : grid(products)) + categoryFacts(catalog, products) : children.length ? '' : empty;
     const html = `<main id="main-content" class="flex-1"><div class="pt-20"><section class="bg-steel-dark py-12"><div class="max-w-max-content mx-auto px-4 lg:px-8"><nav class="catalog-breadcrumb flex items-center gap-2 text-sm text-gray-400 mb-4">${breadcrumbs}<span class="text-white">${escape(category.title)}</span></nav><h1 class="text-3xl lg:text-4xl font-bold text-white mb-2">${escape(category.title)}</h1><p class="text-gray-400 max-w-2xl">${escape(category.description)}</p></div></section><section class="py-16"><div class="catalog-sections max-w-max-content mx-auto px-4 lg:px-8">${childSections}${productSection}</div></section></div></main>\n`;
     pages.set(category.path, { title: `${category.title} | Near Fastener`, description: category.description, file: `${category.path.slice(1)}.html`, catalogGenerated: true, html });
   }

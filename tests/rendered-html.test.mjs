@@ -3,6 +3,9 @@ import { readFile, access } from 'node:fs/promises';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import test from 'node:test';
+import { pageSeo } from '../scripts/seo.mjs';
+import catalog from '../content/catalog.json' with { type: 'json' };
+import site from '../content/site.json' with { type: 'json' };
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const routes = JSON.parse(await readFile(join(root, 'content/routes.json'), 'utf8'));
@@ -43,7 +46,7 @@ test('the deployable worker renders every configured route and returns 404 for u
     const response = await worker.fetch(new Request(`http://localhost${path}`, { headers: { accept: 'text/html' } }), env, context);
     assert.equal(response.status, 200, path);
     const html = await response.text();
-    assert.ok(html.includes(page.title.replaceAll('&', '&amp;')), `${path} has wrong metadata`);
+    assert.ok(html.includes(pageSeo(path, page, catalog, site, routes).title.replaceAll('&', '&amp;')), `${path} has wrong metadata`);
     assert.match(html, /id="main-content"/, path);
     assert.match(html, /Near Fastener/, path);
     assert.doesNotMatch(html, /Your site is taking shape|codex-preview/, path);

@@ -127,3 +127,11 @@ npm run export:static # 更新语言包和全部静态页面
 React 页面及独立 HTML 共用 `scripts/seo.mjs`：提供分享标题、摘要及 JSON-LD，产品分类和面包屑来自产品目录。域名未配置时不会生成猜测的绝对网址。产品没有添加价格、现货或评价，不保证出现搜索富结果。规范链接的用途参见 [Google canonical 文档](https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls)，产品展示要求参见 [Google 产品结构化数据文档](https://developers.google.com/search/docs/appearance/structured-data/product)。
 
 当前多语言仍通过客户端切换，SEO 基础内容使用英文，未声明九个独立语言版本的 hreflang。后续若需要分别收录各语言，应先提供可直接抓取的语言页面。`robots.txt` 的 API 排除规则只用于爬虫提示，附件权限仍由后台验证。
+
+### 多语言页面与搜索信息
+
+静态导出按英文根目录及 `/zh-CN/`、`/de/`、`/es/` 等语言目录生成 9 个版本。正文、标题、描述、分享信息和结构化数据在构建时翻译，关闭 JavaScript 也能读取。页脚语言链接可直接抓取；语言选择器跳转到相应静态页面，原有 `?lang=` 访问方式会保留查询参数并转到对应语言目录。产品询价继续携带产品标识和规格字段。
+
+正式 HTTPS 主域名须写入 `content/site.json` 的 `url`。配置后生成自引用 canonical、9 种语言与 x-default 的 hreflang、覆盖全部语言页面的站点地图，以及完整产品图片和面包屑 URL。规范网址统一以 `/` 结尾，实体标识使用同一个主域名。`build:ecs` 默认拒绝域名为空的发布构建；若明确需要先发布已有功能，可执行 `npm run build:ecs -- --allow-unconfigured-origin`，构建记录会注明域名相关 SEO 项目仍待配置。普通本地预览使用相对链接。
+
+公司结构化数据使用页面已展示的联系方式、所在地和成立年份；产品参数来自目录；文章标记只使用已记录的更新日期和可见技术来源。分类及标准页的规格表和订货问答也使用已有目录数据。未添加虚构价格、库存、评价、专家身份或认证。可抓取正文、准确事实、清晰表格、来源链接和稳定实体信息同时服务传统搜索与生成式搜索；不保证收录、排名或引用。

@@ -60,7 +60,7 @@ test('one countersunk hex-socket product can belong to two categories and is cou
   catalog.products.push(product);
   const pages = catalogPages(catalog, { ...routes, [product.path]: { file: 'product/sample-screw.html' } });
   assert.equal(productsForCategory(catalog, 'screws').length, 1);
-  for (const id of ['screws', 'countersunk-screws', 'hex-socket-screws']) assert.equal(pages.get(`/products/${id}`).html.match(/href="\/product\/sample-screw"/g).length, 1);
+  for (const id of ['screws', 'countersunk-screws', 'hex-socket-screws']) assert.equal(pages.get(`/products/${id}`).html.match(/<a class="catalog-card[^"]*" href="\/product\/sample-screw"/g).length, 1);
   assert.ok(pages.get('/products').html.includes('href="/products/screws"'));
   assert.ok(pages.get('/products/countersunk-screws').html.includes('href="/products/screws"'));
 });

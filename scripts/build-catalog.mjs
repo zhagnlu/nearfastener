@@ -2,7 +2,7 @@ import { productSupport } from './product-support.mjs';
 import { readFile, writeFile, mkdir, access, unlink } from 'node:fs/promises';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { catalogPages, homepageCategories, footerCategories } from './catalog.mjs';
+import { catalogPages, categoryFacts, homepageCategories, footerCategories } from './catalog.mjs';
 import { customManufacturing } from './custom-manufacturing.mjs';
 import { aboutProductionStory, manufacturingProcessPage, productionMeta, productionRoute } from './manufacturing-gallery.mjs';
 import { rfqContext, productBreadcrumb, productRequest } from './catalog-detail.mjs';
@@ -40,6 +40,16 @@ export async function buildCatalog() {
     const requestBlock = `<!-- product-request:start --><div class="max-w-max-content mx-auto px-4 lg:px-8 pb-12">${productSupport(catalog, product)}${productRequest(product)}</div><!-- product-request:end -->`;
     updated = requestMarker.test(updated) ? updated.replace(requestMarker, requestBlock) : updated.replace('</main>', `${requestBlock}</main>`);
     if (updated !== html) await writeFile(file, updated);
+  }
+  for (const [path, meta] of Object.entries(routes).filter(([path, meta]) => path.startsWith('/standards/') && !meta.catalogGenerated)) {
+    const key = path.split('/').at(-1).replace(/[^a-z0-9]/g, '').toLowerCase();
+    const related = catalog.products.filter(item => item.status === 'published' && item.standard?.replace(/[^a-z0-9]/gi, '').toLowerCase().includes(key));
+    if (!related.length) continue;
+    const file = join(root, 'content/pages', meta.file);
+    const html = await readFile(file, 'utf8');
+    const marker = /<!-- standard-support:start -->[\s\S]*?<!-- standard-support:end -->/;
+    const support = `<!-- standard-support:start --><div class="max-w-max-content mx-auto px-4 lg:px-8 pb-12">${categoryFacts(catalog, related)}</div><!-- standard-support:end -->`;
+    await writeFile(file, marker.test(html) ? html.replace(marker, support) : html.replace('</main>', `${support}</main>`));
   }
   const footerFile = join(root, 'content/footer.html');
   const footer = await readFile(footerFile, 'utf8');

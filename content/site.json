@@ -2,5 +2,13 @@
   "name": "Near Fastener",
   "url": null,
   "email": "info@nearfastener.com",
+  "telephone": "+8613813096295",
+  "foundingDate": "1991",
+  "address": {
+    "streetAddress": "Shiqiu Industrial Zone, Lishui District",
+    "addressLocality": "Nanjing",
+    "addressRegion": "Jiangsu",
+    "addressCountry": "CN"
+  },
   "defaultImage": "/assets/products/custom-fasteners/custom-fastener-family-hero-v2.jpg"
 }
