@@ -1,0 +1,422 @@
+{
+  "tool": "built-in image_gen",
+  "finish": "blackened steel appearance",
+  "referenceImage": "/assets/products/high-strength-bolts/high-strength-hex-bolt-42crmo-63a7ff09.jpg",
+  "purpose": "Product appearance edits; product dimensions, materials and ordering specifications remain controlled by the catalog.",
+  "prompt": "Use case: precise-object-edit. Edit ONLY Image 1. Recolor ONLY all metal fastener surfaces in Image 1 to natural BLACK OXIDE / blued steel, using Image 2 only as a dark-metal finish reference. All head faces, shafts, nuts, washers and threaded surfaces must read as dark graphite-black with subtle satin/oily sheen, original machining texture and restrained metallic edge highlights. No bright silver/zinc/bronze faces; no featureless flat-black plastic. Preserve exactly the original fastener types, number, geometry, thread pitches, bores, recesses, washers, placement, relative sizes, camera angle, 3:2 landscape composition, background brightness/colors, lighting and shadows. Preserve any blue nylon inserts or other nonmetal components in their original colors. Change the metal reflection in the support surface consistently, but do not darken the whole photo. Preserve fine details. Add no text, labels, logos, watermark, props or objects. Return only the edited Image 1, no collage.",
+  "preserved": [
+    "homepage hero",
+    "factory photographs",
+    "stainless-steel article illustration",
+    "nonmetal inserts"
+  ],
+  "assets": [
+    {
+      "editIndex": 0,
+      "source": "/assets/products/hex-bolts/hex-head-bolt-steel-close-up-b894f812.jpg",
+      "sourceAliases": [],
+      "file": "/assets/products/black-oxide/hex-head-bolt-steel-close-up-b894f812-black-oxide-v1.jpg",
+      "sourceSha256": "c3c4db0629cf8f9e2d672e296bbcc37c851967272ae3ca6973ab6cb3eecb6150",
+      "fileSha256": "fed299c0b50d384ff17abd5dc4ca45100cbe73519d2f2bb72b3e65fbbc21ada3",
+      "bytes": 83691,
+      "prompt": "Use case: precise-object-edit. Edit ONLY Image 1. Recolor the entire metal bolt in Image 1 to natural black oxide / blued steel, using Image 2 ONLY as reference for the charcoal-black metal finish. Make all head faces and threaded surfaces a visibly dark graphite-black, with subtle satin/oily sheen, fine original machining texture and restrained warm metallic edge highlights. It must clearly read as blackened industrial steel, not bright silver, zinc or bronze, and not flat black plastic. Preserve the exact bolt geometry, external hex head, thread pitch, original position, size, camera angle, 3:2 landscape crop, warm beige workbench, softly blurred background, window lighting and cast shadow of Image 1. The background must remain its original brightness and color: do not darken the whole image. Keep the product fully visible and crisply detailed. Add no text, labels, logos, watermark or extra objects. Return only the edited Image 1, no comparison collage."
+    },
+    {
+      "editIndex": 1,
+      "source": "/assets/products/screw-families/hex-socket-countersunk-screw-photo.jpg",
+      "sourceAliases": [],
+      "file": "/assets/products/black-oxide/hex-socket-countersunk-screw-photo-black-oxide-v1.jpg",
+      "sourceSha256": "90de3542a36c90e4c69ba1a5b9836e82e3209167ad20b0f241e59ca7faffb727",
+      "fileSha256": "dfa4c01ff894daee3e18cd5c201f915be2385fb135888226a394b6d25ee77b31",
+      "bytes": 77731
+    },
+    {
+      "editIndex": 2,
+      "source": "/assets/products/hex-nuts/hex-nut-steel-machined-13f37182.jpg",
+      "sourceAliases": [
+        "/assets/products/high-strength-bolts/large-hex-bolt-forged-steel-5eb223e6.jpg"
+      ],
+      "file": "/assets/products/black-oxide/hex-nut-steel-machined-13f37182-black-oxide-v1.jpg",
+      "sourceSha256": "96fefe9b668fc5ae4ccc3d32ea3b49e3a65af346aad234b127ed16c8ec18cf72",
+      "fileSha256": "dc637b0377d06a97fd1612c7e3e8629c873ca839b774069e254da616c5ffde4b",
+      "bytes": 114861
+    },
+    {
+      "editIndex": 3,
+      "source": "/assets/products/threaded-rods/studs-threaded-rods-pure-product-v2.jpg",
+      "sourceAliases": [],
+      "file": "/assets/products/black-oxide/studs-threaded-rods-pure-product-v2-black-oxide-v1.jpg",
+      "sourceSha256": "13c5224ba23fd2cfa6c59acad95636ee62e387db4878110ca6cd9f4e385adefb",
+      "fileSha256": "72c4d6bc4d255eb73f2ffef40acea8f674236d3b0fb701c1c679880b236b8818",
+      "bytes": 167913
+    },
+    {
+      "editIndex": 4,
+      "source": "/assets/products/washers/steel-flat-washers-stack-1f14b8d2.jpg",
+      "sourceAliases": [],
+      "file": "/assets/products/black-oxide/steel-flat-washers-stack-1f14b8d2-black-oxide-v1.jpg",
+      "sourceSha256": "19fc4aa8696f3e0e048893476fe4eb20ddacd4b6621ca96e29a2d5df0aa256d4",
+      "fileSha256": "c395317eb5cb28e91572d21493b0008bc3ac099ace57f0d47bc868af2d859f13",
+      "bytes": 121017
+    },
+    {
+      "editIndex": 5,
+      "source": "/assets/products/custom-fasteners/custom-engineered-special-fasteners-f2c9f809.jpg",
+      "sourceAliases": [],
+      "file": "/assets/products/black-oxide/custom-engineered-special-fasteners-f2c9f809-black-oxide-v1.jpg",
+      "sourceSha256": "187e891b928e162dc9eeb8dc2e1b2cae3013a5664432165491ff82513fcd8dac",
+      "fileSha256": "14c427287058a33791ce5113983e4a67ffd63e439c1eb868752fa6f928d2bfe2",
+      "bytes": 151167
+    },
+    {
+      "editIndex": 7,
+      "source": "/assets/products/structural-bolts/structural-bolt-assembly-nut-washer-5e6908bd.jpg",
+      "sourceAliases": [],
+      "file": "/assets/products/black-oxide/structural-bolt-assembly-nut-washer-5e6908bd-black-oxide-v1.jpg",
+      "sourceSha256": "da07321d8298ba0b5dcee8f5c836433ef7e7f3efe0f0f598f07af4eed50068b9",
+      "fileSha256": "5b6a40ff00e1f9cd04680f9a4f15fed25938b3cb4a8a848c00a4a4803c6f9796",
+      "bytes": 171644
+    },
+    {
+      "editIndex": 8,
+      "source": "/assets/products/stud-bolts/stud-bolt-threaded-rod-with-nuts-1f2e7f82.jpg",
+      "sourceAliases": [
+        "/assets/products/threaded-rods/threaded-rod-full-thread-zinc-18557509.jpg"
+      ],
+      "file": "/assets/products/black-oxide/stud-bolt-threaded-rod-with-nuts-1f2e7f82-black-oxide-v1.jpg",
+      "sourceSha256": "7f8ddf301f890edb8e17bd9b1c693a9307ee106facdaad5a7e5f85d721f03e2d",
+      "fileSha256": "d72bbd956eeb4550955ba1572b488dc7fc129d987571bb80ff125b9f9f16efbf",
+      "bytes": 121899
+    },
+    {
+      "editIndex": 9,
+      "source": "/assets/products/catalog-expansion/anchor-bolt.jpg",
+      "sourceAliases": [],
+      "file": "/assets/products/black-oxide/anchor-bolt-black-oxide-v1.jpg",
+      "sourceSha256": "d59e2a5076f964182f539f77e65772406f5aa777b22341caea45a8f654d49337",
+      "fileSha256": "63d8d63c582687cef6de7fa5750541e59c1b658fca8ad58dd88bc2b42de46939",
+      "bytes": 164199
+    },
+    {
+      "editIndex": 10,
+      "source": "/assets/products/screw-families/socket-cap-screw-photo.jpg",
+      "sourceAliases": [],
+      "file": "/assets/products/black-oxide/socket-cap-screw-photo-black-oxide-v1.jpg",
+      "sourceSha256": "92077769870c6151616e7554b4f8b4d9cee361f8633c50dc80ffd487e9cb7a99",
+      "fileSha256": "b042e38251ed021cb35bcb8e827781359f6fb8556d2cd2e49c085fbd58251360",
+      "bytes": 85741
+    },
+    {
+      "editIndex": 11,
+      "source": "/assets/products/screw-families/phillips-countersunk-screw-photo.jpg",
+      "sourceAliases": [],
+      "file": "/assets/products/black-oxide/phillips-countersunk-screw-photo-black-oxide-v1.jpg",
+      "sourceSha256": "0e288ebb821f0c4d60b59cf7aed49c85739f30f12ebbbbf91865758e19a18396",
+      "fileSha256": "c0e244e20641e255ce0cb44a97b17b82d0c4e69d559816ad51cb57762e7b6a4b",
+      "bytes": 87545
+    },
+    {
+      "editIndex": 12,
+      "source": "/assets/products/screw-families/flat-point-set-screw-photo.jpg",
+      "sourceAliases": [],
+      "file": "/assets/products/black-oxide/flat-point-set-screw-photo-black-oxide-v1.jpg",
+      "sourceSha256": "be85e15dd14f26e9bb68b33f449c7030f6ac156705d6e6e39b3ecaa7572ddc08",
+      "fileSha256": "ffcd169a59f1387c30ede313026ac976f9032445c7187516f090db197e23c962",
+      "bytes": 75167
+    },
+    {
+      "editIndex": 13,
+      "source": "/assets/products/screw-families/shoulder-screw-photo.jpg",
+      "sourceAliases": [],
+      "file": "/assets/products/black-oxide/shoulder-screw-photo-black-oxide-v1.jpg",
+      "sourceSha256": "a25cb02a442f73c1c48f73c7e57c78aab898b1cd7282d6dc275172392beb9fe7",
+      "fileSha256": "9610582733c0ae65fa8259672e3aa7ef2b1b5c2a755d8c097791a8816635a050",
+      "bytes": 77342
+    },
+    {
+      "editIndex": 14,
+      "source": "/assets/products/screw-families/knurled-thumb-screw-photo.jpg",
+      "sourceAliases": [],
+      "file": "/assets/products/black-oxide/knurled-thumb-screw-photo-black-oxide-v1.jpg",
+      "sourceSha256": "ab06736d725212a9738ac25ddb045ecce12666eea23881030426f4eb6dcf0f6e",
+      "fileSha256": "ce2bd8fecd2707b94ff3815409aa8ecb370cdfa12758b4b3287a73803abad50a",
+      "bytes": 83044
+    },
+    {
+      "editIndex": 15,
+      "source": "/assets/products/screw-families/sems-screw-photo.jpg",
+      "sourceAliases": [],
+      "file": "/assets/products/black-oxide/sems-screw-photo-black-oxide-v1.jpg",
+      "sourceSha256": "7d126ce282b94a758361a903e27532a12707b0b6992591ca949f9825ce4e13df",
+      "fileSha256": "405361d2a477eb43ca35d5ee55d80d0609c451e1bc8e4f3ce1ee2cbfd5fecd74",
+      "bytes": 86845
+    },
+    {
+      "editIndex": 16,
+      "source": "/assets/products/screw-families/countersunk-drilling-screw-photo.jpg",
+      "sourceAliases": [],
+      "file": "/assets/products/black-oxide/countersunk-drilling-screw-photo-black-oxide-v1.jpg",
+      "sourceSha256": "6b48a67475f7d755223163aad9b63f9659f6bfdfb8b43a108b58b9db7860480c",
+      "fileSha256": "973bf13129aca9ef605676935240e068e8bdf20d811f550369c696e558ab1074",
+      "bytes": 79182
+    },
+    {
+      "editIndex": 17,
+      "source": "/assets/products/screw-families/square-head-bolt-photo.jpg",
+      "sourceAliases": [],
+      "file": "/assets/products/black-oxide/square-head-bolt-photo-black-oxide-v1.jpg",
+      "sourceSha256": "6948455053bb91064abcf57bb1aa2872ce904be596fa89ccf0b8aa2368d5a21b",
+      "fileSha256": "d8465783e54361e53d9aeaaae338b6f4a8d61a265fe26bb6c9d47d7dffbf2057",
+      "bytes": 85656
+    },
+    {
+      "editIndex": 18,
+      "source": "/assets/products/catalog-expansion/self-tapping-screw.jpg",
+      "sourceAliases": [],
+      "file": "/assets/products/black-oxide/self-tapping-screw-black-oxide-v1.jpg",
+      "sourceSha256": "551814cb988c34bdf92890894ec683ebc5e0d88bd873dbc2b705dde169d13587",
+      "fileSha256": "1debf9e159844409d07e91daac188ffb2645e7a291170f4b584456e10be4e0f2",
+      "bytes": 139211
+    },
+    {
+      "editIndex": 19,
+      "source": "/assets/products/catalog-expansion/hex-flange-bolt.jpg",
+      "sourceAliases": [],
+      "file": "/assets/products/black-oxide/hex-flange-bolt-black-oxide-v1.jpg",
+      "sourceSha256": "14602d5d3207969fa4eb4a38e21da7a479784dd01ab0fff6945c73357d05c948",
+      "fileSha256": "3e82e9992e82611bb07868070467fd21f2d27543bc19c5a9760d53fb63cc166c",
+      "bytes": 135836
+    },
+    {
+      "editIndex": 20,
+      "source": "/assets/products/catalog-expansion/carriage-bolt.jpg",
+      "sourceAliases": [],
+      "file": "/assets/products/black-oxide/carriage-bolt-black-oxide-v1.jpg",
+      "sourceSha256": "69187aa0866359f2b160fc28401fbb1829a63ad9af2342d696f22f375eb7b4f2",
+      "fileSha256": "5f57a81ce44a203bc15d1de4655f7bb0264e8ffab0692e38bd2556e68c25c862",
+      "bytes": 162308
+    },
+    {
+      "editIndex": 21,
+      "source": "/assets/products/catalog-expansion/lock-nut.jpg",
+      "sourceAliases": [],
+      "file": "/assets/products/black-oxide/lock-nut-black-oxide-v1.jpg",
+      "sourceSha256": "52791200fe373b048c477366ddf5f99de48362de075494903bd9678b46973c00",
+      "fileSha256": "deb758718694341cda2573dd5113b9ac19e77148350db914be6e2abdec5fb24f",
+      "bytes": 159677
+    },
+    {
+      "editIndex": 22,
+      "source": "/assets/products/catalog-expansion/flange-nut.jpg",
+      "sourceAliases": [],
+      "file": "/assets/products/black-oxide/flange-nut-black-oxide-v1.jpg",
+      "sourceSha256": "e9b4cca8451670ed0e9af867dbd4b4e433b255bcc8b67e7effa5e3f6676d8530",
+      "fileSha256": "bf84d03053d76a275128bcb2557e03b69ae676665b9d922afba932e14d0d83d3",
+      "bytes": 168296
+    },
+    {
+      "editIndex": 23,
+      "source": "/assets/products/catalog-expansion/coupling-nut.jpg",
+      "sourceAliases": [],
+      "file": "/assets/products/black-oxide/coupling-nut-black-oxide-v1.jpg",
+      "sourceSha256": "54e315f19a52c6b3ed94e108bd00d5927347d7d69c60219bbf00515fff6c4ee8",
+      "fileSha256": "47fcdb8c96cc82c81ba80b93161b2e0539d6b54773caee1e91f52a8655b9ec56",
+      "bytes": 147941
+    },
+    {
+      "editIndex": 24,
+      "source": "/assets/products/washers/flat-washer-din125-zinc-0ed0fd68.jpg",
+      "sourceAliases": [],
+      "file": "/assets/products/black-oxide/flat-washer-din125-0ed0fd68-black-oxide-v1.jpg",
+      "sourceSha256": "db76b711b6a662afa2d05eec993cee9059dba0171b12676aca206f18325f42dc",
+      "fileSha256": "ba8703695878583fbcbfccbfc081b4e1ceef1ba43fff75c8bb4296c749cdc6ec",
+      "bytes": 81644
+    },
+    {
+      "editIndex": 25,
+      "source": "/assets/products/catalog-expansion/spring-washer.jpg",
+      "sourceAliases": [],
+      "file": "/assets/products/black-oxide/spring-washer-black-oxide-v1.jpg",
+      "sourceSha256": "0192e8202e9d42f75fb9a94807449cfee310b1ba73eb9faf50e053c1de872399",
+      "fileSha256": "bc604a173caf85521c57a78de645b7bd2d17ff501aef8b07e19193a332249546",
+      "bytes": 161676
+    },
+    {
+      "editIndex": 26,
+      "source": "/assets/products/catalog-expansion/structural-washer.jpg",
+      "sourceAliases": [],
+      "file": "/assets/products/black-oxide/structural-washer-black-oxide-v1.jpg",
+      "sourceSha256": "97422a6ac496882fd3e9386d15002274bb9299db146c719b5154a886512b18cf",
+      "fileSha256": "31b028d6e3823173a00d78ba2b8e29357e11dba04562422084227e217fa0e7d3",
+      "bytes": 176927
+    },
+    {
+      "editIndex": 27,
+      "source": "/assets/products/hex-bolts/hex-head-bolt-zinc-plated-ccd31d4c.jpg",
+      "sourceAliases": [
+        "/assets/products/hex-bolts/din931-partial-thread-hex-bolt-ac0fe916.jpg"
+      ],
+      "file": "/assets/products/black-oxide/hex-head-bolt-ccd31d4c-black-oxide-v1.jpg",
+      "sourceSha256": "45e2b7d02743bea8ace5928f0ca238fae1c3cf262d65cabf63bd5f43958fe243",
+      "fileSha256": "fdfdf20d9f1c7884884488c688eed8e50404da2987bccbf17b8153b9c2709859",
+      "bytes": 57963
+    },
+    {
+      "editIndex": 29,
+      "source": "/assets/products/catalog-expansion/full-thread-hex-bolt.jpg",
+      "sourceAliases": [],
+      "file": "/assets/products/black-oxide/full-thread-hex-bolt-black-oxide-v1.jpg",
+      "sourceSha256": "97b8f3ab4e69b5dbdda562a5381fff2535f2df7ed76096876d43cc1fce3c9df4",
+      "fileSha256": "8161969b6989aa160be8011e4ba5bc0d7eb4274bb8e069a544285ab34006bc0b",
+      "bytes": 141558
+    },
+    {
+      "editIndex": 30,
+      "source": "/assets/products/hex-bolts/iso4014-hex-bolt-partial-thread-413471ed.jpg",
+      "sourceAliases": [],
+      "file": "/assets/products/black-oxide/iso4014-hex-bolt-partial-thread-413471ed-black-oxide-v1.jpg",
+      "sourceSha256": "e0f5963b5deac56bd8528326b909398a9e0982ddf2261809013d6f797cf6c156",
+      "fileSha256": "fd63d81b37f30646331a8172e2567317e6c6d06d5efde0df304a6f6b55a8e304",
+      "bytes": 43402
+    },
+    {
+      "editIndex": 32,
+      "source": "/assets/products/structural-bolts/structural-bolt-assembly-gbt1231-16f4a007.jpg",
+      "sourceAliases": [
+        "/assets/products/stud-bolts/stud-bolt-assembly-b7-2h-189724b0.jpg"
+      ],
+      "file": "/assets/products/black-oxide/structural-bolt-assembly-gbt1231-16f4a007-black-oxide-v1.jpg",
+      "sourceSha256": "9be3903d977af4861aac322a23ab24ac7b8edf2dfd8075c88df20ca0a62c4deb",
+      "fileSha256": "ba8e765de5c268a6cb344d71e59a27b2c35b9aaa603904b63ffeb9c6257bc040",
+      "bytes": 165773
+    },
+    {
+      "editIndex": 33,
+      "source": "/assets/products/structural-bolts/astm-a325-heavy-hex-structural-bolt-8c7b1586.jpg",
+      "sourceAliases": [],
+      "file": "/assets/products/black-oxide/astm-a325-heavy-hex-structural-bolt-8c7b1586-black-oxide-v1.jpg",
+      "sourceSha256": "c20d2a7603e1687da287e0003afa935a5be5f6cbb36e3ef93e4f356058152cb9",
+      "fileSha256": "f703d4c1357fe4753124c519ca8e54973a4d488778beb5092b4f5b7da8d8ed97",
+      "bytes": 106966
+    },
+    {
+      "editIndex": 34,
+      "source": "/assets/products/hex-nuts/standard-hex-nut-zinc-fd045946.jpg",
+      "sourceAliases": [],
+      "file": "/assets/products/black-oxide/standard-hex-nut-fd045946-black-oxide-v1.jpg",
+      "sourceSha256": "b83e4adb519805d8e2c67d1d2e2fbc3f35b0b196b2afb6c39eba839f81c078a8",
+      "fileSha256": "a4a614cced16396f05aa8f5065381d54b37984fdee58eefefafb57ba0ce9e65c",
+      "bytes": 78445
+    },
+    {
+      "editIndex": 37,
+      "source": "/assets/products/screw-families/socket-button-screw-photo.jpg",
+      "sourceAliases": [],
+      "file": "/assets/products/black-oxide/socket-button-screw-photo-black-oxide-v1.jpg",
+      "sourceSha256": "57754a266d5322f284928a7e07e063dbe40ab40687d8119456e56091a6d86d1c",
+      "fileSha256": "62ee8cff52e460c164be53e4373e8f32a67ded8a58f83c568b6a7451847d253c",
+      "bytes": 82429
+    },
+    {
+      "editIndex": 38,
+      "source": "/assets/products/screw-families/low-head-socket-screw-photo.jpg",
+      "sourceAliases": [],
+      "file": "/assets/products/black-oxide/low-head-socket-screw-photo-black-oxide-v1.jpg",
+      "sourceSha256": "39aff515747dcc4c565c2ecdf48ce8e0d8ffc35e8e644e39a74b52723212368d",
+      "fileSha256": "ba4a77f851c51608fe1c1a34740c7f500f60c886b4ff5edafecb6aee7c1896a3",
+      "bytes": 71726
+    },
+    {
+      "editIndex": 39,
+      "source": "/assets/products/screw-families/slotted-cylinder-screw-photo.jpg",
+      "sourceAliases": [],
+      "file": "/assets/products/black-oxide/slotted-cylinder-screw-photo-black-oxide-v1.jpg",
+      "sourceSha256": "57bb88048d6e45aa52c5cbdd5ebd55c7c0a9db43d5ee2a901fda4794891b585c",
+      "fileSha256": "29b7bf2275933fd271cc7146133df83aac9af616706b9c5a76d23da070311449",
+      "bytes": 86016
+    },
+    {
+      "editIndex": 40,
+      "source": "/assets/products/screw-families/captive-screw-photo.jpg",
+      "sourceAliases": [],
+      "file": "/assets/products/black-oxide/captive-screw-photo-black-oxide-v1.jpg",
+      "sourceSha256": "e6cb92b701e3da8837eee5fc70938a4b14975b6f06541a69a1bfe808183cffa7",
+      "fileSha256": "fbb057ab8bc55176b5f30c683a1ec18f7ee7bfc60259f0db93bfdb87192e693d",
+      "bytes": 74381
+    },
+    {
+      "editIndex": 41,
+      "source": "/assets/products/screw-families/hex-socket-flange-screw-photo.jpg",
+      "sourceAliases": [],
+      "file": "/assets/products/black-oxide/hex-socket-flange-screw-photo-black-oxide-v1.jpg",
+      "sourceSha256": "1618421adccb0df98fe06567b32896e1248698d91234db5cf7b35242e45967b1",
+      "fileSha256": "2876ebac1707f006004b425fe0c170e3005851b8111d2a35895001265cb1a05c",
+      "bytes": 89544
+    },
+    {
+      "editIndex": 42,
+      "source": "/assets/products/screw-families/fitted-hex-bolt-photo.jpg",
+      "sourceAliases": [],
+      "file": "/assets/products/black-oxide/fitted-hex-bolt-photo-black-oxide-v1.jpg",
+      "sourceSha256": "7aa8bf4c9d74cec7a1b024fdb23ea19800eb84226e549264471a3ebce0bdbb92",
+      "fileSha256": "e54109dc610e434672774b31093d049c31cdf14df5e1b697baa57807705b171a",
+      "bytes": 75297
+    },
+    {
+      "editIndex": 43,
+      "source": "/assets/products/screw-families/eye-bolt-photo.jpg",
+      "sourceAliases": [],
+      "file": "/assets/products/black-oxide/eye-bolt-photo-black-oxide-v1.jpg",
+      "sourceSha256": "22620b5c161728d964a85f1cc506bc3e61bcee70592e248fabd6c0c82140d5da",
+      "fileSha256": "ddc50ed1b2da0766d1443fb2f9d94c115a9576a8d32ec85f8fe68468510c5e5f",
+      "bytes": 100719
+    },
+    {
+      "editIndex": 44,
+      "source": "/assets/products/screw-families/hex-head-drilling-screw-photo.jpg",
+      "sourceAliases": [],
+      "file": "/assets/products/black-oxide/hex-head-drilling-screw-photo-black-oxide-v1.jpg",
+      "sourceSha256": "b7a2440f98c1df5b82600f597f3cf0055dde02ba1f2648e419c2f6c1f84d41a9",
+      "fileSha256": "d6864cfb495064158312c15d1cbd41d2bdab42dd467e04a4b298fa0303fe5757",
+      "bytes": 80259
+    },
+    {
+      "editIndex": 45,
+      "source": "/assets/products/catalog-expansion/pan-head-machine-screw.jpg",
+      "sourceAliases": [],
+      "file": "/assets/products/black-oxide/pan-head-machine-screw-black-oxide-v1.jpg",
+      "sourceSha256": "48d88e474555a646d3248d3ae28658aa6176671dbc8a3732a3e93a946bfa2f51",
+      "fileSha256": "b9389b1a4b528073f9db8782c57b56b3c87ccbfd01cd98dc87d527f7bd5fb5c6",
+      "bytes": 144249
+    },
+    {
+      "editIndex": 46,
+      "source": "/assets/products/catalog-expansion/cone-point-set-screw.jpg",
+      "sourceAliases": [],
+      "file": "/assets/products/black-oxide/cone-point-set-screw-black-oxide-v1.jpg",
+      "sourceSha256": "1062ce44cbd0d1b02ba46eb19f0cd7d9cee682e15ba7a1cb5dff3745008c94d1",
+      "fileSha256": "95c838c99bff411066001d1eed32c8625a2fc5c1f13fe5c99e2babd014f0b628",
+      "bytes": 137009
+    },
+    {
+      "editIndex": 47,
+      "source": "/assets/products/catalog-expansion/cup-point-set-screw.jpg",
+      "sourceAliases": [],
+      "file": "/assets/products/black-oxide/cup-point-set-screw-black-oxide-v1.jpg",
+      "sourceSha256": "c2e6f8d4f3b618b51a5f9217585d166ef1bb269d4e9ce7d701428da137d16b34",
+      "fileSha256": "d0cd2dd49f92e944cf444da05495b6386cb74d25cb80f8685473e66874024f5a",
+      "bytes": 125148,
+      "prompt": "Edit this existing product photo. Change only the steel set screw from shiny silver to satin charcoal-black BLACK OXIDE steel. Keep the exact cup-point concave end, thread geometry, number of objects, position, 3:2 landscape frame, beige workbench, softly blurred warm workshop background, light direction and shadows unchanged. Retain crisp realistic threads and subtle restrained edge highlights; the metal faces should be dark blackened steel rather than silver. Do not darken the background. No text, watermark, logos or extra objects."
+    },
+    {
+      "editIndex": 48,
+      "source": "/assets/products/catalog-expansion/dog-point-set-screw.jpg",
+      "sourceAliases": [],
+      "file": "/assets/products/black-oxide/dog-point-set-screw-black-oxide-v1.jpg",
+      "sourceSha256": "c8bcd3fa241eb8bcb547f94785f7c1f0bb98931019ae5c7a6540c3902d87b5de",
+      "fileSha256": "9bde642a57d640f2fbba0cd775fb2a72f8e63ecb3777ba1c85b628d51055b30b",
+      "bytes": 117155,
+      "prompt": "Edit this existing product photo. Change only the steel dog-point set screw from shiny silver to satin charcoal-black BLACK OXIDE steel. Preserve the exact headless cylinder, hex socket, thread pitch, smaller smooth coaxial dog-point pin, position, size, 3:2 landscape frame, beige workbench, warm blurred workshop background, lighting and shadows. Keep realistic machining texture and restrained metallic edge highlights; all screw faces and the dog-point pin should be visibly dark graphite-black. Do not darken or recolor the background. No text, watermark, logos or extra objects."
+    }
+  ]
+}

@@ -315,7 +315,7 @@
       "topic": "selection",
       "title": "SEMS Screws: Washer Configuration and Factory Ordering",
       "summary": "Specify the screw and washer combination together, then confirm assembly clearance, material, finish and batch demand.",
-      "image": "/assets/products/screw-families/sems-screw-photo.jpg",
+      "image": "/assets/products/black-oxide/sems-screw-photo-black-oxide-v1.jpg",
       "relatedProducts": [
         "sems-screw",
         "captive-screw",
@@ -368,7 +368,7 @@
       "topic": "selection",
       "title": "Socket Cap, Button, Low and Countersunk Heads: How to Choose",
       "summary": "Compare head clearance, tool access and mounting geometry before specifying a screw for factory assembly.",
-      "image": "/assets/products/screw-families/socket-cap-screw-photo.jpg",
+      "image": "/assets/products/black-oxide/socket-cap-screw-photo-black-oxide-v1.jpg",
       "relatedProducts": [
         "socket-cap-screw",
         "socket-button-screw",
