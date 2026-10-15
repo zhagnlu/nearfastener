@@ -3,6 +3,7 @@
   const base = new URL('locales/', document.currentScript.src);
   const languages = [['en', 'English'], ['zh-CN', '简体中文'], ['es', 'Español'], ['fr', 'Français'], ['de', 'Deutsch'], ['pt', 'Português'], ['ru', 'Русский'], ['ar', 'العربية'], ['ja', '日本語']];
   const supported = new Set(languages.map(([code]) => code));
+  const staticLanguage = document.documentElement.dataset.staticLanguage;
   const packs = new Map([['en', {}]]);
   const loading = new Map();
   const invariantText = new Set();
@@ -59,6 +60,14 @@
     for (const child of root.childNodes) translateTree(child);
   }
   function updateLinks() {
+    if (staticLanguage) {
+      document.querySelectorAll('[data-language-code]').forEach(link => {
+        const url = new URL(link.href, location.href);
+        for (const [key, value] of new URL(location.href).searchParams) if (key !== 'lang') url.searchParams.set(key, value);
+        link.href = url.href;
+      });
+      return;
+    }
     document.querySelectorAll('a[href]').forEach((link) => {
       const href = link.getAttribute('href');
       if (href.startsWith('#') || link.hasAttribute('download')) return;
@@ -84,6 +93,16 @@
   }
   async function change(code, persist = true) {
     if (!supported.has(code)) return;
+    if (staticLanguage && code !== staticLanguage) {
+      updateLinks();
+      const link = document.querySelector(`[data-language-code="${code}"]`);
+      if (link) {
+        const target = new URL(link.href, location.href);
+        target.hash = location.hash;
+        location.assign(target.href);
+        return;
+      }
+    }
     const request = ++serial;
     selector.setAttribute('aria-busy', 'true');
     status.textContent = t('Loading language…');
@@ -97,7 +116,7 @@
         try { localStorage.setItem('nearfastener-language', code); } catch { /* Storage can be disabled. */ }
         try {
           const url = new URL(location.href);
-          if (code === 'en') url.searchParams.delete('lang'); else url.searchParams.set('lang', code);
+          if (staticLanguage || code === 'en') url.searchParams.delete('lang'); else url.searchParams.set('lang', code);
           history.replaceState(null, '', url);
         } catch { /* Some browsers disallow file:// history changes. */ }
       }
@@ -138,9 +157,9 @@
     let saved;
     try { saved = localStorage.getItem('nearfastener-language'); } catch { /* Use English if storage is unavailable. */ }
     const requested = new URL(location.href).searchParams.get('lang');
-    change(supported.has(requested) ? requested : supported.has(saved) ? saved : 'en', false);
+    change(staticLanguage ? supported.has(requested) ? requested : staticLanguage : supported.has(requested) ? requested : supported.has(saved) ? saved : 'en', false);
     window.addEventListener('popstate', () => {
-      const code = new URL(location.href).searchParams.get('lang') || 'en';
+      const code = new URL(location.href).searchParams.get('lang') || staticLanguage || 'en';
       change(supported.has(code) ? code : 'en', false);
     });
   }

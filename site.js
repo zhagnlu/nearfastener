@@ -12,7 +12,7 @@ function initNearFastener() {
   const t = (text) => window.NearFastenerI18n?.t(text) ?? text;
   const header = document.querySelector('header');
   const main = document.querySelector('main');
-  const toggle = header?.querySelector('[aria-label="Toggle menu"]');
+  const toggle = header?.querySelector('[data-menu-toggle], [aria-label="Toggle menu"]');
   const desktopNav = header?.querySelector('nav');
   const route = document.querySelector('[data-page-path]')?.getAttribute('data-page-path') || location.pathname;
 
