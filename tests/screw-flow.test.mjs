@@ -46,12 +46,15 @@ test('unpublishing a generated product removes its detail and unreferenced stand
   assert.ok(!rfqContext(draft).includes(`data-rfq-product-id="${id}"`));
 });
 
-test('static RFQ action resolves to a real file and retains the product identity', async () => {
+test('static RFQ uses its canonical directory and retains an offline file fallback', async () => {
   const path = resolve(root, 'static-site', product.path.slice(1), 'index.html');
   const html = await readFile(path, 'utf8');
   const action = html.match(/<form[^>]*action="([^"]+)"[^>]*data-product-request/)[1];
   assert.ok(!action.startsWith('/'), 'Offline form action must be relative');
-  const rfq = await readFile(resolve(dirname(path), action), 'utf8');
+  const url = new URL(action, `https://www.nearfastener.com${product.path}/`);
+  assert.equal(url.pathname, '/rfq/');
+  const offline = html.match(/<form[^>]*data-offline-action="([^"]+)"[^>]*>/)[1];
+  const rfq = await readFile(resolve(dirname(path), offline), 'utf8');
   assert.match(rfq, /data-preview-form="rfq"/);
   assert.ok(rfq.includes(`data-rfq-product-id="${id}"`));
 });

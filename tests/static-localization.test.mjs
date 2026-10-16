@@ -19,6 +19,15 @@ test('every exported language has static content, local assets, complete languag
       const html = await readFile(file, 'utf8');
       assert.match(html, new RegExp(`<html lang="${language}"`), file);
       assert.match(html, /data-static-language=/, file);
+      for (const node of walk(parse(html))) {
+        const destination = attr(node, node.tagName === 'form' ? 'action' : 'href');
+        if (!attr(node, 'data-route') && !attr(node, 'data-language-code')) continue;
+        const url = new URL(destination, `https://www.nearfastener.com${localizedPath(path, language)}`);
+        assert.ok(url.pathname.endsWith('/'), `${file}: noncanonical navigation ${destination}`);
+        assert.ok(!url.pathname.includes('index.html'), `${file}: index navigation ${destination}`);
+        const offline = attr(node, node.tagName === 'form' ? 'data-offline-action' : 'data-offline-href');
+        assert.ok(offline?.split(/[?#]/)[0].endsWith('index.html'), `${file}: missing offline fallback`);
+      }
       for (const code of languages) assert.ok(html.includes(`data-language-code="${code}"`), `${file}: missing ${code} link`);
       assert.doesNotMatch(html, /AI-(generated|retouched)|LinkFoxAI/, file);
       for (const [, value] of html.matchAll(/(?:src|href|action)="([^"]+)"/g)) {

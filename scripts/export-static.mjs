@@ -67,7 +67,9 @@ for (const [route, meta] of Object.entries(routes)) {
         const resolved = resolveLocalizedPath(url.pathname);
         if ((attr.name === 'href' || attr.name === 'action') && routes[resolved.path]) {
           if (!targetLanguage) set(node, 'data-route', resolved.path);
-          attr.value = `${local(localizedPath(resolved.path, targetLanguage ?? language) + 'index.html')}${url.search}${url.hash}`;
+          const destination = localizedPath(resolved.path, targetLanguage ?? language);
+          set(node, `data-offline-${attr.name}`, `${local(destination + 'index.html')}${url.search}${url.hash}`);
+          attr.value = `${local(destination).replace(/\/$/, '')}/${url.search}${url.hash}`;
         } else attr.value = `${local(url.pathname)}${url.search}${url.hash}`;
       }
     });

@@ -16,7 +16,7 @@
 
 ## 直接查看
 
-`static-site/index.html` 是独立版本入口，可以直接用浏览器打开。所有子页面使用相对链接，CSS、JavaScript、图片也都是本地文件。也可以把整个 `static-site` 文件夹上传到普通静态服务器。
+`static-site/index.html` 是独立版本入口，可以直接用浏览器打开。线上导航使用与 canonical 一致的目录 URL；从磁盘打开时 JavaScript 会恢复相对 HTML 文件链接。CSS、JavaScript、图片都是本地文件。也可以把整个 `static-site` 文件夹上传到普通静态服务器。
 
 ## 启动项目
 
@@ -122,7 +122,7 @@ npm run export:static # 更新语言包和全部静态页面
 
 ## 搜索与分享信息
 
-`content/site.json` 管理品牌、邮箱、分享图片和正式域名。`url` 已配置为 `https://www.nearfastener.com`，全站 canonical、分享链接和 `sitemap.xml` 统一使用该地址。ECS 已将 HTTP 及不带 `www` 的地址永久跳转到 HTTPS 的 `www` 地址。`npm run seo:build` 生成爬虫规则和站点地图；生产构建与静态导出均自动调用。
+`content/site.json` 管理品牌、邮箱、分享图片和正式域名。`url` 已配置为 `https://www.nearfastener.com`，全站 canonical、分享链接和 `sitemap.xml` 统一使用该地址。裸域已永久跳转到 HTTPS 的 `www` 地址；CDN 上的 HTTP 强制跳转和源站显式 `index.html` 跳转需按 [部署文档](content/DEPLOYMENT.md#规范-url-与-cdn) 单独配置，静态文件发布不会修改 CDN 或 Nginx。`npm run seo:build` 生成爬虫规则和站点地图；生产构建与静态导出均自动调用。
 
 React 页面及独立 HTML 共用 `scripts/seo.mjs`：提供分享标题、摘要及 JSON-LD，产品分类和面包屑来自产品目录。域名未配置时不会生成猜测的绝对网址。产品没有添加价格、现货或评价，不保证出现搜索富结果。规范链接的用途参见 [Google canonical 文档](https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls)，产品展示要求参见 [Google 产品结构化数据文档](https://developers.google.com/search/docs/appearance/structured-data/product)。
 

@@ -153,6 +153,16 @@ ECS公网IP ssh-ed25519 服务器公钥完整字符串
 
 ## 报价、域名与故障定位
 
+### 规范 URL 与 CDN
+
+正式页面采用 `https://www.nearfastener.com/<路径>/`。线上 HTML 的导航、语言切换和询价 GET 表单统一使用目录 URL；`data-offline-href` 和 `data-offline-action` 仅在 `file:` 预览时恢复相对 `index.html` 文件链接。
+
+阿里云 CDN 的 `www.nearfastener.com` 域名需开启 **HTTPS 配置 → 强制跳转 → HTTP → HTTPS → 301**。源站跳转不能替代 CDN 客户端协议设置，CDN 缓存命中时可能不回源。开启前确认 HTTPS 证书有效；开启后检查带路径和查询参数的 HTTP 请求均保留路径和参数跳转至 HTTPS。
+
+旧的 `/index.html` 地址需要服务器永久跳转。仓库 `ops/nginx/nearfastener-canonical.conf` 提供仅处理显式 `index.html` 请求的规则，避免 Nginx 内部解析目录首页时循环。在现有 HTTPS `server` 块内 include 此规则，保留现有证书、root、ACME 和其他 location。此文件不会随静态发布自动安装。管理员先备份现有配置，执行 `sudo nginx -t`，通过后再执行 `sudo systemctl reload nginx`；失败时恢复原配置。
+
+上线后核对 `/`、`/index.html`、`/zh-CN/product/eye-bolt/index.html?source=check`、裸域和 HTTP；规范页应返回 200，旧 `index.html` 应以 301 保留查询参数跳到对应目录，随机不存在路径应保持 404。CDN 修改跳转规则后按需刷新旧 URL 缓存。
+
 报价采用 FormSubmit 邮件模式，静态 ECS 无需部署报价 API。首次使用需要收件邮箱激活，详见 [RFQ.md](RFQ.md)。正式域名填写在 `content/site.json` 的 url 中，然后重新构建发布，以生成正确 canonical 和 sitemap。
 
 | 错误 | 检查项 |
