@@ -9,6 +9,14 @@ function contactEmailDraft(values, t = (text) => text) {
 
 // Shared, dependency-free behavior for the app and the standalone HTML export.
 function initNearFastener() {
+  if (location.protocol === 'file:') {
+    document.querySelectorAll('[data-offline-href], [data-offline-action]').forEach((node) => {
+      for (const attr of ['href', 'action']) {
+        const value = node.getAttribute(`data-offline-${attr}`);
+        if (value) node.setAttribute(attr, value);
+      }
+    });
+  }
   const t = (text) => window.NearFastenerI18n?.t(text) ?? text;
   const header = document.querySelector('header');
   const main = document.querySelector('main');
