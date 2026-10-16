@@ -215,6 +215,7 @@ function initNearFastener() {
         submitting = true;
         button.disabled = true;
         showFeedback('Submitting your request...');
+        window.NearFastenerAnalytics?.track('rfq_submit');
         HTMLFormElement.prototype.submit.call(form);
         return;
       }

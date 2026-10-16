@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import header from "../content/header.html?raw";
 import footer from "../content/footer.html?raw";
 import SiteEnhancements from "./SiteEnhancements";
+import site from "../content/site.json";
+import { analyticsConfig } from "../scripts/analytics.mjs";
+
+const analytics = analyticsConfig(site);
 
 export const metadata: Metadata = {
   title: "Custom Fasteners & OEM Bulk Supply | Near Fastener",
@@ -22,6 +26,7 @@ export default function RootLayout({
       <head>
         <link rel="stylesheet" href="/site.css" />
         <link rel="stylesheet" href="/replica.css" />
+        {analytics && <script defer src="/analytics.js" data-measurement-id={analytics.measurementId} data-analytics-host={analytics.host} />}
       </head>
       <body>
         <a className="skip-link" href="#main-content">Skip to content</a>

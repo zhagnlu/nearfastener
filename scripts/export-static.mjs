@@ -8,6 +8,7 @@ import { readFile, writeFile, mkdir, cp, unlink, rm } from 'node:fs/promises';
 import { join, dirname, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import sharp from 'sharp';
+import { analyticsHead } from './analytics.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const out = join(root, 'static-site');
@@ -33,7 +34,7 @@ for (const route of previousRoutes) {
 }
 await rm(join(out, 'assets'), { recursive: true, force: true });
 for (const legacyLogo of ['nearfastener_flag_transparent.png', 'nearfastener_flag.jpg']) await rm(join(out, legacyLogo), { force: true });
-for (const file of ['assets', 'site.css', 'replica.css', 'site.js', 'i18n.js', 'locales']) await cp(join(root, 'public', file), join(out, file), { recursive: true });
+for (const file of ['assets', 'site.css', 'replica.css', 'site.js', 'i18n.js', 'analytics.js', 'locales']) await cp(join(root, 'public', file), join(out, file), { recursive: true });
 await cp(join(root, 'public/robots.txt'), join(out, 'robots.txt'));
 if (site.url) await cp(join(root, 'public/sitemap.xml'), join(out, 'sitemap.xml'));
 else await unlink(join(out, 'sitemap.xml')).catch(error => { if (error.code !== 'ENOENT') throw error; });
@@ -79,7 +80,7 @@ for (const [route, meta] of Object.entries(routes)) {
       }
     });
     const seo = pageSeo(route, meta, catalog, site, routes, language);
-    const html = `<!DOCTYPE html>\n<html lang="${language}" dir="${language === 'ar' ? 'rtl' : 'ltr'}" data-static-language="${language}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escape(seo.title)}</title><meta name="description" content="${escape(seo.description)}">${seoHead(seo)}<link rel="icon" type="image/png" href="${local('/assets/brand/nearfastener_flag_transparent.png')}"><link rel="stylesheet" href="${local('/site.css')}"><link rel="stylesheet" href="${local('/replica.css')}"><script defer src="${local('/i18n.js')}"></script><script defer src="${local('/site.js')}"></script></head><body><a class="skip-link" href="#main-content">${escape(translator(language)('Skip to content'))}</a><div class="site-shell" data-page-path="${route}">${markup}</div></body></html>\n`;
+    const html = `<!DOCTYPE html>\n<html lang="${language}" dir="${language === 'ar' ? 'rtl' : 'ltr'}" data-static-language="${language}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escape(seo.title)}</title><meta name="description" content="${escape(seo.description)}">${seoHead(seo)}<link rel="icon" type="image/png" href="${local('/assets/brand/nearfastener_flag_transparent.png')}"><link rel="stylesheet" href="${local('/site.css')}"><link rel="stylesheet" href="${local('/replica.css')}">${analyticsHead(site, local('/analytics.js'))}<script defer src="${local('/i18n.js')}"></script><script defer src="${local('/site.js')}"></script></head><body><a class="skip-link" href="#main-content">${escape(translator(language)('Skip to content'))}</a><div class="site-shell" data-page-path="${route}">${markup}</div></body></html>\n`;
     await mkdir(directory, { recursive: true });
     await writeFile(outputFile, html);
   }
