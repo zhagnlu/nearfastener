@@ -23,7 +23,7 @@ export function pageSeo(path, page, catalog, site, routes, language = 'en') {
   if (product || category) {
     const item = product ?? category;
     title = `${t(item.title)} | ${t(product ? 'Specifications' : 'Product Families')} | ${site.name}`;
-    description = `${t(item.title)}. ${t(item.description)}`;
+    description = `${t(item.title)}. ${category ? `${t('Product Families')}: ` : ''}${t(item.description)}`;
   } else if (path.startsWith('/standards/')) {
     title = `${t(page.title.replace(/ \| Near Fastener$/, ''))} | ${t('Standards')} | ${site.name}`;
     description = `${t(page.title.replace(/ \| Near Fastener$/, ''))}. ${description}`;
