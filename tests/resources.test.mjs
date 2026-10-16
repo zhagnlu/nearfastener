@@ -33,10 +33,23 @@ test('resource input rejects broken topics, products, sources, paths and duplica
     [(d) => { d.articles[0].image = '/assets/../secret.png'; }, /article image/],
     [(d) => { d.articles[0].sections[1].id = d.articles[0].sections[0].id; }, /article section/],
     [(d) => { d.articles[0].sources[0].url = 'javascript:alert(1)'; }, /article source/],
+    [(d) => { d.articles[0].sources[0].public = 'false'; }, /source visibility/],
   ]) {
     const copy = structuredClone(data); mutate(copy);
     assert.throws(() => resourcePages(copy, catalog), expected);
   }
+});
+
+test('private references leave no visible source blocks or reference navigation', () => {
+  const pages = resourcePages(data, catalog);
+  for (const id of ['sems-screw-selection', 'custom-fastener-rfq-checklist']) {
+    const html = pages.get(`/resources/${id}`).html;
+    assert.doesNotMatch(html, /pencom|blog-source-note|blog-references|href="#references"/i);
+    assert.match(html, /class="blog-related"/);
+    assert.match(html, /href="\/rfq"/);
+  }
+  assert.match(pages.get('/resources/gb-t-32076-7-guide').html, /openstd\.samr\.gov\.cn/);
+  assert.match(pages.get('/resources/bolt-property-classes').html, /www\.iso\.org/);
 });
 
 test('article bodies and interface text have translated content in all supported languages', async () => {

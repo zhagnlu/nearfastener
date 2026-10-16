@@ -66,7 +66,9 @@ test('article entities cite the visible sources and use recorded modification da
     assert.equal(data.headline, translator('de')(article.title));
     assert.equal(data.dateModified, article.updated);
     assert.equal(data.inLanguage, 'de');
-    assert.deepEqual(data.citation, article.sources.map(source => source.url));
+    const expected = article.sources.filter(source => source.public !== false).map(source => source.url);
+    if (expected.length) assert.deepEqual(data.citation, expected);
+    else assert.equal('citation' in data, false);
     assert.equal(data.mainEntityOfPage, seo.canonical);
     assert.equal('datePublished' in data, false);
   }

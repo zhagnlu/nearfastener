@@ -1,5 +1,6 @@
 import resources from '../content/resources.json' with { type: 'json' };
 import { languages, localizedPath, translator } from './localization.mjs';
+import { publicSources } from './resource-sources.mjs';
 
 const escape = (value) => String(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
 export const safeJson = (value) => JSON.stringify(value).replaceAll('<', '\\u003c').replaceAll('\u2028', '\\u2028').replaceAll('\u2029', '\\u2029');
@@ -53,8 +54,9 @@ export function pageSeo(path, page, catalog, site, routes, language = 'en') {
   }
   if (article) {
     const articleId = canonical ? `${canonical}#article` : undefined;
+    const citations = publicSources(article).map(source => source.url);
     webPage.mainEntity = articleId ? { '@id': articleId } : undefined;
-    graph.push({ '@type': 'BlogPosting', '@id': articleId, headline: t(article.title), description: t(article.summary), inLanguage: language, dateModified: article.updated, image, author: orgId ? { '@id': orgId } : organization, publisher: orgId ? { '@id': orgId } : organization, mainEntityOfPage: canonical, citation: article.sources.map(source => source.url), about: article.relatedProducts.map(id => { const item = catalog.products.find(product => product.id === id); return { '@type': 'Thing', name: t(item.title), url: pageUrl(item.path) }; }) });
+    graph.push({ '@type': 'BlogPosting', '@id': articleId, headline: t(article.title), description: t(article.summary), inLanguage: language, dateModified: article.updated, image, author: orgId ? { '@id': orgId } : organization, publisher: orgId ? { '@id': orgId } : organization, mainEntityOfPage: canonical, ...(citations.length ? { citation: citations } : {}), about: article.relatedProducts.map(id => { const item = catalog.products.find(product => product.id === id); return { '@type': 'Thing', name: t(item.title), url: pageUrl(item.path) }; }) });
   }
   if (origin && path === '/products') graph.push({ '@type': 'ItemList', itemListElement: catalog.categories.filter(item => item.status === 'published' && !item.parentId).map((item, index) => ({ '@type': 'ListItem', position: index + 1, name: t(item.title), url: pageUrl(item.path) })) });
   const alternates = origin ? [...languages.map(code => ({ language: code, url: absolute(localizedPath(path, code)) })), { language: 'x-default', url: absolute(localizedPath(path)) }] : [];

@@ -30,6 +30,7 @@ test('every exported language has static content, local assets, complete languag
       }
       for (const code of languages) assert.ok(html.includes(`data-language-code="${code}"`), `${file}: missing ${code} link`);
       assert.doesNotMatch(html, /AI-(generated|retouched)|LinkFoxAI/, file);
+      assert.doesNotMatch(html, /pencom/i, `${file}: private source leaked into public HTML or JSON-LD`);
       for (const [, value] of html.matchAll(/(?:src|href|action)="([^"]+)"/g)) {
         if (/^(?:[a-z][a-z0-9+.-]*:|#|\/\/)/i.test(value)) continue;
         destinations.add(resolve(dirname(file), value.split(/[?#]/)[0]));

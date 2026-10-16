@@ -357,7 +357,8 @@
         {
           "id": "pencom",
           "label": "PENCOM — machine screw and SEMS configurations",
-          "url": "https://www.pencomsf.com/en/products/screws/machine-screws/"
+          "url": "https://www.pencomsf.com/en/products/screws/machine-screws/",
+          "public": false
         }
       ],
       "updated": "2026-10-09",
@@ -472,7 +473,8 @@
         {
           "id": "pencom",
           "label": "PENCOM — machine screw and SEMS configurations",
-          "url": "https://www.pencomsf.com/en/products/screws/machine-screws/"
+          "url": "https://www.pencomsf.com/en/products/screws/machine-screws/",
+          "public": false
         }
       ],
       "updated": "2026-10-09",

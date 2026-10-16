@@ -9,7 +9,7 @@ test('SEMS and structural bolt pages answer product-specific purchasing question
   const sems = await readFile(new URL('../content/pages/product/sems-screw.html', import.meta.url), 'utf8');
   assert.match(sems, /washer inside diameter, outside diameter, thickness/);
   assert.match(sems, /Check the installed envelope/);
-  assert.match(sems, /https:\/\/www\.pencomsf\.com/);
+  assert.doesNotMatch(sems, /pencom|technical-guidance-sources/i);
   const structural = await readFile(new URL('../content/pages/product/gb-t-32076-7-high-strength-bolt.html', import.meta.url), 'utf8');
   assert.match(structural, /GB\/T 32076.7-2015 covers M39–M64/);
   assert.match(structural, /https:\/\/openstd\.samr\.gov\.cn/);
