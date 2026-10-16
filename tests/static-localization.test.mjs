@@ -38,6 +38,12 @@ test('every exported language has static content, local assets, complete languag
         assert.match(image, /\bwidth="\d+"/, file);
         assert.match(image, /\bheight="\d+"/, file);
         assert.match(image, /\balt="/, file);
+        const sourceSet = image.match(/\bsrcset="([^"]+)"/)?.[1];
+        for (const candidate of sourceSet?.split(',') ?? []) {
+          const [source, descriptor] = candidate.trim().split(/\s+/);
+          assert.match(descriptor, /^\d+w$/, `${file}: invalid responsive image width`);
+          destinations.add(resolve(dirname(file), source));
+        }
       }
     }
     const html = await readFile(join(out, localizedPath('/about', language), 'index.html'), 'utf8');

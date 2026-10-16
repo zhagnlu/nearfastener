@@ -62,6 +62,11 @@ for (const [route, meta] of Object.entries(routes)) {
       }
       if (node.tagName === 'input' && attrs.some(attr => attr.name === 'data-request-language')) set(node, 'value', language);
       const targetLanguage = attrs.find(attr => attr.name === 'data-language-code')?.value;
+      const sourceSet = attrs.find(attr => attr.name === 'srcset');
+      if (sourceSet) sourceSet.value = sourceSet.value.split(',').map(candidate => {
+        const [source, descriptor] = candidate.trim().split(/\s+/);
+        return `${source.startsWith('/') ? local(source) : source}${descriptor ? ` ${descriptor}` : ''}`;
+      }).join(', ');
       for (const attr of attrs.filter(attr => ['href', 'src', 'action'].includes(attr.name) && /^\/(?!\/)/.test(attr.value))) {
         const url = new URL(attr.value, 'https://local.invalid');
         const resolved = resolveLocalizedPath(url.pathname);
