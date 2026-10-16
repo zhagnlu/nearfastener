@@ -307,6 +307,19 @@ body:has([data-rfq-submit]) .whatsapp-float { bottom: calc(28px + env(safe-area-
   .about-production-flow { padding-bottom:32px; }
 }
 .workshop-preview { padding:56px 0; background:#f3f5f7; }
+.technical-guidance { margin-block:40px; padding:clamp(20px,4vw,36px); border:1px solid #dce2e7; border-radius:8px; min-width:0; }
+.technical-guidance h2 { color:#182735; font-size:clamp(1.25rem,2.2vw,1.65rem); line-height:1.4; font-weight:700; margin-bottom:24px; }
+.technical-guidance h3 { color:#182735; font-size:1.1rem; line-height:1.5; font-weight:600; margin-bottom:10px; }
+.technical-guidance > section + section { margin-top:24px; }
+.technical-guidance p { color:#53616e; line-height:1.8; margin-bottom:12px; }
+.technical-guidance a { color:#a84b08; text-decoration:underline; text-underline-offset:3px; overflow-wrap:anywhere; }
+.technical-guidance-sources { font-size:.85rem; }
+.technical-guidance-more { display:inline-block; margin-top:16px; font-weight:600; }
+.technical-guidance-table { overflow-x:auto; margin-block:16px; }
+.technical-guidance table { width:100%; border-collapse:collapse; text-align:start; font-size:.9rem; }
+.technical-guidance caption { text-align:start; font-weight:600; margin-bottom:10px; }
+.technical-guidance th, .technical-guidance td { border:1px solid #dce2e7; padding:10px 12px; min-width:100px; }
+.technical-guidance thead { background:#f3f5f7; }
 .production-teaser { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); align-items:center; gap:48px; }
 .production-teaser img { display:block; width:100%; height:auto; border-radius:8px; }
 .production-teaser h2 { font-size:clamp(1.5rem,2.7vw,2rem); font-weight:700; color:#182735; margin-bottom:16px; }
