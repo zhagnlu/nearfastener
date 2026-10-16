@@ -98,7 +98,17 @@
       "status": "published",
       "kind": "service",
       "parentId": null,
-      "aliases": []
+      "aliases": [],
+      "technicalGuides": [
+        {
+          "article": "custom-fastener-rfq-checklist",
+          "sections": [
+            "drawing",
+            "acceptance",
+            "delivery"
+          ]
+        }
+      ]
     },
     {
       "id": "hex-bolts",
@@ -113,6 +123,15 @@
         "外六角螺丝",
         "外六角螺栓",
         "External Hex Fasteners"
+      ],
+      "technicalGuides": [
+        {
+          "article": "bolt-property-classes",
+          "sections": [
+            "compare-classes",
+            "rfq-checklist"
+          ]
+        }
       ]
     },
     {
@@ -125,7 +144,17 @@
       "kind": "performance",
       "parentId": "bolts",
       "aliases": [],
-      "navigationGroup": "performance"
+      "navigationGroup": "performance",
+      "technicalGuides": [
+        {
+          "article": "bolt-property-classes",
+          "sections": [
+            "read-markings",
+            "compare-classes",
+            "joint-selection"
+          ]
+        }
+      ]
     },
     {
       "id": "structural-bolts",
@@ -219,7 +248,7 @@
       "id": "machine-screws",
       "path": "/products/machine-screws",
       "title": "Machine Screws",
-      "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+      "description": "Machine-thread screws for tapped holes or matching nuts. Select the drive and head style for your assembly.",
       "image": "/assets/products/black-oxide/phillips-countersunk-screw-photo-black-oxide-v1.jpg",
       "status": "published",
       "kind": "type",
@@ -232,7 +261,7 @@
       "id": "set-screws",
       "path": "/products/set-screws",
       "title": "Set Screws",
-      "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+      "description": "Headless threaded fasteners with a flat contact end for locating or retaining components.",
       "image": "/assets/products/black-oxide/flat-point-set-screw-photo-black-oxide-v1.jpg",
       "status": "published",
       "kind": "type",
@@ -245,7 +274,7 @@
       "id": "shoulder-screws",
       "path": "/products/shoulder-screws",
       "title": "Shoulder Screws",
-      "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+      "description": "A smooth precision shank provides a locating surface. Confirm shank diameter, fit and thread dimensions on the drawing.",
       "image": "/assets/products/black-oxide/shoulder-screw-photo-black-oxide-v1.jpg",
       "status": "published",
       "kind": "type",
@@ -258,7 +287,7 @@
       "id": "thumb-screws",
       "path": "/products/thumb-screws",
       "title": "Thumb Screws",
-      "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+      "description": "A knurled head supports manual adjustment and removable covers without a separate driver.",
       "image": "/assets/products/black-oxide/knurled-thumb-screw-photo-black-oxide-v1.jpg",
       "status": "published",
       "kind": "type",
@@ -271,20 +300,29 @@
       "id": "assembly-screws",
       "path": "/products/assembly-screws",
       "title": "Assembly and Captive Screws",
-      "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+      "description": "Assembly fasteners help retain washers or the screw itself during installation and maintenance.",
       "image": "/assets/products/black-oxide/sems-screw-photo-black-oxide-v1.jpg",
       "status": "published",
       "kind": "type",
       "parentId": "screws",
       "aliases": [
         "组合与松不脱螺丝"
+      ],
+      "technicalGuides": [
+        {
+          "article": "sems-screw-selection",
+          "sections": [
+            "configuration",
+            "fit"
+          ]
+        }
       ]
     },
     {
       "id": "self-drilling-screws",
       "path": "/products/self-drilling-screws",
       "title": "Self-Drilling Screws",
-      "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+      "description": "A drill-point tip combines hole formation and fastening for compatible sheet assemblies. Match the screw to the substrate and thickness.",
       "image": "/assets/products/black-oxide/countersunk-drilling-screw-photo-black-oxide-v1.jpg",
       "status": "published",
       "kind": "type",
@@ -297,7 +335,7 @@
       "id": "special-bolts",
       "path": "/products/special-bolts",
       "title": "Special Head Bolts",
-      "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+      "description": "Special head profiles for equipment connections. Confirm the mating geometry and application requirements before ordering.",
       "image": "/assets/products/black-oxide/square-head-bolt-photo-black-oxide-v1.jpg",
       "status": "published",
       "kind": "type",
@@ -310,7 +348,7 @@
       "id": "self-tapping-screws",
       "path": "/products/self-tapping-screws",
       "title": "Self-Tapping Screws",
-      "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+      "description": "Pointed self-tapping screws; confirm substrate, pilot hole and engagement before selecting the thread.",
       "image": "/assets/products/black-oxide/self-tapping-screw-black-oxide-v1.jpg",
       "status": "published",
       "kind": "type",
@@ -322,7 +360,7 @@
       "id": "flange-bolts",
       "path": "/products/flange-bolts",
       "title": "Flange Bolts",
-      "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+      "description": "External hex head with an integral flange; confirm flange diameter, bearing surface and thread.",
       "image": "/assets/products/black-oxide/hex-flange-bolt-black-oxide-v1.jpg",
       "status": "published",
       "kind": "type",
@@ -334,7 +372,7 @@
       "id": "carriage-bolts",
       "path": "/products/carriage-bolts",
       "title": "Carriage Bolts",
-      "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+      "description": "Round head with a square neck; confirm neck dimensions and the matching hole.",
       "image": "/assets/products/black-oxide/carriage-bolt-black-oxide-v1.jpg",
       "status": "published",
       "kind": "type",
@@ -346,7 +384,7 @@
       "id": "lock-nuts",
       "path": "/products/lock-nuts",
       "title": "Lock Nuts",
-      "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+      "description": "Hex nuts with a nylon locking insert; confirm thread fit, temperature and assembly requirements.",
       "image": "/assets/products/black-oxide/lock-nut-black-oxide-v1.jpg",
       "status": "published",
       "kind": "type",
@@ -358,7 +396,7 @@
       "id": "flange-nuts",
       "path": "/products/flange-nuts",
       "title": "Flange Nuts",
-      "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+      "description": "Hex nuts with an integral flange; specify flange dimensions and serrated or plain bearing surface.",
       "image": "/assets/products/black-oxide/flange-nut-black-oxide-v1.jpg",
       "status": "published",
       "kind": "type",
@@ -370,7 +408,7 @@
       "id": "coupling-nuts",
       "path": "/products/coupling-nuts",
       "title": "Coupling Nuts",
-      "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+      "description": "Elongated hex nuts for threaded connections; confirm length, thread engagement and alignment.",
       "image": "/assets/products/black-oxide/coupling-nut-black-oxide-v1.jpg",
       "status": "published",
       "kind": "type",
@@ -382,7 +420,7 @@
       "id": "flat-washers",
       "path": "/products/flat-washers",
       "title": "Flat Washers",
-      "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+      "description": "Standard flat washer per DIN 125 (ISO 7089), used with bolts and nuts to distribute load.",
       "image": "/assets/products/washers/flat-washer-din125-zinc-0ed0fd68.jpg",
       "status": "published",
       "kind": "type",
@@ -393,7 +431,7 @@
       "id": "spring-washers",
       "path": "/products/spring-washers",
       "title": "Spring Washers",
-      "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+      "description": "Split helical washers; specify dimensions and validate their suitability for the complete joint.",
       "image": "/assets/products/black-oxide/spring-washer-black-oxide-v1.jpg",
       "status": "published",
       "kind": "type",
@@ -405,7 +443,7 @@
       "id": "structural-washers",
       "path": "/products/structural-washers",
       "title": "Structural Washers",
-      "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+      "description": "Thick flat washers for structural assemblies; confirm dimensions, hardness and assembly specification.",
       "image": "/assets/products/catalog-expansion/structural-washer.jpg",
       "status": "published",
       "kind": "type",
@@ -436,7 +474,17 @@
         ]
       },
       "displayFamilyId": "partial-thread-hex",
-      "displayFamilyTitle": "Hex Head Bolt (Partial Thread)"
+      "displayFamilyTitle": "Hex Head Bolt (Partial Thread)",
+      "technicalGuides": [
+        {
+          "article": "bolt-property-classes",
+          "sections": [
+            "compare-classes",
+            "joint-selection",
+            "rfq-checklist"
+          ]
+        }
+      ]
     },
     {
       "id": "din-931-hex-bolt",
@@ -459,7 +507,16 @@
         ]
       },
       "displayFamilyId": "partial-thread-hex",
-      "displayFamilyTitle": "Hex Head Bolt (Partial Thread)"
+      "displayFamilyTitle": "Hex Head Bolt (Partial Thread)",
+      "technicalGuides": [
+        {
+          "article": "bolt-property-classes",
+          "sections": [
+            "joint-selection",
+            "rfq-checklist"
+          ]
+        }
+      ]
     },
     {
       "id": "din-933-hex-bolt",
@@ -510,7 +567,16 @@
           }
         ],
         "availability": "Manufacturing feasibility, material options and delivery are confirmed after review of your drawing or specification."
-      }
+      },
+      "technicalGuides": [
+        {
+          "article": "bolt-property-classes",
+          "sections": [
+            "joint-selection",
+            "rfq-checklist"
+          ]
+        }
+      ]
     },
     {
       "id": "iso-4014-hex-bolt",
@@ -606,7 +672,18 @@
         "driveType": [
           "external-hex"
         ]
-      }
+      },
+      "technicalGuides": [
+        {
+          "article": "gb-t-32076-7-guide",
+          "sections": [
+            "scope",
+            "complete-assembly",
+            "installation",
+            "purchase-checklist"
+          ]
+        }
+      ]
     },
     {
       "id": "gb-t-1231-structural-bolt",
@@ -621,7 +698,17 @@
         "hex-bolts",
         "structural-bolts"
       ],
-      "attributes": {}
+      "attributes": {},
+      "technicalGuides": [
+        {
+          "article": "high-strength-coating-hydrogen-embrittlement",
+          "sections": [
+            "step-1",
+            "step-2",
+            "step-3"
+          ]
+        }
+      ]
     },
     {
       "id": "astm-a325-structural-bolt",
@@ -1103,7 +1190,7 @@
       "id": "sems-screw",
       "path": "/product/sems-screw",
       "title": "SEMS Washer Assembly Screws",
-      "description": "Assembly fasteners help retain washers or the screw itself during installation and maintenance.",
+      "description": "Specify the screw and washer combination together, then confirm assembly clearance, material, finish and batch demand.",
       "standard": "Drawing / specification",
       "image": "/assets/products/black-oxide/sems-screw-photo-black-oxide-v1.jpg",
       "status": "published",
@@ -1148,7 +1235,17 @@
         "availability": "Manufacturing feasibility, material options and delivery are confirmed after review of your drawing or specification."
       },
       "referenceListing": "https://guwanji.tmall.com/category-1237502200.htm",
-      "imageKind": "generated"
+      "imageKind": "generated",
+      "technicalGuides": [
+        {
+          "article": "sems-screw-selection",
+          "sections": [
+            "configuration",
+            "fit",
+            "batch"
+          ]
+        }
+      ]
     },
     {
       "id": "captive-screw",

@@ -1,6 +1,7 @@
 // Pure catalog validation and rendering, shared by the builder and tests.
 import { detailPages, validateDetails } from './catalog-detail.mjs';
 import { customManufacturing } from './custom-manufacturing.mjs';
+import { technicalGuidance } from './technical-guidance.mjs';
 const escape = (value) => String(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#39;');
 const requireValue = (condition, message) => { if (!condition) throw new Error(message); };
 const nonempty = (value) => typeof value === 'string' && value.trim().length > 0;
@@ -133,7 +134,8 @@ export function catalogPages(catalog, routes) {
     }).join('');
     const productSection = category.id === 'custom-fasteners' ? customManufacturing(catalog, true) : products.length ? (children.length ? categorySection('All Products', grid(products)) : grid(products)) + categoryFacts(catalog, products) : children.length ? '' : empty;
     const html = `<main id="main-content" class="flex-1"><div class="pt-20"><section class="bg-steel-dark py-12"><div class="max-w-max-content mx-auto px-4 lg:px-8"><nav class="catalog-breadcrumb flex items-center gap-2 text-sm text-gray-400 mb-4">${breadcrumbs}<span class="text-white">${escape(category.title)}</span></nav><h1 class="text-3xl lg:text-4xl font-bold text-white mb-2">${escape(category.title)}</h1><p class="text-gray-400 max-w-2xl">${escape(category.description)}</p></div></section><section class="py-16"><div class="catalog-sections max-w-max-content mx-auto px-4 lg:px-8">${childSections}${productSection}</div></section></div></main>\n`;
-    pages.set(category.path, { title: `${category.title} | Near Fastener`, description: category.description, file: `${category.path.slice(1)}.html`, catalogGenerated: true, html });
+    const guidance = technicalGuidance(category);
+    pages.set(category.path, { title: `${category.title} | Near Fastener`, description: category.description, file: `${category.path.slice(1)}.html`, catalogGenerated: true, html: html.replace('</main>', `${guidance ? `<div class="max-w-max-content mx-auto px-4 lg:px-8 pb-12">${guidance}</div>` : ''}</main>`) });
   }
   for (const [path, page] of detailPages(catalog)) pages.set(path, page);
   return pages;

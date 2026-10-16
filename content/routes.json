@@ -293,43 +293,43 @@
   },
   "/products/machine-screws": {
     "title": "Machine Screws | Near Fastener",
-    "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+    "description": "Machine-thread screws for tapped holes or matching nuts. Select the drive and head style for your assembly.",
     "file": "products/machine-screws.html",
     "catalogGenerated": true
   },
   "/products/set-screws": {
     "title": "Set Screws | Near Fastener",
-    "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+    "description": "Headless threaded fasteners with a flat contact end for locating or retaining components.",
     "file": "products/set-screws.html",
     "catalogGenerated": true
   },
   "/products/shoulder-screws": {
     "title": "Shoulder Screws | Near Fastener",
-    "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+    "description": "A smooth precision shank provides a locating surface. Confirm shank diameter, fit and thread dimensions on the drawing.",
     "file": "products/shoulder-screws.html",
     "catalogGenerated": true
   },
   "/products/thumb-screws": {
     "title": "Thumb Screws | Near Fastener",
-    "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+    "description": "A knurled head supports manual adjustment and removable covers without a separate driver.",
     "file": "products/thumb-screws.html",
     "catalogGenerated": true
   },
   "/products/assembly-screws": {
     "title": "Assembly and Captive Screws | Near Fastener",
-    "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+    "description": "Assembly fasteners help retain washers or the screw itself during installation and maintenance.",
     "file": "products/assembly-screws.html",
     "catalogGenerated": true
   },
   "/products/self-drilling-screws": {
     "title": "Self-Drilling Screws | Near Fastener",
-    "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+    "description": "A drill-point tip combines hole formation and fastening for compatible sheet assemblies. Match the screw to the substrate and thickness.",
     "file": "products/self-drilling-screws.html",
     "catalogGenerated": true
   },
   "/products/special-bolts": {
     "title": "Special Head Bolts | Near Fastener",
-    "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+    "description": "Special head profiles for equipment connections. Confirm the mating geometry and application requirements before ordering.",
     "file": "products/special-bolts.html",
     "catalogGenerated": true
   },
@@ -383,7 +383,7 @@
   },
   "/product/sems-screw": {
     "title": "SEMS Washer Assembly Screws | Near Fastener",
-    "description": "Assembly fasteners help retain washers or the screw itself during installation and maintenance.",
+    "description": "Specify the screw and washer combination together, then confirm assembly clearance, material, finish and batch demand.",
     "file": "product/sems-screw.html",
     "catalogGenerated": true
   },
@@ -479,55 +479,55 @@
   },
   "/products/self-tapping-screws": {
     "title": "Self-Tapping Screws | Near Fastener",
-    "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+    "description": "Pointed self-tapping screws; confirm substrate, pilot hole and engagement before selecting the thread.",
     "file": "products/self-tapping-screws.html",
     "catalogGenerated": true
   },
   "/products/flange-bolts": {
     "title": "Flange Bolts | Near Fastener",
-    "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+    "description": "External hex head with an integral flange; confirm flange diameter, bearing surface and thread.",
     "file": "products/flange-bolts.html",
     "catalogGenerated": true
   },
   "/products/carriage-bolts": {
     "title": "Carriage Bolts | Near Fastener",
-    "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+    "description": "Round head with a square neck; confirm neck dimensions and the matching hole.",
     "file": "products/carriage-bolts.html",
     "catalogGenerated": true
   },
   "/products/lock-nuts": {
     "title": "Lock Nuts | Near Fastener",
-    "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+    "description": "Hex nuts with a nylon locking insert; confirm thread fit, temperature and assembly requirements.",
     "file": "products/lock-nuts.html",
     "catalogGenerated": true
   },
   "/products/flange-nuts": {
     "title": "Flange Nuts | Near Fastener",
-    "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+    "description": "Hex nuts with an integral flange; specify flange dimensions and serrated or plain bearing surface.",
     "file": "products/flange-nuts.html",
     "catalogGenerated": true
   },
   "/products/coupling-nuts": {
     "title": "Coupling Nuts | Near Fastener",
-    "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+    "description": "Elongated hex nuts for threaded connections; confirm length, thread engagement and alignment.",
     "file": "products/coupling-nuts.html",
     "catalogGenerated": true
   },
   "/products/flat-washers": {
     "title": "Flat Washers | Near Fastener",
-    "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+    "description": "Standard flat washer per DIN 125 (ISO 7089), used with bolts and nuts to distribute load.",
     "file": "products/flat-washers.html",
     "catalogGenerated": true
   },
   "/products/spring-washers": {
     "title": "Spring Washers | Near Fastener",
-    "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+    "description": "Split helical washers; specify dimensions and validate their suitability for the complete joint.",
     "file": "products/spring-washers.html",
     "catalogGenerated": true
   },
   "/products/structural-washers": {
     "title": "Structural Washers | Near Fastener",
-    "description": "Product families for industrial fastening. Material, dimensions and finish are confirmed against your requirements.",
+    "description": "Thick flat washers for structural assemblies; confirm dimensions, hardness and assembly specification.",
     "file": "products/structural-washers.html",
     "catalogGenerated": true
   },
