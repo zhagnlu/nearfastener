@@ -9,18 +9,11 @@ function contactEmailDraft(values, t = (text) => text) {
 
 // Shared, dependency-free behavior for the app and the standalone HTML export.
 function initNearFastener() {
-  if (location.protocol === 'file:') {
-    document.querySelectorAll('[data-offline-href], [data-offline-action]').forEach((node) => {
-      for (const attr of ['href', 'action']) {
-        const value = node.getAttribute(`data-offline-${attr}`);
-        if (value) node.setAttribute(attr, value);
-      }
-    });
-  }
-  const t = (text) => window.NearFastenerI18n?.t(text) ?? text;
+  const messages = new Map([...document.querySelectorAll('#site-messages [data-source]')].map(node => [node.dataset.source, node.textContent]));
+  const t = (text) => messages.get(text) || text;
   const header = document.querySelector('header');
   const main = document.querySelector('main');
-  const toggle = header?.querySelector('[data-menu-toggle], [aria-label="Toggle menu"]');
+  const toggle = header?.querySelector('button');
   const desktopNav = header?.querySelector('nav');
   const route = document.querySelector('[data-page-path]')?.getAttribute('data-page-path') || location.pathname;
 
@@ -54,7 +47,7 @@ function initNearFastener() {
     const mobileNav = desktopNav.cloneNode(true);
     mobileNav.id = 'mobile-navigation';
     mobileNav.className = 'mobile-navigation';
-    mobileNav.setAttribute('aria-label', 'Mobile navigation');
+    mobileNav.setAttribute('aria-label', t('Mobile navigation'));
     mobileNav.hidden = true;
     const quote = header.querySelector('a[href$="/rfq"], a[data-route="/rfq"]')?.cloneNode(true);
     if (quote) { quote.className = 'mobile-quote'; mobileNav.append(quote); }
@@ -64,13 +57,13 @@ function initNearFastener() {
     const close = () => {
       mobileNav.hidden = true;
       toggle.setAttribute('aria-expanded', 'false');
-      toggle.setAttribute('aria-label', 'Toggle menu');
+      toggle.setAttribute('aria-label', t('Toggle menu'));
     };
     toggle.addEventListener('click', () => {
       const open = mobileNav.hidden;
       mobileNav.hidden = !open;
       toggle.setAttribute('aria-expanded', String(open));
-      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Toggle menu');
+      toggle.setAttribute('aria-label', t(open ? 'Close menu' : 'Toggle menu'));
     });
     document.addEventListener('keydown', (event) => {
       if (event.key === 'Escape' && !mobileNav.hidden) { close(); toggle.focus(); }
@@ -111,14 +104,8 @@ function initNearFastener() {
         form.querySelector('[data-rfq-context]').hidden = false;
         product.hidden = false;
         const productField = form.elements.namedItem('product');
-        let automaticTitle = product.dataset.productTitle;
+        const automaticTitle = product.dataset.productTitle;
         productField.value = automaticTitle;
-        document.addEventListener('nearfastener:language', () => {
-          if (productField.value === automaticTitle) {
-            automaticTitle = t(product.dataset.productTitle);
-            productField.value = automaticTitle;
-          }
-        });
         form.elements.namedItem('standard').value = product.dataset.productStandard;
         for (const name of ['diameter', 'length', 'thread_pitch', 'material', 'property_class', 'surface_treatment', 'quantity']) {
           const value = params.get(name);
@@ -215,7 +202,6 @@ function initNearFastener() {
         submitting = true;
         button.disabled = true;
         showFeedback('Submitting your request...');
-        window.NearFastenerAnalytics?.track('rfq_submit');
         HTMLFormElement.prototype.submit.call(form);
         return;
       }
@@ -237,7 +223,7 @@ function initNearFastener() {
       const download = document.createElement('button');
       download.type = 'button';
       download.className = 'download-request';
-      download.textContent = 'Download request';
+      download.textContent = t('Download request');
       download.addEventListener('click', () => {
         const url = URL.createObjectURL(new Blob([text], { type: 'text/plain;charset=utf-8' }));
         const anchor = document.createElement('a');
@@ -252,11 +238,15 @@ function initNearFastener() {
       feedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     });
   });
-  const requestLanguages = document.querySelectorAll('[data-request-language]');
-  document.addEventListener('nearfastener:language', (event) => {
-    requestLanguages.forEach((input) => { input.value = event.detail.language; });
+  document.querySelectorAll('[data-request-language]').forEach(input => { input.value = document.documentElement.lang; });
+  document.querySelectorAll('[data-language]').forEach(link => {
+    const url = new URL(link.href, location.href);
+    const query = new URLSearchParams(location.search);
+    query.delete('lang');
+    url.search = query.toString();
+    url.hash = location.hash;
+    link.href = url.href;
   });
-  window.NearFastenerI18n?.init();
 }
 
 if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initNearFastener, { once: true });
