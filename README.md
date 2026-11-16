@@ -46,7 +46,7 @@ npm run build:ecs    # 构建和测试，只生成本地静态产物
 npm run publish:ecs  # 推送已预览的产物，不重新构建
 ```
 
-`build:ecs` 执行 `npm test` 并记录本次构建的开发提交。构建和推送独立，构建不会访问远程或触发部署。可通过 `python3 -m http.server 8000 --directory static-site` 在 `http://localhost:8000/` 预览产物。
+`build:ecs` 执行 `npm test` 并记录本次构建的开发提交。构建和推送独立，构建不会访问远程或触发部署。可通过 `npm run preview:static` 在 `http://127.0.0.1:8011/` 预览产物及旧地址 301／404。
 
 `publish:ecs` 只读取已构建的 `static-site/`，通过临时 Git 工作目录将产物作为分支根目录提交并推送到 `push_remote`。不重新构建、不切换开发分支、不强制推送，自动移除发布分支中已过时的文件。开发提交如已变化，需重新构建和预览。构建和发布前工作区需干净；构建若更新了已跟踪的生成文件，先提交它们再构建。`npm run publish:ecs -- --dry-run` 可验证发布提交但不推送，仍读取远程分支。
 
@@ -101,12 +101,14 @@ ECS 需安装 Nginx、rsync，并将部署公钥加入部署用户的 authorized
 
 ## 本地多语言
 
-顶部语言菜单支持英语、简体中文、西班牙语、法语、德语、葡萄牙语、俄语、阿拉伯语和日语。译文保存在 `content/locales/*.json`，切换时加载本地语言包，无需在线翻译 API；独立 HTML 版本直接从磁盘打开也可切换。选择会记忆并传递到后续页面，阿拉伯语使用从右到左布局。
+顶部语言菜单支持九种语言，采用与 `../nearblade/` 相同的语言目录：`/en/`、`/zh-cn/`、`/es/` 等。107 个页面分别生成九种语言，共 963 个独立 HTML，首屏正文和元数据已经翻译，浏览器不再加载 JSON／JS 语言包或动态替换正文。切换语言使用同页链接，并保留查询参数和锚点。语言由 URL 决定，阿拉伯语使用从右到左布局。
+
+`content/locales/*.json` 仅作为构建／服务端渲染的文案源，维护时无需手动复制九份页面模板。现有静态服务器直接提供各语言目录中的 `index.html`，无需修改 Nginx。旧无前缀地址和 `?lang=` 入口通过 HTML／浏览器跳转到语言页面，详见 [多语言页面与迁移](docs/i18n/language-pages.md)。
 
 ```sh
-npm run i18n:build  # 从 JSON 生成语言包
-npm run test:i18n   # 检查翻译覆盖及语言包一致性
-npm run export:static # 更新语言包和全部静态页面
+npm run i18n:build  # 校验构建期文案
+npm run export:static
+npm run test:i18n   # 检查文案、语言页面、链接及路由
 ```
 
 文案维护与加载规则见 [content/locales/README.md](content/locales/README.md)。
@@ -117,4 +119,4 @@ npm run export:static # 更新语言包和全部静态页面
 
 React 页面及独立 HTML 共用 `scripts/seo.mjs`：提供分享标题、摘要及 JSON-LD，产品分类和面包屑来自产品目录。域名未配置时不会生成猜测的绝对网址。产品没有添加价格、现货或评价，不保证出现搜索富结果。规范链接的用途参见 [Google canonical 文档](https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls)，产品展示要求参见 [Google 产品结构化数据文档](https://developers.google.com/search/docs/appearance/structured-data/product)。
 
-当前多语言仍通过客户端切换，SEO 基础内容使用英文，未声明九个独立语言版本的 hreflang。后续若需要分别收录各语言，应先提供可直接抓取的语言页面。`robots.txt` 的 API 排除规则只用于爬虫提示，附件权限仍由后台验证。
+各语言页面可独立抓取；设置正式域名后输出对应语言的 canonical、hreflang、分享信息和 sitemap。`robots.txt` 的 API 排除规则只用于爬虫提示，附件权限仍由后台验证。

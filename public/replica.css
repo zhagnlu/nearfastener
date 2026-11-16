@@ -85,10 +85,6 @@ a:focus-visible,button:focus-visible,label[for="file-upload"]:focus-visible { ou
 
 /* The language control is shared by desktop and mobile navigation. */
 .language-switcher { position: relative; display: flex; align-items: center; gap: 5px; margin-inline-start: 12px; color: #e2e8f0; flex-shrink: 0; }
-.language-icon { font-size: 22px; line-height: 1; }
-.language-switcher select { background: #182334; color: #f1f5f9; border: 1px solid #526073; border-radius: 4px; font: inherit; font-size: 13px; padding: 7px 5px; max-width: 112px; cursor: pointer; }
-.language-switcher select:focus-visible { outline: 3px solid #d38a43; outline-offset: 3px; }
-.language-status:not(:empty) { position: absolute; top: calc(100% + 12px); inset-inline-end: 0; width: 240px; padding: 10px 12px; background: #182334; border: 1px solid #526073; border-radius: 4px; font-size: 13px; }
 @media (max-width: 1279px) {
   .site-shell header > div > div > nav, .site-shell header > div > div > .hidden { display: none; }
   .site-shell header > div > div > button { display: block; }
@@ -98,14 +94,11 @@ a:focus-visible,button:focus-visible,label[for="file-upload"]:focus-visible { ou
 @media (min-width: 1280px) { .mobile-navigation { display: none !important; } }
 @media (max-width: 380px) {
   header > div > div > a > span { font-size: 14px; }
-  .language-icon { display: none; }
   .language-switcher { margin-inline-start: 5px; margin-inline-end: 2px; }
-  .language-switcher select { max-width: 90px; font-size: 12px; }
 }
 [dir="rtl"] { font-family: Arial, sans-serif; }
 [dir="rtl"] .text-left { text-align: right; }
 [dir="rtl"] input[type="email"], [dir="rtl"] input[type="tel"] { direction: ltr; text-align: right; }
-[dir="rtl"] .language-switcher select { direction: ltr; }
 [dir="rtl"] main p { line-height: 1.85; }
 /* Long translated words must not widen cards or the page on small screens. */
 main, footer { overflow-wrap: anywhere; }
@@ -215,3 +208,10 @@ body:has([data-rfq-submit]) .whatsapp-float { bottom: calc(28px + env(safe-area-
 @media (max-width: 768px) { .product-buying-grid, .product-recommendation-grid { grid-template-columns: 1fr; } }
 
 .catalog-standard-family{min-width:0}.catalog-standard-family>.catalog-card{display:block}.catalog-standard-family>.product-tags{padding-top:12px;gap:8px}
+
+.language-menu { position: relative; direction: ltr; font-size: 13px; }
+.language-menu summary { cursor: pointer; padding: 7px 10px; border: 1px solid #526073; border-radius: 4px; background: #182334; }
+.language-menu nav { position: absolute; inset-inline-end: 0; top: calc(100% + 6px); min-width: 140px; max-height: 70svh; overflow: auto; padding: 6px; background: #182334; border: 1px solid #526073; z-index: 60; }
+.language-menu a { display: block; padding: 8px 12px; color: #f1f5f9; }
+.language-menu a:hover, .language-menu a[aria-current] { background: #304760; }
+.language-menu a:focus-visible, .language-menu summary:focus-visible { outline: 2px solid #d38a43; outline-offset: 2px; }

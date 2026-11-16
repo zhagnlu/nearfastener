@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import header from "../content/header.html?raw";
-import footer from "../content/footer.html?raw";
+import { splitLocalePath } from "../scripts/localization.mjs";
+import { dictionaryFor } from "./lib/localization";
 import SiteEnhancements from "./SiteEnhancements";
 
 export const metadata: Metadata = {
@@ -12,23 +12,23 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
+export default async function RootLayout({
+  children, params,
 }: Readonly<{
   children: React.ReactNode;
+  params: Promise<{ slug?: string[] }>;
 }>) {
+  const language = splitLocalePath("/" + ((await params).slug || []).join("/")).language || "en";
   return (
-    <html lang="en">
+    <html lang={language} dir={language === "ar" ? "rtl" : "ltr"}>
       <head>
         <link rel="stylesheet" href="/site.css" />
         <link rel="stylesheet" href="/replica.css" />
       </head>
       <body>
-        <a className="skip-link" href="#main-content">Skip to content</a>
+        <a className="skip-link" href="#main-content">{dictionaryFor(language)["Skip to content"] || "Skip to content"}</a>
         <div className="site-shell">
-          <div className="site-fragment" dangerouslySetInnerHTML={{ __html: header }} />
           {children}
-          <div className="site-fragment" dangerouslySetInnerHTML={{ __html: footer }} />
         </div>
         <SiteEnhancements />
       </body>

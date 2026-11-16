@@ -1,3 +1,5 @@
+import routes from '../content/routes.json';
+import { resolvePageRequest, splitLocalePath, languageNames, languages } from '../scripts/localization.mjs';
 import { handleRfq, retryRfq, type RfqBucket } from './rfq.mjs';
 /** Cloudflare Worker entry point for the vinext-starter template. */
 import { handleImageOptimization, DEFAULT_DEVICE_SIZES, DEFAULT_IMAGE_SIZES } from "vinext/server/image-optimization";
@@ -35,6 +37,8 @@ const worker = {
   },
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     const url = new URL(request.url);
+    const page = resolvePageRequest(url.pathname, url.search, routes);
+    if (page?.redirect) return Response.redirect(new URL(page.redirect, request.url), 301);
     if (url.pathname === "/api/rfq" || url.pathname.startsWith("/api/rfq/attachment/")) {
       try { return (await handleRfq(request, env)) ?? Response.json({ error: "not_found" }, { status: 404 }); } catch { return Response.json({ error: "unavailable" }, { status: 503, headers: { "Cache-Control": "no-store" } }); }
     }
@@ -50,6 +54,11 @@ const worker = {
       }, allowedWidths);
     }
 
+    // Unknown extensionless page URLs must return 404 before the framework's global slash redirect.
+    if (!page && !url.pathname.startsWith('/api/') && !url.pathname.startsWith('/_') && !url.pathname.split('/').pop()?.includes('.')) {
+      const language = splitLocalePath(url.pathname).language || 'en';
+      return new Response(`<!DOCTYPE html><html lang="${language}" dir="${language === 'ar' ? 'rtl' : 'ltr'}"><head><meta charset="utf-8"><meta name="robots" content="noindex"><title>404</title></head><body><h1>404</h1><a href="/${language.toLowerCase()}/">${languageNames[languages.indexOf(language)]}</a></body></html>`, { status: 404, headers: { 'Content-Type': 'text/html; charset=utf-8', 'Content-Language': language } });
+    }
     return handler.fetch(request, env, ctx);
   },
 };

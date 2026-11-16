@@ -1,3 +1,5 @@
+import { languages, localizedPath } from '../scripts/localization.mjs';
+import { readCatalog } from '../scripts/build-locales.mjs';
 import assert from 'node:assert/strict';
 import { readFile, access } from 'node:fs/promises';
 import { join } from 'node:path';
@@ -39,14 +41,24 @@ test('the deployable worker renders every configured route and returns 404 for u
   const { default: worker } = await import('../dist/server/index.js');
   const env = { ASSETS: { fetch: async () => new Response('Not found', { status: 404 }) } };
   const context = { waitUntil() {}, passThroughOnException() {} };
-  for (const [path, page] of Object.entries(routes)) {
-    const response = await worker.fetch(new Request(`http://localhost${path}`, { headers: { accept: 'text/html' } }), env, context);
-    assert.equal(response.status, 200, path);
-    const html = await response.text();
-    assert.ok(html.includes(page.title.replaceAll('&', '&amp;')), `${path} has wrong metadata`);
-    assert.match(html, /id="main-content"/, path);
-    assert.match(html, /Near Fastener/, path);
-    assert.doesNotMatch(html, /Your site is taking shape|codex-preview/, path);
+  for (const language of languages) {
+    const dictionary = await readCatalog(language);
+    for (const [path, page] of Object.entries(routes)) {
+      const url = localizedPath(path, language);
+      const response = await worker.fetch(new Request(`http://localhost${url}`, { headers: { accept: 'text/html' } }), env, context);
+      assert.equal(response.status, 200, url);
+      const html = await response.text();
+      assert.ok(html.includes(dictionary[page.title].replaceAll('&', '&amp;')), `${url} has wrong metadata`);
+      assert.ok(html.includes(`lang="${language}"`), `${url} has wrong HTML language`);
+      assert.match(html, /id="main-content"/, url);
+      assert.match(html, /data-language="zh-CN"/, url);
+      assert.doesNotMatch(html, /Your site is taking shape|codex-preview|i18n\.js/, url);
+    }
+  }
+  for (const [path, target] of [ ['/', '/en/'], ['/products?lang=zh-CN&topic=all', '/zh-cn/products/?topic=all'], ['/de/products/index.html?lang=ja', '/de/products/'] ]) {
+    const response = await worker.fetch(new Request('http://localhost' + path), env, context);
+    assert.equal(response.status, 301, path);
+    assert.equal(response.headers.get('location'), 'http://localhost' + target);
   }
   const missing = await worker.fetch(new Request('http://localhost/this-page-does-not-exist'), env, context);
   assert.equal(missing.status, 404);

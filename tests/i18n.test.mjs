@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { join } from 'node:path';
-import vm from 'node:vm';
+import { localizedPath, resolvePageRequest, localizeHtml } from '../scripts/localization.mjs';
 import test from 'node:test';
 import { languages, root, readCatalog } from '../scripts/build-locales.mjs';
 
@@ -40,13 +40,39 @@ test('every language has complete dictionaries and preserves technical identifie
   }
 });
 
-test('offline script packs register precisely the source dictionary without remote code', async () => {
+test('every route has nine complete HTML pages without runtime translation packs', async () => {
+  const routes = JSON.parse(await readFile(join(root, 'content/routes.json'), 'utf8'));
   for (const code of languages) {
-    let registered;
-    let dictionary;
-    const context = { window: { NearFastenerI18n: { register: (language, data) => { registered = language; dictionary = data; } } } };
-    vm.runInNewContext(await readFile(join(root, `public/locales/${code}.js`), 'utf8'), context);
-    assert.equal(registered, code);
-    assert.deepEqual(JSON.parse(JSON.stringify(dictionary)), await readCatalog(code));
+    const dictionary = await readCatalog(code);
+    for (const [path, page] of Object.entries(routes)) {
+      const html = await readFile(join(root, 'static-site', localizedPath(path, code), 'index.html'), 'utf8');
+      assert.ok(html.includes(`<html lang="${code}" dir="${code === 'ar' ? 'rtl' : 'ltr'}">`));
+      assert.ok(html.includes(dictionary[page.title].replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll('<', '&lt;').replaceAll('>', '&gt;')));
+      assert.ok(!html.includes('i18n.js') && !html.includes('/locales/'));
+      const links = [...html.matchAll(/data-language="([^"]+)"/g)];
+      assert.equal(links.length, languages.length, `${code} ${path}`);
+      for (const [, target] of html.matchAll(/(?:href|src)="([^"]+)"/g)) {
+        if (target.startsWith('#') || /^[a-z]+:/i.test(target)) continue;
+        const file = new URL(target, 'file://' + join(root, 'static-site', localizedPath(path, code), 'index.html'));
+        await readFile(file).catch(error => { throw new Error(`${code} ${path}: broken link ${target}: ${error.message}`); });
+      }
+    }
   }
+});
+test('language routing migrates old addresses and preserves query data', () => {
+  const routes = { '/': {}, '/products': {} };
+  for (const [path, search, expected] of [
+    ['/', '', '/en/'], ['/products', '?lang=zh-CN&topic=all', '/zh-cn/products/?topic=all'],
+    ['/de/products/index.html', '?lang=ja&product_id=test', '/de/products/?product_id=test'],
+    ['/EN/products', '', '/en/products/'],
+  ]) assert.equal(resolvePageRequest(path, search, routes).redirect, expected);
+  assert.equal(resolvePageRequest('/ja/products/', '', routes).redirect, null);
+  assert.equal(resolvePageRequest('/xx/products/', '', routes), null);
+  assert.equal(resolvePageRequest('/ja/missing/', '', routes), null);
+});
+test('rendering escapes translations and localizes internal links only', () => {
+  const html = localizeHtml('<p>Hello</p><img alt="Hello" src="/assets/a.jpg"><a href="/rfq?product_id=x#form">Hello</a>', 'de', { Hello: '<Hallo & Welt>' }, { '/rfq': {} });
+  assert.match(html, /&lt;Hallo &amp; Welt&gt;/);
+  assert.match(html, /href="\/de\/rfq\/\?product_id=x#form"/);
+  assert.match(html, /src="\/assets\/a.jpg"/);
 });

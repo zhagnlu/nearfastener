@@ -53,7 +53,7 @@ test('article bodies and interface text have translated content in all supported
 
 test('exported articles resolve offline images, product links, and RFQ links', async () => {
   for (const { file } of resourcePages(data, catalog).values()) {
-    const page = join(root, 'static-site', file.replace(/\.html$/, '/index.html'));
+    const page = join(root, 'static-site', 'en', file.replace(/\.html$/, '/index.html'));
     const html = await readFile(page, 'utf8');
     for (const [, value] of html.matchAll(/(?:src|href)="([^"]+)"/g)) {
       if (/^(https?:|mailto:|tel:|#)/.test(value)) continue;

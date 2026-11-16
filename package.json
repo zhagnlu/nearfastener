@@ -23,7 +23,8 @@
     "resources:build": "node scripts/build-resources.mjs",
     "seo:build": "node scripts/build-seo.mjs",
     "build:ecs": "node scripts/build-ecs.mjs",
-    "publish:ecs": "node scripts/publish-ecs.mjs"
+    "publish:ecs": "node scripts/publish-ecs.mjs",
+    "preview:static": "node scripts/preview-static.mjs"
   },
   "dependencies": {
     "drizzle-orm": "0.45.2",

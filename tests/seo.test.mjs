@@ -1,3 +1,4 @@
+import { languages, splitLocalePath } from '../scripts/localization.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
@@ -10,9 +11,9 @@ const site = { ...settings, url: 'https://factory.example' };
 test('sitemap enumerates every real route once without API or parameter URLs', () => {
   const xml = sitemapXml(routes, site);
   const urls = [...xml.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => match[1]);
-  assert.equal(urls.length, Object.keys(routes).length);
+  assert.equal(urls.length, Object.keys(routes).length * languages.length);
   assert.equal(new Set(urls).size, urls.length);
-  for (const url of urls) assert.ok(routes[new URL(url).pathname]);
+  for (const url of urls) assert.ok(routes[splitLocalePath(new URL(url).pathname).path]);
   assert.ok(urls.every((url) => !url.includes('?') && !url.includes('/api/')));
   assert.match(robotsTxt(site), /Sitemap: https:\/\/factory.example\/sitemap.xml/);
 });
@@ -36,9 +37,27 @@ test('product structured data matches primary taxonomy and avoids invented comme
 test('JSON-LD safely serializes HTML-like user data and exported pages share the schema', async () => {
   assert.ok(!safeJson({ text: '</script><script>alert(1)</script>' }).includes('<'));
   const product = catalog.products.find((item) => item.id === 'sems-screw');
-  const html = await readFile(new URL('../static-site/product/sems-screw/index.html', import.meta.url), 'utf8');
+  const html = await readFile(new URL('../static-site/en/product/sems-screw/index.html', import.meta.url), 'utf8');
   const data = JSON.parse(html.match(/<script type="application\/ld\+json">(.*?)<\/script>/)[1]);
   assert.equal(data['@graph'].find((item) => item['@type'] === 'Product').name, product.title);
   assert.match(html, /property="og:title"/);
   assert.match(html, /name="twitter:card"/);
+});
+
+test('language SEO localizes visible fields without translating schema vocabulary', async () => {
+  const { readCatalog } = await import('../scripts/build-locales.mjs');
+  const product = catalog.products.find(item => item.status === 'published');
+  for (const language of languages) {
+    const dictionary = await readCatalog(language);
+    const seo = pageSeo(product.path, routes[product.path], catalog, site, routes, language, dictionary);
+    assert.equal(seo.canonical, site.url + '/' + language.toLowerCase() + product.path + '/');
+    assert.equal(seo.alternates.length, 10);
+    const graph = seo.structuredData['@graph'];
+    const data = graph.find(item => item['@type'] === 'Product');
+    assert.ok(data, language + ': schema type must remain Product');
+    assert.equal(data.name, dictionary[product.title] || product.title);
+    assert.equal(data.image, site.url + product.image);
+    assert.equal(graph.find(item => item['@type'] === 'ItemPage').inLanguage, language);
+    assert.equal(graph.find(item => item['@type'] === 'BreadcrumbList').itemListElement.at(-1).item, seo.canonical);
+  }
 });

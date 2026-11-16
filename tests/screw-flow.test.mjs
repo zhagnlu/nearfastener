@@ -47,7 +47,7 @@ test('unpublishing a generated product removes its detail and unreferenced stand
 });
 
 test('static RFQ action resolves to a real file and retains the product identity', async () => {
-  const path = resolve(root, 'static-site', product.path.slice(1), 'index.html');
+  const path = resolve(root, 'static-site', 'en', product.path.slice(1), 'index.html');
   const html = await readFile(path, 'utf8');
   const action = html.match(/<form[^>]*action="([^"]+)"[^>]*data-product-request/)[1];
   assert.ok(!action.startsWith('/'), 'Offline form action must be relative');
