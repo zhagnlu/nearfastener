@@ -33,6 +33,9 @@ try {
   cpSync(join(root, '.github/workflows/deploy-ecs.yml'), join(publishRoot, '.github/workflows/deploy-ecs.yml'));
   git(['config', 'user.name', git(['show', '-s', '--format=%cn', 'HEAD'])], publishRoot);
   git(['config', 'user.email', git(['show', '-s', '--format=%ce', 'HEAD'])], publishRoot);
+  // Rebuild the index from the generated tree: on case-insensitive filesystems,
+  // a retained index can otherwise keep old directory spelling (zh-CN vs zh-cn).
+  git(['read-tree', '--empty'], publishRoot);
   git(['add', '-A'], publishRoot);
   const changes = git(['diff', '--cached', '--name-only'], publishRoot);
   if (!changes) {
