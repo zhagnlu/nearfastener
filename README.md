@@ -115,7 +115,7 @@ npm run test:i18n   # 检查文案、语言页面、链接及路由
 
 ## 搜索与分享信息
 
-`content/site.json` 管理品牌、邮箱、分享图片和正式域名。`url` 当前为 `null`，上线前填写最终 HTTPS 主域名（不含路径、参数或认证信息），再构建即可启用全站 canonical、分享链接和覆盖全部路由的 `sitemap.xml`。`npm run seo:build` 生成爬虫规则和站点地图；生产构建与静态导出均自动调用。
+`content/site.json` 管理品牌、邮箱、分享图片和正式域名。`url` 已确认为 `https://www.nearfastener.com`（不含路径、参数或认证信息），构建会生成全站 canonical、分享链接和覆盖963个语言页面的 `sitemap.xml`。静态导出在正式域名缺失或无效时提前失败，不清理上一份产物。`npm run seo:build` 生成爬虫规则和站点地图；生产构建与静态导出均自动调用。
 
 React 页面及独立 HTML 共用 `scripts/seo.mjs`：提供分享标题、摘要及 JSON-LD，产品分类和面包屑来自产品目录。域名未配置时不会生成猜测的绝对网址。产品没有添加价格、现货或评价，不保证出现搜索富结果。规范链接的用途参见 [Google canonical 文档](https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls)，产品展示要求参见 [Google 产品结构化数据文档](https://developers.google.com/search/docs/appearance/structured-data/product)。
 

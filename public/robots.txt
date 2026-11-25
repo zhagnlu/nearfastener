@@ -3,3 +3,4 @@ Allow: /
 Disallow: /api/
 Disallow: /__debug
 Disallow: /_vinext/
+Sitemap: https://www.nearfastener.com/sitemap.xml

@@ -1,5 +1,5 @@
 import { buildSeo } from './build-seo.mjs';
-import { pageSeo, seoHead } from './seo.mjs';
+import { pageSeo, seoHead, siteOrigin } from './seo.mjs';
 import { buildLocales, readCatalog } from './build-locales.mjs';
 import { languages, localizedPath, renderFragments, interactionMessages, escapeHtml, messageKeys } from './localization.mjs';
 import { buildCatalog } from './build-catalog.mjs';
@@ -10,12 +10,15 @@ import { fileURLToPath } from 'node:url';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const out = join(root, 'static-site');
+const read = async file => JSON.parse(await readFile(join(root, file), 'utf8'));
+const site = await read('content/site.json');
+// Validate before running generators or replacing an existing static export.
+// Development can omit the origin; a publishable export must contain SEO URLs.
+if (!siteOrigin(site)) throw new Error('Set content/site.json.url to the confirmed HTTPS production origin before exporting the static website.');
 await buildCatalog();
 await buildResources();
 await buildSeo();
 await buildLocales();
-const read = async file => JSON.parse(await readFile(join(root, file), 'utf8'));
-const site = await read('content/site.json');
 const catalog = await read('content/catalog.json');
 const routes = await read('content/routes.json');
 const header = await readFile(join(root, 'content/header.html'), 'utf8');
@@ -26,7 +29,7 @@ const messages = messageKeys(behavior);
 await rm(out, { recursive: true, force: true });
 await mkdir(out, { recursive: true });
 for (const file of ['assets', 'site.css', 'replica.css', 'site.js', 'robots.txt']) await cp(join(root, 'public', file), join(out, file), { recursive: true });
-if (site.url) await cp(join(root, 'public/sitemap.xml'), join(out, 'sitemap.xml'));
+await cp(join(root, 'public/sitemap.xml'), join(out, 'sitemap.xml'));
 for (const language of languages) {
   const dictionary = await readCatalog(language);
   for (const [route, meta] of Object.entries(routes)) {

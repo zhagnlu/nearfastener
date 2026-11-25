@@ -7,7 +7,7 @@
 - `content/locales/*.json` 仅作构建／服务端文案源；`public/i18n.js` 和 `public/locales/*.js` 已移除。浏览器没有整页动态翻译和语言包网络请求。
 - 共用 HTML 模板在导出时生成各语言页面，在应用端由服务端输出各语言内容。语言菜单为普通链接，JS 开启时保留查询参数、产品询价参数和锚点。切换语言会加载新页面，未提交表单输入不会跨页面保存。
 - `lang` 和 `dir` 与路径一致；阿拉伯语使用 RTL。标题、描述、分享元数据、结构化数据与内部链接同步本地化。
-- `content/site.json` 的 `url` 目前未配置，因此延续原有策略，不生成猜测的绝对 canonical、hreflang 和 sitemap。配置正式 HTTPS 域名后构建会生成自引用 canonical、九种语言及 x-default 链接和仅包含语言目录的 sitemap。
+- `content/site.json` 已恢复确认的正式域名 `https://www.nearfastener.com`。构建输出自引用 canonical、九种语言及 x-default 链接、分享地址和只包含语言目录的 sitemap，robots.txt 同时声明 sitemap。静态导出要求有效 HTTPS origin；缺失或无效时在生成器运行和清理旧产物之前失败。
 
 ## 旧地址
 
@@ -48,3 +48,13 @@
 ## 2026-11-17 范围调整
 
 按用户要求移除此前新增的 Nginx 示例、映射文件和构建生成逻辑。多语言页面沿用现有静态服务器配置，旧地址采用已生成的 HTML／浏览器跳转兜底。
+
+## 2026-11-25 SEO 配置修复
+
+线上核查发现 sitemap.xml 为404、robots缺少Sitemap声明，抽查语言页没有canonical和SEO hreflang。当前分支 `content/site.json.url` 为null，与上述线上行为一致。恢复已经确认的正式域名，保留现有107条基础路由、963个语言页面及当前产品／文章内容；没有合并另一条分叉分支或恢复未经本轮核验的企业字段。
+
+新增回归检查直接使用实际站点配置和完整导出产物，避免仅以示例域名通过测试而漏掉生产配置为空的问题。检查全部963页的自引用canonical、九语种及x-default对应关系、分享URL、结构化数据URL、语言、面包屑和索引指令，同时确认旧地址仍为noindex兜底且不进入sitemap。隔离临时目录中的导出测试验证缺失／无效域名会拒绝导出，并保留上一份产物。
+
+本轮本地修复不自动提交、推送、部署或向Search Console提交请求。部署后仍需用正式域名验证sitemap返回200、robots声明及新页面元数据，再复核GSC读取状态；本地测试通过不代表线上已修复。既有未跟踪 `SEO_PLAN.md` 保留原样。
+
+本地验证：应用构建和静态导出成功，最终 `node --test tests/*.test.mjs` 的47项测试全部通过；8011端口HTTP检查中，sitemap返回200，robots声明正确，963个语言页均直接返回200且与导出HTML一致，0失败。报告保存在已忽略的 `outputs/seo-repair-2026-11-25/local-http-verification.json`。没有改动或应用Nginx配置。

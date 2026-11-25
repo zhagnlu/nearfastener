@@ -153,7 +153,7 @@ ECS公网IP ssh-ed25519 服务器公钥完整字符串
 
 ## 报价、域名与故障定位
 
-报价采用 FormSubmit 邮件模式，静态 ECS 无需部署报价 API。首次使用需要收件邮箱激活，详见 [RFQ.md](RFQ.md)。正式域名填写在 `content/site.json` 的 url 中，然后重新构建发布，以生成正确 canonical 和 sitemap。
+报价采用 FormSubmit 邮件模式，静态 ECS 无需部署报价 API。首次使用需要收件邮箱激活，详见 [RFQ.md](RFQ.md)。正式域名已在 `content/site.json` 的 url 中确认为 `https://www.nearfastener.com`。静态导出在该值缺失或无效时提前失败；生成产物必须包含 sitemap.xml、robots 的 Sitemap 声明，以及全部语言页面的 canonical 和 hreflang。当前107个基础页面对应963个语言URL，测试以实际配置和全部导出HTML检查这些内容。发布后仍需通过正式域名核对响应，不能以本地检查代替线上验收。
 
 | 错误 | 检查项 |
 | --- | --- |
